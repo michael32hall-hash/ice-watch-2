@@ -42,15 +42,7 @@ A fantasy hockey tracker that updates itself nightly via GitHub Actions.
   If something errors out or looks wrong once real games are being played,
   bring the Actions log or a sample API response back to this chat and I can
   help fix the field mapping — I can't test the live API myself since I don't
-  have outbound network access here.
-
-- **ESPN ownership** comes from a public, read-only endpoint (no login
-  needed) that ESPN's own "trending" widgets use internally.
-
-- **Yahoo ownership** isn't wired up yet. Yahoo's Fantasy Sports API needs a
-  registered developer app and a full OAuth login flow, which didn't fit in
-  this first pass — the Yahoo columns just show 0 for now. Let me know if you
-  want to add it next.
+  have outbound network access 
 
 ## Scoring settings
 
