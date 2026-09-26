@@ -13,7 +13,29 @@
     "skaters": [],
     "goalies": []
   },
-  "updated_at": "2026-09-26T22:29:21.896361+00:00",
+  "season": {
+    "game_type": 2,
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-25",
+    "games_count": 0,
+    "skaters": [],
+    "goalies": []
+  },
+  "game_logs": {
+    "skaters": {},
+    "goalies": {}
+  },
+  "raw_performance": {
+    "version": 1,
+    "season_start": "2026-07-01",
+    "through": "2026-09-25",
+    "windows": {
+      "week_days": 7,
+      "month_days": 30
+    },
+    "description": "Season totals and chronological game logs used by Ice Watchers trend intelligence."
+  },
+  "updated_at": "2026-09-26T23:12:18.761173+00:00",
   "timezone": "America/Toronto",
   "waivers": []
 }
