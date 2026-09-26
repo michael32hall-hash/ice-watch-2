@@ -1,0 +1,95 @@
+"""
+Pulls player ownership % and 7-day ownership change from ESPN's public (also
+unofficial) fantasy hockey endpoint and writes the top movers into data.json.
+
+This uses ESPN's "kona_player_info" view, which is read-only and doesn't
+require login for ownership percentages (it's the same data ESPN's own
+"Who's Hot" / trending-add widgets use). No league ID is required for this —
+it's league-agnostic, global ownership data.
+
+Yahoo isn't included yet: their Fantasy Sports API requires registering an
+app and doing a full OAuth login flow, which is more setup than fits in a
+first pass. The Yahoo columns in data.json are left at 0 until that's added —
+say the word if you want to tackle that next.
+"""
+
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+import requests
+
+SEASON = 2027  # ESPN labels a season by the year it ends in, e.g. 2026-27 -> 2027
+ESPN_URL = f"https://fantasy.espn.com/apis/v3/games/fhl/seasons/{SEASON}/segments/0/leaguedefaults/3"
+OUT_PATH = Path(__file__).resolve().parent / "data.json"
+TOP_N = 15
+
+HEADERS = {
+    # ESPN's endpoint returns 403 without something that looks like a browser
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/json",
+    "x-fantasy-filter": json.dumps({
+        "players": {
+            "filterStatsForTopScoringPeriodIds": {"value": 2},
+            "sortPercChanged": {"sortPriority": 1, "sortAsc": False},
+            "limit": 50,
+        }
+    })
+}
+
+POSITION_MAP = {1: "C", 2: "LW", 3: "RW", 4: "D", 5: "G"}
+
+
+def main():
+    try:
+        resp = requests.get(ESPN_URL, headers=HEADERS, timeout=15)
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        print(f"ESPN fetch failed: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    payload = resp.json()
+    players = payload.get("players", [])
+
+    rows = []
+    for entry in players:
+        p = entry.get("player", {})
+        ownership = p.get("ownership", {})
+        change = ownership.get("percentChange", 0)
+        if change <= 0:
+            continue  # only interested in trending UP
+        pos_ids = p.get("eligibleSlots", [])
+        pos = POSITION_MAP.get(pos_ids[0], "?") if pos_ids else "?"
+        rows.append({
+            "name": p.get("fullName", "Unknown"),
+            "team": p.get("proTeamAbbreviation", "???"),
+            "pos": pos,
+            "eowned": round(ownership.get("percentOwned", 0), 1),
+            "echange": round(change, 1),
+            # Yahoo not wired up yet — placeholders so the table renders cleanly
+            "yowned": 0,
+            "ychange": 0,
+        })
+
+    rows.sort(key=lambda r: r["echange"], reverse=True)
+    rows = rows[:TOP_N]
+
+    data = {}
+    if OUT_PATH.exists():
+        data = json.loads(OUT_PATH.read_text())
+
+    data["updated_at"] = datetime.now(timezone.utc).isoformat()
+    data["waivers"] = rows
+    data.setdefault("skaters", [])
+    data.setdefault("goalies", [])
+
+    OUT_PATH.write_text(json.dumps(data, indent=2))
+    print(f"Wrote {len(rows)} trending waiver players to {OUT_PATH}")
+
+
+if __name__ == "__main__":
+    main()
