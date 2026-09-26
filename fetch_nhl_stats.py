@@ -26,7 +26,7 @@ import requests
 
 NHL_API = "https://api-web.nhle.com/v1"
 DAYS_BACK = 7
-OUT_PATH = Path(__file__).resolve().parent.parent / "data.json"
+OUT_PATH = Path(__file__).resolve().parent/ "data.json"
 
 
 def get_game_ids_for_range(days_back: int) -> list[str]:
