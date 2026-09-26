@@ -22,7 +22,7 @@ import requests
 
 SEASON = 2027  # ESPN labels a season by the year it ends in, e.g. 2026-27 -> 2027
 ESPN_URL = f"https://fantasy.espn.com/apis/v3/games/fhl/seasons/{SEASON}/segments/0/leaguedefaults/3"
-OUT_PATH = Path(__file__).resolve().parent.parent / "data.json"
+OUT_PATH = Path(__file__).resolve().parent/ "data.json"
 TOP_N = 15
 
 HEADERS = {
