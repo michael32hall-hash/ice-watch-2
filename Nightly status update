@@ -1,4 +1,4 @@
-name: Nightly stats update
+name: .github/workflows/update.yml
 
 on:
   schedule:
