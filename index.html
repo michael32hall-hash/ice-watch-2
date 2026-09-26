@@ -2,333 +2,683 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ice Watch — Weekly Fantasy Tracker</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ice Watchers | Fantasy Hockey Stats</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --ice:#EEF3F6;
-    --surface:#FFFFFF;
-    --navy:#0F2436;
-    --steel:#5A7285;
-    --line:#D7E1E8;
-    --red:#D91E36;
-    --frost:#1C6FA8;
-    --frost-bg:#E7F1F8;
-    color-scheme:light;
-  }
+:root{
+  --ink:#101820;
+  --muted:#617080;
+  --line:#dfe5ea;
+  --ice:#f3f6f8;
+  --blue:#007ca8;
+  --pale:#eaf6fb;
+}
 
-  @media(prefers-color-scheme:dark) {
-    :root {
-      --ice:#0B1720;
-      --surface:#122232;
-      --navy:#EAF1F6;
-      --steel:#A0B5C4;
-      --line:#345065;
-      --red:#FF7081;
-      --frost:#5FB0EE;
-      --frost-bg:#183246;
-      color-scheme:dark;
-    }
-  }
+*{box-sizing:border-box}
 
-  * { box-sizing:border-box; }
+body{
+  margin:0;
+  background:var(--ice);
+  color:var(--ink);
+  font-family:Inter,Arial,sans-serif;
+}
 
-  body {
-    margin:0;
-    background:var(--ice);
-    color:var(--navy);
-    font-family:Inter,system-ui,sans-serif;
-    padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);
-  }
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
 
-  .wrap {
-    max-width:920px;
-    margin:auto;
-    padding:28px 20px 60px;
-  }
+button,a,input,summary{
+  -webkit-tap-highlight-color:transparent;
+}
 
-  header {
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    gap:16px;
-    flex-wrap:wrap;
-    border-bottom:3px solid var(--navy);
-    padding-bottom:18px;
-  }
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+summary:focus-visible{
+  outline:3px solid #16a9da;
+  outline-offset:3px;
+}
 
-  h1,h2 {
-    font-family:Teko,system-ui,sans-serif;
-    letter-spacing:.3px;
-  }
+[hidden]{display:none!important}
 
-  h1 { font-size:44px; line-height:1; margin:0; }
-  h2 { font-size:28px; margin:0 0 8px; }
-  h3 { font-size:16px; margin:0 0 16px; }
+.topbar{
+  background:#101820;
+  color:#fff;
+  border-bottom:4px solid #39c2ec;
+}
 
-  .tagline,.subhead,small,footer {
-    color:var(--steel);
-    line-height:1.6;
-  }
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:22px 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
 
-  .tagline { font-size:14px; }
-  .subhead { font-size:14px; margin:0 0 18px; }
+.brand{
+  font-family:"Barlow Condensed",Impact,sans-serif;
+  font-size:32px;
+  font-weight:800;
+  font-style:italic;
+  letter-spacing:.5px;
+  text-decoration:none;
+  line-height:1;
+}
 
-  .badge {
-    background:var(--frost);
-    color:var(--surface);
-    font-size:11px;
-    padding:7px 10px;
-    border-radius:5px;
-    font-weight:700;
-  }
+.brand span{color:#67d7f7}
 
-  .banner {
-    background:var(--frost-bg);
-    border-left:4px solid var(--frost);
-    padding:16px;
-    margin:20px 0 28px;
-    font-size:14px;
-    line-height:1.6;
-  }
+.nav-note{
+  font-size:10px;
+  letter-spacing:2px;
+  color:#a8bdcc;
+  text-transform:uppercase;
+}
 
-  section { margin-bottom:36px; }
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:36px 28px 60px;
+}
 
-  .settings {
-    background:var(--surface);
-    border:1px solid var(--line);
-    padding:24px;
-    border-radius:14px;
-  }
+.eyebrow{
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:800;
+  color:var(--blue);
+  text-transform:uppercase;
+}
 
-  .settings-group + .settings-group {
-    border-top:1px solid var(--line);
-    margin-top:24px;
-    padding-top:24px;
-  }
+.intro{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:28px;
+}
 
-  .field-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-    gap:16px;
-  }
+h1{
+  font-family:"Barlow Condensed",Impact,sans-serif;
+  font-size:64px;
+  line-height:1;
+  margin:10px 0;
+  text-transform:uppercase;
+  letter-spacing:-.6px;
+}
 
-  .field {
-    display:flex;
-    flex-direction:column;
-    gap:7px;
-  }
+.intro p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+  margin:0;
+}
 
-  .field label { font-size:13px; font-weight:600; }
+.edition{
+  border-left:2px solid var(--line);
+  padding-left:22px;
+  min-width:175px;
+}
 
-  .field input {
-    width:100%;
-    min-height:48px;
-    border:1px solid var(--line);
-    border-radius:8px;
-    background:var(--ice);
-    color:var(--navy);
-    font:inherit;
-    font-size:16px;
-    padding:10px 12px;
-  }
+.edition b{
+  display:block;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:28px;
+}
 
-  .field input.active {
-    border-color:var(--frost);
-    background:var(--frost-bg);
-  }
+.edition span{
+  color:var(--muted);
+  font-size:11px;
+}
 
-  input:focus-visible,button:focus-visible {
-    outline:3px solid var(--frost);
-    outline-offset:3px;
-  }
+.summarybar{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  border:1px solid var(--line);
+  background:white;
+  padding:14px 18px;
+  font-size:11px;
+  margin-bottom:22px;
+}
 
-  .field small { font-size:11px; }
+.pill{
+  background:var(--pale);
+  color:#075879;
+  font-weight:700;
+  border-radius:3px;
+  padding:6px 9px;
+}
 
-  .actions {
-    display:flex;
-    align-items:center;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-top:24px;
-  }
+.updated{
+  margin-left:auto;
+  color:var(--muted);
+  font-size:11px;
+}
 
-  button {
-    cursor:pointer;
-    font:inherit;
-    color:var(--navy);
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:10px 14px;
-    min-height:44px;
-  }
+.banner{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+  margin:0 0 22px;
+}
 
-  .status {
-    color:var(--steel);
-    font-size:12px;
-    line-height:1.5;
-  }
+.banner.error{color:#a32727}
 
-  .notice {
-    font-size:13px;
-    line-height:1.5;
-    color:var(--red);
-    margin-top:16px;
-  }
+.tabs{
+  display:flex;
+  gap:25px;
+  border-bottom:1px solid #b7c4ce;
+  margin-bottom:24px;
+}
 
-  .tablewrap { overflow-x:auto; }
+.tab{
+  border:0;
+  background:none;
+  color:var(--muted);
+  font-weight:700;
+  font-size:13px;
+  padding:14px 0;
+  border-bottom:3px solid transparent;
+  margin-bottom:-1px;
+}
 
-  table {
-    width:100%;
-    border-collapse:collapse;
-    font-size:13px;
-    min-width:640px;
-  }
+.tab[aria-pressed=true]{
+  color:var(--ink);
+  border-color:var(--blue);
+}
 
-  th,td {
-    text-align:right;
-    padding:10px;
-    white-space:nowrap;
-  }
+.settings-link{
+  margin-left:auto;
+  color:var(--blue);
+}
 
-  th:first-child,td:first-child,
-  th:nth-child(2),td:nth-child(2) {
-    text-align:left;
-  }
+details{
+  border:1px solid var(--line);
+  background:white;
+  margin-bottom:26px;
+  border-radius:6px;
+}
 
-  th { border-bottom:2px solid var(--navy); }
+summary{
+  cursor:pointer;
+  padding:18px;
+  font-weight:700;
+  font-size:13px;
+}
 
-  th button {
-    border:0;
-    background:none;
-    padding:0;
-    font-size:12px;
-    min-height:44px;
-  }
+summary span{
+  font-weight:400;
+  color:var(--muted);
+  margin-left:10px;
+  font-size:11px;
+}
 
-  td { border-bottom:1px solid var(--line); }
-  td.fpts { font-weight:700; color:var(--red); }
+.settings-body{
+  padding:0 20px 20px;
+  border-top:1px solid var(--line);
+}
 
-  .empty-row td {
-    text-align:center;
-    color:var(--steel);
-    padding:24px;
-  }
+.help{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.7;
+}
 
-  footer {
-    border-top:1px solid var(--line);
-    padding-top:16px;
-    font-size:12px;
-  }
+.settings-body h3{
+  font-size:13px;
+  margin:20px 0 12px;
+}
 
-  noscript { display:block; padding:20px; }
+.field-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(135px,1fr));
+  gap:14px;
+}
 
-  @media(max-width:420px) {
-    .wrap { padding-left:16px; padding-right:16px; }
-    .settings { padding:18px; }
+.field{
+  display:grid;
+  gap:7px;
+  font-size:11px;
+  font-weight:600;
+}
 
-    .field-grid {
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:16px 12px;
-    }
+.field input{
+  width:100%;
+  min-height:44px;
+  padding:10px;
+  border:1px solid #c8d4dd;
+  background:var(--ice);
+  border-radius:4px;
+  font-size:16px;
+  color:var(--ink);
+}
 
-    .field label { min-height:32px; }
-  }
+.field input.active{
+  border-color:var(--blue);
+  background:var(--pale);
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.reset{
+  border:1px solid #c8d4dd;
+  background:white;
+  padding:10px 14px;
+  border-radius:4px;
+  font-size:12px;
+  min-height:44px;
+}
+
+#saved{
+  font-size:12px;
+  color:var(--muted);
+}
+
+#coverage{
+  background:#fff6e7;
+  color:#75480b;
+  padding:12px;
+  font-size:12px;
+  line-height:1.6;
+  border-left:3px solid #d5a64d;
+  margin-bottom:24px;
+}
+
+.board{margin-bottom:30px}
+
+.board-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:13px;
+}
+
+.board-title h2{
+  font-family:"Barlow Condensed",Impact,sans-serif;
+  font-size:30px;
+  text-transform:uppercase;
+  margin:0;
+}
+
+.board-title span{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--muted);
+}
+
+.tablewrap{
+  overflow:auto;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:6px;
+}
+
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:12px;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+
+th{
+  background:#edf1f4;
+  border-bottom:1px solid #cbd6de;
+  color:#536373;
+  text-align:right;
+  font-size:10px;
+  height:45px;
+  padding:0 12px;
+}
+
+th button{
+  border:0;
+  background:transparent;
+  color:inherit;
+  font-size:10px;
+  font-weight:700;
+  padding:0;
+  min-height:44px;
+}
+
+th[aria-sort=descending] button::after{
+  content:" ↓";
+  color:var(--blue);
+}
+
+th[aria-sort=ascending] button::after{
+  content:" ↑";
+  color:var(--blue);
+}
+
+td{
+  height:76px;
+  padding:10px 12px;
+  text-align:right;
+  border-bottom:1px solid #edf1f4;
+  background:white;
+}
+
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:#f4faff}
+
+.rank{
+  width:42px;
+  text-align:center;
+  color:#71808d;
+  font-weight:700;
+}
+
+.player-col{
+  text-align:left;
+  min-width:230px;
+  position:sticky;
+  left:0;
+  z-index:1;
+  border-right:1px solid #edf1f4;
+}
+
+th.player-col{z-index:2}
+
+.player{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.portrait{
+  width:50px;
+  height:50px;
+  flex:0 0 50px;
+  border-radius:50%;
+  background:#eaf0f4;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  color:#5c7181;
+  font-size:14px;
+  font-weight:700;
+}
+
+.portrait img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.player-name{
+  font-size:12px;
+  font-weight:700;
+  white-space:normal;
+  max-width:170px;
+  line-height:1.4;
+}
+
+.player-meta{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.fpts{
+  font-weight:800;
+  color:var(--blue);
+  background:#f0f9fd;
+  font-size:14px;
+}
+
+.first .rank{color:var(--blue)}
+.first .player-name{color:#006d98}
+
+.board-foot{
+  font-size:10px;
+  color:var(--muted);
+  margin:10px 2px;
+  line-height:1.6;
+}
+
+.empty-row td{
+  height:165px;
+  text-align:center;
+  white-space:normal;
+}
+
+.empty-row strong{
+  display:block;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:24px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.empty-row span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding-top:22px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.8;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+footer b{
+  font-family:"Barlow Condensed",sans-serif;
+  color:var(--ink);
+  font-size:20px;
+}
+
+@media(max-width:700px){
+  .nav{padding:20px}
+  .nav-note{display:none}
+  main{padding:26px 16px 40px}
+  h1{font-size:48px}
+  .intro{align-items:start}
+  .edition{display:none}
+  .intro p{font-size:12px}
+  .summarybar{padding:12px;gap:8px}
+  .updated{width:100%;margin:3px 0 0}
+  .tabs{gap:22px}
+  .tab{font-size:12px}
+  .settings-link{font-size:11px}
+  .field-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .field{min-width:0}
+  .field span{min-height:27px}
+  .board-title h2{font-size:27px}
+  .board-title span{font-size:9px}
+  .player-col{min-width:180px;max-width:180px}
+  td,th{padding-left:10px;padding-right:10px}
+  .portrait{width:40px;height:40px;flex-basis:40px}
+  .player{gap:8px}
+  .player-name{font-size:11px;max-width:110px}
+  .rank{width:30px}
+  summary span{display:block;margin:6px 0 0}
+  footer{display:block}
+  footer a{display:inline-block;margin-top:12px}
+}
 </style>
 </head>
 
 <body>
-<main class="wrap">
 
-  <header>
+<header class="topbar">
+  <div class="nav">
+    <a class="brand" href="#">ICE <span>WATCHERS</span></a>
+    <div class="nav-note">Your league. Your scoring. Your edge.</div>
+  </div>
+</header>
+
+<main>
+
+  <div class="intro">
     <div>
-      <h1>Ice Watch</h1>
-      <div class="tagline">Regular-season fantasy stat tracker</div>
+      <div class="eyebrow">Fantasy hockey / Weekly report</div>
+      <h1>Player statistics</h1>
+      <p>
+        The week’s best, ranked for your league.<br>
+        Custom scoring. Regular season. Top 10.
+      </p>
     </div>
-    <span class="badge" id="status-badge">LOADING</span>
-  </header>
 
-  <div class="banner" id="banner" role="status">
-    Loading the latest stats…
+    <div class="edition">
+      <b>THE WEEKLY TEN</b>
+      <span>Skaters &amp; goaltenders</span>
+    </div>
   </div>
 
-  <section aria-labelledby="settings-title">
-    <h2 id="settings-title">Your league’s scoring</h2>
+  <div class="summarybar">
+    <span class="pill">REGULAR SEASON</span>
+    <span id="period">Last 7 completed calendar days</span>
+    <span class="updated" id="updated">Loading statistics…</span>
+  </div>
 
-    <p class="subhead">
-      Enter your points-league values. Use 0 to exclude a stat.
-      Scores update as you type.
-    </p>
+  <p class="banner" id="banner" role="status">
+    You can adjust your scoring while statistics load.
+  </p>
 
-    <div class="settings">
-      <p class="subhead">
-        Decimals and negative points are supported.
-        Each visitor’s settings are saved in their own browser on this device.
+  <nav class="tabs" aria-label="Statistics view">
+    <button class="tab" data-view="all" aria-pressed="true">
+      All leaders
+    </button>
+    <button class="tab" data-view="skater" aria-pressed="false">
+      Skaters
+    </button>
+    <button class="tab" data-view="goalie" aria-pressed="false">
+      Goalies
+    </button>
+    <button
+      class="tab settings-link"
+      id="edit-scoring"
+      aria-controls="settings"
+      aria-expanded="false"
+    >
+      Edit scoring
+    </button>
+  </nav>
+
+  <details id="settings">
+    <summary>
+      Your league’s scoring
+      <span>Personalize the rankings · Saved on this device</span>
+    </summary>
+
+    <div class="settings-body">
+      <p class="help">
+        Enter points per stat. Use 0 to exclude a stat; decimals and
+        negative values work too. Power-play and shorthanded values
+        add to base goals and assists. Defense bonus adds points per
+        defenseman’s goal or assist.
       </p>
 
-      <div class="settings-group">
-        <h3>Skaters</h3>
-        <div class="field-grid" id="skater-fields"></div>
-      </div>
+      <h3>Skaters</h3>
+      <div class="field-grid" id="skater-fields"></div>
 
-      <div class="settings-group">
-        <h3>Goalies</h3>
-        <div class="field-grid" id="goalie-fields"></div>
-      </div>
+      <h3>Goalies</h3>
+      <div class="field-grid" id="goalie-fields"></div>
 
       <div class="actions">
-        <button id="reset-btn" type="button">Reset to defaults</button>
-        <span class="status" id="save-status" role="status">
+        <button class="reset" id="reset" type="button">
+          Reset to defaults
+        </button>
+        <span id="saved" role="status">
           Defaults: 1 per goal, assist and goalie win; all others 0.
         </span>
       </div>
-
-      <p class="notice" id="coverage" hidden></p>
     </div>
-  </section>
+  </details>
 
-  <section>
-    <h2>Top 10 skaters</h2>
-    <p class="subhead">
-      Regular season only · Top 10 by your fantasy points.
-      Select a column to sort those players.
-      A dash means that stat is unavailable.
-    </p>
+  <p id="coverage" hidden></p>
 
-    <div class="tablewrap">
-      <table id="skater-table" aria-label="Skater statistics">
+  <section class="board" id="skater-board" aria-labelledby="skater-title">
+    <div class="board-title">
+      <h2 id="skater-title">Top 10 skaters</h2>
+      <span>FANTASY POINTS</span>
+    </div>
+
+    <div
+      class="tablewrap"
+      tabindex="0"
+      role="region"
+      aria-label="Skater statistics, scroll horizontally"
+    >
+      <table id="skater-table" aria-label="Top 10 skaters">
         <thead></thead>
         <tbody></tbody>
       </table>
     </div>
+
+    <p class="board-foot">
+      Top 10 by your scoring. Click a column to reorder these players.
+      On mobile, swipe for more stats.
+    </p>
   </section>
 
-  <section>
-    <h2>Top 10 goalies</h2>
-    <p class="subhead">
-      Regular season only · Top 10 by your fantasy points.
-    </p>
+  <section class="board" id="goalie-board" aria-labelledby="goalie-title">
+    <div class="board-title">
+      <h2 id="goalie-title">Top 10 goalies</h2>
+      <span>FANTASY POINTS</span>
+    </div>
 
-    <div class="tablewrap">
-      <table id="goalie-table" aria-label="Goalie statistics">
+    <div
+      class="tablewrap"
+      tabindex="0"
+      role="region"
+      aria-label="Goalie statistics, scroll horizontally"
+    >
+      <table id="goalie-table" aria-label="Top 10 goalies">
         <thead></thead>
         <tbody></tbody>
       </table>
     </div>
+
+    <p class="board-foot">
+      A dash means a stat is unavailable.
+      Missing photos use the player’s initials.
+    </p>
   </section>
 
   <footer>
-    Stats refresh nightly at approximately 1 a.m. Toronto time.
-    Only completed regular-season games are included.
-    Scoring changes apply only to this browser.
+    <div>
+      <b>ICE WATCHERS</b><br>
+      Independent fantasy hockey tracker. Not affiliated with the NHL.<br>
+      Scheduled updates: 1 a.m. Toronto time.
+      Completed regular-season games only.
+    </div>
+
+    <a
+      href="https://www.nhl.com/stats/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      NHL statistics ↗
+    </a>
   </footer>
 
   <noscript>
-    Enable JavaScript to edit scoring settings and display player statistics.
+    Enable JavaScript to view rankings and edit scoring.
   </noscript>
 
 </main>
@@ -336,12 +686,12 @@
 <script>
 "use strict";
 
-const DEFAULT_SCORING = {
-  skater: {
+const DEFAULTS = {
+  skater:{
     g:1, a:1, pim:0, ppp:0, shg:0, sha:0,
     gwg:0, hat:0, sog:0, hit:0, blk:0, fow:0, def:0
   },
-  goalie: {
+  goalie:{
     gs:0, w:1, ga:0, sv:0, so:0, otl:0
   }
 };
@@ -365,20 +715,26 @@ const LABELS = {
   ga:"Goals against",
   sv:"Saves",
   so:"Shutouts",
-  otl:"Overtime losses"
+  otl:"Overtime losses",
+  fpts:"Fantasy points",
+  name:"Player",
+  rank:"Rank"
 };
 
-const COLUMNS = {
-  skater:["name","team","g","a","sog","hit","blk","ppp","fow","pim","fpts"],
-  goalie:["name","team","gs","w","ga","sv","so","otl","fpts"]
+const COLS = {
+  skater:["rank","name","g","a","sog","hit","blk","ppp","fow","pim","fpts"],
+  goalie:["rank","name","gs","w","ga","sv","so","otl","fpts"]
 };
 
-const STORAGE_KEY = "icewatch-scoring";
-const cloneDefaults = () => JSON.parse(JSON.stringify(DEFAULT_SCORING));
+const KEY = "icewatch-scoring";
 const $ = id => document.getElementById(id);
+const clone = () => JSON.parse(JSON.stringify(DEFAULTS));
 
-let scoring = cloneDefaults();
-let players = { skater:[], goalie:[] };
+let scoring = clone();
+let players = {skater:[],goalie:[]};
+
+const photoIds = new Map();
+const rosterJobs = new Map();
 
 const sort = {
   skater:{key:"fpts",dir:-1},
@@ -396,19 +752,20 @@ const esc = value => String(value ?? "").replace(
   }[c])
 );
 
-const hasStat = (p,k) =>
+const known = (p,k) =>
   (typeof p[k] === "number" || typeof p[k] === "string") &&
   String(p[k]).trim() !== "" &&
   Number.isFinite(Number(p[k]));
 
-const num = (p,k) => hasStat(p,k) ? Number(p[k]) : 0;
+const num = (p,k) => known(p,k) ? Number(p[k]) : 0;
 
+// Reuse scoring settings saved by the previous version.
 try {
-  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  const stored = JSON.parse(localStorage.getItem(KEY));
 
   for (const group of Object.keys(scoring)) {
     for (const key of Object.keys(scoring[group])) {
-      const value = saved?.[group]?.[key];
+      const value = stored?.[group]?.[key];
 
       if (typeof value === "number" && Number.isFinite(value)) {
         scoring[group][key] = value;
@@ -417,111 +774,317 @@ try {
   }
 } catch {}
 
-function saveScoring() {
+function save() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(scoring));
-    $("save-status").textContent = "Saved on this device";
+    localStorage.setItem(KEY,JSON.stringify(scoring));
+    $("saved").textContent = "Saved on this device";
   } catch {
-    $("save-status").textContent =
-      "Applied for this visit. Browser storage is unavailable.";
+    $("saved").textContent =
+      "Applied for this visit; browser storage is unavailable.";
   }
 }
 
-function buildFields(group) {
+function fields(group) {
   $(group + "-fields").innerHTML =
-    Object.keys(DEFAULT_SCORING[group]).map(key => {
-      const hint =
-        key === "def" ? "Extra per D goal or assist" :
-        key === "ppp" ? "Bonus on top of G/A points" :
-        key === "pim" ? "Points per minute" :
-        "Points per stat";
-
-      return `
-        <div class="field">
-          <label for="${group}-${key}">${LABELS[key]}</label>
-          <input
-            type="number"
-            step="any"
-            required
-            id="${group}-${key}"
-            data-group="${group}"
-            data-key="${key}"
-            value="${scoring[group][key]}"
-            class="${scoring[group][key] !== 0 ? "active" : ""}"
-            aria-describedby="${group}-${key}-hint"
-          >
-          <small id="${group}-${key}-hint">${hint}</small>
-        </div>
-      `;
-    }).join("");
+    Object.keys(DEFAULTS[group]).map(key => `
+      <label class="field">
+        <span>${LABELS[key]}</span>
+        <input
+          type="number"
+          step="any"
+          required
+          data-group="${group}"
+          data-key="${key}"
+          value="${scoring[group][key]}"
+          class="${scoring[group][key] !== 0 ? "active" : ""}"
+        >
+      </label>
+    `).join("");
 }
 
-function points(p,group) {
+function points(player,group) {
   return Object.entries(scoring[group]).reduce(
-    (total,[key,weight]) => {
-      if (!weight) return total;
-
+    (total,[key,value]) => {
       if (key === "def") {
         return total + (
-          String(p.pos).toUpperCase() === "D"
-            ? (num(p,"g") + num(p,"a")) * weight
+          String(player.pos).toUpperCase() === "D"
+            ? (num(player,"g") + num(player,"a")) * value
             : 0
         );
       }
 
-      return total + num(p,key) * weight;
+      return total + num(player,key) * value;
     },
     0
   );
 }
 
-function buildTable(group) {
-  const table = $(group + "-table");
-
-  table.querySelector("thead").innerHTML =
-    "<tr>" + COLUMNS[group].map(key => `
-      <th scope="col" data-key="${key}" aria-sort="none">
-        <button type="button" title="Sort by ${esc(LABELS[key] || key)}">
-          ${key === "name" ? "Player" :
-            key === "team" ? "Team" : key.toUpperCase()}
-        </button>
-      </th>
-    `).join("") + "</tr>";
-
-  table.querySelectorAll("th").forEach(th => {
-    th.querySelector("button").addEventListener("click", () => {
-      const key = th.dataset.key;
-
-      sort[group] = {
-        key,
-        dir: sort[group].key === key
-          ? -sort[group].dir
-          : (key === "name" || key === "team" ? 1 : -1)
-      };
-
-      renderTable(group);
-    });
-  });
-}
-
-function renderTable(group) {
-  const table = $(group + "-table");
-  const {key,dir} = sort[group];
-
-  // Choose the top 10 by fantasy points first.
-  // Column sorting only reorders those selected players.
-  const rows = players[group]
-    .map(p => ({...p, fpts:points(p,group)}))
+function topTen(group) {
+  return players[group]
+    .map(player => ({
+      ...player,
+      fpts:points(player,group)
+    }))
     .sort((a,b) =>
       b.fpts - a.fpts ||
       String(a.name ?? "").localeCompare(String(b.name ?? ""))
     )
     .slice(0,10)
-    .sort((a,b) => dir * (
-      key === "name" || key === "team"
-        ? String(a[key] ?? "").localeCompare(String(b[key] ?? ""))
-        : num(a,key) - num(b,key)
-    ));
+    .map((player,index) => ({
+      ...player,
+      rank:index + 1
+    }));
+}
+
+// Player photo lookup works even if data.json has no player IDs.
+function normalizeName(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g,"")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function photoKey(player) {
+  return String(player.team) + "|" + normalizeName(player.name);
+}
+
+function rosterMatch(player,roster) {
+  const name = normalizeName(player.name);
+
+  const exact = roster.filter(
+    item => normalizeName(item.name) === name
+  );
+
+  if (exact.length === 1) return exact[0].id;
+
+  // Handle abbreviated names such as "A. Matthews".
+  // Do not guess when multiple players match.
+  const parts = name.split(" ");
+
+  if (parts[0]?.length !== 1) return null;
+
+  const candidates = roster.filter(item =>
+    normalizeName(item.first).startsWith(parts[0]) &&
+    normalizeName(item.last) === parts.slice(1).join(" ")
+  );
+
+  return candidates.length === 1 ? candidates[0].id : null;
+}
+
+async function getRoster(team) {
+  if (!/^[A-Z]{2,3}$/.test(team)) return [];
+  if (rosterJobs.has(team)) return rosterJobs.get(team);
+
+  const job = (async () => {
+    const cacheKey = "icewatch-roster-" + team;
+
+    try {
+      const cache = JSON.parse(localStorage.getItem(cacheKey));
+
+      if (
+        cache &&
+        Date.now() - cache.time < 86400000 &&
+        Array.isArray(cache.players)
+      ) {
+        return cache.players;
+      }
+    } catch {}
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(),10000);
+
+    try {
+      const response = await fetch(
+        "https://api-web.nhle.com/v1/roster/" + team + "/current",
+        {signal:controller.signal}
+      );
+
+      if (!response.ok) return [];
+
+      const data = await response.json();
+
+      const roster = ["forwards","defensemen","goalies"]
+        .flatMap(key => Array.isArray(data[key]) ? data[key] : [])
+        .map(player => {
+          const first = player.firstName?.default || "";
+          const last = player.lastName?.default || "";
+
+          return {
+            id:player.id,
+            first,
+            last,
+            name:first + " " + last
+          };
+        })
+        .filter(player => /^\d+$/.test(String(player.id)));
+
+      try {
+        localStorage.setItem(
+          cacheKey,
+          JSON.stringify({
+            time:Date.now(),
+            players:roster
+          })
+        );
+      } catch {}
+
+      return roster;
+    } catch {
+      return [];
+    } finally {
+      clearTimeout(timer);
+    }
+  })();
+
+  rosterJobs.set(team,job);
+  return job;
+}
+
+async function loadPhotos() {
+  const candidates = [
+    ...topTen("skater"),
+    ...topTen("goalie")
+  ].filter(player =>
+    !player.player_id &&
+    !player.playerId &&
+    !photoIds.has(photoKey(player))
+  );
+
+  const teams = [
+    ...new Set(candidates.map(player => String(player.team)))
+  ];
+
+  let next = 0;
+  let changed = false;
+
+  async function worker() {
+    while (next < teams.length) {
+      const team = teams[next++];
+      const roster = await getRoster(team);
+
+      for (const player of candidates.filter(
+        item => String(item.team) === team
+      )) {
+        const id = rosterMatch(player,roster);
+
+        if (id) {
+          photoIds.set(photoKey(player),id);
+          changed = true;
+        }
+      }
+    }
+  }
+
+  await Promise.all(
+    Array.from(
+      {length:Math.min(4,teams.length)},
+      worker
+    )
+  );
+
+  if (changed) {
+    render("skater");
+    render("goalie");
+  }
+}
+
+function playerCell(player,group) {
+  const initials = String(player.name || "?")
+    .trim()
+    .split(/\s+/)
+    .map(part => part[0])
+    .slice(0,2)
+    .join("");
+
+  const id = String(
+    player.player_id ??
+    player.playerId ??
+    photoIds.get(photoKey(player)) ??
+    ""
+  );
+
+  const photo = /^\d+$/.test(id)
+    ? `
+      <img
+        src="https://assets.nhle.com/mugs/nhl/latest/${id}.png"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
+    `
+    : "";
+
+  return `
+    <div class="player">
+      <div class="portrait" aria-hidden="true">
+        ${esc(initials)}
+        ${photo}
+      </div>
+      <div>
+        <div class="player-name">
+          ${esc(player.name || "Unknown player")}
+        </div>
+        <div class="player-meta">
+          ${esc(player.team || "—")} ·
+          ${esc(group === "goalie" ? "G" : player.pos || "F")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function setupTable(group) {
+  const table = $(group + "-table");
+
+  table.querySelector("thead").innerHTML =
+    "<tr>" + COLS[group].map(key => `
+      <th
+        scope="col"
+        data-key="${key}"
+        class="${
+          key === "name" ? "player-col" :
+          key === "rank" ? "rank" : ""
+        }"
+        aria-sort="none"
+      >
+        <button type="button" title="Sort by ${LABELS[key]}">
+          ${
+            key === "rank" ? "#" :
+            key === "name" ? "PLAYER" :
+            key.toUpperCase()
+          }
+        </button>
+      </th>
+    `).join("") + "</tr>";
+
+  table.querySelectorAll("th").forEach(th => {
+    th.querySelector("button").addEventListener("click",() => {
+      const key = th.dataset.key;
+
+      sort[group] = {
+        key,
+        dir:sort[group].key === key
+          ? -sort[group].dir
+          : key === "name" || key === "rank" ? 1 : -1
+      };
+
+      render(group);
+    });
+  });
+}
+
+function render(group) {
+  const table = $(group + "-table");
+  const {key,dir} = sort[group];
+
+  const rows = topTen(group).sort((a,b) => dir * (
+    key === "name"
+      ? String(a.name ?? "").localeCompare(String(b.name ?? ""))
+      : num(a,key) - num(b,key)
+  ));
 
   table.querySelectorAll("th").forEach(th => {
     th.setAttribute(
@@ -533,96 +1096,118 @@ function renderTable(group) {
   });
 
   table.querySelector("tbody").innerHTML = rows.length
-    ? rows.map(p => "<tr>" + COLUMNS[group].map(col => {
-        const value =
-          col === "fpts" ? p.fpts.toFixed(2) :
-          col === "name" || col === "team" ? esc(p[col] ?? "—") :
-          hasStat(p,col) ? esc(p[col]) : "—";
+    ? rows.map(player => `
+        <tr class="${player.rank === 1 ? "first" : ""}">
+          ${COLS[group].map(column => {
+            const cellClass =
+              column === "name" ? "player-col" :
+              column === "rank" ? "rank" :
+              column === "fpts" ? "fpts" : "";
 
-        return `<td${col === "fpts" ? ' class="fpts"' : ""}>${value}</td>`;
-      }).join("") + "</tr>").join("")
+            const value =
+              column === "name" ? playerCell(player,group) :
+              column === "fpts" ? player.fpts.toFixed(2) :
+              known(player,column) ? esc(player[column]) : "—";
+
+            return `<td class="${cellClass}">${value}</td>`;
+          }).join("")}
+        </tr>
+      `).join("")
     : `
       <tr class="empty-row">
-        <td colspan="${COLUMNS[group].length}">
-          No regular-season ${group} data loaded yet
+        <td colspan="${COLS[group].length}">
+          <strong>Waiting for regular-season stats</strong>
+          <span>
+            Your top 10 will appear here when completed games are available.
+          </span>
         </td>
       </tr>
     `;
+
+  table.querySelectorAll("img").forEach(img => {
+    img.addEventListener("error",() => img.remove(),{once:true});
+
+    if (img.complete && !img.naturalWidth) {
+      img.remove();
+    }
+  });
 }
 
-function checkCoverage() {
+function coverage() {
   const missing = [];
 
   for (const group of Object.keys(players)) {
-    const list = players[group];
-    if (!list.length) continue;
+    for (const [key,value] of Object.entries(scoring[group])) {
+      if (!value) continue;
 
-    for (const [key,weight] of Object.entries(scoring[group])) {
-      if (!weight) continue;
-
-      const absent = key === "def"
-        ? list.some(p =>
-            !p.pos ||
-            (
-              String(p.pos).toUpperCase() === "D" &&
-              (!hasStat(p,"g") || !hasStat(p,"a"))
+      const absent = players[group].some(player =>
+        key === "def"
+          ? (
+              !player.pos ||
+              (
+                String(player.pos).toUpperCase() === "D" &&
+                (!known(player,"g") || !known(player,"a"))
+              )
             )
-          )
-        : list.some(p => !hasStat(p,key));
+          : !known(player,key)
+      );
 
       if (absent) missing.push(LABELS[key]);
     }
   }
 
   $("coverage").hidden = !missing.length;
-  $("coverage").textContent = missing.length
-    ? "Some players are missing data for: " +
-      [...new Set(missing)].join(", ") +
-      ". Missing values contribute 0; scores may be incomplete."
-    : "";
+
+  $("coverage").textContent =
+    "Some players are missing " +
+    [...new Set(missing)].join(", ") +
+    ". Missing values contribute 0, so rankings may be incomplete.";
 }
 
-function recompute() {
-  renderTable("skater");
-  renderTable("goalie");
-  checkCoverage();
+function refresh() {
+  render("skater");
+  render("goalie");
+  coverage();
+  void loadPhotos();
 }
 
-function setBanner(text,badge) {
-  $("banner").textContent = text;
-  $("status-badge").textContent = badge;
-}
-
-function isRegular(type) {
-  return type === 2 ||
-    type === "2" ||
-    type === "regular" ||
-    type === "regular-season" ||
-    type === "regular_season";
-}
-
-function regularPlayers(list,data) {
-  return list.filter(p =>
-    p &&
-    typeof p === "object" &&
-    !Array.isArray(p) &&
-    isRegular(
-      p.game_type ?? p.gameType ?? data.game_type ?? data.gameType
-    )
+function regular(player,data) {
+  return [
+    2,
+    "2",
+    "regular",
+    "regular-season",
+    "regular_season"
+  ].includes(
+    player.game_type ??
+    player.gameType ??
+    data.game_type ??
+    data.gameType
   );
 }
 
-async function loadData() {
+function formatDay(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value))) return "";
+
+  return new Date(value + "T12:00:00").toLocaleDateString(
+    undefined,
+    {month:"short",day:"numeric"}
+  );
+}
+
+async function load() {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(),15000);
+  const timer = setTimeout(() => controller.abort(),15000);
 
   try {
-    const response = await fetch("./data.json", {
+    const response = await fetch("./data.json",{
       cache:"no-store",
       signal:controller.signal
     });
 
-    if (!response.ok) throw new Error("HTTP " + response.status);
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
 
     const data = await response.json();
 
@@ -631,78 +1216,132 @@ async function loadData() {
       !Array.isArray(data.skaters) ||
       !Array.isArray(data.goalies)
     ) {
-      throw new Error("Expected skaters and goalies arrays");
+      throw new Error("Invalid stats file");
     }
 
-    players.skater = regularPlayers(data.skaters,data);
-    players.goalie = regularPlayers(data.goalies,data);
-
-    const date = new Date(data.updated_at);
-    const updated =
-      data.updated_at && Number.isFinite(date.getTime())
-        ? date.toLocaleString()
-        : "time unavailable";
-
-    const any = players.skater.length || players.goalie.length;
-
-    setBanner(
-      any
-        ? "Regular-season stats loaded. Last updated: " + updated + "."
-        : "No confirmed regular-season stats available. " +
-          "Preseason and untagged totals are hidden. " +
-          "Your scoring settings are ready to use.",
-      any ? "STATS LOADED" : "NO DATA YET"
+    players.skater = data.skaters.filter(player =>
+      player &&
+      typeof player === "object" &&
+      regular(player,data)
     );
+
+    players.goalie = data.goalies.filter(player =>
+      player &&
+      typeof player === "object" &&
+      regular(player,data)
+    );
+
+    const start = formatDay(data.period_start);
+    const end = formatDay(data.period_end);
+
+    if (start && end) {
+      $("period").textContent = start + " – " + end;
+    }
+
+    const updated = new Date(data.updated_at);
+
+    $("updated").textContent =
+      data.updated_at && Number.isFinite(updated.getTime())
+        ? "Updated " + updated.toLocaleString()
+        : "Update time unavailable";
+
+    $("banner").textContent =
+      players.skater.length || players.goalie.length
+        ? "Rankings use your scoring settings. " +
+          "Only the top 10 in each group are shown."
+        : "No confirmed regular-season games in this period. " +
+          "Preseason is excluded; you can still set your scoring.";
+
   } catch (error) {
-    setBanner(
-      "Stats could not be loaded. Your scoring settings still work. " +
-      "Check that the nightly update has produced data.json. (" +
-      (error.name === "AbortError" ? "Request timed out" : error.message) +
-      ")",
-      "LOAD ERROR"
-    );
+    $("updated").textContent = "Statistics unavailable";
+    $("banner").classList.add("error");
+
+    $("banner").textContent =
+      "Could not load statistics (" +
+      (
+        error.name === "AbortError"
+          ? "request timed out"
+          : error.message
+      ) +
+      "). Your scoring settings still work.";
+
   } finally {
-    clearTimeout(timeout);
-    recompute();
+    clearTimeout(timer);
+    refresh();
   }
 }
 
-// Show inputs before fetching stats.
+// Build scoring inputs before requesting data.
 for (const group of ["skater","goalie"]) {
-  buildFields(group);
-  buildTable(group);
+  fields(group);
+  setupTable(group);
 }
 
-document.querySelector(".settings").addEventListener("input",event => {
+$("settings").addEventListener("input",event => {
   const input = event.target;
+
   if (!input.matches("input[data-group]")) return;
 
   if (!input.validity.valid || !Number.isFinite(input.valueAsNumber)) {
-    $("save-status").textContent =
-      "Enter a valid number, or 0 to exclude this stat. " +
-      "The previous value remains applied.";
     input.setAttribute("aria-invalid","true");
+
+    $("saved").textContent =
+      "Enter a number, or 0 to exclude. Previous value remains applied.";
+
     return;
   }
 
   input.removeAttribute("aria-invalid");
-  scoring[input.dataset.group][input.dataset.key] = input.valueAsNumber;
+
+  scoring[input.dataset.group][input.dataset.key] =
+    input.valueAsNumber;
+
   input.classList.toggle("active",input.valueAsNumber !== 0);
 
-  saveScoring();
-  recompute();
+  save();
+  refresh();
 });
 
-$("reset-btn").addEventListener("click",() => {
-  scoring = cloneDefaults();
-  buildFields("skater");
-  buildFields("goalie");
-  saveScoring();
-  recompute();
+$("reset").addEventListener("click",() => {
+  scoring = clone();
+  fields("skater");
+  fields("goalie");
+  save();
+  refresh();
 });
 
-recompute();
-loadData();
+$("edit-scoring").addEventListener("click",() => {
+  $("settings").open = !$("settings").open;
+
+  if ($("settings").open) {
+    $("settings").querySelector("summary").focus();
+  }
+});
+
+$("settings").addEventListener("toggle",() => {
+  $("edit-scoring").setAttribute(
+    "aria-expanded",
+    String($("settings").open)
+  );
+});
+
+document.querySelectorAll("[data-view]").forEach(button => {
+  button.addEventListener("click",() => {
+    document.querySelectorAll("[data-view]").forEach(item => {
+      item.setAttribute("aria-pressed",String(item === button));
+    });
+
+    for (const group of ["skater","goalie"]) {
+      $(group + "-board").hidden =
+        button.dataset.view !== "all" &&
+        button.dataset.view !== group;
+    }
+  });
+});
+
+refresh();
+load();
 </script>
+
 </body>
 </html>
