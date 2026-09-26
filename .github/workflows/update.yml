@@ -1,0 +1,36 @@
+name: Nightly Status Update 
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch NHL stats
+        run: python fetch_nhl_stats.py
+
+      - name: Fetch ESPN ownership trends
+        run: python fetch_espn_ownership.py
+
+      - name: Commit updated data.json
+        run: |
+          git config user.name "icewatch-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.json
+          git diff --quiet --cached || git commit -m "Nightly data update"
+          git push
