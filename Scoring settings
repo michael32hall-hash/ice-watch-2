@@ -1,0 +1,145 @@
+<section class="scoring">
+  <h2>Your league’s scoring</h2>
+  <p>Enter points per stat. Use 0 to exclude a stat.
+     Negative values and decimals are supported.</p>
+
+  <div id="scoring-fields"></div>
+  <button id="reset-scoring" type="button">Reset scoring</button>
+  <p id="save-status" role="status"></p>
+</section>
+
+<style>
+  .scoring {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    color: #132b3b;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .stat-field {
+    display: grid;
+    gap: 8px;
+    font-weight: 600;
+  }
+
+  .stat-field input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px;
+    border: 1px solid #a8bbc7;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .stat-field input:focus {
+    outline: 3px solid #237ab6;
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  // Example values, not official platform defaults.
+  const groups = {
+    Skaters: [
+      ["goals", "Goals", 1],
+      ["assists", "Assists", 1],
+      ["shots", "Shots on goal", 0],
+      ["blocks", "Blocked shots", 0],
+      ["hits", "Hits", 0],
+      ["faceoffWins", "Faceoff wins", 0],
+      ["powerPlayPoints", "Power-play points", 0],
+      ["plusMinus", "Plus/minus", 0]
+    ],
+    Goalies: [
+      ["wins", "Wins", 1],
+      ["saves", "Saves", 0],
+      ["goalsAgainst", "Goals against", 0],
+      ["shutouts", "Shutouts", 0]
+    ]
+  };
+
+  const storageKey = "ice-watch-scoring-v1";
+  const defaults = Object.fromEntries(
+    Object.values(groups).flat().map(([key, , value]) => [key, value])
+  );
+  let settings = { ...defaults };
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey));
+    for (const key of Object.keys(defaults)) {
+      if (typeof saved?.[key] === "number" &&
+          Number.isFinite(saved[key])) {
+        settings[key] = saved[key];
+      }
+    }
+  } catch {}
+
+  const container = document.querySelector("#scoring-fields");
+  const status = document.querySelector("#save-status");
+
+  function renderSettings() {
+    container.innerHTML = Object.entries(groups).map(
+      ([group, stats]) => `
+        <h3>${group}</h3>
+        <div class="stat-grid">
+          ${stats.map(([key, label]) => `
+            <label class="stat-field">
+              ${label}
+              <input type="number" step="any"
+                data-stat="${key}" value="${settings[key]}"
+                required>
+            </label>
+          `).join("")}
+        </div>
+      `
+    ).join("");
+  }
+
+  function applySettings() {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(settings));
+      status.textContent = "Saved on this device";
+    } catch {
+      status.textContent = "Applied, but could not save on this device";
+    }
+
+    // Connect this event to your existing table-rendering function.
+    document.dispatchEvent(new CustomEvent("scoring-change", {
+      detail: { ...settings }
+    }));
+  }
+
+  container.addEventListener("input", event => {
+    const input = event.target;
+    if (!input.matches("input[data-stat]")) return;
+    if (!input.validity.valid ||
+        !Number.isFinite(input.valueAsNumber)) return;
+
+    settings[input.dataset.stat] = input.valueAsNumber;
+    applySettings();
+  });
+
+  document.querySelector("#reset-scoring").addEventListener("click", () => {
+    settings = { ...defaults };
+    renderSettings();
+    applySettings();
+  });
+
+  function fantasyPoints(playerStats) {
+    return Object.entries(settings).reduce(
+      (total, [stat, weight]) =>
+        total + (Number(playerStats[stat]) || 0) * weight,
+      0
+    );
+  }
+
+  renderSettings();
+</script>
