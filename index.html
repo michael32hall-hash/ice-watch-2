@@ -126,23 +126,8 @@
     </div>
   </section>
 
-  <section>
-    <h2>Waiver wire trends</h2>
-    <div class="subhead">Players trending up in ownership on Yahoo and ESPN</div>
-    <div class="tablewrap">
-      <table id="waiver-table">
-        <thead><tr>
-          <th data-k="name">Player</th><th data-k="team">Team</th><th data-k="pos">Pos</th>
-          <th data-k="yowned">Yahoo %Own</th><th data-k="ychange">Yahoo 7-Day</th>
-          <th data-k="eowned">ESPN %Own</th><th data-k="echange">ESPN 7-Day</th>
-        </tr></thead>
-        <tbody><tr class="empty-row"><td colspan="7">No waiver data loaded yet</td></tr></tbody>
-      </table>
-    </div>
-  </section>
-
   <footer>
-    Stats and ownership data refresh nightly via a scheduled GitHub Actions job that pulls from the NHL API and ESPN, and writes the results to <code>data.json</code>. This page just reads that file.
+    Stats refresh nightly via a scheduled GitHub Actions job that pulls from the NHL API and writes the results to <code>data.json</code>. This page just reads that file.
   </footer>
 </div>
 
@@ -171,7 +156,6 @@ try{
 
 let skaters = [];
 let goalies = [];
-let waivers = []; // {name, team, pos, yowned, ychange, eowned, echange}
 
 function setBanner(text, kind){
   const el = document.getElementById("banner");
@@ -189,154 +173,4 @@ async function loadData(){
     const data = await res.json();
     skaters = data.skaters || [];
     goalies = data.goalies || [];
-    waivers = data.waivers || [];
-    const updated = data.updated_at ? new Date(data.updated_at).toLocaleString() : "unknown time";
-    if(skaters.length === 0 && goalies.length === 0){
-      setBanner(`Data file loaded (last run: <b>${updated}</b>) but it's empty — check the Actions log for the nightly job.`, "empty");
-    } else {
-      setBanner(`Live data, last updated <b>${updated}</b>.`, "live");
-    }
-  }catch(e){
-    setBanner(`Couldn't load <code>data.json</code> (${e.message}). Falling back to empty tables — check that the nightly Action ran and the file is committed at the repo root.`, "error");
-  }
-  recompute();
-}
-
-function saveScoring(){
-  try{ localStorage.setItem("icewatch-scoring", JSON.stringify(scoring)); }catch(e){}
-}
-
-function buildFields(containerId, group){
-  const container = document.getElementById(containerId);
-  container.innerHTML = Object.keys(scoring[group]).map(k=>`
-    <div class="field">
-      <label for="${group}-${k}">${LABELS[k]||k}</label>
-      <input type="number" step="0.05" id="${group}-${k}" data-group="${group}" data-key="${k}" value="${scoring[group][k]}">
-    </div>`).join("");
-  container.querySelectorAll("input").forEach(input=>{
-    input.addEventListener("input",()=>{
-      const g = input.dataset.group, k = input.dataset.key;
-      scoring[g][k] = parseFloat(input.value) || 0;
-      saveScoring();
-      recompute();
-    });
-  });
-}
-
-function skaterFpts(p){
-  const s = scoring.skater;
-  const base = p.g*s.g + p.a*s.a + p.pim*s.pim + p.ppp*s.ppp + p.shg*s.shg + p.sha*s.sha +
-    p.gwg*s.gwg + p.hat*s.hat + p.sog*s.sog + p.hit*s.hit + p.blk*s.blk + p.fow*s.fow;
-  return base + (p.pos==="D" ? (p.g+p.a)*s.def : 0);
-}
-function goalieFpts(p){
-  const s = scoring.goalie;
-  return p.gs*s.gs + p.w*s.w + p.ga*s.ga + p.sv*s.sv + p.so*s.so + p.otl*s.otl;
-}
-
-function renderMovers(){
-  const el = document.getElementById("movers-empty");
-  if(skaters.length===0 && goalies.length===0){
-    el.style.display = "block";
-    return;
-  }
-  const top = [...skaters].sort((a,b)=>skaterFpts(b)-skaterFpts(a)).slice(0,3);
-  const topG = [...goalies].sort((a,b)=>goalieFpts(b)-goalieFpts(a))[0];
-  const all = [...top.map(p=>({...p,role:p.pos,fpts:skaterFpts(p)}))];
-  if(topG) all.push({...topG,role:"G",fpts:goalieFpts(topG)});
-  el.outerHTML = `<div class="movers" id="movers-rendered" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:36px;">${
-    all.map((p,i)=>`
-    <div class="mover-card" style="background:var(--surface);padding:16px 18px;">
-      <div class="rank" style="color:var(--steel);font-size:12px;font-weight:600;">#${i+1} ${p.role==="G"?"GOALIE":"SKATER"}</div>
-      <div class="name" style="font-size:19px;font-weight:600;margin:2px 0;">${p.name}</div>
-      <div class="meta" style="color:var(--steel);font-size:12px;">${p.team}</div>
-      <div class="pts" style="font-family:'Teko';font-size:34px;color:var(--red);line-height:1;">${p.fpts.toFixed(2)}<span style="font-size:14px;color:var(--steel)"> pts</span></div>
-    </div>`).join("")
-  }</div>`;
-}
-
-function renderTable(id, cols, data, fptsFn, emptyColspan){
-  const tbody = document.querySelector(`#${id} tbody`);
-  if(data.length===0){
-    tbody.innerHTML = `<tr class="empty-row"><td colspan="${emptyColspan}">No player data loaded yet</td></tr>`;
-    return;
-  }
-  const withFpts = data.map(p=>({...p, fpts:fptsFn(p)}));
-  let sortKey = "fpts", dir = -1;
-  function draw(){
-    const rows = [...withFpts].sort((a,b)=>{
-      if(sortKey==="name"||sortKey==="team") return dir * String(a[sortKey]).localeCompare(String(b[sortKey]));
-      return (a[sortKey]-b[sortKey])*dir;
-    });
-    tbody.innerHTML = rows.map(p=>`<tr>
-      <td>${p.name}</td><td>${p.team}</td>
-      ${cols.map(c=>`<td${c==="fpts"?' class="fpts"':''}>${c==="fpts"?p.fpts.toFixed(2):p[c]}</td>`).join("")}
-    </tr>`).join("");
-  }
-  document.querySelectorAll(`#${id} thead th`).forEach(th=>{
-    th.onclick = ()=>{
-      const k = th.dataset.k;
-      dir = (sortKey===k) ? -dir : -1;
-      sortKey = k;
-      draw();
-    };
-  });
-  draw();
-}
-
-function fmtChange(n){
-  const sign = n > 0 ? "+" : "";
-  const color = n > 0 ? "var(--red)" : (n < 0 ? "var(--steel)" : "var(--steel)");
-  return `<span style="color:${color};font-weight:${n>0?"700":"400"}">${sign}${n.toFixed(1)}%</span>`;
-}
-
-function renderWaivers(){
-  const tbody = document.querySelector("#waiver-table tbody");
-  if(waivers.length===0){
-    tbody.innerHTML = `<tr class="empty-row"><td colspan="7">No waiver data loaded yet</td></tr>`;
-    return;
-  }
-  let sortKey = "ychange", dir = -1;
-  function draw(){
-    const rows = [...waivers].sort((a,b)=>{
-      if(["name","team","pos"].includes(sortKey)) return dir * String(a[sortKey]).localeCompare(String(b[sortKey]));
-      return (a[sortKey]-b[sortKey])*dir;
-    });
-    tbody.innerHTML = rows.map(p=>`<tr>
-      <td>${p.name}</td><td>${p.team}</td><td>${p.pos}</td>
-      <td>${p.yowned.toFixed(1)}%</td><td>${fmtChange(p.ychange)}</td>
-      <td>${p.eowned.toFixed(1)}%</td><td>${fmtChange(p.echange)}</td>
-    </tr>`).join("");
-  }
-  document.querySelectorAll("#waiver-table thead th").forEach(th=>{
-    th.onclick = ()=>{
-      const k = th.dataset.k;
-      dir = (sortKey===k) ? -dir : -1;
-      sortKey = k;
-      draw();
-    };
-  });
-  draw();
-}
-
-function recompute(){
-  renderTable("skater-table", ["g","a","sog","hit","blk","ppp","fow","pim","fpts"], skaters, skaterFpts, 11);
-  renderTable("goalie-table", ["gs","w","ga","sv","so","otl","fpts"], goalies, goalieFpts, 9);
-  renderMovers();
-  renderWaivers();
-}
-
-document.getElementById("reset-btn").addEventListener("click",()=>{
-  scoring = JSON.parse(JSON.stringify(DEFAULT_SCORING));
-  saveScoring();
-  buildFields("skater-fields","skater");
-  buildFields("goalie-fields","goalie");
-  recompute();
-});
-
-buildFields("skater-fields","skater");
-buildFields("goalie-fields","goalie");
-loadData();
-</script>
-</body>
-</html>
+    const updated =
