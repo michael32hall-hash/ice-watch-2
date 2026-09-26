@@ -1,4 +1,4 @@
-name: Nightly Status Update 
+name: Nightly stats update
 
 on:
   schedule:
@@ -23,9 +23,6 @@ jobs:
 
       - name: Fetch NHL stats
         run: python fetch_nhl_stats.py
-
-      - name: Fetch ESPN ownership trends
-        run: python fetch_espn_ownership.py
 
       - name: Commit updated data.json
         run: |
