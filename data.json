@@ -1,26 +1,48 @@
 {
+  "game_type": 2,
+  "period_start": "2026-09-20",
+  "period_end": "2026-09-26",
+  "games_count": 0,
   "skaters": [],
   "goalies": [],
-
-  "monthly": {},
-
-  "season": {},
-
-  "game_logs": {},
-
-  "live": {
-    "games_count": 3,
-
-    "games": [
-      {
-        "game_id": 2026020001,
-        "state": "LIVE",
-        "period": 2,
-        "clock": "08:42"
-      }
-    ],
-
+  "monthly": {
+    "game_type": 2,
+    "period_start": "2026-08-28",
+    "period_end": "2026-09-26",
+    "games_count": 0,
     "skaters": [],
     "goalies": []
-  }
+  },
+  "season": {
+    "game_type": 2,
+    "period_start": "2026-07-01",
+    "period_end": "2026-09-26",
+    "games_count": 0,
+    "skaters": [],
+    "goalies": []
+  },
+  "game_logs": {
+    "skaters": {},
+    "goalies": {}
+  },
+  "raw_performance": {
+    "version": 2,
+    "season_start": "2026-07-01",
+    "through": "2026-09-26",
+    "windows": {
+      "week_days": 7,
+      "month_days": 30
+    },
+    "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live."
+  },
+  "live": {
+    "games_count": 0,
+    "games": [],
+    "skaters": [],
+    "goalies": [],
+    "updated_at": "2026-09-27T00:15:21.465832+00:00"
+  },
+  "updated_at": "2026-09-27T00:15:21.465846+00:00",
+  "timezone": "America/Toronto",
+  "waivers": []
 }
