@@ -1,17 +1,18 @@
-name: Nightly stats update
+name: Near-live stats update
 
 on:
   schedule:
-    - cron: "0 1 * * *"
-      timezone: "America/Toronto"
+    # Every 5 minutes
+    - cron: "*/5 * * * *"
+
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 concurrency:
-  group: icewatch-nightly-stats
-  cancel-in-progress: false
+  group: icewatch-live-stats
+  cancel-in-progress: true
 
 jobs:
   update-data:
@@ -25,18 +26,19 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch regular-season NHL stats
+      - name: Fetch NHL stats
         run: python fetch_nhl_stats.py
 
       - name: Commit updated data.json
         run: |
           git config user.name "icewatch-bot"
           git config user.email "actions@users.noreply.github.com"
+
           git add data.json
 
           if git diff --quiet --cached; then
             echo "No data changes to commit."
           else
-            git commit -m "Nightly regular-season data update"
+            git commit -m "Near-live NHL data update"
             git push
           fi
