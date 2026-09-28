@@ -1,14 +1,14 @@
 {
   "game_type": 2,
-  "period_start": "2026-09-21",
-  "period_end": "2026-09-27",
+  "period_start": "2026-09-22",
+  "period_end": "2026-09-28",
   "games_count": 0,
   "skaters": [],
   "goalies": [],
   "monthly": {
     "game_type": 2,
-    "period_start": "2026-08-29",
-    "period_end": "2026-09-27",
+    "period_start": "2026-08-30",
+    "period_end": "2026-09-28",
     "games_count": 0,
     "skaters": [],
     "goalies": []
@@ -16,7 +16,7 @@
   "season": {
     "game_type": 2,
     "period_start": "2026-07-01",
-    "period_end": "2026-09-27",
+    "period_end": "2026-09-28",
     "games_count": 0,
     "skaters": [],
     "goalies": []
@@ -28,7 +28,7 @@
   "raw_performance": {
     "version": 2,
     "season_start": "2026-07-01",
-    "through": "2026-09-27",
+    "through": "2026-09-28",
     "windows": {
       "week_days": 7,
       "month_days": 30
@@ -40,9 +40,9 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-09-28T03:58:24.964237+00:00"
+    "updated_at": "2026-09-28T04:21:38.350034+00:00"
   },
-  "updated_at": "2026-09-28T03:58:24.964261+00:00",
+  "updated_at": "2026-09-28T04:21:38.350045+00:00",
   "timezone": "America/Toronto",
   "waivers": []
 }
