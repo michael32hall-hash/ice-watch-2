@@ -44,7 +44,7 @@
         "state": "LIVE",
         "period": 1,
         "period_type": "REG",
-        "clock": "14:18",
+        "clock": "01:15",
         "in_intermission": true,
         "away": {
           "abbrev": "FLA",
@@ -95,7 +95,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 1,
-        "hit": 2,
+        "hit": 4,
         "blk": 0,
         "fow": 2,
         "plusMinus": 0,
@@ -119,7 +119,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 2,
-        "hit": 3,
+        "hit": 4,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -263,7 +263,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 0,
+        "hit": 1,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -623,7 +623,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 3,
+        "hit": 5,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -647,7 +647,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 2,
+        "hit": 3,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -671,7 +671,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 0,
+        "hit": 1,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -695,7 +695,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 4,
+        "hit": 5,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -962,9 +962,9 @@
         "avgToi": "20:00"
       }
     ],
-    "updated_at": "2026-09-29T22:01:42.180758+00:00"
+    "updated_at": "2026-09-29T22:14:46.081991+00:00"
   },
-  "updated_at": "2026-09-29T22:01:42.180774+00:00",
+  "updated_at": "2026-09-29T22:14:46.082005+00:00",
   "timezone": "America/Toronto",
   "waivers": []
 }
