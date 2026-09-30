@@ -103,6 +103,7 @@ footer b{font-family:'Barlow Condensed',sans-serif;color:var(--ink);font-size:20
 
 .content-grid{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:24px;align-items:start}
 .main-column{min-width:0}
+
 .watch-rail{position:sticky;top:18px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .watch-head{padding:20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f7fbfd)}
 .watch-head h2{font-family:'Barlow Condensed',Impact,sans-serif;font-size:32px;text-transform:uppercase;margin:5px 0 6px}
@@ -118,6 +119,7 @@ footer b{font-family:'Barlow Condensed',sans-serif;color:var(--ink);font-size:20
 .watch-empty strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:21px;color:var(--ink);text-transform:uppercase;margin-bottom:6px}
 
 th button{border:0;background:transparent;color:inherit;font-size:10px;font-weight:700;padding:0;min-height:44px;cursor:default}
+
 #skater-table{min-width:1220px}
 #goalie-table{min-width:980px}
 #skater-table th,#goalie-table th{white-space:nowrap}
@@ -168,6 +170,7 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 <h1>Player statistics</h1>
 <p>The week's best, ranked for your league.<br>Custom scoring. Regular season. Top 10.</p>
 </div>
+
 <div class="edition">
 <b>THE WEEKLY TEN</b>
 <span>Skaters &amp; goaltenders</span>
@@ -194,6 +197,7 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 
 <details id="settings">
 <summary>Your league's scoring</summary>
+
 <div class="settings-body">
 <p class="help">Enter points per stat. Player Watch badges are independent of these scoring settings.</p>
 
@@ -207,6 +211,7 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 <button class="reset" id="reset">Reset to defaults</button>
 <span id="saved"></span>
 </div>
+
 </div>
 </details>
 
@@ -215,6 +220,7 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 <div class="main-column">
 
 <section class="board" id="skater-board">
+
 <div class="board-title">
 <h2>Top 10 skaters</h2>
 <span>FANTASY POINTS</span>
@@ -228,9 +234,11 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 </div>
 
 <p class="board-foot">Click any stat heading to rank the top 10 by that category.</p>
+
 </section>
 
 <section class="board" id="goalie-board">
+
 <div class="board-title">
 <h2>Top 10 goalies</h2>
 <span>FANTASY POINTS</span>
@@ -244,9 +252,11 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 </div>
 
 <p class="board-foot"></p>
+
 </section>
 
 <section class="board" id="leaders-board">
+
 <div class="board-title">
 <h2 id="leaders-title">Top 10 players of the week</h2>
 <span>ALL-STAT SCORE</span>
@@ -260,7 +270,9 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 </div>
 
 <div class="tablewrap">
+
 <table id="leaders-table">
+
 <thead>
 <tr>
 <th>#</th>
@@ -270,25 +282,32 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 <th>SCORE / 100</th>
 </tr>
 </thead>
+
 <tbody></tbody>
+
 </table>
+
 </div>
 
 <p class="board-foot" id="leaders-period"></p>
+
 </section>
 
 <section class="board" id="targets-board">
+
 <div class="board-title">
 <h2>Potential waiver targets</h2>
 <span>CHECK YOUR LEAGUE</span>
 </div>
 
 <p class="report-note">
-Potential targets are players outside the top 30 skaters and top 5 goalies. Ownership is not checked.
+Potential targets are deeper performers outside the top 30 skaters and top 5 goalies. Ownership is not checked.
 </p>
 
 <div class="tablewrap">
+
 <table id="targets-table">
+
 <thead>
 <tr>
 <th class="player-col">PLAYER</th>
@@ -297,9 +316,13 @@ Potential targets are players outside the top 30 skaters and top 5 goalies. Owne
 <th>FPTS</th>
 </tr>
 </thead>
+
 <tbody></tbody>
+
 </table>
+
 </div>
+
 </section>
 
 </div>
@@ -307,9 +330,16 @@ Potential targets are players outside the top 30 skaters and top 5 goalies. Owne
 <aside class="watch-rail" id="watch-rail" aria-labelledby="watch-title">
 
 <div class="watch-head">
+
 <div class="eyebrow">Ice Watchers intelligence</div>
+
 <h2 id="watch-title">Player Watch</h2>
-<p>Players flashing noteworthy form over the last seven days. Independent of your league scoring.</p>
+
+<p>
+Players showing sustained performance over the last seven days.
+Requires multiple games and is independent of your league scoring.
+</p>
+
 </div>
 
 <div id="watch-list"></div>
@@ -319,6 +349,7 @@ Potential targets are players outside the top 30 skaters and top 5 goalies. Owne
 </div>
 
 <footer>
+
 <div>
 <b>ICE WATCHERS</b><br>
 Independent fantasy hockey tracker. Not affiliated with the NHL.<br>
@@ -328,6 +359,7 @@ Regular-season data. Live games may be included in displayed rankings.
 <a href="https://www.nhl.com/stats/" target="_blank" rel="noopener noreferrer">
 NHL statistics &nearr;
 </a>
+
 </footer>
 
 </main>
@@ -335,20 +367,45 @@ NHL statistics &nearr;
 <script>
 'use strict';
 
+/* =========================================================
+   SETTINGS
+========================================================= */
+
 const DEFAULTS={
+
  skater:{
-  g:1,a:1,pim:0,ppp:0,shg:0,sha:0,gwg:0,
-  hat:0,sog:0,hit:0,blk:0,fow:0,def:0
+  g:1,
+  a:1,
+  pim:0,
+  ppp:0,
+  shg:0,
+  sha:0,
+  gwg:0,
+  hat:0,
+  sog:0,
+  hit:0,
+  blk:0,
+  fow:0,
+  def:0
  },
+
  goalie:{
-  gs:0,w:1,ga:0,sv:0,so:0,otl:0
+  gs:0,
+  w:1,
+  ga:0,
+  sv:0,
+  so:0,
+  otl:0
  }
+
 };
 
 const LABELS={
+
  rank:'Rank',
  name:'Player',
  gp:'Games played',
+
  g:'Goals',
  a:'Assists',
  plusMinus:'Plus/minus',
@@ -363,6 +420,7 @@ const LABELS={
  blk:'Blocked shots',
  fow:'Faceoff wins',
  def:'Defense bonus',
+
  gs:'Games started',
  w:'Wins',
  ga:'Goals against',
@@ -371,21 +429,52 @@ const LABELS={
  gaa:'Goals-against average',
  so:'Shutouts',
  otl:'Overtime losses',
+
  fpts:'Fantasy points'
+
 };
 
 const COLS={
+
  skater:[
-  'rank','name','gp','g','a','plusMinus','sog','hit',
-  'blk','ppp','fow','pim','shg','sha','gwg','hat','fpts'
+  'rank',
+  'name',
+  'gp',
+  'g',
+  'a',
+  'plusMinus',
+  'sog',
+  'hit',
+  'blk',
+  'ppp',
+  'fow',
+  'pim',
+  'shg',
+  'sha',
+  'gwg',
+  'hat',
+  'fpts'
  ],
+
  goalie:[
-  'rank','name','gp','gs','w','ga','sv','svPct',
-  'gaa','so','otl','fpts'
+  'rank',
+  'name',
+  'gp',
+  'gs',
+  'w',
+  'ga',
+  'sv',
+  'svPct',
+  'gaa',
+  'so',
+  'otl',
+  'fpts'
  ]
+
 };
 
 const $=id=>document.getElementById(id);
+
 const KEY='icewatch-scoring';
 
 const known=(p,k)=>
@@ -395,60 +484,115 @@ const known=(p,k)=>
  p[k]!=='' &&
  Number.isFinite(Number(p[k]));
 
-const num=(p,k)=>known(p,k)?Number(p[k]):0;
+const num=(p,k)=>
+ known(p,k)
+  ? Number(p[k])
+  : 0;
 
-const esc=v=>String(v??'').replace(
- /[&<>"']/g,
- c=>({
-  '&':'&amp;',
-  '<':'&lt;',
-  '>':'&gt;',
-  '"':'&quot;',
-  "'":'&#39;'
- }[c])
-);
+const esc=v=>
+ String(v??'').replace(
+  /[&<>"']/g,
+  c=>({
+   '&':'&amp;',
+   '<':'&lt;',
+   '>':'&gt;',
+   '"':'&quot;',
+   "'":'&#39;'
+  }[c])
+ );
 
-let scoring=JSON.parse(JSON.stringify(DEFAULTS));
+let scoring=
+ JSON.parse(
+  JSON.stringify(DEFAULTS)
+ );
 
-let players={skater:[],goalie:[]};
-let completedPlayers={skater:[],goalie:[]};
-let livePlayers={skater:[],goalie:[]};
-let monthlyPlayers={skater:[],goalie:[]};
+let players={
+ skater:[],
+ goalie:[]
+};
+
+let completedPlayers={
+ skater:[],
+ goalie:[]
+};
+
+let livePlayers={
+ skater:[],
+ goalie:[]
+};
+
+let monthlyPlayers={
+ skater:[],
+ goalie:[]
+};
 
 let leaderPeriod='week';
+
 let lastDataStamp='';
+
 let refreshTimer=null;
+
 let currentData=null;
 
 const ranking={
- skater:{key:'fpts',dir:-1},
- goalie:{key:'fpts',dir:-1}
+
+ skater:{
+  key:'fpts',
+  dir:-1
+ },
+
+ goalie:{
+  key:'fpts',
+  dir:-1
+ }
+
 };
 
 try{
- const x=JSON.parse(localStorage.getItem(KEY));
+
+ const x=
+  JSON.parse(
+   localStorage.getItem(KEY)
+  );
 
  for(const g in scoring){
+
   for(const k in scoring[g]){
-   if(Number.isFinite(x?.[g]?.[k])){
-    scoring[g][k]=x[g][k];
+
+   if(
+    Number.isFinite(
+     x?.[g]?.[k]
+    )
+   ){
+
+    scoring[g][k]=
+     x[g][k];
+
    }
+
   }
+
  }
+
 }catch{}
 
-
 /* =========================================================
-   SCORING
+   SCORING FIELDS
 ========================================================= */
 
 function fields(g){
 
  $(g+'-fields').innerHTML=
-  Object.keys(DEFAULTS[g]).map(k=>`
+
+  Object.keys(DEFAULTS[g])
+
+  .map(k=>`
+
    <label class="field">
 
-    <span>${LABELS[k]}</span>
+    <span>
+     ${LABELS[k]}
+    </span>
 
     <input
      type="number"
@@ -460,188 +604,376 @@ function fields(g){
     >
 
    </label>
-  `).join('');
+
+  `)
+
+  .join('');
+
 }
 
+/* =========================================================
+   FANTASY POINTS
+========================================================= */
 
 function points(p,g){
 
- return Object.entries(scoring[g]).reduce(
+ return Object.entries(
+  scoring[g]
+ )
+
+ .reduce(
   (t,[k,v])=>
+
    t+(
+
     k==='def' &&
     String(p.pos).toUpperCase()==='D'
 
-     ? (num(p,'g')+num(p,'a'))*v
+     ? (
+        num(p,'g')+
+        num(p,'a')
+       )*v
 
      : k==='def'
-      ? 0
-      : num(p,k)*v
-   ),
-  0
- );
-}
 
+      ? 0
+
+      : num(p,k)*v
+
+   ),
+
+  0
+
+ );
+
+}
 
 /* =========================================================
    PLAYER WATCH BADGES
+
+   IMPORTANT:
+   Player Watch is based on CONSISTENCY,
+   not one-game explosions.
+
+   Minimum sample = 2 games.
 ========================================================= */
 
 function badges(p,g){
 
- const gp=Math.max(1,num(p,'gp'));
+ const gp=
+  num(p,'gp');
+
  const out=[];
+
+ /* -------------------------
+    SKATERS
+ ------------------------- */
 
  if(g==='skater'){
 
-  const pts=(num(p,'g')+num(p,'a'))/gp;
-  const sog=num(p,'sog')/gp;
-  const physical=(num(p,'hit')+num(p,'blk'))/gp;
+  /*
+   One game is NOT enough to trigger
+   Player Watch.
+  */
 
+  if(gp<2){
+   return out;
+  }
 
-  /* HOT */
+  const totalPoints=
+   num(p,'g')+
+   num(p,'a');
+
+  const pointsPerGame=
+   totalPoints/gp;
+
+  const shotsPerGame=
+   num(p,'sog')/gp;
+
+  const physicalPerGame=
+   (
+    num(p,'hit')+
+    num(p,'blk')
+   )/gp;
+
+  const pppPerGame=
+   num(p,'ppp')/gp;
+
+  /*
+   HOT
+
+   Sustained high-end scoring.
+
+   1.5+ points/game.
+  */
 
   if(
-   (gp===1 && num(p,'g')+num(p,'a')>=2) ||
-   (gp>=2 && pts>=1.5)
+   pointsPerGame>=1.5
   ){
-   out.push(['HOT','hot']);
+
+   out.push([
+    'HOT',
+    'hot'
+   ]);
+
   }
 
+  /*
+   SHOT MACHINE
 
-  /* SHOT MACHINE */
+   Sustained 4+ shots/game.
+  */
 
   if(
-   (gp===1 && num(p,'sog')>=5) ||
-   (gp>=2 && sog>=4)
+   shotsPerGame>=4
   ){
-   out.push(['SHOT MACHINE','shots']);
+
+   out.push([
+    'SHOT MACHINE',
+    'shots'
+   ]);
+
   }
 
+  /*
+   PHYSICAL FORCE
 
-  /* PHYSICAL FORCE */
+   Sustained 5+ combined
+   hits + blocks per game.
+  */
 
   if(
-   (
-    gp===1 &&
-    num(p,'hit')+num(p,'blk')>=6
-   ) ||
-   (
-    gp>=2 &&
-    physical>=5
-   )
+   physicalPerGame>=5
   ){
-   out.push(['PHYSICAL FORCE','physical']);
+
+   out.push([
+    'PHYSICAL FORCE',
+    'physical'
+   ]);
+
   }
 
+  /*
+   POWER PLAY
 
-  /* POWER PLAY */
+   Requires:
+   2+ total PPP
+   AND
+   0.5+ PPP/game.
 
-  if(num(p,'ppp')>=2){
-   out.push(['POWER PLAY','power']);
-  }
-
-
-  /* BREAKOUT WATCH */
+   This keeps the badge focused
+   on current PP production.
+  */
 
   if(
-   (
-    gp===1 &&
-    num(p,'g')+num(p,'a')>=2 &&
-    num(p,'sog')>=4
-   ) ||
-   (
-    gp>=2 &&
-    pts>=1 &&
-    sog>=3.5
-   )
+   num(p,'ppp')>=2 &&
+   pppPerGame>=0.5
   ){
-   out.push(['BREAKOUT WATCH','breakout']);
+
+   out.push([
+    'POWER PLAY',
+    'power'
+   ]);
+
   }
+
+  /*
+   BREAKOUT WATCH
+
+   Requires both:
+
+   1+ point/game
+   3.5+ shots/game
+
+   This identifies production that
+   is supported by shot generation.
+  */
+
+  if(
+   pointsPerGame>=1 &&
+   shotsPerGame>=3.5
+  ){
+
+   out.push([
+    'BREAKOUT WATCH',
+    'breakout'
+   ]);
+
+  }
+
+ /* -------------------------
+    GOALIES
+ ------------------------- */
 
  }else{
 
+  /*
+   One appearance is NOT enough.
+  */
 
-  /* HOT GOALIE */
-
-  if(
-   gp>=1 &&
-   known(p,'svPct') &&
-   num(p,'svPct')>=.925 &&
-   num(p,'sv')>=25
-  ){
-   out.push(['HOT GOALIE','goalie']);
+  if(gp<2){
+   return out;
   }
 
+  const savesPerGame=
+   num(p,'sv')/gp;
 
-  /* SHUTOUT */
+  /*
+   HOT GOALIE
 
-  if(num(p,'so')>=1){
-   out.push(['SHUTOUT FORM','shutout']);
+   Requires:
+   .925+ SV%
+   25+ saves/appearance
+   2+ appearances
+  */
+
+  if(
+   known(p,'svPct') &&
+   num(p,'svPct')>=.925 &&
+   savesPerGame>=25
+  ){
+
+   out.push([
+    'HOT GOALIE',
+    'goalie'
+   ]);
+
+  }
+
+  /*
+   SHUTOUT FORM
+
+   A single shutout does not
+   automatically qualify a goalie.
+
+   The goalie must also have:
+   2+ appearances
+   .920+ overall SV%
+  */
+
+  if(
+   num(p,'so')>=1 &&
+   known(p,'svPct') &&
+   num(p,'svPct')>=.920
+  ){
+
+   out.push([
+    'SHUTOUT FORM',
+    'shutout'
+   ]);
+
   }
 
  }
 
  return out;
+
 }
 
+/* =========================================================
+   BADGE HTML
+========================================================= */
 
 function badgeHTML(p,g){
 
- return badges(p,g)
+ const b=
+  badges(p,g);
+
+ return b
+
   .map(
-   x=>`<span class="badge ${x[1]}">${x[0]}</span>`
+   x=>
+    `<span class="badge ${x[1]}">${x[0]}</span>`
   )
+
   .join('');
+
 }
 
-
 /* =========================================================
-   PLAYER DISPLAY
+   PLAYER CELL
 ========================================================= */
 
 function playerCell(p,g){
 
- const id=String(p.player_id??'');
+ const id=
+  String(
+   p.player_id??''
+  );
 
- const initials=String(p.name||'?')
+ const initials=
+  String(
+   p.name||'?'
+  )
+
   .split(/\s+/)
-  .map(x=>x[0])
-  .slice(0,2)
+
+  .map(
+   x=>x[0]
+  )
+
+  .slice(
+   0,
+   2
+  )
+
   .join('');
 
- const photo=/^\d+$/.test(id)
-  ? `<img
-      src="https://assets.nhle.com/mugs/nhl/latest/${id}.png"
-      alt=""
-      loading="lazy"
-      onerror="this.remove()"
-     >`
-  : '';
+ const photo=
+  /^\d+$/.test(id)
+
+   ? `<img
+       src="https://assets.nhle.com/mugs/nhl/latest/${id}.png"
+       alt=""
+       loading="lazy"
+       onerror="this.remove()"
+      >`
+
+   : '';
 
  return `
+
   <div class="player">
 
    <div class="portrait">
+
     ${esc(initials)}
+
     ${photo}
+
    </div>
 
    <div>
 
     <div class="player-name">
-     ${esc(p.name||'Unknown')}
+
+     ${esc(
+      p.name||
+      'Unknown'
+     )}
+
     </div>
 
     <div class="player-meta">
 
-     ${esc(p.team||'-')}
+     ${esc(
+      p.team||
+      '-'
+     )}
+
      |
-     ${esc(g==='goalie'?'G':p.pos||'F')}
+
+     ${esc(
+      g==='goalie'
+       ? 'G'
+       : p.pos||'F'
+     )}
 
      ${
       p.live
+
        ? ' | <span class="live-dot">LIVE</span>'
+
        : ''
      }
 
@@ -650,9 +982,10 @@ function playerCell(p,g){
    </div>
 
   </div>
- `;
-}
 
+ `;
+
+}
 
 /* =========================================================
    TOP 10
@@ -660,15 +993,23 @@ function playerCell(p,g){
 
 function rankedTopTen(g){
 
- const key=ranking[g].key;
- const dir=ranking[g].dir;
+ const key=
+  ranking[g].key;
+
+ const dir=
+  ranking[g].dir;
 
  return players[g]
 
-  .map(p=>({
-   ...p,
-   fpts:points(p,g)
-  }))
+  .map(
+   p=>({
+    ...p,
+    fpts:points(
+     p,
+     g
+    )
+   })
+  )
 
   .filter(
    p=>
@@ -677,46 +1018,2145 @@ function rankedTopTen(g){
     known(p,key)
   )
 
-  .sort((a,b)=>{
+  .sort(
+   (a,b)=>{
 
-   if(key==='name'){
+    if(
+     key==='name'
+    ){
 
-    return dir*
-     String(a.name||'')
+     return dir*
+      String(
+       a.name||''
+      )
       .localeCompare(
-       String(b.name||'')
+       String(
+        b.name||''
+       )
       );
-   }
 
-   const av=
-    key==='fpts'
-     ? a.fpts
-     : num(a,key);
+    }
 
-   const bv=
-    key==='fpts'
-     ? b.fpts
-     : num(b,key);
+    const av=
+     key==='fpts'
+      ? a.fpts
+      : num(a,key);
 
-   return (
-    dir*(av-bv) ||
-    String(a.name||'')
-     .localeCompare(
-      String(b.name||'')
+    const bv=
+     key==='fpts'
+      ? b.fpts
+      : num(b,key);
+
+    return (
+     dir*(av-bv) ||
+     String(
+      a.name||''
      )
-   );
+     .localeCompare(
+      String(
+       b.name||''
+      )
+     )
+    );
 
-  })
+   }
+  )
 
-  .slice(0,10)
+  .slice(
+   0,
+   10
+  )
 
-  .map((p,i)=>({
-   ...p,
-   rank:i+1
-  }));
+  .map(
+   (p,i)=>({
+    ...p,
+    rank:i+1
+   })
+  );
+
 }
 
+/* =========================================================
+   TABLE SETUP
+========================================================= */
 
 function setupTable(g){
 
- const table=$(g+'-table');
+ const table=
+  $(g+'-table');
+
+ table
+  .querySelector('thead')
+  .innerHTML=
+
+  '<tr>'+
+
+  COLS[g]
+
+  .map(k=>`
+
+   <th
+    scope="col"
+    data-key="${k}"
+    class="${
+     k==='name'
+      ? 'player-col'
+      : k==='rank'
+       ? 'rank'
+       : ''
+    }"
+    aria-sort="none"
+   >
+
+    <button
+     type="button"
+     title="Show top 10 by ${esc(LABELS[k]||k)}"
+    >
+
+     ${
+      k==='rank'
+       ? '#'
+
+       : k==='name'
+        ? 'PLAYER'
+
+       : k==='plusMinus'
+        ? '+/-'
+
+       : k==='svPct'
+        ? 'SV%'
+
+       : k.toUpperCase()
+     }
+
+    </button>
+
+   </th>
+
+  `)
+
+  .join('')
+
+  +'</tr>';
+
+ table
+  .querySelectorAll(
+   'th[data-key]'
+  )
+
+  .forEach(
+   th=>
+
+    th
+     .querySelector('button')
+
+     .addEventListener(
+      'click',
+      ()=>{
+
+       const k=
+        th.dataset.key;
+
+       if(
+        k==='rank'
+       ){
+        return;
+       }
+
+       const lowerBetter=
+        k==='gaa' ||
+        k==='ga' ||
+        k==='otl' ||
+        k==='pim';
+
+       if(
+        ranking[g].key===k
+       ){
+
+        ranking[g].dir*=-1;
+
+       }else{
+
+        ranking[g]={
+
+         key:k,
+
+         dir:
+          k==='name'
+           ? 1
+           : lowerBetter
+            ? 1
+            : -1
+
+        };
+
+       }
+
+       render(g);
+
+      }
+     )
+
+  );
+
+}
+
+/* =========================================================
+   DISPLAY STAT
+========================================================= */
+
+function displayStat(p,k){
+
+ if(
+  k==='fpts'
+ ){
+  return p.fpts.toFixed(2);
+ }
+
+ if(
+  !known(p,k)
+ ){
+  return '-';
+ }
+
+ if(
+  k==='svPct'
+ ){
+  return (
+   num(p,k)*100
+  ).toFixed(1)+'%';
+ }
+
+ if(
+  k==='gaa'
+ ){
+  return num(
+   p,
+   k
+  ).toFixed(2);
+ }
+
+ return esc(
+  p[k]
+ );
+
+}
+
+/* =========================================================
+   RENDER MAIN TABLE
+========================================================= */
+
+function render(g){
+
+ const rows=
+  rankedTopTen(g);
+
+ const t=
+  $(g+'-table');
+
+ const active=
+  ranking[g];
+
+ t
+  .querySelectorAll(
+   'th[data-key]'
+  )
+
+  .forEach(
+   th=>
+
+    th.setAttribute(
+     'aria-sort',
+
+     th.dataset.key===active.key
+
+      ? active.dir===1
+       ? 'ascending'
+       : 'descending'
+
+      : 'none'
+    )
+
+  );
+
+ t
+  .querySelector('tbody')
+  .innerHTML=
+
+  rows.length
+
+   ? rows
+
+      .map(
+       p=>
+
+        '<tr>'+
+
+        COLS[g]
+
+        .map(k=>`
+
+         <td class="${
+          k==='name'
+           ? 'player-col'
+
+          : k==='fpts'
+           ? 'fpts'
+
+          : k==='rank'
+           ? 'rank'
+
+          : ''
+         }">
+
+          ${
+           k==='name'
+            ? playerCell(p,g)
+
+           : k==='rank'
+            ? p.rank
+
+           : displayStat(p,k)
+          }
+
+         </td>
+
+        `)
+
+        .join('')
+
+        +'</tr>'
+
+      )
+
+      .join('')
+
+   : `
+
+      <tr class="empty-row">
+
+       <td colspan="${COLS[g].length}">
+
+        <strong>
+         Waiting for regular-season stats
+        </strong>
+
+        <span>
+         Results will appear when regular-season games are available.
+        </span>
+
+       </td>
+
+      </tr>
+
+     `;
+
+ const foot=
+  t
+   .closest('.board')
+   ?.querySelector(
+    '.board-foot'
+   );
+
+ if(foot){
+
+  const label=
+   LABELS[active.key]||
+   active.key;
+
+  foot.textContent=
+
+   `Showing the top 10 ${
+    g==='skater'
+     ? 'skaters'
+     : 'goalies'
+   } by ${label}. `+
+
+   `Click any stat heading to change the ranking. `+
+
+   `${
+    active.dir===1
+     ? 'Lowest to highest'
+     : 'Highest to lowest'
+   }. `+
+
+   `On mobile, swipe horizontally for more stats.`;
+
+ }
+
+}
+
+/* =========================================================
+   MERGE COMPLETED + LIVE
+========================================================= */
+
+const SKATER_ADD=[
+ 'gp',
+ 'g',
+ 'a',
+ 'pim',
+ 'ppp',
+ 'shg',
+ 'sha',
+ 'gwg',
+ 'hat',
+ 'sog',
+ 'hit',
+ 'blk',
+ 'fow',
+ 'plusMinus',
+ 'seconds'
+];
+
+const GOALIE_ADD=[
+ 'gp',
+ 'gs',
+ 'w',
+ 'ga',
+ 'sv',
+ 'so',
+ 'otl',
+ 'sa',
+ 'seconds'
+];
+
+function mergePlayerLists(
+ completed,
+ live,
+ g
+){
+
+ const map=
+  new Map();
+
+ for(
+  const p of completed||[]
+ ){
+
+  map.set(
+   String(
+    p.player_id??
+    p.name
+   ),
+
+   {...p}
+  );
+
+ }
+
+ for(
+  const p of live||[]
+ ){
+
+  const id=
+   String(
+    p.player_id??
+    p.name
+   );
+
+  const old=
+   map.get(id);
+
+  if(
+   !old
+  ){
+
+   map.set(
+    id,
+    {
+     ...p,
+     live:true
+    }
+   );
+
+   continue;
+
+  }
+
+  const merged=
+   {...old};
+
+  const keys=
+   g==='skater'
+    ? SKATER_ADD
+    : GOALIE_ADD;
+
+  for(
+   const k of keys
+  ){
+
+   if(
+    known(old,k) ||
+    known(p,k)
+   ){
+
+    merged[k]=
+     (
+      known(old,k)
+       ? Number(old[k])
+       : 0
+     )
+     +
+     (
+      known(p,k)
+       ? Number(p[k])
+       : 0
+     );
+
+   }
+
+  }
+
+  merged.name=
+   p.name||
+   old.name;
+
+  merged.team=
+   p.team||
+   old.team;
+
+  merged.player_id=
+   p.player_id??
+   old.player_id;
+
+  if(
+   g==='skater'
+  ){
+
+   merged.pos=
+    p.pos||
+    old.pos;
+
+  }
+
+  if(
+   g==='goalie'
+  ){
+
+   const sv=
+    known(merged,'sv')
+     ? Number(merged.sv)
+     : null;
+
+   const sa=
+    known(merged,'sa')
+     ? Number(merged.sa)
+     : null;
+
+   const ga=
+    known(merged,'ga')
+     ? Number(merged.ga)
+     : null;
+
+   const sec=
+    known(merged,'seconds')
+     ? Number(merged.seconds)
+     : null;
+
+   merged.svPct=
+    sv!==null &&
+    sa!==null &&
+    sa>0
+
+     ? sv/sa
+
+     : null;
+
+   merged.gaa=
+    ga!==null &&
+    sec!==null &&
+    sec>0
+
+     ? ga*3600/sec
+
+     : null;
+
+  }
+
+  merged.live=true;
+
+  map.set(
+   id,
+   merged
+  );
+
+ }
+
+ return [
+  ...map.values()
+ ];
+
+}
+
+/* =========================================================
+   ALL-STAT RANKINGS
+========================================================= */
+
+function percentileRanks(
+ values
+){
+
+ const sorted=
+  [...values]
+
+   .filter(
+    Number.isFinite
+   )
+
+   .sort(
+    (a,b)=>a-b
+   );
+
+ return v=>{
+
+  if(
+   !sorted.length ||
+   !Number.isFinite(v)
+  ){
+   return 0;
+  }
+
+  let n=0;
+
+  for(
+   const x of sorted
+  ){
+
+   if(
+    x<=v
+   ){
+    n++;
+   }
+
+  }
+
+  return (
+   n/
+   sorted.length
+  );
+
+ };
+
+}
+
+/* =========================================================
+   WEEK / MONTH ALL-STAT SCORE
+========================================================= */
+
+function allStatRows(
+ source
+){
+
+ const sk=
+  (source.skater||[])
+
+  .map(
+   p=>({
+    ...p,
+    _g:'skater'
+   })
+  );
+
+ const go=
+  (source.goalie||[])
+
+  .map(
+   p=>({
+    ...p,
+    _g:'goalie'
+   })
+  );
+
+ const skKeys=[
+  'g',
+  'a',
+  'sog',
+  'hit',
+  'blk',
+  'ppp',
+  'fow'
+ ];
+
+ const goKeys=[
+  'w',
+  'sv',
+  'svPct',
+  'so'
+ ];
+
+ const scoreGroup=
+  (arr,keys)=>{
+
+   const rankers={};
+
+   for(
+    const k of keys
+   ){
+
+    rankers[k]=
+     percentileRanks(
+
+      arr.map(
+       p=>
+        known(p,k)
+         ? num(p,k)
+         : NaN
+      )
+
+     );
+
+   }
+
+   return arr.map(
+    p=>{
+
+     const available=
+      keys.filter(
+       k=>known(p,k)
+      );
+
+     const score=
+      available.length
+
+       ? available.reduce(
+          (s,k)=>
+           s+
+           rankers[k](
+            num(p,k)
+           ),
+          0
+         )
+         /
+         available.length
+         *
+         100
+
+       : 0;
+
+     return {
+      ...p,
+      allScore:score
+     };
+
+    }
+   );
+
+  };
+
+ return [
+
+  ...scoreGroup(
+   sk,
+   skKeys
+  ),
+
+  ...scoreGroup(
+   go,
+   goKeys
+  )
+
+ ]
+
+ .sort(
+  (a,b)=>
+
+   b.allScore-
+   a.allScore
+
+   ||
+
+   (
+    num(b,'g')+
+    num(b,'a')
+   )
+
+   -
+
+   (
+    num(a,'g')+
+    num(a,'a')
+   )
+ )
+
+ .slice(
+  0,
+  10
+ );
+
+}
+
+/* =========================================================
+   STAT SUMMARY
+========================================================= */
+
+function statSummary(
+ p,
+ g
+){
+
+ if(
+  g==='goalie'
+ ){
+
+  return (
+
+   `W ${
+    known(p,'w')
+     ? num(p,'w')
+     : '-'
+   } | `+
+
+   `SV ${
+    known(p,'sv')
+     ? num(p,'sv')
+     : '-'
+   } | `+
+
+   `SV% ${
+    known(p,'svPct')
+     ? (
+        num(p,'svPct')*
+        100
+       ).toFixed(1)+'%'
+     : '-'
+   } | `+
+
+   `SO ${
+    known(p,'so')
+     ? num(p,'so')
+     : '-'
+   }`
+
+  );
+
+ }
+
+ return (
+
+  `G ${
+   known(p,'g')
+    ? num(p,'g')
+    : '-'
+  } | `+
+
+  `A ${
+   known(p,'a')
+    ? num(p,'a')
+    : '-'
+  } | `+
+
+  `SOG ${
+   known(p,'sog')
+    ? num(p,'sog')
+    : '-'
+  } | `+
+
+  `HIT ${
+   known(p,'hit')
+    ? num(p,'hit')
+    : '-'
+  } | `+
+
+  `BLK ${
+   known(p,'blk')
+    ? num(p,'blk')
+    : '-'
+  }`
+
+ );
+
+}
+
+/* =========================================================
+   WEEK / MONTH LEADERS
+========================================================= */
+
+function renderLeaders(){
+
+ const source=
+  leaderPeriod==='month'
+   ? monthlyPlayers
+   : players;
+
+ const rows=
+  allStatRows(
+   source
+  );
+
+ $('leaders-title').textContent=
+
+  leaderPeriod==='month'
+
+   ? 'Top 10 players of the month'
+
+   : 'Top 10 players of the week';
+
+ $('leaders-period').textContent=
+
+  leaderPeriod==='month'
+
+   ? 'Completed-game 30-day performance.'
+
+   : 'Seven-day performance; current live stats are included when games are in progress.';
+
+ $('leaders-table')
+  .querySelector('tbody')
+  .innerHTML=
+
+  rows.length
+
+   ? rows.map(
+      (p,i)=>`
+
+       <tr>
+
+        <td class="rank">
+         ${i+1}
+        </td>
+
+        <td class="player-col">
+         ${playerCell(p,p._g)}
+        </td>
+
+        <td>
+         ${
+          known(p,'gp')
+           ? num(p,'gp')
+           : '-'
+         }
+        </td>
+
+        <td class="stat-summary">
+         ${statSummary(p,p._g)}
+        </td>
+
+        <td class="fpts">
+         ${p.allScore.toFixed(1)}
+        </td>
+
+       </tr>
+
+      `
+     )
+     .join('')
+
+   : `
+
+      <tr class="empty-row">
+
+       <td colspan="5">
+
+        <strong>
+         Waiting for regular-season stats
+        </strong>
+
+        <span>
+         All-stat leaders will appear when games are available.
+        </span>
+
+       </td>
+
+      </tr>
+
+     `;
+
+}
+
+/* =========================================================
+   POTENTIAL WAIVER TARGETS
+
+   Skaters must be OUTSIDE Top 30.
+   Goalies must be OUTSIDE Top 5.
+========================================================= */
+
+function renderTargets(){
+
+ const sk=
+  players.skater
+
+  .map(
+   p=>({
+    ...p,
+    _g:'skater',
+    fpts:points(
+     p,
+     'skater'
+    )
+   })
+  )
+
+  .sort(
+   (a,b)=>
+    b.fpts-
+    a.fpts
+  );
+
+ const go=
+  players.goalie
+
+  .map(
+   p=>({
+    ...p,
+    _g:'goalie',
+    fpts:points(
+     p,
+     'goalie'
+    )
+   })
+  )
+
+  .sort(
+   (a,b)=>
+    b.fpts-
+    a.fpts
+  );
+
+ /*
+  slice(30) means:
+
+  Index 0 = Rank #1
+  Index 29 = Rank #30
+  Index 30 = Rank #31
+
+  Therefore only #31+ skaters qualify.
+ */
+
+ const candidates=[
+
+  ...sk.slice(30),
+
+  ...go.slice(5)
+
+ ]
+
+ .sort(
+  (a,b)=>
+   b.fpts-
+   a.fpts
+ )
+
+ .slice(
+  0,
+  10
+ );
+
+ $('targets-table')
+  .querySelector('tbody')
+  .innerHTML=
+
+  candidates.length
+
+   ? candidates.map(
+      p=>{
+
+       const role=
+
+        p._g==='skater'
+
+         ? sk.findIndex(
+            x=>
+             String(
+              x.player_id??
+              x.name
+             )
+             ===
+             String(
+              p.player_id??
+              p.name
+             )
+           )+1
+
+         : go.findIndex(
+            x=>
+             String(
+              x.player_id??
+              x.name
+             )
+             ===
+             String(
+              p.player_id??
+              p.name
+             )
+           )+1;
+
+       return `
+
+        <tr>
+
+         <td class="player-col">
+
+          ${playerCell(
+           p,
+           p._g
+          )}
+
+         </td>
+
+         <td>
+
+          ${
+           p._g==='skater'
+            ? 'Skater #'
+            : 'Goalie #'
+          }${role}
+
+         </td>
+
+         <td class="stat-summary">
+
+          ${statSummary(
+           p,
+           p._g
+          )}
+
+         </td>
+
+         <td class="fpts">
+
+          ${p.fpts.toFixed(2)}
+
+         </td>
+
+        </tr>
+
+       `;
+
+      }
+     )
+     .join('')
+
+   : `
+
+      <tr class="empty-row">
+
+       <td colspan="4">
+
+        <strong>
+         Waiting for a deeper player pool
+        </strong>
+
+        <span>
+         Targets appear outside the top 30 skaters and top 5 goalies.
+        </span>
+
+       </td>
+
+      </tr>
+
+     `;
+
+}
+
+/* =========================================================
+   PLAYER WATCH
+
+   This is NOT a fantasy points leaderboard.
+
+   It is designed to identify players
+   sustaining strong recent performance.
+
+   Up to:
+   8 skaters
+   4 goalies
+========================================================= */
+
+function renderWatch(){
+
+ const skaters=[];
+
+ const goalies=[];
+
+ /* =====================================================
+    SKATERS
+ ===================================================== */
+
+ for(
+  const p of players.skater
+ ){
+
+  const b=
+   badges(
+    p,
+    'skater'
+   );
+
+  /*
+   If no consistency badge was earned,
+   this player does not belong in Watch.
+  */
+
+  if(
+   !b.length
+  ){
+   continue;
+  }
+
+  const gp=
+   Math.max(
+    1,
+    num(p,'gp')
+   );
+
+  const totalPoints=
+   num(p,'g')+
+   num(p,'a');
+
+  const pointsPerGame=
+   totalPoints/gp;
+
+  const shotsPerGame=
+   num(p,'sog')/gp;
+
+  const physicalPerGame=
+   (
+    num(p,'hit')+
+    num(p,'blk')
+   )/gp;
+
+  const pppPerGame=
+   num(p,'ppp')/gp;
+
+  /*
+   CONSISTENCY SCORE
+
+   Badge coverage:
+   15 points each
+
+   Scoring:
+   P/GP x 12
+
+   Shot generation:
+   SOG/GP x 2
+
+   Power play:
+   PPP/GP x 5
+
+   Physical:
+   HIT+BLK/GP x .75
+
+   Sample confidence:
+   small bonus for sustaining production
+   across additional games.
+  */
+
+  const consistencyScore=
+
+   b.length*15
+
+   +
+
+   pointsPerGame*12
+
+   +
+
+   shotsPerGame*2
+
+   +
+
+   pppPerGame*5
+
+   +
+
+   physicalPerGame*.75
+
+   +
+
+   Math.min(
+    gp,
+    4
+   )*2;
+
+  skaters.push({
+
+   ...p,
+
+   _g:'skater',
+
+   _badges:b,
+
+   _watchScore:
+    consistencyScore
+
+  });
+
+ }
+
+ /* =====================================================
+    GOALIES
+ ===================================================== */
+
+ for(
+  const p of players.goalie
+ ){
+
+  const b=
+   badges(
+    p,
+    'goalie'
+   );
+
+  if(
+   !b.length
+  ){
+   continue;
+  }
+
+  const gp=
+   Math.max(
+    1,
+    num(p,'gp')
+   );
+
+  const savePct=
+
+   known(
+    p,
+    'svPct'
+   )
+
+    ? num(
+       p,
+       'svPct'
+      )
+
+    : 0;
+
+  const savesPerGame=
+   num(
+    p,
+    'sv'
+   )
+   /
+   gp;
+
+  const winsPerGame=
+   num(
+    p,
+    'w'
+   )
+   /
+   gp;
+
+  /*
+   We score SV% relative to .900.
+
+   Example:
+
+   .925 -> .025
+   .940 -> .040
+
+   This lets better sustained save
+   percentages separate themselves.
+  */
+
+  const svQuality=
+   Math.max(
+    0,
+    savePct-.900
+   );
+
+  const consistencyScore=
+
+   b.length*15
+
+   +
+
+   svQuality*300
+
+   +
+
+   savesPerGame*.5
+
+   +
+
+   winsPerGame*8
+
+   +
+
+   num(
+    p,
+    'so'
+   )*4
+
+   +
+
+   Math.min(
+    gp,
+    4
+   )*2;
+
+  goalies.push({
+
+   ...p,
+
+   _g:'goalie',
+
+   _badges:b,
+
+   _watchScore:
+    consistencyScore
+
+  });
+
+ }
+
+ /* =====================================================
+    RANK EACH POSITION SEPARATELY
+ ===================================================== */
+
+ skaters.sort(
+  (a,b)=>
+   b._watchScore-
+   a._watchScore
+ );
+
+ goalies.sort(
+  (a,b)=>
+   b._watchScore-
+   a._watchScore
+ );
+
+ /* =====================================================
+    WATCH BALANCE
+
+    Maximum starting allocation:
+
+    8 skaters
+    4 goalies
+
+    If one group does not have enough
+    qualifying players, the other group
+    can fill the empty spots.
+ ===================================================== */
+
+ let selected=[
+
+  ...skaters.slice(
+   0,
+   8
+  ),
+
+  ...goalies.slice(
+   0,
+   4
+  )
+
+ ];
+
+ /* =====================================================
+    FILL EMPTY WATCH SPOTS
+ ===================================================== */
+
+ if(
+  selected.length<12
+ ){
+
+  const used=
+   new Set(
+
+    selected.map(
+     p=>
+      `${p._g}:${p.player_id??p.name}`
+    )
+
+   );
+
+  const remaining=[
+
+   ...skaters,
+
+   ...goalies
+
+  ]
+
+  .filter(
+   p=>
+    !used.has(
+     `${p._g}:${p.player_id??p.name}`
+    )
+  )
+
+  .sort(
+   (a,b)=>
+    b._watchScore-
+    a._watchScore
+  );
+
+  selected.push(
+
+   ...remaining.slice(
+    0,
+    12-selected.length
+   )
+
+  );
+
+ }
+
+ /* =====================================================
+    FINAL ORDER
+
+    Strongest consistency signal first.
+ ===================================================== */
+
+ selected.sort(
+  (a,b)=>
+   b._watchScore-
+   a._watchScore
+ );
+
+ /* =====================================================
+    RENDER PLAYER WATCH
+ ===================================================== */
+
+ $('watch-list').innerHTML=
+
+  selected.length
+
+   ? selected.map(
+      p=>`
+
+       <div class="watch-card">
+
+        <div class="badges">
+
+         ${
+          p.live
+
+           ? '<span class="badge live">LIVE</span>'
+
+           : ''
+         }
+
+         ${badgeHTML(
+          p,
+          p._g
+         )}
+
+        </div>
+
+        <div class="watch-player">
+
+         ${playerCell(
+          p,
+          p._g
+         )}
+
+        </div>
+
+        <div class="watch-stats">
+
+         ${statSummary(
+          p,
+          p._g
+         )}
+
+        </div>
+
+       </div>
+
+      `
+     )
+
+     .join('')
+
+   : `
+
+      <div class="watch-empty">
+
+       <strong>
+        No consistent trends yet
+       </strong>
+
+       Player Watch requires at least two games
+       of sustained performance during the
+       current seven-day window.
+
+      </div>
+
+     `;
+
+}
+
+/* =========================================================
+   REFRESH EVERYTHING
+========================================================= */
+
+function refresh(){
+
+ render(
+  'skater'
+ );
+
+ render(
+  'goalie'
+ );
+
+ renderLeaders();
+
+ renderTargets();
+
+ renderWatch();
+
+}
+
+/* =========================================================
+   APPLY DATA.JSON
+========================================================= */
+
+function applyData(d){
+
+ currentData=d;
+
+ completedPlayers={
+
+  skater:
+   Array.isArray(
+    d.skaters
+   )
+    ? d.skaters
+    : [],
+
+  goalie:
+   Array.isArray(
+    d.goalies
+   )
+    ? d.goalies
+    : []
+
+ };
+
+ livePlayers={
+
+  skater:
+   Array.isArray(
+    d.live?.skaters
+   )
+    ? d.live.skaters
+    : [],
+
+  goalie:
+   Array.isArray(
+    d.live?.goalies
+   )
+    ? d.live.goalies
+    : []
+
+ };
+
+ players={
+
+  skater:
+   mergePlayerLists(
+    completedPlayers.skater,
+    livePlayers.skater,
+    'skater'
+   ),
+
+  goalie:
+   mergePlayerLists(
+    completedPlayers.goalie,
+    livePlayers.goalie,
+    'goalie'
+   )
+
+ };
+
+ monthlyPlayers={
+
+  skater:
+   Array.isArray(
+    d.monthly?.skaters
+   )
+    ? d.monthly.skaters
+    : [],
+
+  goalie:
+   Array.isArray(
+    d.monthly?.goalies
+   )
+    ? d.monthly.goalies
+    : []
+
+ };
+
+ $('period').textContent=
+
+  d.period_start &&
+  d.period_end
+
+   ? d.period_start+
+     ' - '+
+     d.period_end
+
+   : 'Last 7 days';
+
+ const liveCount=
+  Number(
+   d.live?.games_count||
+   0
+  );
+
+ const updatedAt=
+  d.live?.updated_at||
+  d.updated_at;
+
+ $('live-pill').hidden=
+  !liveCount;
+
+ $('live-pill').textContent=
+
+  liveCount
+
+   ? `LIVE ${liveCount}`
+
+   : 'LIVE';
+
+ $('updated').textContent=
+
+  updatedAt
+
+   ? 'Updated '+
+     new Date(
+      updatedAt
+     )
+     .toLocaleString()
+
+   : 'Update time unavailable';
+
+ $('banner')
+  .classList
+  .remove(
+   'error'
+  );
+
+ if(
+  liveCount
+ ){
+
+  $('banner').textContent=
+
+   `${liveCount} regular-season game${
+    liveCount===1
+     ? ' is'
+     : 's are'
+   } live. Current boxscore stats are included and the page checks for updates every 60 seconds.`;
+
+ }
+
+ else if(
+  completedPlayers.skater.length ||
+  completedPlayers.goalie.length
+ ){
+
+  $('banner').textContent=
+
+   'Daily update loaded. No games are live right now. Player Watch is based on sustained recent NHL performance.';
+
+ }
+
+ else{
+
+  $('banner').textContent=
+
+   'No confirmed regular-season games in this period. Preseason is excluded.';
+
+ }
+
+ refresh();
+
+}
+
+/* =========================================================
+   LOAD DATA.JSON
+========================================================= */
+
+async function load(
+ {silent=false}={}
+){
+
+ try{
+
+  const r=
+   await fetch(
+
+    './data.json?t='+
+    Date.now(),
+
+    {
+     cache:'no-store'
+    }
+
+   );
+
+  if(
+   !r.ok
+  ){
+
+   throw Error(
+    'HTTP '+
+    r.status
+   );
+
+  }
+
+  const d=
+   await r.json();
+
+  const stamp=
+   String(
+
+    d.updated_at||
+
+    d.live?.updated_at||
+
+    ''
+
+   );
+
+  if(
+   !lastDataStamp ||
+   stamp!==lastDataStamp
+  ){
+
+   lastDataStamp=
+    stamp;
+
+   applyData(
+    d
+   );
+
+  }
+
+ }
+
+ catch(e){
+
+  if(
+   !silent
+  ){
+
+   $('banner')
+    .classList
+    .add(
+     'error'
+    );
+
+   $('banner').textContent=
+
+    'Could not load statistics ('+
+    e.message+
+    ').';
+
+   $('updated').textContent=
+
+    'Statistics unavailable';
+
+   refresh();
+
+  }
+
+ }
+
+}
+
+/* =========================================================
+   NEAR-LIVE REFRESH
+========================================================= */
+
+function startNearLiveRefresh(){
+
+ if(
+  refreshTimer
+ ){
+
+  clearInterval(
+   refreshTimer
+  );
+
+ }
+
+ refreshTimer=
+  setInterval(
+
+   ()=>
+    load({
+     silent:true
+    }),
+
+   60000
+
+  );
+
+ document.addEventListener(
+
+  'visibilitychange',
+
+  ()=>{
+
+   if(
+    document.visibilityState===
+    'visible'
+   ){
+
+    load({
+     silent:true
+    });
+
+   }
+
+  }
+
+ );
+
+}
+
+/* =========================================================
+   INITIAL TABLE SETUP
+========================================================= */
+
+for(
+ const g of [
+  'skater',
+  'goalie'
+ ]
+){
+
+ fields(g);
+
+ setupTable(g);
+
+}
+
+/* =========================================================
+   CUSTOM SCORING INPUT
+========================================================= */
+
+$('settings')
+ .addEventListener(
+  'input',
+  e=>{
+
+   const x=
+    e.target;
+
+   if(
+    !x.matches(
+     'input[data-group]'
+    )
+    ||
+    !Number.isFinite(
+     x.valueAsNumber
+    )
+   ){
+
+    return;
+
+   }
+
+   scoring[
+    x.dataset.group
+   ][
+    x.dataset.key
+   ]=
+    x.valueAsNumber;
+
+   x.classList.toggle(
+    'active',
+    x.valueAsNumber!==0
+   );
+
+   try{
+
+    localStorage.setItem(
+
+     KEY,
+
+     JSON.stringify(
+      scoring
+     )
+
+    );
+
+    $('saved').textContent=
+     'Saved on this device';
+
+   }
+
+   catch{}
+
+   refresh();
+
+  }
+ );
+
+/* =========================================================
+   RESET SCORING
+========================================================= */
+
+$('reset').onclick=
+ ()=>{
+
+  scoring=
+   JSON.parse(
+    JSON.stringify(
+     DEFAULTS
+    )
+   );
+
+  fields(
+   'skater'
+  );
+
+  fields(
+   'goalie'
+  );
+
+  try{
+
+   localStorage.setItem(
+
+    KEY,
+
+    JSON.stringify(
+     scoring
+    )
+
+   );
+
+  }
+
+  catch{}
+
+  refresh();
+
+ };
+
+/* =========================================================
+   EDIT SCORING
+========================================================= */
+
+$('edit-scoring').onclick=
+ ()=>{
+
+  $('settings').open=
+   !$('settings').open;
+
+ };
+
+/* =========================================================
+   WEEK / MONTH
+========================================================= */
+
+document
+ .querySelectorAll(
+  '[data-period]'
+ )
+
+ .forEach(
+  b=>
+
+   b.onclick=
+    ()=>{
+
+     leaderPeriod=
+      b.dataset.period;
+
+     document
+      .querySelectorAll(
+       '[data-period]'
+      )
+
+      .forEach(
+       x=>
+
+        x.setAttribute(
+
+         'aria-pressed',
+
+         String(
+          x===b
+         )
+
+        )
+
+      );
+
+     renderLeaders();
+
+    }
+
+ );
+
+/* =========================================================
+   VIEW TABS
+========================================================= */
+
+document
+ .querySelectorAll(
+  '[data-view]'
+ )
+
+ .forEach(
+  b=>
+
+   b.onclick=
+    ()=>{
+
+     document
+      .querySelectorAll(
+       '[data-view]'
+      )
+
+      .forEach(
+       x=>
+
+        x.setAttribute(
+
+         'aria-pressed',
+
+         String(
+          x===b
+         )
+
+        )
+
+      );
+
+     for(
+      const g of [
+       'skater',
+       'goalie',
+       'leaders',
+       'targets'
+      ]
+     ){
+
+      $(g+'-board').hidden=
+
+       b.dataset.view!=='all'
+
+       &&
+
+       b.dataset.view!==g;
+
+     }
+
+    }
+
+ );
+
+/* =========================================================
+   START ICE WATCHERS
+========================================================= */
+
+refresh();
+
+load();
+
+startNearLiveRefresh();
+
+</script>
+
+</body>
+</html>
