@@ -3647,10 +3647,10 @@
       "fow": 0,
       "plusMinus": -1,
       "gp": 1,
-      "seconds": 1013,
-      "toi": "16:53",
-      "toiPerGame": 1013.0,
-      "avgToi": "16:53"
+      "seconds": 1011,
+      "toi": "16:51",
+      "toiPerGame": 1011.0,
+      "avgToi": "16:51"
     },
     {
       "name": "N. Lardis",
@@ -3714,7 +3714,7 @@
       "gwg": null,
       "hat": 0,
       "sog": 4,
-      "hit": 1,
+      "hit": 2,
       "blk": 0,
       "fow": 0,
       "plusMinus": -1,
@@ -3813,12 +3813,12 @@
       "hit": 0,
       "blk": 1,
       "fow": 0,
-      "plusMinus": 1,
+      "plusMinus": 0,
       "gp": 1,
-      "seconds": 762,
-      "toi": "12:42",
-      "toiPerGame": 762.0,
-      "avgToi": "12:42"
+      "seconds": 760,
+      "toi": "12:40",
+      "toiPerGame": 760.0,
+      "avgToi": "12:40"
     },
     {
       "name": "W. Kaiser",
@@ -3837,12 +3837,12 @@
       "hit": 0,
       "blk": 2,
       "fow": 0,
-      "plusMinus": 0,
+      "plusMinus": 1,
       "gp": 1,
-      "seconds": 1233,
-      "toi": "20:33",
-      "toiPerGame": 1233.0,
-      "avgToi": "20:33"
+      "seconds": 1237,
+      "toi": "20:37",
+      "toiPerGame": 1237.0,
+      "avgToi": "20:37"
     },
     {
       "name": "A. Levshunov",
@@ -3911,10 +3911,10 @@
       "fow": 6,
       "plusMinus": 1,
       "gp": 1,
-      "seconds": 1081,
-      "toi": "18:01",
-      "toiPerGame": 1081.0,
-      "avgToi": "18:01"
+      "seconds": 1080,
+      "toi": "18:00",
+      "toiPerGame": 1080.0,
+      "avgToi": "18:00"
     },
     {
       "name": "M. Gatcomb",
@@ -4055,10 +4055,10 @@
       "fow": 6,
       "plusMinus": 1,
       "gp": 1,
-      "seconds": 944,
-      "toi": "15:44",
-      "toiPerGame": 944.0,
-      "avgToi": "15:44"
+      "seconds": 945,
+      "toi": "15:45",
+      "toiPerGame": 945.0,
+      "avgToi": "15:45"
     },
     {
       "name": "I. Barbashev",
@@ -8166,10 +8166,10 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 1,
-        "seconds": 1013,
-        "toi": "16:53",
-        "toiPerGame": 1013.0,
-        "avgToi": "16:53"
+        "seconds": 1011,
+        "toi": "16:51",
+        "toiPerGame": 1011.0,
+        "avgToi": "16:51"
       },
       {
         "name": "N. Lardis",
@@ -8233,7 +8233,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 4,
-        "hit": 1,
+        "hit": 2,
         "blk": 0,
         "fow": 0,
         "plusMinus": -1,
@@ -8332,12 +8332,12 @@
         "hit": 0,
         "blk": 1,
         "fow": 0,
-        "plusMinus": 1,
+        "plusMinus": 0,
         "gp": 1,
-        "seconds": 762,
-        "toi": "12:42",
-        "toiPerGame": 762.0,
-        "avgToi": "12:42"
+        "seconds": 760,
+        "toi": "12:40",
+        "toiPerGame": 760.0,
+        "avgToi": "12:40"
       },
       {
         "name": "W. Kaiser",
@@ -8356,12 +8356,12 @@
         "hit": 0,
         "blk": 2,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": 1,
         "gp": 1,
-        "seconds": 1233,
-        "toi": "20:33",
-        "toiPerGame": 1233.0,
-        "avgToi": "20:33"
+        "seconds": 1237,
+        "toi": "20:37",
+        "toiPerGame": 1237.0,
+        "avgToi": "20:37"
       },
       {
         "name": "A. Levshunov",
@@ -8430,10 +8430,10 @@
         "fow": 6,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 1081,
-        "toi": "18:01",
-        "toiPerGame": 1081.0,
-        "avgToi": "18:01"
+        "seconds": 1080,
+        "toi": "18:00",
+        "toiPerGame": 1080.0,
+        "avgToi": "18:00"
       },
       {
         "name": "M. Gatcomb",
@@ -8574,10 +8574,10 @@
         "fow": 6,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 944,
-        "toi": "15:44",
-        "toiPerGame": 944.0,
-        "avgToi": "15:44"
+        "seconds": 945,
+        "toi": "15:45",
+        "toiPerGame": 945.0,
+        "avgToi": "15:45"
       },
       {
         "name": "I. Barbashev",
@@ -12686,10 +12686,10 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 1,
-        "seconds": 1013,
-        "toi": "16:53",
-        "toiPerGame": 1013.0,
-        "avgToi": "16:53"
+        "seconds": 1011,
+        "toi": "16:51",
+        "toiPerGame": 1011.0,
+        "avgToi": "16:51"
       },
       {
         "name": "N. Lardis",
@@ -12753,7 +12753,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 4,
-        "hit": 1,
+        "hit": 2,
         "blk": 0,
         "fow": 0,
         "plusMinus": -1,
@@ -12852,12 +12852,12 @@
         "hit": 0,
         "blk": 1,
         "fow": 0,
-        "plusMinus": 1,
+        "plusMinus": 0,
         "gp": 1,
-        "seconds": 762,
-        "toi": "12:42",
-        "toiPerGame": 762.0,
-        "avgToi": "12:42"
+        "seconds": 760,
+        "toi": "12:40",
+        "toiPerGame": 760.0,
+        "avgToi": "12:40"
       },
       {
         "name": "W. Kaiser",
@@ -12876,12 +12876,12 @@
         "hit": 0,
         "blk": 2,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": 1,
         "gp": 1,
-        "seconds": 1233,
-        "toi": "20:33",
-        "toiPerGame": 1233.0,
-        "avgToi": "20:33"
+        "seconds": 1237,
+        "toi": "20:37",
+        "toiPerGame": 1237.0,
+        "avgToi": "20:37"
       },
       {
         "name": "A. Levshunov",
@@ -12950,10 +12950,10 @@
         "fow": 6,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 1081,
-        "toi": "18:01",
-        "toiPerGame": 1081.0,
-        "avgToi": "18:01"
+        "seconds": 1080,
+        "toi": "18:00",
+        "toiPerGame": 1080.0,
+        "avgToi": "18:00"
       },
       {
         "name": "M. Gatcomb",
@@ -13094,10 +13094,10 @@
         "fow": 6,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 944,
-        "toi": "15:44",
-        "toiPerGame": 944.0,
-        "avgToi": "15:44"
+        "seconds": 945,
+        "toi": "15:45",
+        "toiPerGame": 945.0,
+        "avgToi": "15:45"
       },
       {
         "name": "I. Barbashev",
@@ -18114,8 +18114,8 @@
             "opponent": "VGK",
             "home_away": "away",
             "pos": "L",
-            "toi": "16:53",
-            "toi_seconds": 1013
+            "toi": "16:51",
+            "toi_seconds": 1011
           }
         ]
       },
@@ -18194,7 +18194,7 @@
             "gwg": null,
             "hat": 0,
             "sog": 4,
-            "hit": 1,
+            "hit": 2,
             "blk": 0,
             "fow": 0,
             "plusMinus": -1,
@@ -18317,15 +18317,15 @@
             "hit": 0,
             "blk": 1,
             "fow": 0,
-            "plusMinus": 1,
+            "plusMinus": 0,
             "game_id": 2026020005,
             "date": "2026-09-29",
             "team": "CHI",
             "opponent": "VGK",
             "home_away": "away",
             "pos": "D",
-            "toi": "12:42",
-            "toi_seconds": 762
+            "toi": "12:40",
+            "toi_seconds": 760
           }
         ]
       },
@@ -18347,15 +18347,15 @@
             "hit": 0,
             "blk": 2,
             "fow": 0,
-            "plusMinus": 0,
+            "plusMinus": 1,
             "game_id": 2026020005,
             "date": "2026-09-29",
             "team": "CHI",
             "opponent": "VGK",
             "home_away": "away",
             "pos": "D",
-            "toi": "20:33",
-            "toi_seconds": 1233
+            "toi": "20:37",
+            "toi_seconds": 1237
           }
         ]
       },
@@ -18444,8 +18444,8 @@
             "opponent": "CHI",
             "home_away": "home",
             "pos": "C",
-            "toi": "18:01",
-            "toi_seconds": 1081
+            "toi": "18:00",
+            "toi_seconds": 1080
           }
         ]
       },
@@ -18624,8 +18624,8 @@
             "opponent": "CHI",
             "home_away": "home",
             "pos": "C",
-            "toi": "15:44",
-            "toi_seconds": 944
+            "toi": "15:45",
+            "toi_seconds": 945
           }
         ]
       },
@@ -19238,9 +19238,9 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-09-30T05:22:08.696810+00:00"
+    "updated_at": "2026-09-30T05:41:50.578353+00:00"
   },
-  "updated_at": "2026-09-30T05:22:08.696825+00:00",
+  "updated_at": "2026-09-30T05:41:50.578364+00:00",
   "timezone": "America/Toronto",
   "waivers": []
 }
