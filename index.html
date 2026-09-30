@@ -127,30 +127,22 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 #skater-table th button,#goalie-table th button{cursor:pointer}
 #skater-table th[aria-sort]:not([aria-sort=none]),#goalie-table th[aria-sort]:not([aria-sort=none]){background:#e1f3fa;color:#075879}
 #skater-table thead,#goalie-table thead{display:table-header-group!important}
-#skater-table:has(.empty-row),#goalie-table:has(.empty-row){table-layout:auto!important}
-#skater-table .empty-row td,#goalie-table .empty-row td{text-align:center;white-space:normal}
 
 .player-profile-link{display:block;color:inherit;text-decoration:none;border-radius:6px}
 .player-profile-link:hover .player-name{color:var(--blue);text-decoration:underline}
-.player-profile-link:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+
 body.profile-open{overflow:hidden}
 .profile-dialog{width:min(780px,calc(100% - 24px));max-height:calc(100dvh - 32px);padding:0;border:1px solid var(--line);border-radius:14px;color:var(--ink);background:#fff;box-shadow:0 24px 100px #10182055;overflow:auto}
 .profile-dialog::backdrop{background:#101820aa}
 .profile-toolbar{position:sticky;top:0;background:#101820;color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:2}
-.profile-toolbar h2{font-family:'Barlow Condensed',Impact,sans-serif;font-size:28px;margin:0;line-height:1.1}
+.profile-toolbar h2{font-family:'Barlow Condensed',Impact,sans-serif;font-size:28px;margin:0}
 .profile-toolbar button{border:1px solid #ffffff55;background:transparent;color:#fff;border-radius:6px;padding:9px 12px}
 #profile-content{padding:24px}
-.profile-hero{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.profile-hero .portrait{width:84px;height:84px;flex-basis:84px}
-.profile-hero .player-name{font-size:20px;max-width:none;white-space:normal}
-.profile-hero .player-meta{font-size:12px;margin-top:8px}
-.profile-hero .badges{display:flex;gap:6px;flex-wrap:wrap}
 .profile-note{font-size:11px;color:var(--muted);line-height:1.65;margin:14px 0}
 .profile-periods{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-.profile-periods button{border:1px solid var(--line);border-radius:6px;padding:10px 16px;background:var(--ice);color:var(--ink);font-size:12px;font-weight:700}
+.profile-periods button{border:1px solid var(--line);border-radius:6px;padding:10px 16px;background:var(--ice);font-size:12px;font-weight:700}
 .profile-periods button[aria-pressed=true]{background:var(--blue);color:white;border-color:var(--blue)}
-.profile-points{padding:18px;background:var(--pale);border-radius:8px;display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px}
-.profile-points span{font-size:12px;font-weight:700}
+.profile-points{padding:18px;background:var(--pale);border-radius:8px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .profile-points strong{font-size:28px;color:var(--blue)}
 .profile-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .profile-stat{background:var(--ice);padding:14px;border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;gap:8px}
@@ -158,16 +150,12 @@ body.profile-open{overflow:hidden}
 .profile-stat strong{font-size:22px}
 .profile-total{margin-top:10px}
 .profile-empty{padding:20px;background:var(--ice);color:var(--muted);border-radius:8px;font-size:12px;line-height:1.6}
-#profile-content h3{font-family:'Barlow Condensed',Impact,sans-serif;font-size:25px;margin:28px 0 0}
-.profile-game-table{width:100%;white-space:nowrap}
-.profile-game-table td,.profile-game-table th{padding:12px 10px;font-size:11px}
 .profile-actions{padding:16px 24px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .profile-actions button{border:1px solid var(--line);background:var(--ice);border-radius:6px;padding:10px 14px;font-size:12px}
-#profile-copy-status{font-size:11px;color:var(--muted)}
 
 @media(max-width:980px){
  .content-grid{grid-template-columns:1fr}
- .watch-rail{position:static;grid-row:2}
+ .watch-rail{position:static}
 }
 
 @media(max-width:700px){
@@ -175,26 +163,19 @@ body.profile-open{overflow:hidden}
  .nav-note,.edition{display:none}
  main{padding:26px 16px 40px}
  h1{font-size:48px}
- .intro p{font-size:12px}
  .updated{width:100%;margin-left:0}
  .tabs{flex-wrap:wrap;overflow:visible;gap:0 20px}
  .settings-link{margin-left:0}
  .player-col{min-width:175px;max-width:175px}
  .portrait{width:40px;height:40px;flex-basis:40px}
  .player-name{font-size:11px;max-width:105px}
- .badge{font-size:8px;padding:4px 6px}
- .board-title{flex-wrap:wrap}
- footer{display:block}
- #profile-content{padding:18px}
  .profile-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
- .profile-hero .player-name{font-size:18px}
- .profile-toolbar{padding:14px 18px}
- .profile-toolbar h2{font-size:24px}
 }
 </style>
 </head>
 
 <body>
+
 <header class="topbar">
  <div class="nav">
   <a class="brand" href="#">ICE <span>WATCHERS</span></a>
@@ -203,176 +184,183 @@ body.profile-open{overflow:hidden}
 </header>
 
 <main>
- <div class="intro">
-  <div>
-   <div class="eyebrow">Fantasy hockey / Daily report</div>
-   <h1>Player statistics</h1>
-   <p>The week's best, ranked for your league.<br>Custom scoring. Regular season. Top 10.</p>
-  </div>
-  <div class="edition">
-   <b>THE WEEKLY TEN</b>
-   <span>Skaters &amp; goaltenders</span>
+
+<div class="intro">
+ <div>
+  <div class="eyebrow">Fantasy hockey / Daily report</div>
+  <h1>Player statistics</h1>
+  <p>The week's best, ranked for your league.<br>Custom scoring. Regular season. Top 10.</p>
+ </div>
+ <div class="edition">
+  <b>THE WEEKLY TEN</b>
+  <span>Skaters &amp; goaltenders</span>
+ </div>
+</div>
+
+<div class="summarybar">
+ <span class="pill">REGULAR SEASON</span>
+ <span class="pill live-pill" id="live-pill" hidden>LIVE</span>
+ <span id="period">Last 7 days</span>
+ <span class="updated" id="updated">Loading statistics...</span>
+</div>
+
+<p class="banner" id="banner">You can adjust your scoring while statistics load.</p>
+
+<nav class="tabs">
+ <button class="tab" data-view="all" aria-pressed="true">All leaders</button>
+ <button class="tab" data-view="skater" aria-pressed="false">Skaters</button>
+ <button class="tab" data-view="goalie" aria-pressed="false">Goalies</button>
+ <button class="tab" data-view="leaders" aria-pressed="false">Week &amp; month</button>
+ <button class="tab" data-view="targets" aria-pressed="false">Potential targets</button>
+ <button class="tab settings-link" id="edit-scoring">Edit scoring</button>
+</nav>
+
+<details id="settings">
+ <summary>Your league's scoring</summary>
+ <div class="settings-body">
+  <p class="help">Enter points per stat. Player Watch badges are independent of these settings.</p>
+  <h3>Skaters</h3>
+  <div class="field-grid" id="skater-fields"></div>
+  <h3>Goalies</h3>
+  <div class="field-grid" id="goalie-fields"></div>
+  <div class="actions">
+   <button class="reset" id="reset">Reset to defaults</button>
+   <span id="saved"></span>
   </div>
  </div>
+</details>
 
- <div class="summarybar">
-  <span class="pill">REGULAR SEASON</span>
-  <span class="pill live-pill" id="live-pill" hidden>LIVE</span>
-  <span id="period">Last 7 completed calendar days</span>
-  <span class="updated" id="updated">Loading statistics...</span>
+<div class="content-grid">
+<div class="main-column">
+
+<section class="board" id="skater-board">
+ <div class="board-title">
+  <h2>Top 10 skaters</h2>
+  <span>FANTASY POINTS</span>
+ </div>
+ <div class="tablewrap">
+  <table id="skater-table">
+   <thead></thead>
+   <tbody></tbody>
+  </table>
+ </div>
+ <p class="board-foot"></p>
+</section>
+
+<section class="board" id="goalie-board">
+ <div class="board-title">
+  <h2>Top 10 goalies</h2>
+  <span>FANTASY POINTS</span>
+ </div>
+ <div class="tablewrap">
+  <table id="goalie-table">
+   <thead></thead>
+   <tbody></tbody>
+  </table>
+ </div>
+ <p class="board-foot"></p>
+</section>
+
+<section class="board" id="leaders-board">
+ <div class="board-title">
+  <h2 id="leaders-title">Top 10 players of the week</h2>
+  <span>ALL-STAT SCORE</span>
  </div>
 
- <p class="banner" id="banner">You can adjust your scoring while statistics load.</p>
+ <p class="report-note">Independent all-stat performance ranking.</p>
 
- <nav class="tabs">
-  <button class="tab" data-view="all" aria-pressed="true">All leaders</button>
-  <button class="tab" data-view="skater" aria-pressed="false">Skaters</button>
-  <button class="tab" data-view="goalie" aria-pressed="false">Goalies</button>
-  <button class="tab" data-view="leaders" aria-pressed="false">Week &amp; month</button>
-  <button class="tab" data-view="targets" aria-pressed="false">Potential targets</button>
-  <button class="tab settings-link" id="edit-scoring">Edit scoring</button>
- </nav>
-
- <details id="settings">
-  <summary>Your league's scoring</summary>
-  <div class="settings-body">
-   <p class="help">Enter points per stat. Player Watch badges are independent of these scoring settings.</p>
-   <h3>Skaters</h3>
-   <div class="field-grid" id="skater-fields"></div>
-   <h3>Goalies</h3>
-   <div class="field-grid" id="goalie-fields"></div>
-   <div class="actions">
-    <button class="reset" id="reset">Reset to defaults</button>
-    <span id="saved"></span>
-   </div>
-  </div>
- </details>
-
- <div class="content-grid">
-  <div class="main-column">
-
-   <section class="board" id="skater-board">
-    <div class="board-title">
-     <h2>Top 10 skaters</h2>
-     <span>FANTASY POINTS</span>
-    </div>
-    <div class="tablewrap">
-     <table id="skater-table">
-      <thead></thead>
-      <tbody></tbody>
-     </table>
-    </div>
-    <p class="board-foot">Click any stat heading to rank the top 10 by that category.</p>
-   </section>
-
-   <section class="board" id="goalie-board">
-    <div class="board-title">
-     <h2>Top 10 goalies</h2>
-     <span>FANTASY POINTS</span>
-    </div>
-    <div class="tablewrap">
-     <table id="goalie-table">
-      <thead></thead>
-      <tbody></tbody>
-     </table>
-    </div>
-    <p class="board-foot"></p>
-   </section>
-
-   <section class="board" id="leaders-board">
-    <div class="board-title">
-     <h2 id="leaders-title">Top 10 players of the week</h2>
-     <span>ALL-STAT SCORE</span>
-    </div>
-    <p class="report-note">Independent all-stat performance ranking.</p>
-    <div class="report-controls">
-     <button data-period="week" aria-pressed="true">Last 7 days</button>
-     <button data-period="month" aria-pressed="false">Last 30 days</button>
-    </div>
-    <div class="tablewrap">
-     <table id="leaders-table">
-      <thead>
-       <tr>
-        <th>#</th>
-        <th class="player-col">PLAYER</th>
-        <th>GP</th>
-        <th class="stat-summary">PERIOD STATS</th>
-        <th>SCORE / 100</th>
-       </tr>
-      </thead>
-      <tbody></tbody>
-     </table>
-    </div>
-    <p class="board-foot" id="leaders-period"></p>
-   </section>
-
-   <section class="board" id="targets-board">
-    <div class="board-title">
-     <h2>Potential waiver targets</h2>
-     <span>ICE WATCHERS TARGET SCORE</span>
-    </div>
-    <p class="report-note">
-     Ice Watchers searches beyond the established fantasy tier: skaters ranked #51+ and goalies ranked #13+.
-     Established stars and strong season-long performers are automatically excluded. Ownership is not checked.
-    </p>
-    <div class="tablewrap">
-     <table id="targets-table">
-      <thead>
-       <tr>
-        <th class="player-col">PLAYER</th>
-        <th>WEEKLY RANK</th>
-        <th class="stat-summary">RECENT STATS</th>
-        <th class="target-reason">WHY HE'S HERE</th>
-        <th>TARGET SCORE</th>
-       </tr>
-      </thead>
-      <tbody></tbody>
-     </table>
-    </div>
-   </section>
-  </div>
-
-  <aside class="watch-rail" id="watch-rail" aria-labelledby="watch-title">
-   <div class="watch-head">
-    <div class="eyebrow">Ice Watchers intelligence</div>
-    <h2 id="watch-title">Player Watch</h2>
-    <p>
-     Players showing sustained performance over the last seven days.
-     Requires multiple games and is independent of your league scoring.
-    </p>
-   </div>
-   <div id="watch-list"></div>
-  </aside>
+ <div class="report-controls">
+  <button data-period="week" aria-pressed="true">Last 7 days</button>
+  <button data-period="month" aria-pressed="false">Last 30 days</button>
  </div>
 
- <footer>
-  <div>
-   <b>ICE WATCHERS</b><br>
-   Independent fantasy hockey tracker. Not affiliated with the NHL.<br>
-   Regular-season data. Live games may be included in displayed rankings.
-  </div>
-  <a href="https://www.nhl.com/stats/" target="_blank" rel="noopener noreferrer">
-   NHL statistics &nearr;
-  </a>
- </footer>
+ <div class="tablewrap">
+  <table id="leaders-table">
+   <thead>
+    <tr>
+     <th>#</th>
+     <th class="player-col">PLAYER</th>
+     <th>GP</th>
+     <th class="stat-summary">PERIOD STATS</th>
+     <th>SCORE / 100</th>
+    </tr>
+   </thead>
+   <tbody></tbody>
+  </table>
+ </div>
+
+ <p class="board-foot" id="leaders-period"></p>
+</section>
+
+<section class="board" id="targets-board">
+ <div class="board-title">
+  <h2>Potential waiver targets</h2>
+  <span>ICE WATCHERS TARGET SCORE</span>
+ </div>
+
+ <p class="report-note">
+  Ice Watchers searches beyond the established fantasy tier:
+  skaters ranked #51+ and goalies ranked #13+.
+  Established stars are protected from appearing here.
+  Ownership is not checked.
+ </p>
+
+ <div class="tablewrap">
+  <table id="targets-table">
+   <thead>
+    <tr>
+     <th class="player-col">PLAYER</th>
+     <th>WEEKLY RANK</th>
+     <th class="stat-summary">RECENT STATS</th>
+     <th class="target-reason">WHY HE'S HERE</th>
+     <th>TARGET SCORE</th>
+    </tr>
+   </thead>
+   <tbody></tbody>
+  </table>
+ </div>
+</section>
+
+</div>
+
+<aside class="watch-rail">
+ <div class="watch-head">
+  <div class="eyebrow">Ice Watchers intelligence</div>
+  <h2>Player Watch</h2>
+  <p>Players showing sustained performance over the last seven days.</p>
+ </div>
+ <div id="watch-list"></div>
+</aside>
+
+</div>
+
+<footer>
+ <div>
+  <b>ICE WATCHERS</b><br>
+  Independent fantasy hockey tracker. Not affiliated with the NHL.<br>
+  Regular-season data.
+ </div>
+ <a href="https://www.nhl.com/stats/" target="_blank" rel="noopener noreferrer">
+  NHL statistics &nearr;
+ </a>
+</footer>
+
 </main>
 
-<dialog id="player-profile" class="profile-dialog" aria-labelledby="profile-title">
+<dialog id="player-profile" class="profile-dialog">
  <div class="profile-toolbar">
   <h2 id="profile-title">Player profile</h2>
-  <button type="button" id="profile-close" autofocus>Close</button>
+  <button id="profile-close">Close</button>
  </div>
  <div id="profile-content"></div>
  <div class="profile-actions">
-  <button type="button" id="profile-copy">Copy profile link</button>
-  <span id="profile-copy-status" role="status"></span>
+  <button id="profile-copy">Copy profile link</button>
+  <span id="profile-copy-status"></span>
  </div>
 </dialog>
 
 <script>
 'use strict';
-
-/* SETTINGS */
 
 const DEFAULTS={
  skater:{
@@ -406,10 +394,9 @@ const COLS={
 };
 
 const $=id=>document.getElementById(id);
-const KEY='icewatch-scoring';
 
 const known=(p,k)=>
- p && p[k]!==null && p[k]!==undefined && p[k]!=='' &&
+ p&&p[k]!==null&&p[k]!==undefined&&p[k]!==''&&
  Number.isFinite(Number(p[k]));
 
 const num=(p,k)=>known(p,k)?Number(p[k]):0;
@@ -417,94 +404,85 @@ const num=(p,k)=>known(p,k)?Number(p[k]):0;
 const esc=v=>String(v??'').replace(
  /[&<>"']/g,
  c=>({
-  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  '&':'&amp;',
+  '<':'&lt;',
+  '>':'&gt;',
+  '"':'&quot;',
+  "'":'&#39;'
  }[c])
 );
 
 let scoring=JSON.parse(JSON.stringify(DEFAULTS));
+
 let players={skater:[],goalie:[]};
-let completedPlayers={skater:[],goalie:[]};
-let livePlayers={skater:[],goalie:[]};
 let monthlyPlayers={skater:[],goalie:[]};
-let leaderPeriod='week';
-let lastDataStamp='';
-let refreshTimer=null;
+
 let currentData=null;
+let leaderPeriod='week';
+let refreshTimer=null;
 
 const ranking={
  skater:{key:'fpts',dir:-1},
  goalie:{key:'fpts',dir:-1}
 };
 
-try{
- const saved=JSON.parse(localStorage.getItem(KEY));
- for(const g in scoring){
-  for(const k in scoring[g]){
-   if(Number.isFinite(saved?.[g]?.[k])){
-    scoring[g][k]=saved[g][k];
-   }
-  }
- }
-}catch{}
-
 /* SCORING */
-
-function fields(g){
- $(g+'-fields').innerHTML=Object.keys(DEFAULTS[g]).map(k=>`
-  <label class="field">
-   <span>${LABELS[k]}</span>
-   <input
-    type="number"
-    step="any"
-    data-group="${g}"
-    data-key="${k}"
-    value="${scoring[g][k]}"
-    class="${scoring[g][k]?'active':''}"
-   >
-  </label>
- `).join('');
-}
 
 function points(p,g){
  return Object.entries(scoring[g]).reduce((total,[k,value])=>{
   if(k==='def'){
    return total+(
     String(p.pos).toUpperCase()==='D'
-     ? (num(p,'g')+num(p,'a'))*value
-     : 0
+     ?(num(p,'g')+num(p,'a'))*value
+     :0
    );
   }
+
   return total+num(p,k)*value;
  },0);
 }
 
-/* PLAYER WATCH BADGES */
+function fields(g){
+ $(g+'-fields').innerHTML=
+  Object.keys(DEFAULTS[g]).map(k=>`
+   <label class="field">
+    <span>${LABELS[k]}</span>
+    <input
+     type="number"
+     step="any"
+     data-group="${g}"
+     data-key="${k}"
+     value="${scoring[g][k]}"
+    >
+   </label>
+  `).join('');
+}
+
+/* PLAYER BADGES */
 
 function badges(p,g){
  const gp=num(p,'gp');
  const out=[];
+
  if(gp<2)return out;
 
  if(g==='skater'){
   const ppg=(num(p,'g')+num(p,'a'))/gp;
   const shots=num(p,'sog')/gp;
   const physical=(num(p,'hit')+num(p,'blk'))/gp;
-  const power=num(p,'ppp')/gp;
 
   if(ppg>=1.5)out.push(['HOT','hot']);
   if(shots>=4)out.push(['SHOT MACHINE','shots']);
   if(physical>=5)out.push(['PHYSICAL FORCE','physical']);
-  if(num(p,'ppp')>=2&&power>=.5){
-   out.push(['POWER PLAY','power']);
-  }
-  if(ppg>=1&&shots>=3.5){
-   out.push(['BREAKOUT WATCH','breakout']);
-  }
+  if(num(p,'ppp')>=2)out.push(['POWER PLAY','power']);
+  if(ppg>=1&&shots>=3.5)out.push(['BREAKOUT WATCH','breakout']);
  }else{
   const saves=num(p,'sv')/gp;
+
   if(known(p,'svPct')&&num(p,'svPct')>=.925&&saves>=25){
    out.push(['HOT GOALIE','goalie']);
   }
+
   if(num(p,'so')>=1&&known(p,'svPct')&&num(p,'svPct')>=.920){
    out.push(['SHUTOUT FORM','shutout']);
   }
@@ -514,32 +492,43 @@ function badges(p,g){
 }
 
 function badgeHTML(p,g){
- return badges(p,g).map(
-  x=>`<span class="badge ${x[1]}">${x[0]}</span>`
- ).join('');
+ return badges(p,g)
+  .map(x=>`<span class="badge ${x[1]}">${x[0]}</span>`)
+  .join('');
 }
 
-/* PLAYER CELLS */
+/* PLAYER CELL */
 
 function basePlayerCell(p,g){
  const id=String(p.player_id??'');
+
  const initials=String(p.name||'?')
-  .split(/\s+/).map(x=>x[0]).slice(0,2).join('');
+  .split(/\s+/)
+  .map(x=>x[0])
+  .slice(0,2)
+  .join('');
 
  const photo=/^\d+$/.test(id)
-  ? `<img
+  ?`<img
       src="https://assets.nhle.com/mugs/nhl/latest/${id}.png"
       alt=""
       loading="lazy"
       onerror="this.remove()"
      >`
-  : '';
+  :'';
 
  return `
   <div class="player">
-   <div class="portrait">${esc(initials)}${photo}</div>
+   <div class="portrait">
+    ${esc(initials)}
+    ${photo}
+   </div>
+
    <div>
-    <div class="player-name">${esc(p.name||'Unknown')}</div>
+    <div class="player-name">
+     ${esc(p.name||'Unknown')}
+    </div>
+
     <div class="player-meta">
      ${esc(p.team||'-')} |
      ${esc(g==='goalie'?'G':p.pos||'F')}
@@ -550,7 +539,20 @@ function basePlayerCell(p,g){
  `;
 }
 
-/* MAIN TABLE RANKINGS */
+function playerCell(p,g){
+ const id=String(p.player_id??p.name??'');
+
+ return `
+  <a
+   class="player-profile-link"
+   href="#player=${g}:${encodeURIComponent(id)}"
+  >
+   ${basePlayerCell(p,g)}
+  </a>
+ `;
+}
+
+/* MAIN TABLE */
 
 function rankedTopTen(g){
  const {key,dir}=ranking[g];
@@ -566,8 +568,7 @@ function rankedTopTen(g){
    const av=key==='fpts'?a.fpts:num(a,key);
    const bv=key==='fpts'?b.fpts:num(b,key);
 
-   return dir*(av-bv)||
-    String(a.name||'').localeCompare(String(b.name||''));
+   return dir*(av-bv);
   })
   .slice(0,10)
   .map((p,i)=>({...p,rank:i+1}));
@@ -576,15 +577,11 @@ function rankedTopTen(g){
 function setupTable(g){
  const table=$(g+'-table');
 
- table.querySelector('thead').innerHTML='<tr>'+
+ table.querySelector('thead').innerHTML=
+  '<tr>'+
   COLS[g].map(k=>`
-   <th
-    scope="col"
-    data-key="${k}"
-    class="${k==='name'?'player-col':k==='rank'?'rank':''}"
-    aria-sort="none"
-   >
-    <button type="button" title="Show top 10 by ${esc(LABELS[k]||k)}">
+   <th data-key="${k}">
+    <button type="button">
      ${
       k==='rank'?'#':
       k==='name'?'PLAYER':
@@ -594,24 +591,26 @@ function setupTable(g){
      }
     </button>
    </th>
-  `).join('')+'</tr>';
+  `).join('')+
+  '</tr>';
 
  table.querySelectorAll('th[data-key]').forEach(th=>{
-  th.querySelector('button').addEventListener('click',()=>{
-   const k=th.dataset.key;
-   if(k==='rank')return;
+  th.querySelector('button').onclick=()=>{
+   const key=th.dataset.key;
 
-   const lowerBetter=
-    k==='gaa'||k==='ga'||k==='otl'||k==='pim';
+   if(key==='rank')return;
 
-   if(ranking[g].key===k){
+   if(ranking[g].key===key){
     ranking[g].dir*=-1;
    }else{
-    ranking[g]={key:k,dir:k==='name'||lowerBetter?1:-1};
+    ranking[g]={
+     key,
+     dir:key==='name'?1:-1
+    };
    }
 
    render(g);
-  });
+  };
  });
 }
 
@@ -620,218 +619,168 @@ function displayStat(p,k){
  if(!known(p,k))return '-';
  if(k==='svPct')return (num(p,k)*100).toFixed(1)+'%';
  if(k==='gaa')return num(p,k).toFixed(2);
+
  return esc(p[k]);
 }
 
 function render(g){
  const rows=rankedTopTen(g);
- const table=$(g+'-table');
- const active=ranking[g];
 
- table.querySelectorAll('th[data-key]').forEach(th=>{
-  th.setAttribute(
-   'aria-sort',
-   th.dataset.key===active.key
-    ? active.dir===1?'ascending':'descending'
-    : 'none'
-  );
- });
-
- table.querySelector('tbody').innerHTML=rows.length
-  ? rows.map(p=>'<tr>'+COLS[g].map(k=>`
-     <td class="${
-      k==='name'?'player-col':
-      k==='fpts'?'fpts':
-      k==='rank'?'rank':''
-     }">
-      ${
-       k==='name'?playerCell(p,g):
-       k==='rank'?p.rank:
-       displayStat(p,k)
-      }
-     </td>
-    `).join('')+'</tr>').join('')
-  : `
-   <tr class="empty-row">
-    <td colspan="${COLS[g].length}">
-     <strong>Waiting for regular-season stats</strong>
-     <span>Results will appear when regular-season games are available.</span>
-    </td>
-   </tr>
-  `;
-
- const foot=table.closest('.board')?.querySelector('.board-foot');
-
- if(foot){
-  foot.textContent=
-   `Showing the top 10 ${g==='skater'?'skaters':'goalies'} by ${LABELS[active.key]||active.key}. `+
-   'Click any stat heading to change the ranking. '+
-   `${active.dir===1?'Lowest to highest':'Highest to lowest'}. `+
-   'On mobile, swipe horizontally for more stats.';
- }
+ $(g+'-table')
+  .querySelector('tbody')
+  .innerHTML=
+   rows.length
+    ?rows.map(p=>
+      '<tr>'+
+      COLS[g].map(k=>`
+       <td class="${
+        k==='name'?'player-col':
+        k==='fpts'?'fpts':
+        k==='rank'?'rank':''
+       }">
+        ${
+         k==='name'
+          ?playerCell(p,g)
+          :k==='rank'
+           ?p.rank
+           :displayStat(p,k)
+        }
+       </td>
+      `).join('')+
+      '</tr>'
+     ).join('')
+    :`
+     <tr class="empty-row">
+      <td colspan="${COLS[g].length}">
+       <strong>Waiting for regular-season stats</strong>
+      </td>
+     </tr>
+    `;
 }
 
-/* MERGE COMPLETED AND LIVE STATISTICS */
-
-const SKATER_ADD=[
- 'gp','g','a','pim','ppp','shg','sha','gwg','hat',
- 'sog','hit','blk','fow','plusMinus','seconds'
-];
-
-const GOALIE_ADD=[
- 'gp','gs','w','ga','sv','so','otl','sa','seconds'
-];
-
-function mergePlayerLists(completed,live,g){
- const map=new Map();
-
- for(const p of completed||[]){
-  map.set(String(p.player_id??p.name),{...p});
- }
-
- for(const p of live||[]){
-  const id=String(p.player_id??p.name);
-  const old=map.get(id);
-
-  if(!old){
-   map.set(id,{...p,live:true});
-   continue;
-  }
-
-  const merged={...old};
-  const keys=g==='skater'?SKATER_ADD:GOALIE_ADD;
-
-  for(const k of keys){
-   if(known(old,k)||known(p,k)){
-    merged[k]=num(old,k)+num(p,k);
-   }
-  }
-
-  merged.name=p.name||old.name;
-  merged.team=p.team||old.team;
-  merged.player_id=p.player_id??old.player_id;
-
-  if(g==='skater'){
-   merged.pos=p.pos||old.pos;
-  }
-
-  if(g==='goalie'){
-   const sv=known(merged,'sv')?Number(merged.sv):null;
-   const sa=known(merged,'sa')?Number(merged.sa):null;
-   const ga=known(merged,'ga')?Number(merged.ga):null;
-   const seconds=known(merged,'seconds')?Number(merged.seconds):null;
-
-   merged.svPct=sv!==null&&sa!==null&&sa>0?sv/sa:null;
-   merged.gaa=ga!==null&&seconds!==null&&seconds>0
-    ? ga*3600/seconds
-    : null;
-  }
-
-  merged.live=true;
-  map.set(id,merged);
- }
-
- return [...map.values()];
-}
-
-/* WEEK AND MONTH ALL-STAT RANKINGS */
+/* LEADERS */
 
 function percentileRanks(values){
- const sorted=[...values].filter(Number.isFinite).sort((a,b)=>a-b);
+ const sorted=[...values]
+  .filter(Number.isFinite)
+  .sort((a,b)=>a-b);
 
  return value=>{
   if(!sorted.length||!Number.isFinite(value))return 0;
+
   let count=0;
+
   for(const x of sorted){
    if(x<=value)count++;
   }
+
   return count/sorted.length;
  };
 }
 
 function allStatRows(source){
- const sk=(source.skater||[]).map(p=>({...p,_g:'skater'}));
- const go=(source.goalie||[]).map(p=>({...p,_g:'goalie'}));
- const skKeys=['g','a','sog','hit','blk','ppp','fow'];
- const goKeys=['w','sv','svPct','so'];
+ const sk=(source.skater||[])
+  .map(p=>({...p,_g:'skater'}));
+
+ const go=(source.goalie||[])
+  .map(p=>({...p,_g:'goalie'}));
 
  function scoreGroup(arr,keys){
   const rankers={};
 
-  for(const k of keys){
+  keys.forEach(k=>{
    rankers[k]=percentileRanks(
     arr.map(p=>known(p,k)?num(p,k):NaN)
    );
-  }
+  });
 
   return arr.map(p=>{
    const available=keys.filter(k=>known(p,k));
+
    const score=available.length
-    ? available.reduce((sum,k)=>sum+rankers[k](num(p,k)),0)/
-      available.length*100
-    : 0;
+    ?available.reduce(
+      (sum,k)=>sum+rankers[k](num(p,k)),
+      0
+     )/available.length*100
+    :0;
 
    return {...p,allScore:score};
   });
  }
 
  return [
-  ...scoreGroup(sk,skKeys),
-  ...scoreGroup(go,goKeys)
- ].sort((a,b)=>
-  b.allScore-a.allScore||
-  (num(b,'g')+num(b,'a'))-(num(a,'g')+num(a,'a'))
- ).slice(0,10);
+  ...scoreGroup(
+   sk,
+   ['g','a','sog','hit','blk','ppp','fow']
+  ),
+  ...scoreGroup(
+   go,
+   ['w','sv','svPct','so']
+  )
+ ]
+ .sort((a,b)=>b.allScore-a.allScore)
+ .slice(0,10);
 }
 
 function statSummary(p,g){
  if(g==='goalie'){
-  return `W ${known(p,'w')?num(p,'w'):'-'} | `+
-   `SV ${known(p,'sv')?num(p,'sv'):'-'} | `+
-   `SV% ${known(p,'svPct')?(num(p,'svPct')*100).toFixed(1)+'%':'-'} | `+
-   `SO ${known(p,'so')?num(p,'so'):'-'}`;
+  return `W ${num(p,'w')} | `+
+   `SV ${num(p,'sv')} | `+
+   `SV% ${known(p,'svPct')
+     ?(num(p,'svPct')*100).toFixed(1)+'%'
+     :'-'} | `+
+   `SO ${num(p,'so')}`;
  }
 
- return `G ${known(p,'g')?num(p,'g'):'-'} | `+
-  `A ${known(p,'a')?num(p,'a'):'-'} | `+
-  `SOG ${known(p,'sog')?num(p,'sog'):'-'} | `+
-  `HIT ${known(p,'hit')?num(p,'hit'):'-'} | `+
-  `BLK ${known(p,'blk')?num(p,'blk'):'-'}`;
+ return `G ${num(p,'g')} | `+
+  `A ${num(p,'a')} | `+
+  `SOG ${num(p,'sog')} | `+
+  `HIT ${num(p,'hit')} | `+
+  `BLK ${num(p,'blk')}`;
 }
 
 function renderLeaders(){
- const source=leaderPeriod==='month'?monthlyPlayers:players;
+ const source=
+  leaderPeriod==='month'
+   ?monthlyPlayers
+   :players;
+
  const rows=allStatRows(source);
 
- $('leaders-title').textContent=leaderPeriod==='month'
-  ? 'Top 10 players of the month'
-  : 'Top 10 players of the week';
+ $('leaders-title').textContent=
+  leaderPeriod==='month'
+   ?'Top 10 players of the month'
+   :'Top 10 players of the week';
 
- $('leaders-period').textContent=leaderPeriod==='month'
-  ? 'Completed-game 30-day performance.'
-  : 'Seven-day performance; current live stats are included when games are in progress.';
-
- $('leaders-table').querySelector('tbody').innerHTML=rows.length
-  ? rows.map((p,i)=>`
-   <tr>
-    <td class="rank">${i+1}</td>
-    <td class="player-col">${playerCell(p,p._g)}</td>
-    <td>${known(p,'gp')?num(p,'gp'):'-'}</td>
-    <td class="stat-summary">${statSummary(p,p._g)}</td>
-    <td class="fpts">${p.allScore.toFixed(1)}</td>
-   </tr>
-  `).join('')
-  : `
-   <tr class="empty-row">
-    <td colspan="5">
-     <strong>Waiting for regular-season stats</strong>
-     <span>All-stat leaders will appear when games are available.</span>
-    </td>
-   </tr>
-  `;
+ $('leaders-table')
+  .querySelector('tbody')
+  .innerHTML=
+   rows.length
+    ?rows.map((p,i)=>`
+     <tr>
+      <td class="rank">${i+1}</td>
+      <td class="player-col">
+       ${playerCell(p,p._g)}
+      </td>
+      <td>${num(p,'gp')}</td>
+      <td class="stat-summary">
+       ${statSummary(p,p._g)}
+      </td>
+      <td class="fpts">
+       ${p.allScore.toFixed(1)}
+      </td>
+     </tr>
+    `).join('')
+    :`
+     <tr class="empty-row">
+      <td colspan="5">
+       <strong>Waiting for regular-season stats</strong>
+      </td>
+     </tr>
+    `;
 }
 
-/* INDEPENDENT ICE WATCHERS TARGET SCORE */
+/* TARGET SCORE */
 
 function clamp(value,min,max){
  return Math.min(max,Math.max(min,value));
@@ -839,45 +788,107 @@ function clamp(value,min,max){
 
 function rateScore(value,low,high){
  if(!Number.isFinite(value)||high<=low)return 0;
- return clamp((value-low)/(high-low),0,1);
+
+ return clamp(
+  (value-low)/(high-low),
+  0,
+  1
+ );
 }
 
 function skaterTargetScore(p){
  const gp=Math.max(1,num(p,'gp'));
 
  let score=
-  rateScore((num(p,'g')+num(p,'a'))/gp,.35,1.35)*30+
-  rateScore(num(p,'sog')/gp,1.5,4.5)*22+
-  rateScore(num(p,'ppp')/gp,0,.75)*14+
-  rateScore((num(p,'hit')+num(p,'blk'))/gp,1,6)*14+
-  rateScore(num(p,'fow')/gp,0,8)*4+
-  rateScore(num(p,'g')/gp,.1,.75)*8;
+  rateScore(
+   (num(p,'g')+num(p,'a'))/gp,
+   .35,
+   1.35
+  )*30+
+
+  rateScore(
+   num(p,'sog')/gp,
+   1.5,
+   4.5
+  )*22+
+
+  rateScore(
+   num(p,'ppp')/gp,
+   0,
+   .75
+  )*14+
+
+  rateScore(
+   (num(p,'hit')+num(p,'blk'))/gp,
+   1,
+   6
+  )*14+
+
+  rateScore(
+   num(p,'fow')/gp,
+   0,
+   8
+  )*4+
+
+  rateScore(
+   num(p,'g')/gp,
+   .1,
+   .75
+  )*8;
 
  score+=gp>=4?8:gp===3?6:gp===2?4:1;
 
- if(gp<2)score=Math.min(score,49);
+ if(gp<2){
+  score=Math.min(score,49);
+ }
 
- return Math.round(clamp(score,0,100));
+ return Math.round(
+  clamp(score,0,100)
+ );
 }
 
 function goalieTargetScore(p){
  const gp=Math.max(1,num(p,'gp'));
 
  let score=
-  rateScore(known(p,'svPct')?num(p,'svPct'):0,.890,.940)*40+
-  rateScore(num(p,'sv')/gp,18,35)*25+
-  rateScore(num(p,'w')/gp,0,.8)*17+
-  rateScore(num(p,'gs')/gp,.5,1)*8+
-  rateScore(num(p,'so'),0,1)*5;
+  rateScore(
+   known(p,'svPct')?num(p,'svPct'):0,
+   .890,
+   .940
+  )*40+
+
+  rateScore(
+   num(p,'sv')/gp,
+   18,
+   35
+  )*25+
+
+  rateScore(
+   num(p,'w')/gp,
+   0,
+   .8
+  )*17+
+
+  rateScore(
+   num(p,'gs')/gp,
+   .5,
+   1
+  )*8+
+
+  rateScore(
+   num(p,'so'),
+   0,
+   1
+  )*5;
 
  score+=gp>=4?5:gp===3?4:gp===2?3:1;
 
- if(gp<2)score=Math.min(score,49);
-
- return Math.round(clamp(score,0,100));
+ return Math.round(
+  clamp(score,0,100)
+ );
 }
 
-/* WHY EACH WAIVER TARGET IS HERE */
+/* TARGET REASONS */
 
 function targetInfo(p){
  const gp=Math.max(1,num(p,'gp'));
@@ -885,85 +896,208 @@ function targetInfo(p){
  const reasons=[];
 
  if(p._g==='skater'){
-  const ppg=(num(p,'g')+num(p,'a'))/gp;
-  const shots=num(p,'sog')/gp;
-  const power=num(p,'ppp')/gp;
-  const physical=(num(p,'hit')+num(p,'blk'))/gp;
-  const faceoffs=num(p,'fow')/gp;
-  const goals=num(p,'g')/gp;
+  const ppg=
+   (num(p,'g')+num(p,'a'))/gp;
 
-  if(gp>=2&&ppg>=1)tags.push('TRENDING');
+  const shots=
+   num(p,'sog')/gp;
+
+  const power=
+   num(p,'ppp')/gp;
+
+  const physical=
+   (num(p,'hit')+num(p,'blk'))/gp;
+
+  const faceoffs=
+   num(p,'fow')/gp;
+
+  if(ppg>=1)tags.push('TRENDING');
   if(shots>=3.5)tags.push('SHOT VOLUME');
-  if(num(p,'ppp')>=1&&power>=.4)tags.push('POWER PLAY');
-  if(physical>=4||faceoffs>=6)tags.push('CATEGORY VALUE');
-  if(goals>=.5)tags.push('SCORING');
+  if(power>=.4)tags.push('POWER PLAY');
+  if(physical>=4||faceoffs>=6){
+   tags.push('CATEGORY VALUE');
+  }
 
-  if(gp<2){
-   reasons.push('Early signal only; more games are needed');
-  }else if(ppg>=1){
-   reasons.push(`${ppg.toFixed(2)} points per game`);
-  }else if(ppg>=.7){
-   reasons.push('Solid recent point production');
+  if(ppg>=1){
+   reasons.push(
+    `${ppg.toFixed(2)} points per game`
+   );
   }
 
   if(shots>=3.5){
-   reasons.push(`${shots.toFixed(1)} shots per game`);
+   reasons.push(
+    `${shots.toFixed(1)} shots per game`
+   );
   }
+
   if(power>=.4){
-   reasons.push('Active power-play production');
+   reasons.push(
+    'Active power-play production'
+   );
   }
+
   if(physical>=4){
-   reasons.push('Strong hits and blocks contribution');
+   reasons.push(
+    'Strong hits and blocks contribution'
+   );
   }
+
   if(faceoffs>=6){
-   reasons.push('Useful faceoff volume');
+   reasons.push(
+    'Useful faceoff volume'
+   );
   }
-  if(!reasons.length){
-   reasons.push('Balanced recent fantasy production');
-  }
+
  }else{
-  const savePct=known(p,'svPct')?num(p,'svPct'):0;
-  const saves=num(p,'sv')/gp;
-  const wins=num(p,'w')/gp;
 
-  if(gp>=2&&savePct>=.920)tags.push('HOT GOALIE');
-  if(saves>=27)tags.push('WORKLOAD');
-  if(wins>=.5)tags.push('WINNING');
-  if(num(p,'so')>=1)tags.push('SHUTOUT');
+  const savePct=
+   known(p,'svPct')
+    ?num(p,'svPct')
+    :0;
 
-  if(gp<2){
-   reasons.push('Early signal only; more appearances are needed');
-  }else if(savePct>=.920){
-   reasons.push(`${(savePct*100).toFixed(1)}% save percentage`);
+  const saves=
+   num(p,'sv')/gp;
+
+  const wins=
+   num(p,'w')/gp;
+
+  if(savePct>=.920){
+   tags.push('HOT GOALIE');
+  }
+
+  if(saves>=27){
+   tags.push('WORKLOAD');
+  }
+
+  if(wins>=.5){
+   tags.push('WINNING');
+  }
+
+  if(num(p,'so')>=1){
+   tags.push('SHUTOUT');
+  }
+
+  if(savePct>=.920){
+   reasons.push(
+    `${(savePct*100).toFixed(1)}% save percentage`
+   );
   }
 
   if(saves>=25){
-   reasons.push(`${saves.toFixed(1)} saves per appearance`);
+   reasons.push(
+    `${saves.toFixed(1)} saves per appearance`
+   );
   }
+
   if(wins>=.5){
-   reasons.push('Strong recent winning rate');
-  }
-  if(num(p,'so')>=1){
-   reasons.push('Shutout production');
-  }
-  if(!reasons.length){
-   reasons.push('Recent workload creates fantasy opportunity');
+   reasons.push(
+    'Strong recent winning rate'
+   );
   }
  }
 
  if(!tags.length){
-  tags.push(p._g==='skater'?'DEPTH WATCH':'GOALIE WATCH');
+  tags.push(
+   p._g==='skater'
+    ?'DEPTH WATCH'
+    :'GOALIE WATCH'
+  );
  }
 
- return {
+ if(!reasons.length){
+  reasons.push(
+   'Balanced recent fantasy production'
+  );
+ }
+
+ return{
   tags:tags.slice(0,3),
   reason:reasons.slice(0,3).join(' / ')
  };
 }
 
-/* WAIVER TARGET PROTECTION */
+/* =========================================================
+   WAIVER PROTECTION
+   ========================================================= */
+
+/*
+ NHL IDs are the PRIMARY exemption check.
+
+ Names are kept as a backup.
+
+ This ONLY affects Potential Waiver Targets.
+*/
+
+const WAIVER_EXEMPT_IDS=new Set([
+
+ /* elite forwards */
+
+ '8478402', /* Connor McDavid */
+ '8477492', /* Nathan MacKinnon */
+ '8477934', /* Leon Draisaitl */
+ '8479318', /* Auston Matthews */
+ '8477956', /* David Pastrnak */
+ '8476453', /* Nikita Kucherov */
+ '8478864', /* Kirill Kaprizov */
+ '8478420', /* Mikko Rantanen */
+ '8481559', /* Jack Hughes */
+ '8476468', /* Mark Stone */
+ '8475166', /* John Tavares */
+ '8476887', /* Filip Forsberg */
+ '8477504', /* Aleksander Barkov */
+ '8477933', /* Sam Reinhart */
+ '8478427', /* Sebastian Aho */
+ '8479979', /* Jason Robertson */
+ '8479420', /* Tage Thompson */
+ '8478398', /* Kyle Connor */
+ '8476389', /* Artemi Panarin */
+ '8484144', /* Connor Bedard */
+ '8479314', /* Matthew Tkachuk */
+ '8476924', /* Brady Tkachuk */
+ '8477939', /* William Nylander */
+ '8478483', /* Mitch Marner */
+ '8477404', /* Elias Lindholm */
+ '8474564', /* Steven Stamkos */
+ '8474563', /* Drew Doughty */
+ '8471675', /* Sidney Crosby */
+ '8471214', /* Alex Ovechkin */
+ '8478010', /* Brayden Point */
+ '8477409', /* J.T. Miller */
+ '8476460', /* Mark Scheifele */
+ '8477946', /* Dylan Larkin */
+ '8479314', /* Matthew Tkachuk */
+ '8479442', /* Clayton Keller */
+ '8484153', /* Macklin Celebrini */
+
+ /* elite defensemen */
+
+ '8480800', /* Quinn Hughes */
+ '8480069', /* Cale Makar */
+ '8479323', /* Adam Fox */
+ '8474600', /* Roman Josi */
+ '8480839', /* Rasmus Dahlin */
+ '8481542', /* Moritz Seider */
+ '8476462', /* Dougie Hamilton */
+ '8480803', /* Evan Bouchard */
+ '8479325', /* Charlie McAvoy */
+ '8477495', /* Jacob Trouba */
+ '8475167', /* Victor Hedman */
+
+ /* established goalies */
+
+ '8478048', /* Igor Shesterkin */
+ '8476945', /* Connor Hellebuyck */
+ '8476883', /* Andrei Vasilevskiy */
+ '8479973', /* Jake Oettinger */
+ '8477424', /* Juuse Saros */
+ '8480280', /* Jeremy Swayman */
+ '8477967', /* Thatcher Demko */
+ '8478009'  /* Ilya Sorokin */
+
+]);
 
 const WAIVER_EXEMPT_NAMES=new Set([
+
  'Connor McDavid',
  'Nathan MacKinnon',
  'Leon Draisaitl',
@@ -973,47 +1107,59 @@ const WAIVER_EXEMPT_NAMES=new Set([
  'Kirill Kaprizov',
  'Mikko Rantanen',
  'Jack Hughes',
+
  'Quinn Hughes',
  'Cale Makar',
+
  'Brady Tkachuk',
  'Matthew Tkachuk',
  'William Nylander',
  'Mitch Marner',
+
  'Aleksander Barkov',
  'Sam Reinhart',
  'Sebastian Aho',
  'Jason Robertson',
+
  'Tage Thompson',
  'Kyle Connor',
  'Artemi Panarin',
  'Connor Bedard',
+
  'Filip Forsberg',
  'Tim Stutzle',
  'Brayden Point',
  'Jake Guentzel',
- 'Alex Ovechkin',
+
  'Sidney Crosby',
+ 'Alex Ovechkin',
+
  'Elias Pettersson',
  'J.T. Miller',
  'Mark Scheifele',
  'Dylan Larkin',
+
  'Robert Thomas',
  'Jack Eichel',
  'Jesper Bratt',
  'Cole Caufield',
  'Nick Suzuki',
+
  'Mathew Barzal',
  'Clayton Keller',
  'Macklin Celebrini',
+
  'Adam Fox',
  'Roman Josi',
  'Rasmus Dahlin',
  'Moritz Seider',
+
  'Dougie Hamilton',
  'Evan Bouchard',
  'Charlie McAvoy',
  'Noah Dobson',
  'Victor Hedman',
+
  'Igor Shesterkin',
  'Connor Hellebuyck',
  'Andrei Vasilevskiy',
@@ -1022,149 +1168,136 @@ const WAIVER_EXEMPT_NAMES=new Set([
  'Jeremy Swayman',
  'Thatcher Demko',
  'Ilya Sorokin'
+
 ]);
 
-function normalizedPlayerName(name){
+function normalizeName(name){
  return String(name||'')
   .normalize('NFD')
   .replace(/[\u0300-\u036f]/g,'')
+  .replace(/[.'’\-]/g,'')
+  .replace(/\s+/g,' ')
   .trim()
   .toLowerCase();
 }
 
-const WAIVER_EXEMPT_NORMALIZED=new Set(
- [...WAIVER_EXEMPT_NAMES].map(normalizedPlayerName)
-);
-
-function manualWaiverExempt(p){
- return WAIVER_EXEMPT_NORMALIZED.has(
-  normalizedPlayerName(p?.name)
- );
-}
-
-function seasonWaiverExemptions(){
- const exemptSkaters=new Set();
- const exemptGoalies=new Set();
-
- const seasonSkaters=Array.isArray(currentData?.season?.skaters)
-  ? currentData.season.skaters
-  : [];
-
- const seasonGoalies=Array.isArray(currentData?.season?.goalies)
-  ? currentData.season.goalies
-  : [];
-
- seasonSkaters
-  .map(p=>({
-   ...p,
-   _seasonFantasyPoints:points(p,'skater')
-  }))
-  .sort((a,b)=>
-   b._seasonFantasyPoints-a._seasonFantasyPoints||
-   String(a.name||'').localeCompare(String(b.name||''))
-  )
-  .slice(0,60)
-  .forEach(p=>{
-   exemptSkaters.add(
-    String(p.player_id??normalizedPlayerName(p.name))
-   );
-  });
-
- seasonGoalies
-  .map(p=>({
-   ...p,
-   _seasonFantasyPoints:points(p,'goalie')
-  }))
-  .sort((a,b)=>
-   b._seasonFantasyPoints-a._seasonFantasyPoints||
-   String(a.name||'').localeCompare(String(b.name||''))
-  )
-  .slice(0,15)
-  .forEach(p=>{
-   exemptGoalies.add(
-    String(p.player_id??normalizedPlayerName(p.name))
-   );
-  });
-
- return {
-  skater:exemptSkaters,
-  goalie:exemptGoalies
- };
-}
-
-function seasonWaiverExempt(p,g,seasonExemptions){
- const key=String(
-  p.player_id??normalizedPlayerName(p.name)
+const NORMALIZED_WAIVER_NAMES=
+ new Set(
+  [...WAIVER_EXEMPT_NAMES]
+   .map(normalizeName)
  );
 
- return seasonExemptions[g]?.has(key)===true;
+function waiverProtected(p){
+
+ /*
+  FIRST CHECK:
+  NHL player ID
+ */
+
+ const id=
+  String(
+   p?.player_id??
+   p?.playerId??
+   p?.id??
+   ''
+  ).trim();
+
+ if(
+  id&&
+  WAIVER_EXEMPT_IDS.has(id)
+ ){
+  return true;
+ }
+
+ /*
+  SECOND CHECK:
+  normalized full name
+ */
+
+ const name=
+  normalizeName(
+   p?.name||
+   p?.fullName||
+   ''
+  );
+
+ if(
+  name&&
+  NORMALIZED_WAIVER_NAMES.has(name)
+ ){
+  return true;
+ }
+
+ return false;
 }
 
 /* WAIVER TARGET TABLE */
 
 function renderTargets(){
+
  try{
-  const sk=players.skater
-   .map(p=>({
-    ...p,
-    _g:'skater',
-    fpts:points(p,'skater')
-   }))
-   .sort((a,b)=>
-    b.fpts-a.fpts||
-    String(a.name||'').localeCompare(String(b.name||''))
-   );
 
-  const go=players.goalie
-   .map(p=>({
-    ...p,
-    _g:'goalie',
-    fpts:points(p,'goalie')
-   }))
-   .sort((a,b)=>
-    b.fpts-a.fpts||
-    String(a.name||'').localeCompare(String(b.name||''))
-   );
+  const sk=
+   players.skater
+    .map(p=>({
+     ...p,
+     _g:'skater',
+     fpts:points(p,'skater')
+    }))
+    .sort((a,b)=>
+     b.fpts-a.fpts
+    );
 
-  const seasonExemptions=seasonWaiverExemptions();
+  const go=
+   players.goalie
+    .map(p=>({
+     ...p,
+     _g:'goalie',
+     fpts:points(p,'goalie')
+    }))
+    .sort((a,b)=>
+     b.fpts-a.fpts
+    );
 
-  const eligibleSkaters=sk
-   .slice(50)
-   .map((p,i)=>({
-    ...p,
-    _weeklyRank:i+51
-   }))
-   .filter(p=>
-    !manualWaiverExempt(p)&&
-    !seasonWaiverExempt(
-     p,
-     'skater',
-     seasonExemptions
+  /*
+   Skaters:
+   search #51 and below.
+
+   Goalies:
+   search #13 and below.
+  */
+
+  const eligibleSkaters=
+   sk
+    .slice(50)
+    .map((p,i)=>({
+     ...p,
+     _weeklyRank:i+51
+    }))
+    .filter(p=>
+     !waiverProtected(p)
     )
-   )
-   .map(p=>({
-    ...p,
-    _targetScore:skaterTargetScore(p)
-   }));
+    .map(p=>({
+     ...p,
+     _targetScore:
+      skaterTargetScore(p)
+    }));
 
-  const eligibleGoalies=go
-   .slice(12)
-   .map((p,i)=>({
-    ...p,
-    _weeklyRank:i+13
-   }))
-   .filter(p=>
-    !manualWaiverExempt(p)&&
-    !seasonWaiverExempt(
-     p,
-     'goalie',
-     seasonExemptions
+  const eligibleGoalies=
+   go
+    .slice(12)
+    .map((p,i)=>({
+     ...p,
+     _weeklyRank:i+13
+    }))
+    .filter(p=>
+     !waiverProtected(p)
     )
-   )
-   .map(p=>({
-    ...p,
-    _targetScore:goalieTargetScore(p)
-   }));
+    .map(p=>({
+     ...p,
+     _targetScore:
+      goalieTargetScore(p)
+    }));
 
   const pool=[
    ...eligibleSkaters,
@@ -1173,751 +1306,701 @@ function renderTargets(){
 
   const byTarget=(a,b)=>
    b._targetScore-a._targetScore||
-   b.fpts-a.fpts||
-   String(a.name||'').localeCompare(String(b.name||''));
+   b.fpts-a.fpts;
 
-  const mature=pool
-   .filter(p=>num(p,'gp')>=2)
-   .sort(byTarget);
+  const mature=
+   pool
+    .filter(p=>num(p,'gp')>=2)
+    .sort(byTarget);
 
-  const early=pool
-   .filter(p=>num(p,'gp')<2)
-   .sort(byTarget);
+  const early=
+   pool
+    .filter(p=>num(p,'gp')<2)
+    .sort(byTarget);
 
-  const candidates=mature.slice(0,10);
+  const candidates=
+   mature.slice(0,10);
 
   if(candidates.length<10){
    candidates.push(
-    ...early.slice(0,10-candidates.length)
+    ...early.slice(
+     0,
+     10-candidates.length
+    )
    );
   }
 
-  $('targets-table').querySelector('tbody').innerHTML=
-   candidates.length
-    ? candidates.map(p=>{
-     const info=targetInfo(p);
+  $('targets-table')
+   .querySelector('tbody')
+   .innerHTML=
+    candidates.length
+     ?candidates.map(p=>{
 
-     return `
-      <tr>
-       <td class="player-col">
-        ${playerCell(p,p._g)}
-       </td>
+      const info=
+       targetInfo(p);
 
-       <td>
-        ${
-         p._g==='skater'
-          ? 'Skater #'
-          : 'Goalie #'
-        }${p._weeklyRank}
-       </td>
+      return `
+       <tr>
 
-       <td class="stat-summary">
-        ${statSummary(p,p._g)}
-       </td>
+        <td class="player-col">
+         ${playerCell(p,p._g)}
+        </td>
 
-       <td class="target-reason">
-        <div class="target-tags">
-         ${info.tags.map(
-          tag=>`
-           <span class="target-tag">
-            ${esc(tag)}
-           </span>
-          `
-         ).join('')}
-        </div>
+        <td>
+         ${
+          p._g==='skater'
+           ?'Skater #'
+           :'Goalie #'
+         }${p._weeklyRank}
+        </td>
 
-        ${esc(info.reason)}
-       </td>
+        <td class="stat-summary">
+         ${statSummary(p,p._g)}
+        </td>
 
-       <td class="target-score">
-        ${p._targetScore}
+        <td class="target-reason">
+
+         <div class="target-tags">
+          ${
+           info.tags.map(
+            tag=>`
+             <span class="target-tag">
+              ${esc(tag)}
+             </span>
+            `
+           ).join('')
+          }
+         </div>
+
+         ${esc(info.reason)}
+
+        </td>
+
+        <td class="target-score">
+         ${p._targetScore}
+        </td>
+
+       </tr>
+      `;
+
+     }).join('')
+
+     :`
+      <tr class="empty-row">
+       <td colspan="5">
+        <strong>No waiver targets yet</strong>
+        <span>
+         Ice Watchers searches skaters ranked #51+
+         and goalies ranked #13+ while protecting
+         established stars.
+        </span>
        </td>
       </tr>
      `;
-    }).join('')
-    : `
-     <tr class="empty-row">
-      <td colspan="5">
-       <strong>No waiver targets yet</strong>
-       <span>
-        Ice Watchers searches skaters ranked #51+
-        and goalies ranked #13+ while protecting
-        established fantasy stars.
-       </span>
-      </td>
-     </tr>
-    `;
 
  }catch(error){
+
   console.error(
-   'Ice Watchers waiver target error:',
+   'Ice Watchers waiver error:',
    error
   );
 
-  const tbody=$('targets-table')
-   ?.querySelector('tbody');
+  const tbody=
+   $('targets-table')
+    ?.querySelector('tbody');
 
   if(tbody){
+
    tbody.innerHTML=`
     <tr class="empty-row">
      <td colspan="5">
-      <strong>Waiver targets temporarily unavailable</strong>
+
+      <strong>
+       Waiver targets temporarily unavailable
+      </strong>
+
       <span>
        The rest of Ice Watchers is still working.
       </span>
+
      </td>
     </tr>
    `;
+
   }
+
  }
+
 }
 
-/* BALANCED PLAYER WATCH */
+/* PLAYER WATCH */
 
 function renderWatch(){
- const skaters=[];
- const goalies=[];
+
+ const candidates=[];
 
  for(const p of players.skater){
-  const earned=badges(p,'skater');
+
+  const earned=
+   badges(p,'skater');
+
   if(!earned.length)continue;
 
-  const gp=Math.max(1,num(p,'gp'));
-  const ppg=(num(p,'g')+num(p,'a'))/gp;
-  const shots=num(p,'sog')/gp;
-  const physical=(num(p,'hit')+num(p,'blk'))/gp;
-  const power=num(p,'ppp')/gp;
+  const gp=
+   Math.max(1,num(p,'gp'));
 
-  const score=
-   earned.length*15+
-   ppg*12+
-   shots*2+
-   power*5+
-   physical*.75+
-   Math.min(gp,4)*2;
-
-  skaters.push({
-   ...p,_g:'skater',_badges:earned,_watchScore:score
+  candidates.push({
+   ...p,
+   _g:'skater',
+   _watchScore:
+    earned.length*15+
+    ((num(p,'g')+num(p,'a'))/gp)*12+
+    (num(p,'sog')/gp)*2
   });
+
  }
 
  for(const p of players.goalie){
-  const earned=badges(p,'goalie');
+
+  const earned=
+   badges(p,'goalie');
+
   if(!earned.length)continue;
 
-  const gp=Math.max(1,num(p,'gp'));
-  const savePct=known(p,'svPct')?num(p,'svPct'):0;
-  const saves=num(p,'sv')/gp;
-  const wins=num(p,'w')/gp;
-  const quality=Math.max(0,savePct-.900);
+  const gp=
+   Math.max(1,num(p,'gp'));
 
-  const score=
-   earned.length*15+
-   quality*300+
-   saves*.5+
-   wins*8+
-   num(p,'so')*4+
-   Math.min(gp,4)*2;
-
-  goalies.push({
-   ...p,_g:'goalie',_badges:earned,_watchScore:score
+  candidates.push({
+   ...p,
+   _g:'goalie',
+   _watchScore:
+    earned.length*15+
+    num(p,'sv')/gp+
+    num(p,'w')*8
   });
+
  }
 
- skaters.sort((a,b)=>b._watchScore-a._watchScore);
- goalies.sort((a,b)=>b._watchScore-a._watchScore);
+ candidates.sort(
+  (a,b)=>
+   b._watchScore-a._watchScore
+ );
 
- const selected=[
-  ...skaters.slice(0,8),
-  ...goalies.slice(0,4)
- ];
+ const selected=
+  candidates.slice(0,12);
 
- if(selected.length<12){
-  const used=new Set(
-   selected.map(p=>`${p._g}:${p.player_id??p.name}`)
-  );
+ $('watch-list').innerHTML=
+  selected.length
+   ?selected.map(p=>`
+    <div class="watch-card">
 
-  const remaining=[...skaters,...goalies]
-   .filter(p=>!used.has(`${p._g}:${p.player_id??p.name}`))
-   .sort((a,b)=>b._watchScore-a._watchScore);
+     <div class="badges">
+      ${badgeHTML(p,p._g)}
+     </div>
 
-  selected.push(...remaining.slice(0,12-selected.length));
- }
+     <div class="watch-player">
+      ${playerCell(p,p._g)}
+     </div>
 
- selected.sort((a,b)=>b._watchScore-a._watchScore);
+     <div class="watch-stats">
+      ${statSummary(p,p._g)}
+     </div>
 
- $('watch-list').innerHTML=selected.length
-  ? selected.map(p=>`
-   <div class="watch-card">
-    <div class="badges">
-     ${p.live?'<span class="badge live">LIVE</span>':''}
-     ${badgeHTML(p,p._g)}
     </div>
-    <div class="watch-player">${playerCell(p,p._g)}</div>
-    <div class="watch-stats">${statSummary(p,p._g)}</div>
-   </div>
-  `).join('')
-  : `
-   <div class="watch-empty">
-    <strong>No consistent trends yet</strong>
-    Player Watch requires at least two games of sustained
-    performance during the current seven-day window.
-   </div>
-  `;
+   `).join('')
+
+   :`
+    <div class="watch-empty">
+     <strong>No consistent trends yet</strong>
+     Player Watch requires multiple games of sustained performance.
+    </div>
+   `;
 }
 
-/* PLAYER PROFILES */
+/* PROFILES */
 
-let profilePeriod='week';
-let profileOpener=null;
-
-const profileDialog=$('player-profile');
-const profileKey=p=>String(p.player_id??p.name??'');
-const profileListKey=g=>g==='goalie'?'goalies':'skaters';
+const profileDialog=
+ $('player-profile');
 
 function profileRoute(){
- const match=location.hash.match(/^#player=(skater|goalie):(.+)$/);
+
+ const match=
+  location.hash.match(
+   /^#player=(skater|goalie):(.+)$/
+  );
+
  if(!match)return null;
 
- try{
-  return {g:match[1],id:decodeURIComponent(match[2])};
- }catch{
-  return null;
- }
-}
-
-function playerCell(p,g){
- const hash='#player='+g+':'+encodeURIComponent(profileKey(p));
-
- return `
-  <a
-   class="player-profile-link"
-   href="${esc(hash)}"
-   aria-label="View ${esc(p.name||'player')} profile"
-  >${basePlayerCell(p,g)}</a>
- `;
-}
-
-function profileSource(g,period){
- if(period==='week')return players[g];
- if(period==='month')return monthlyPlayers[g];
-
- const list=currentData?.season?.[profileListKey(g)];
- return Array.isArray(list)?list:[];
-}
-
-function findProfilePlayer(route){
- for(const period of ['week','month','season']){
-  const player=profileSource(route.g,period)
-   .find(p=>profileKey(p)===route.id);
-
-  if(player)return player;
- }
-
- const log=currentData?.game_logs?.[profileListKey(route.g)]?.[route.id];
-
- return log?{...log,player_id:route.id}:null;
+ return{
+  g:match[1],
+  id:decodeURIComponent(match[2])
+ };
 }
 
 function renderProfile(){
- const route=profileRoute();
+
+ const route=
+  profileRoute();
+
  if(!route)return;
 
- const p=findProfilePlayer(route);
- const content=$('profile-content');
+ const source=[
+  ...players[route.g],
+  ...monthlyPlayers[route.g],
+  ...(
+   Array.isArray(
+    currentData?.season?.[
+     route.g==='goalie'
+      ?'goalies'
+      :'skaters'
+    ]
+   )
+    ?currentData.season[
+      route.g==='goalie'
+       ?'goalies'
+       :'skaters'
+     ]
+    :[]
+  )
+ ];
+
+ const p=
+  source.find(
+   x=>
+    String(
+     x.player_id??
+     x.name
+    )===route.id
+  );
 
  if(!p){
-  $('profile-title').textContent='Player profile';
 
-  content.innerHTML=`
-   <p class="profile-note">
-    ${
-     currentData
-      ? 'This player is not in the available regular-season data.'
-      : 'Waiting for player data. If statistics fail to load, close this profile and check the dashboard.'
-    }
-   </p>
-  `;
+  $('profile-title')
+   .textContent=
+    'Player profile';
+
+  $('profile-content')
+   .innerHTML=`
+    <p class="profile-empty">
+     Player statistics are unavailable.
+    </p>
+   `;
+
   return;
  }
 
- $('profile-title').textContent=p.name||'Player profile';
+ $('profile-title')
+  .textContent=
+   p.name||'Player';
 
- const selected=profileSource(route.g,profilePeriod)
-  .find(x=>profileKey(x)===route.id);
+ const g=
+  route.g;
 
- const weekly=profileSource(route.g,'week')
-  .find(x=>profileKey(x)===route.id);
-
- const keys=route.g==='goalie'
-  ? ['gp','gs','w','sv','ga','svPct','gaa','so','otl']
-  : [
-     'gp','g','a','plusMinus','sog','hit','blk','ppp',
-     'fow','pim','shg','sha','gwg','hat'
+ const keys=
+  g==='goalie'
+   ?[
+     'gp','gs','w','sv',
+     'ga','svPct','gaa',
+     'so','otl'
+    ]
+   :[
+     'gp','g','a',
+     'plusMinus',
+     'sog','hit','blk',
+     'ppp','fow','pim',
+     'gwg'
     ];
 
- const periodLabels={
-  week:'Last 7 days',
-  month:'Last 30 days',
-  season:'Season'
- };
+ $('profile-content')
+  .innerHTML=`
 
- const scope=profilePeriod==='week'
-  ? currentData
-  : profilePeriod==='month'
-   ? currentData?.monthly
-   : currentData?.season;
+   ${basePlayerCell(p,g)}
 
- const dates=scope?.period_start&&scope?.period_end
-  ? `${scope.period_start} - ${scope.period_end}`
-  : '';
+   <p class="profile-note">
+    Current available regular-season statistics.
+   </p>
 
- const stamp=currentData?.live?.updated_at||currentData?.updated_at;
+   <div class="profile-points">
 
- const logs=currentData?.game_logs?.[profileListKey(route.g)]?.[route.id]?.games;
+    <span>
+     Fantasy points / your scoring
+    </span>
 
- const recent=Array.isArray(logs)
-  ? [...logs].sort((a,b)=>
-     String(b.date||'').localeCompare(String(a.date||''))||
-     num(b,'game_id')-num(a,'game_id')
-    ).slice(0,10)
-  : [];
+    <strong>
+     ${points(p,g).toFixed(2)}
+    </strong>
 
- const logKeys=route.g==='goalie'
-  ? ['w','sv','ga','svPct','gaa','so']
-  : ['g','a','sog','hit','blk','ppp','fow'];
-
- const gameTable=recent.length
-  ? `
-   <div class="tablewrap">
-    <table class="profile-game-table">
-     <thead>
-      <tr>
-       <th scope="col">DATE</th>
-       <th scope="col">OPP</th>
-       ${logKeys.map(k=>`
-        <th scope="col" title="${esc(LABELS[k])}">
-         ${k==='svPct'?'SV%':k.toUpperCase()}
-        </th>
-       `).join('')}
-       <th scope="col">TOI</th>
-       <th scope="col">FPTS</th>
-      </tr>
-     </thead>
-     <tbody>
-      ${recent.map(row=>`
-       <tr>
-        <td>${esc(row.date)}</td>
-        <td>
-         ${row.home_away==='home'?'vs':'@'}
-         ${esc(row.opponent||'-')}
-        </td>
-        ${logKeys.map(k=>`<td>${displayStat(row,k)}</td>`).join('')}
-        <td>${esc(row.toi||'-')}</td>
-        <td class="fpts">
-         ${points({...row,pos:row.pos||p.pos},route.g).toFixed(2)}
-        </td>
-       </tr>
-      `).join('')}
-     </tbody>
-    </table>
    </div>
-  `
-  : '<p class="profile-empty">Game logs are not available in the current data.</p>';
 
- content.innerHTML=`
-  <div class="profile-hero">
-   ${basePlayerCell(p,route.g)}
-   <div class="badges">
-    ${weekly?badgeHTML(weekly,route.g):''}
+   <div class="profile-stats">
+
+    ${
+     keys.map(k=>`
+      <div class="profile-stat">
+
+       <span>
+        ${esc(LABELS[k]||k)}
+       </span>
+
+       <strong>
+        ${displayStat(p,k)}
+       </strong>
+
+      </div>
+     `).join('')
+    }
+
    </div>
-  </div>
-
-  <p class="profile-note">
-   Player Watch badges reflect the seven-day window.
-  </p>
-
-  <div class="profile-periods" aria-label="Profile statistics period">
-   ${Object.entries(periodLabels).map(([key,label])=>`
-    <button
-     type="button"
-     data-profile-period="${key}"
-     aria-pressed="${profilePeriod===key}"
-    >${label}</button>
-   `).join('')}
-  </div>
-
-  <p class="profile-note">
-   ${esc(dates)}${dates?' / ':''}
-   ${
-    profilePeriod==='week'
-     ? 'Includes current live stats when available.'
-     : 'Completed regular-season games only.'
-   }
-  </p>
-
-  ${
-   selected
-    ? `
-     <div class="profile-points">
-      <span>Fantasy points / your scoring</span>
-      <strong>${points(selected,route.g).toFixed(2)}</strong>
-     </div>
-
-     <div class="profile-stats">
-      ${keys.map(k=>`
-       <div class="profile-stat">
-        <span>${esc(LABELS[k]||k)}</span>
-        <strong>${displayStat(selected,k)}</strong>
-       </div>
-      `).join('')}
-     </div>
-
-     ${
-      route.g==='skater'
-       ? `
-        <div class="profile-stat profile-total">
-         <span>Points (goals + assists)</span>
-         <strong>
-          ${
-           known(selected,'g')&&known(selected,'a')
-            ? num(selected,'g')+num(selected,'a')
-            : '-'
-          }
-         </strong>
-        </div>
-       `
-       : ''
-     }
-    `
-    : '<p class="profile-empty">No player statistics are available for this period.</p>'
-  }
-
-  <h3>Recent games</h3>
-  <p class="profile-note">
-   Last 10 completed games, independent of the selected period.
-  </p>
-
-  ${gameTable}
-
-  <p class="profile-note">
-   ${stamp?'Updated '+esc(new Date(stamp).toLocaleString()):''}
-  </p>
- `;
+  `;
 }
 
 function syncProfile(){
- const route=profileRoute();
+
+ const route=
+  profileRoute();
 
  if(route){
+
   renderProfile();
 
   if(!profileDialog.open){
    profileDialog.showModal();
-   document.body.classList.add('profile-open');
+   document.body
+    .classList
+    .add('profile-open');
   }
+
  }else if(profileDialog.open){
+
   profileDialog.close();
-  document.body.classList.remove('profile-open');
 
-  if(profileOpener?.isConnected){
-   profileOpener.focus();
-  }else{
-   document.querySelector('.brand')?.focus();
-  }
+  document.body
+   .classList
+   .remove('profile-open');
 
-  profileOpener=null;
  }
+
 }
 
-function closeProfile(){
- if(history.state?.iceWatchProfile){
-  history.back();
- }else{
-  const url=new URL(location.href);
-  url.hash='';
-  history.replaceState(null,'',url);
-  syncProfile();
- }
-}
+$('profile-close').onclick=()=>{
 
-document.addEventListener('click',e=>{
- const link=e.target.closest?.('.player-profile-link');
+ const url=
+  new URL(location.href);
 
- if(!link||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey){
-  return;
- }
+ url.hash='';
 
- e.preventDefault();
- profileOpener=link;
- profilePeriod='week';
-
- history.pushState(
-  {iceWatchProfile:true},
+ history.replaceState(
+  null,
   '',
-  link.getAttribute('href')
+  url
  );
 
  syncProfile();
-});
 
-profileDialog.addEventListener('click',e=>{
- const period=e.target.closest?.('[data-profile-period]');
-
- if(period){
-  profilePeriod=period.dataset.profilePeriod;
-  renderProfile();
-
-  profileDialog.querySelector(
-   `[data-profile-period="${profilePeriod}"]`
-  )?.focus();
- }
-
- if(e.target===profileDialog){
-  const rect=profileDialog.getBoundingClientRect();
-
-  if(
-   e.clientX<rect.left||
-   e.clientX>rect.right||
-   e.clientY<rect.top||
-   e.clientY>rect.bottom
-  ){
-   closeProfile();
-  }
- }
-});
-
-profileDialog.addEventListener('cancel',e=>{
- e.preventDefault();
- closeProfile();
-});
-
-$('profile-close').onclick=closeProfile;
-
-$('profile-copy').onclick=async()=>{
- const status=$('profile-copy-status');
-
- try{
-  await navigator.clipboard.writeText(location.href);
-  status.textContent='Profile link copied';
- }catch{
-  status.textContent=
-   'Copy the address from your browser to share this profile.';
- }
 };
 
-window.addEventListener('popstate',syncProfile);
-window.addEventListener('hashchange',syncProfile);
+$('profile-copy').onclick=async()=>{
 
-/* REFRESH ALL VIEWS */
+ try{
+
+  await navigator.clipboard
+   .writeText(location.href);
+
+  $('profile-copy-status')
+   .textContent=
+    'Profile link copied';
+
+ }catch{
+
+  $('profile-copy-status')
+   .textContent=
+    'Copy the browser address to share.';
+
+ }
+
+};
+
+window.addEventListener(
+ 'hashchange',
+ syncProfile
+);
+
+/* REFRESH */
 
 function refresh(){
+
  render('skater');
  render('goalie');
  renderLeaders();
  renderTargets();
  renderWatch();
 
- if(profileDialog.open)renderProfile();
+ if(profileDialog.open){
+  renderProfile();
+ }
+
 }
 
-/* APPLY DATA */
+/* DATA */
 
 function applyData(d){
+
  currentData=d;
 
- completedPlayers={
-  skater:Array.isArray(d.skaters)?d.skaters:[],
-  goalie:Array.isArray(d.goalies)?d.goalies:[]
- };
+ const completedSkaters=
+  Array.isArray(d.skaters)
+   ?d.skaters
+   :[];
 
- livePlayers={
-  skater:Array.isArray(d.live?.skaters)?d.live.skaters:[],
-  goalie:Array.isArray(d.live?.goalies)?d.live.goalies:[]
- };
+ const completedGoalies=
+  Array.isArray(d.goalies)
+   ?d.goalies
+   :[];
 
  players={
-  skater:mergePlayerLists(
-   completedPlayers.skater,
-   livePlayers.skater,
-   'skater'
-  ),
-  goalie:mergePlayerLists(
-   completedPlayers.goalie,
-   livePlayers.goalie,
-   'goalie'
-  )
+  skater:completedSkaters,
+  goalie:completedGoalies
  };
 
  monthlyPlayers={
-  skater:Array.isArray(d.monthly?.skaters)?d.monthly.skaters:[],
-  goalie:Array.isArray(d.monthly?.goalies)?d.monthly.goalies:[]
+  skater:
+   Array.isArray(d.monthly?.skaters)
+    ?d.monthly.skaters
+    :[],
+
+  goalie:
+   Array.isArray(d.monthly?.goalies)
+    ?d.monthly.goalies
+    :[]
  };
 
- $('period').textContent=d.period_start&&d.period_end
-  ? d.period_start+' - '+d.period_end
-  : 'Last 7 days';
+ $('period').textContent=
+  d.period_start&&d.period_end
+   ?`${d.period_start} - ${d.period_end}`
+   :'Last 7 days';
 
- const liveCount=Number(d.live?.games_count||0);
- const updatedAt=d.live?.updated_at||d.updated_at;
-
- $('live-pill').hidden=!liveCount;
- $('live-pill').textContent=liveCount?`LIVE ${liveCount}`:'LIVE';
-
- $('updated').textContent=updatedAt
-  ? 'Updated '+new Date(updatedAt).toLocaleString()
-  : 'Update time unavailable';
-
- $('banner').classList.remove('error');
-
- if(liveCount){
-  $('banner').textContent=
-   `${liveCount} regular-season game${liveCount===1?' is':'s are'} live. `+
-   'Current boxscore stats are included and the page checks for updates every 60 seconds.';
- }else if(
-  completedPlayers.skater.length||
-  completedPlayers.goalie.length
- ){
-  $('banner').textContent=
-   'Daily update loaded. No games are live right now. '+
-   'Player Watch is based on sustained recent NHL performance.';
- }else{
-  $('banner').textContent=
-   'No confirmed regular-season games in this period. Preseason is excluded.';
- }
-
- refresh();
-}
-
-/* LOAD DATA.JSON */
-
-async function load({silent=false}={}){
- try{
-  const response=await fetch(
-   './data.json?t='+Date.now(),
-   {cache:'no-store'}
+ const liveCount=
+  Number(
+   d.live?.games_count||0
   );
 
-  if(!response.ok){
-   throw Error('HTTP '+response.status);
-  }
+ $('live-pill').hidden=
+  !liveCount;
 
-  const data=await response.json();
+ $('updated').textContent=
+  d.updated_at
+   ?'Updated '+
+    new Date(
+     d.updated_at
+    ).toLocaleString()
+   :'Update time unavailable';
 
-  const stamp=JSON.stringify([
-   data.updated_at||'',
-   data.live?.updated_at||''
-  ]);
+ $('banner')
+  .classList
+  .remove('error');
 
-  if(!lastDataStamp||stamp!==lastDataStamp){
-   lastDataStamp=stamp;
-   applyData(data);
-  }
- }catch(error){
-  if(!silent){
-   $('banner').classList.add('error');
-   $('banner').textContent=
-    'Could not load statistics ('+error.message+').';
-   $('updated').textContent='Statistics unavailable';
-   refresh();
-  }
- }
+ $('banner').textContent=
+  liveCount
+   ?`${liveCount} regular-season game${liveCount===1?' is':'s are'} live.`
+   :'Daily update loaded.';
+
+ refresh();
+
 }
 
-/* NEAR-LIVE REFRESH */
+/* LOAD */
 
-function startNearLiveRefresh(){
- if(refreshTimer)clearInterval(refreshTimer);
+async function load(){
 
- refreshTimer=setInterval(
-  ()=>load({silent:true}),
-  60000
- );
+ try{
 
- document.addEventListener('visibilitychange',()=>{
-  if(document.visibilityState==='visible'){
-   load({silent:true});
+  const response=
+   await fetch(
+    './data.json?t='+Date.now(),
+    {cache:'no-store'}
+   );
+
+  if(!response.ok){
+   throw Error(
+    'HTTP '+response.status
+   );
   }
- });
+
+  const data=
+   await response.json();
+
+  applyData(data);
+
+ }catch(error){
+
+  $('banner')
+   .classList
+   .add('error');
+
+  $('banner').textContent=
+   'Could not load statistics ('+
+   error.message+
+   ').';
+
+ }
+
 }
 
 /* CONTROLS */
 
-for(const g of ['skater','goalie']){
+for(const g of [
+ 'skater',
+ 'goalie'
+]){
+
  fields(g);
  setupTable(g);
+
 }
 
-$('settings').addEventListener('input',e=>{
- const input=e.target;
+$('settings').addEventListener(
+ 'input',
+ e=>{
 
- if(
-  !input.matches('input[data-group]')||
-  !Number.isFinite(input.valueAsNumber)
- ){
-  return;
+  const input=
+   e.target;
+
+  if(
+   !input.matches(
+    'input[data-group]'
+   )
+  ){
+   return;
+  }
+
+  if(
+   !Number.isFinite(
+    input.valueAsNumber
+   )
+  ){
+   return;
+  }
+
+  scoring[
+   input.dataset.group
+  ][
+   input.dataset.key
+  ]=
+   input.valueAsNumber;
+
+  refresh();
+
  }
-
- scoring[input.dataset.group][input.dataset.key]=input.valueAsNumber;
- input.classList.toggle('active',input.valueAsNumber!==0);
-
- try{
-  localStorage.setItem(KEY,JSON.stringify(scoring));
-  $('saved').textContent='Saved on this device';
- }catch{}
-
- refresh();
-});
+);
 
 $('reset').onclick=()=>{
- scoring=JSON.parse(JSON.stringify(DEFAULTS));
+
+ scoring=
+  JSON.parse(
+   JSON.stringify(
+    DEFAULTS
+   )
+  );
 
  fields('skater');
  fields('goalie');
 
- try{
-  localStorage.setItem(KEY,JSON.stringify(scoring));
- }catch{}
-
  refresh();
+
 };
 
 $('edit-scoring').onclick=()=>{
- $('settings').open=!$('settings').open;
+
+ $('settings').open=
+  !$('settings').open;
+
 };
 
-document.querySelectorAll('[data-period]').forEach(button=>{
- button.onclick=()=>{
-  leaderPeriod=button.dataset.period;
+document
+ .querySelectorAll(
+  '[data-period]'
+ )
+ .forEach(button=>{
 
-  document.querySelectorAll('[data-period]').forEach(other=>{
-   other.setAttribute('aria-pressed',String(other===button));
-  });
+  button.onclick=()=>{
 
-  renderLeaders();
- };
-});
+   leaderPeriod=
+    button.dataset.period;
 
-document.querySelectorAll('[data-view]').forEach(button=>{
- button.onclick=()=>{
-  document.querySelectorAll('[data-view]').forEach(other=>{
-   other.setAttribute('aria-pressed',String(other===button));
-  });
+   document
+    .querySelectorAll(
+     '[data-period]'
+    )
+    .forEach(other=>{
 
-  for(const group of ['skater','goalie','leaders','targets']){
-   $(group+'-board').hidden=
-    button.dataset.view!=='all'&&
-    button.dataset.view!==group;
-  }
- };
-});
+     other.setAttribute(
+      'aria-pressed',
+      String(
+       other===button
+      )
+     );
+
+    });
+
+   renderLeaders();
+
+  };
+
+ });
+
+document
+ .querySelectorAll(
+  '[data-view]'
+ )
+ .forEach(button=>{
+
+  button.onclick=()=>{
+
+   document
+    .querySelectorAll(
+     '[data-view]'
+    )
+    .forEach(other=>{
+
+     other.setAttribute(
+      'aria-pressed',
+      String(
+       other===button
+      )
+     );
+
+    });
+
+   for(const group of [
+    'skater',
+    'goalie',
+    'leaders',
+    'targets'
+   ]){
+
+    $(group+'-board').hidden=
+     button.dataset.view!=='all'&&
+     button.dataset.view!==group;
+
+   }
+
+  };
+
+ });
 
 /* START */
 
 syncProfile();
 refresh();
 load();
-startNearLiveRefresh();
+
+refreshTimer=
+ setInterval(
+  load,
+  60000
+ );
+
 </script>
+
 </body>
 </html>
