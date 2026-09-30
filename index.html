@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- Ice Watchers: UI text uses ASCII/HTML-safe characters to prevent mobile encoding artifacts. -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Ice Watchers | Fantasy Hockey Stats</title>
 
@@ -95,6 +94,11 @@ tbody tr:hover td{background:#f4faff}
 .report-controls button[aria-pressed=true]{background:var(--ink);color:white}
 .stat-summary{white-space:normal;min-width:190px;text-align:left;line-height:1.8}
 
+.target-score{font-weight:800;font-size:16px;color:var(--blue);background:#f0f9fd;text-align:center;min-width:100px}
+.target-reason{white-space:normal;min-width:220px;max-width:280px;text-align:left;line-height:1.55;color:#40515f}
+.target-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+.target-tag{display:inline-flex;align-items:center;padding:4px 7px;border-radius:999px;font-size:8px;font-weight:800;letter-spacing:.3px;background:var(--pale);border:1px solid #c9e6f1;color:#075879}
+
 .empty-row td{height:150px;text-align:center;white-space:normal}
 .empty-row strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:24px;text-transform:uppercase;margin-bottom:8px}
 
@@ -122,6 +126,7 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 
 #skater-table{min-width:1220px}
 #goalie-table{min-width:980px}
+#targets-table{min-width:1050px}
 #skater-table th,#goalie-table th{white-space:nowrap}
 #skater-table th button,#goalie-table th button{cursor:pointer}
 #skater-table th[aria-sort]:not([aria-sort=none]),#goalie-table th[aria-sort]:not([aria-sort=none]){background:#e1f3fa;color:#075879}
@@ -297,11 +302,11 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
 
 <div class="board-title">
 <h2>Potential waiver targets</h2>
-<span>CHECK YOUR LEAGUE</span>
+<span>ICE WATCHERS TARGET SCORE</span>
 </div>
 
 <p class="report-note">
-Potential targets are deeper performers outside the top 30 skaters and top 5 goalies. Ownership is not checked.
+Ice Watchers searches below the obvious fantasy leaders: skaters ranked #31+ and goalies #6+. Target Score is independent of your league scoring; ownership is not checked.
 </p>
 
 <div class="tablewrap">
@@ -311,9 +316,10 @@ Potential targets are deeper performers outside the top 30 skaters and top 5 goa
 <thead>
 <tr>
 <th class="player-col">PLAYER</th>
-<th>WEEKLY ROLE RANK</th>
-<th class="stat-summary">PERIOD STATS</th>
-<th>FPTS</th>
+<th>WEEKLY RANK</th>
+<th class="stat-summary">RECENT STATS</th>
+<th class="target-reason">WHY HE'S HERE</th>
+<th>TARGET SCORE</th>
 </tr>
 </thead>
 
@@ -367,45 +373,19 @@ NHL statistics &nearr;
 <script>
 'use strict';
 
-/* =========================================================
-   SETTINGS
-========================================================= */
-
 const DEFAULTS={
-
  skater:{
-  g:1,
-  a:1,
-  pim:0,
-  ppp:0,
-  shg:0,
-  sha:0,
-  gwg:0,
-  hat:0,
-  sog:0,
-  hit:0,
-  blk:0,
-  fow:0,
-  def:0
+  g:1,a:1,pim:0,ppp:0,shg:0,sha:0,gwg:0,hat:0,sog:0,hit:0,blk:0,fow:0,def:0
  },
-
  goalie:{
-  gs:0,
-  w:1,
-  ga:0,
-  sv:0,
-  so:0,
-  otl:0
+  gs:0,w:1,ga:0,sv:0,so:0,otl:0
  }
-
 };
 
 const LABELS={
-
  rank:'Rank',
  name:'Player',
  gp:'Games played',
-
  g:'Goals',
  a:'Assists',
  plusMinus:'Plus/minus',
@@ -420,7 +400,6 @@ const LABELS={
  blk:'Blocked shots',
  fow:'Faceoff wins',
  def:'Defense bonus',
-
  gs:'Games started',
  w:'Wins',
  ga:'Goals against',
@@ -429,48 +408,16 @@ const LABELS={
  gaa:'Goals-against average',
  so:'Shutouts',
  otl:'Overtime losses',
-
  fpts:'Fantasy points'
-
 };
 
 const COLS={
-
  skater:[
-  'rank',
-  'name',
-  'gp',
-  'g',
-  'a',
-  'plusMinus',
-  'sog',
-  'hit',
-  'blk',
-  'ppp',
-  'fow',
-  'pim',
-  'shg',
-  'sha',
-  'gwg',
-  'hat',
-  'fpts'
+  'rank','name','gp','g','a','plusMinus','sog','hit','blk','ppp','fow','pim','shg','sha','gwg','hat','fpts'
  ],
-
  goalie:[
-  'rank',
-  'name',
-  'gp',
-  'gs',
-  'w',
-  'ga',
-  'sv',
-  'svPct',
-  'gaa',
-  'so',
-  'otl',
-  'fpts'
+  'rank','name','gp','gs','w','ga','sv','svPct','gaa','so','otl','fpts'
  ]
-
 };
 
 const $=id=>document.getElementById(id);
@@ -501,79 +448,33 @@ const esc=v=>
   }[c])
  );
 
-let scoring=
- JSON.parse(
-  JSON.stringify(DEFAULTS)
- );
+let scoring=JSON.parse(JSON.stringify(DEFAULTS));
 
-let players={
- skater:[],
- goalie:[]
-};
-
-let completedPlayers={
- skater:[],
- goalie:[]
-};
-
-let livePlayers={
- skater:[],
- goalie:[]
-};
-
-let monthlyPlayers={
- skater:[],
- goalie:[]
-};
+let players={skater:[],goalie:[]};
+let completedPlayers={skater:[],goalie:[]};
+let livePlayers={skater:[],goalie:[]};
+let monthlyPlayers={skater:[],goalie:[]};
 
 let leaderPeriod='week';
-
 let lastDataStamp='';
-
 let refreshTimer=null;
-
 let currentData=null;
 
 const ranking={
-
- skater:{
-  key:'fpts',
-  dir:-1
- },
-
- goalie:{
-  key:'fpts',
-  dir:-1
- }
-
+ skater:{key:'fpts',dir:-1},
+ goalie:{key:'fpts',dir:-1}
 };
 
 try{
-
- const x=
-  JSON.parse(
-   localStorage.getItem(KEY)
-  );
+ const x=JSON.parse(localStorage.getItem(KEY));
 
  for(const g in scoring){
-
   for(const k in scoring[g]){
-
-   if(
-    Number.isFinite(
-     x?.[g]?.[k]
-    )
-   ){
-
-    scoring[g][k]=
-     x[g][k];
-
+   if(Number.isFinite(x?.[g]?.[k])){
+    scoring[g][k]=x[g][k];
    }
-
   }
-
  }
-
 }catch{}
 
 /* =========================================================
@@ -590,9 +491,7 @@ function fields(g){
 
    <label class="field">
 
-    <span>
-     ${LABELS[k]}
-    </span>
+    <span>${LABELS[k]}</span>
 
     <input
      type="number"
@@ -617,9 +516,7 @@ function fields(g){
 
 function points(p,g){
 
- return Object.entries(
-  scoring[g]
- )
+ return Object.entries(scoring[g])
 
  .reduce(
   (t,[k,v])=>
@@ -629,15 +526,10 @@ function points(p,g){
     k==='def' &&
     String(p.pos).toUpperCase()==='D'
 
-     ? (
-        num(p,'g')+
-        num(p,'a')
-       )*v
+     ? (num(p,'g')+num(p,'a'))*v
 
      : k==='def'
-
       ? 0
-
       : num(p,k)*v
 
    ),
@@ -650,218 +542,73 @@ function points(p,g){
 
 /* =========================================================
    PLAYER WATCH BADGES
-
-   IMPORTANT:
-   Player Watch is based on CONSISTENCY,
-   not one-game explosions.
-
-   Minimum sample = 2 games.
 ========================================================= */
 
 function badges(p,g){
 
- const gp=
-  num(p,'gp');
-
+ const gp=num(p,'gp');
  const out=[];
 
- /* -------------------------
-    SKATERS
- ------------------------- */
-
  if(g==='skater'){
-
-  /*
-   One game is NOT enough to trigger
-   Player Watch.
-  */
 
   if(gp<2){
    return out;
   }
 
-  const totalPoints=
-   num(p,'g')+
-   num(p,'a');
+  const totalPoints=num(p,'g')+num(p,'a');
+  const pointsPerGame=totalPoints/gp;
+  const shotsPerGame=num(p,'sog')/gp;
+  const physicalPerGame=(num(p,'hit')+num(p,'blk'))/gp;
+  const pppPerGame=num(p,'ppp')/gp;
 
-  const pointsPerGame=
-   totalPoints/gp;
-
-  const shotsPerGame=
-   num(p,'sog')/gp;
-
-  const physicalPerGame=
-   (
-    num(p,'hit')+
-    num(p,'blk')
-   )/gp;
-
-  const pppPerGame=
-   num(p,'ppp')/gp;
-
-  /*
-   HOT
-
-   Sustained high-end scoring.
-
-   1.5+ points/game.
-  */
-
-  if(
-   pointsPerGame>=1.5
-  ){
-
-   out.push([
-    'HOT',
-    'hot'
-   ]);
-
+  if(pointsPerGame>=1.5){
+   out.push(['HOT','hot']);
   }
 
-  /*
-   SHOT MACHINE
-
-   Sustained 4+ shots/game.
-  */
-
-  if(
-   shotsPerGame>=4
-  ){
-
-   out.push([
-    'SHOT MACHINE',
-    'shots'
-   ]);
-
+  if(shotsPerGame>=4){
+   out.push(['SHOT MACHINE','shots']);
   }
 
-  /*
-   PHYSICAL FORCE
-
-   Sustained 5+ combined
-   hits + blocks per game.
-  */
-
-  if(
-   physicalPerGame>=5
-  ){
-
-   out.push([
-    'PHYSICAL FORCE',
-    'physical'
-   ]);
-
+  if(physicalPerGame>=5){
+   out.push(['PHYSICAL FORCE','physical']);
   }
-
-  /*
-   POWER PLAY
-
-   Requires:
-   2+ total PPP
-   AND
-   0.5+ PPP/game.
-
-   This keeps the badge focused
-   on current PP production.
-  */
 
   if(
    num(p,'ppp')>=2 &&
    pppPerGame>=0.5
   ){
-
-   out.push([
-    'POWER PLAY',
-    'power'
-   ]);
-
+   out.push(['POWER PLAY','power']);
   }
-
-  /*
-   BREAKOUT WATCH
-
-   Requires both:
-
-   1+ point/game
-   3.5+ shots/game
-
-   This identifies production that
-   is supported by shot generation.
-  */
 
   if(
    pointsPerGame>=1 &&
    shotsPerGame>=3.5
   ){
-
-   out.push([
-    'BREAKOUT WATCH',
-    'breakout'
-   ]);
-
+   out.push(['BREAKOUT WATCH','breakout']);
   }
 
- /* -------------------------
-    GOALIES
- ------------------------- */
-
  }else{
-
-  /*
-   One appearance is NOT enough.
-  */
 
   if(gp<2){
    return out;
   }
 
-  const savesPerGame=
-   num(p,'sv')/gp;
-
-  /*
-   HOT GOALIE
-
-   Requires:
-   .925+ SV%
-   25+ saves/appearance
-   2+ appearances
-  */
+  const savesPerGame=num(p,'sv')/gp;
 
   if(
    known(p,'svPct') &&
    num(p,'svPct')>=.925 &&
    savesPerGame>=25
   ){
-
-   out.push([
-    'HOT GOALIE',
-    'goalie'
-   ]);
-
+   out.push(['HOT GOALIE','goalie']);
   }
-
-  /*
-   SHUTOUT FORM
-
-   A single shutout does not
-   automatically qualify a goalie.
-
-   The goalie must also have:
-   2+ appearances
-   .920+ overall SV%
-  */
 
   if(
    num(p,'so')>=1 &&
    known(p,'svPct') &&
    num(p,'svPct')>=.920
   ){
-
-   out.push([
-    'SHUTOUT FORM',
-    'shutout'
-   ]);
-
+   out.push(['SHUTOUT FORM','shutout']);
   }
 
  }
@@ -870,16 +617,9 @@ function badges(p,g){
 
 }
 
-/* =========================================================
-   BADGE HTML
-========================================================= */
-
 function badgeHTML(p,g){
 
- const b=
-  badges(p,g);
-
- return b
+ return badges(p,g)
 
   .map(
    x=>
@@ -896,27 +636,13 @@ function badgeHTML(p,g){
 
 function playerCell(p,g){
 
- const id=
-  String(
-   p.player_id??''
-  );
+ const id=String(p.player_id??'');
 
  const initials=
-  String(
-   p.name||'?'
-  )
-
+  String(p.name||'?')
   .split(/\s+/)
-
-  .map(
-   x=>x[0]
-  )
-
-  .slice(
-   0,
-   2
-  )
-
+  .map(x=>x[0])
+  .slice(0,2)
   .join('');
 
  const photo=
@@ -936,30 +662,19 @@ function playerCell(p,g){
   <div class="player">
 
    <div class="portrait">
-
     ${esc(initials)}
-
     ${photo}
-
    </div>
 
    <div>
 
     <div class="player-name">
-
-     ${esc(
-      p.name||
-      'Unknown'
-     )}
-
+     ${esc(p.name||'Unknown')}
     </div>
 
     <div class="player-meta">
 
-     ${esc(
-      p.team||
-      '-'
-     )}
+     ${esc(p.team||'-')}
 
      |
 
@@ -971,9 +686,7 @@ function playerCell(p,g){
 
      ${
       p.live
-
        ? ' | <span class="live-dot">LIVE</span>'
-
        : ''
      }
 
@@ -993,21 +706,15 @@ function playerCell(p,g){
 
 function rankedTopTen(g){
 
- const key=
-  ranking[g].key;
-
- const dir=
-  ranking[g].dir;
+ const key=ranking[g].key;
+ const dir=ranking[g].dir;
 
  return players[g]
 
   .map(
    p=>({
     ...p,
-    fpts:points(
-     p,
-     g
-    )
+    fpts:points(p,g)
    })
   )
 
@@ -1021,19 +728,11 @@ function rankedTopTen(g){
   .sort(
    (a,b)=>{
 
-    if(
-     key==='name'
-    ){
+    if(key==='name'){
 
      return dir*
-      String(
-       a.name||''
-      )
-      .localeCompare(
-       String(
-        b.name||''
-       )
-      );
+      String(a.name||'')
+      .localeCompare(String(b.name||''));
 
     }
 
@@ -1049,23 +748,14 @@ function rankedTopTen(g){
 
     return (
      dir*(av-bv) ||
-     String(
-      a.name||''
-     )
-     .localeCompare(
-      String(
-       b.name||''
-      )
-     )
+     String(a.name||'')
+     .localeCompare(String(b.name||''))
     );
 
    }
   )
 
-  .slice(
-   0,
-   10
-  )
+  .slice(0,10)
 
   .map(
    (p,i)=>({
@@ -1082,8 +772,7 @@ function rankedTopTen(g){
 
 function setupTable(g){
 
- const table=
-  $(g+'-table');
+ const table=$(g+'-table');
 
  table
   .querySelector('thead')
@@ -1116,16 +805,12 @@ function setupTable(g){
      ${
       k==='rank'
        ? '#'
-
        : k==='name'
         ? 'PLAYER'
-
        : k==='plusMinus'
         ? '+/-'
-
        : k==='svPct'
         ? 'SV%'
-
        : k.toUpperCase()
      }
 
@@ -1140,10 +825,7 @@ function setupTable(g){
   +'</tr>';
 
  table
-  .querySelectorAll(
-   'th[data-key]'
-  )
-
+  .querySelectorAll('th[data-key]')
   .forEach(
    th=>
 
@@ -1154,12 +836,9 @@ function setupTable(g){
       'click',
       ()=>{
 
-       const k=
-        th.dataset.key;
+       const k=th.dataset.key;
 
-       if(
-        k==='rank'
-       ){
+       if(k==='rank'){
         return;
        }
 
@@ -1169,25 +848,20 @@ function setupTable(g){
         k==='otl' ||
         k==='pim';
 
-       if(
-        ranking[g].key===k
-       ){
+       if(ranking[g].key===k){
 
         ranking[g].dir*=-1;
 
        }else{
 
         ranking[g]={
-
          key:k,
-
          dir:
           k==='name'
            ? 1
            : lowerBetter
             ? 1
             : -1
-
         };
 
        }
@@ -1207,38 +881,23 @@ function setupTable(g){
 
 function displayStat(p,k){
 
- if(
-  k==='fpts'
- ){
+ if(k==='fpts'){
   return p.fpts.toFixed(2);
  }
 
- if(
-  !known(p,k)
- ){
+ if(!known(p,k)){
   return '-';
  }
 
- if(
-  k==='svPct'
- ){
-  return (
-   num(p,k)*100
-  ).toFixed(1)+'%';
+ if(k==='svPct'){
+  return (num(p,k)*100).toFixed(1)+'%';
  }
 
- if(
-  k==='gaa'
- ){
-  return num(
-   p,
-   k
-  ).toFixed(2);
+ if(k==='gaa'){
+  return num(p,k).toFixed(2);
  }
 
- return esc(
-  p[k]
- );
+ return esc(p[k]);
 
 }
 
@@ -1248,20 +907,12 @@ function displayStat(p,k){
 
 function render(g){
 
- const rows=
-  rankedTopTen(g);
-
- const t=
-  $(g+'-table');
-
- const active=
-  ranking[g];
+ const rows=rankedTopTen(g);
+ const t=$(g+'-table');
+ const active=ranking[g];
 
  t
-  .querySelectorAll(
-   'th[data-key]'
-  )
-
+  .querySelectorAll('th[data-key]')
   .forEach(
    th=>
 
@@ -1299,23 +950,18 @@ function render(g){
          <td class="${
           k==='name'
            ? 'player-col'
-
           : k==='fpts'
            ? 'fpts'
-
           : k==='rank'
            ? 'rank'
-
           : ''
          }">
 
           ${
            k==='name'
             ? playerCell(p,g)
-
            : k==='rank'
             ? p.rank
-
            : displayStat(p,k)
           }
 
@@ -1354,9 +1000,7 @@ function render(g){
  const foot=
   t
    .closest('.board')
-   ?.querySelector(
-    '.board-foot'
-   );
+   ?.querySelector('.board-foot');
 
  if(foot){
 
@@ -1391,75 +1035,32 @@ function render(g){
 ========================================================= */
 
 const SKATER_ADD=[
- 'gp',
- 'g',
- 'a',
- 'pim',
- 'ppp',
- 'shg',
- 'sha',
- 'gwg',
- 'hat',
- 'sog',
- 'hit',
- 'blk',
- 'fow',
- 'plusMinus',
- 'seconds'
+ 'gp','g','a','pim','ppp','shg','sha','gwg','hat','sog','hit','blk','fow','plusMinus','seconds'
 ];
 
 const GOALIE_ADD=[
- 'gp',
- 'gs',
- 'w',
- 'ga',
- 'sv',
- 'so',
- 'otl',
- 'sa',
- 'seconds'
+ 'gp','gs','w','ga','sv','so','otl','sa','seconds'
 ];
 
-function mergePlayerLists(
- completed,
- live,
- g
-){
+function mergePlayerLists(completed,live,g){
 
- const map=
-  new Map();
+ const map=new Map();
 
- for(
-  const p of completed||[]
- ){
+ for(const p of completed||[]){
 
   map.set(
-   String(
-    p.player_id??
-    p.name
-   ),
-
+   String(p.player_id??p.name),
    {...p}
   );
 
  }
 
- for(
-  const p of live||[]
- ){
+ for(const p of live||[]){
 
-  const id=
-   String(
-    p.player_id??
-    p.name
-   );
+  const id=String(p.player_id??p.name);
+  const old=map.get(id);
 
-  const old=
-   map.get(id);
-
-  if(
-   !old
-  ){
+  if(!old){
 
    map.set(
     id,
@@ -1473,17 +1074,14 @@ function mergePlayerLists(
 
   }
 
-  const merged=
-   {...old};
+  const merged={...old};
 
   const keys=
    g==='skater'
     ? SKATER_ADD
     : GOALIE_ADD;
 
-  for(
-   const k of keys
-  ){
+  for(const k of keys){
 
    if(
     known(old,k) ||
@@ -1507,31 +1105,15 @@ function mergePlayerLists(
 
   }
 
-  merged.name=
-   p.name||
-   old.name;
+  merged.name=p.name||old.name;
+  merged.team=p.team||old.team;
+  merged.player_id=p.player_id??old.player_id;
 
-  merged.team=
-   p.team||
-   old.team;
-
-  merged.player_id=
-   p.player_id??
-   old.player_id;
-
-  if(
-   g==='skater'
-  ){
-
-   merged.pos=
-    p.pos||
-    old.pos;
-
+  if(g==='skater'){
+   merged.pos=p.pos||old.pos;
   }
 
-  if(
-   g==='goalie'
-  ){
+  if(g==='goalie'){
 
    const sv=
     known(merged,'sv')
@@ -1557,34 +1139,25 @@ function mergePlayerLists(
     sv!==null &&
     sa!==null &&
     sa>0
-
      ? sv/sa
-
      : null;
 
    merged.gaa=
     ga!==null &&
     sec!==null &&
     sec>0
-
      ? ga*3600/sec
-
      : null;
 
   }
 
   merged.live=true;
 
-  map.set(
-   id,
-   merged
-  );
+  map.set(id,merged);
 
  }
 
- return [
-  ...map.values()
- ];
+ return [...map.values()];
 
 }
 
@@ -1592,20 +1165,12 @@ function mergePlayerLists(
    ALL-STAT RANKINGS
 ========================================================= */
 
-function percentileRanks(
- values
-){
+function percentileRanks(values){
 
  const sorted=
   [...values]
-
-   .filter(
-    Number.isFinite
-   )
-
-   .sort(
-    (a,b)=>a-b
-   );
+   .filter(Number.isFinite)
+   .sort((a,b)=>a-b);
 
  return v=>{
 
@@ -1618,22 +1183,15 @@ function percentileRanks(
 
   let n=0;
 
-  for(
-   const x of sorted
-  ){
+  for(const x of sorted){
 
-   if(
-    x<=v
-   ){
+   if(x<=v){
     n++;
    }
 
   }
 
-  return (
-   n/
-   sorted.length
-  );
+  return n/sorted.length;
 
  };
 
@@ -1643,13 +1201,10 @@ function percentileRanks(
    WEEK / MONTH ALL-STAT SCORE
 ========================================================= */
 
-function allStatRows(
- source
-){
+function allStatRows(source){
 
  const sk=
   (source.skater||[])
-
   .map(
    p=>({
     ...p,
@@ -1659,7 +1214,6 @@ function allStatRows(
 
  const go=
   (source.goalie||[])
-
   .map(
    p=>({
     ...p,
@@ -1668,20 +1222,11 @@ function allStatRows(
   );
 
  const skKeys=[
-  'g',
-  'a',
-  'sog',
-  'hit',
-  'blk',
-  'ppp',
-  'fow'
+  'g','a','sog','hit','blk','ppp','fow'
  ];
 
  const goKeys=[
-  'w',
-  'sv',
-  'svPct',
-  'so'
+  'w','sv','svPct','so'
  ];
 
  const scoreGroup=
@@ -1689,9 +1234,7 @@ function allStatRows(
 
    const rankers={};
 
-   for(
-    const k of keys
-   ){
+   for(const k of keys){
 
     rankers[k]=
      percentileRanks(
@@ -1721,9 +1264,7 @@ function allStatRows(
        ? available.reduce(
           (s,k)=>
            s+
-           rankers[k](
-            num(p,k)
-           ),
+           rankers[k](num(p,k)),
           0
          )
          /
@@ -1745,15 +1286,8 @@ function allStatRows(
 
  return [
 
-  ...scoreGroup(
-   sk,
-   skKeys
-  ),
-
-  ...scoreGroup(
-   go,
-   goKeys
-  )
+  ...scoreGroup(sk,skKeys),
+  ...scoreGroup(go,goKeys)
 
  ]
 
@@ -1778,10 +1312,7 @@ function allStatRows(
    )
  )
 
- .slice(
-  0,
-  10
- );
+ .slice(0,10);
 
 }
 
@@ -1789,14 +1320,9 @@ function allStatRows(
    STAT SUMMARY
 ========================================================= */
 
-function statSummary(
- p,
- g
-){
+function statSummary(p,g){
 
- if(
-  g==='goalie'
- ){
+ if(g==='goalie'){
 
   return (
 
@@ -1878,10 +1404,7 @@ function renderLeaders(){
    ? monthlyPlayers
    : players;
 
- const rows=
-  allStatRows(
-   source
-  );
+ const rows=allStatRows(source);
 
  $('leaders-title').textContent=
 
@@ -1963,10 +1486,429 @@ function renderLeaders(){
 }
 
 /* =========================================================
+   ICE WATCHERS TARGET SCORE
+========================================================= */
+
+function clamp(v,min,max){
+ return Math.min(max,Math.max(min,v));
+}
+
+function rateScore(value,low,high){
+
+ if(
+  !Number.isFinite(value) ||
+  high<=low
+ ){
+  return 0;
+ }
+
+ return clamp(
+  (value-low)/(high-low),
+  0,
+  1
+ );
+
+}
+
+function skaterTargetScore(p){
+
+ const gp=Math.max(1,num(p,'gp'));
+
+ const pointsPerGame=
+  (
+   num(p,'g')+
+   num(p,'a')
+  )/gp;
+
+ const shotsPerGame=
+  num(p,'sog')/gp;
+
+ const pppPerGame=
+  num(p,'ppp')/gp;
+
+ const physicalPerGame=
+  (
+   num(p,'hit')+
+   num(p,'blk')
+  )/gp;
+
+ const fowPerGame=
+  num(p,'fow')/gp;
+
+ const goalsPerGame=
+  num(p,'g')/gp;
+
+ let score=
+
+  rateScore(
+   pointsPerGame,
+   .35,
+   1.35
+  )*30
+
+  +
+
+  rateScore(
+   shotsPerGame,
+   1.5,
+   4.5
+  )*22
+
+  +
+
+  rateScore(
+   pppPerGame,
+   0,
+   .75
+  )*14
+
+  +
+
+  rateScore(
+   physicalPerGame,
+   1,
+   6
+  )*14
+
+  +
+
+  rateScore(
+   fowPerGame,
+   0,
+   8
+  )*4
+
+  +
+
+  rateScore(
+   goalsPerGame,
+   .1,
+   .75
+  )*8;
+
+ score+=
+  gp>=4
+   ? 8
+   : gp===3
+    ? 6
+    : gp===2
+     ? 4
+     : 1;
+
+ if(gp<2){
+  score=Math.min(score,49);
+ }
+
+ return Math.round(
+  clamp(score,0,100)
+ );
+
+}
+
+function goalieTargetScore(p){
+
+ const gp=Math.max(1,num(p,'gp'));
+
+ const savePct=
+  known(p,'svPct')
+   ? num(p,'svPct')
+   : 0;
+
+ const savesPerGame=
+  num(p,'sv')/gp;
+
+ const winsPerGame=
+  num(p,'w')/gp;
+
+ const startsPerGame=
+  num(p,'gs')/gp;
+
+ let score=
+
+  rateScore(
+   savePct,
+   .890,
+   .940
+  )*40
+
+  +
+
+  rateScore(
+   savesPerGame,
+   18,
+   35
+  )*25
+
+  +
+
+  rateScore(
+   winsPerGame,
+   0,
+   .8
+  )*17
+
+  +
+
+  rateScore(
+   startsPerGame,
+   .5,
+   1
+  )*8
+
+  +
+
+  rateScore(
+   num(p,'so'),
+   0,
+   1
+  )*5;
+
+ score+=
+  gp>=4
+   ? 5
+   : gp===3
+    ? 4
+    : gp===2
+     ? 3
+     : 1;
+
+ if(gp<2){
+  score=Math.min(score,49);
+ }
+
+ return Math.round(
+  clamp(score,0,100)
+ );
+
+}
+
+function targetInfo(p){
+
+ const gp=Math.max(1,num(p,'gp'));
+ const tags=[];
+ const reasons=[];
+
+ if(p._g==='skater'){
+
+  const pointsPerGame=
+   (
+    num(p,'g')+
+    num(p,'a')
+   )/gp;
+
+  const shotsPerGame=
+   num(p,'sog')/gp;
+
+  const pppPerGame=
+   num(p,'ppp')/gp;
+
+  const physicalPerGame=
+   (
+    num(p,'hit')+
+    num(p,'blk')
+   )/gp;
+
+  const fowPerGame=
+   num(p,'fow')/gp;
+
+  const goalsPerGame=
+   num(p,'g')/gp;
+
+  if(
+   gp>=2 &&
+   pointsPerGame>=1
+  ){
+   tags.push('TRENDING');
+  }
+
+  if(shotsPerGame>=3.5){
+   tags.push('SHOT VOLUME');
+  }
+
+  if(
+   num(p,'ppp')>=1 &&
+   pppPerGame>=.4
+  ){
+   tags.push('POWER PLAY');
+  }
+
+  if(
+   physicalPerGame>=4 ||
+   fowPerGame>=6
+  ){
+   tags.push('CATEGORY VALUE');
+  }
+
+  if(goalsPerGame>=.5){
+   tags.push('SCORING');
+  }
+
+  if(gp<2){
+
+   reasons.push(
+    'Early signal only; more games are needed'
+   );
+
+  }else if(pointsPerGame>=1){
+
+   reasons.push(
+    `${pointsPerGame.toFixed(2)} points per game`
+   );
+
+  }else if(pointsPerGame>=.7){
+
+   reasons.push(
+    'Solid recent point production'
+   );
+
+  }
+
+  if(shotsPerGame>=3.5){
+
+   reasons.push(
+    `${shotsPerGame.toFixed(1)} shots per game`
+   );
+
+  }
+
+  if(pppPerGame>=.4){
+
+   reasons.push(
+    'Active power-play production'
+   );
+
+  }
+
+  if(physicalPerGame>=4){
+
+   reasons.push(
+    'Strong hits and blocks contribution'
+   );
+
+  }
+
+  if(fowPerGame>=6){
+
+   reasons.push(
+    'Useful faceoff volume'
+   );
+
+  }
+
+  if(!reasons.length){
+
+   reasons.push(
+    'Balanced recent fantasy production'
+   );
+
+  }
+
+ }else{
+
+  const savePct=
+   known(p,'svPct')
+    ? num(p,'svPct')
+    : 0;
+
+  const savesPerGame=
+   num(p,'sv')/gp;
+
+  const winsPerGame=
+   num(p,'w')/gp;
+
+  if(
+   gp>=2 &&
+   savePct>=.920
+  ){
+   tags.push('HOT GOALIE');
+  }
+
+  if(savesPerGame>=27){
+   tags.push('WORKLOAD');
+  }
+
+  if(winsPerGame>=.5){
+   tags.push('WINNING');
+  }
+
+  if(num(p,'so')>=1){
+   tags.push('SHUTOUT');
+  }
+
+  if(gp<2){
+
+   reasons.push(
+    'Early signal only; more appearances are needed'
+   );
+
+  }else if(savePct>=.920){
+
+   reasons.push(
+    `${(savePct*100).toFixed(1)}% save percentage`
+   );
+
+  }
+
+  if(savesPerGame>=25){
+
+   reasons.push(
+    `${savesPerGame.toFixed(1)} saves per appearance`
+   );
+
+  }
+
+  if(winsPerGame>=.5){
+
+   reasons.push(
+    'Strong recent winning rate'
+   );
+
+  }
+
+  if(num(p,'so')>=1){
+
+   reasons.push(
+    'Shutout production'
+   );
+
+  }
+
+  if(!reasons.length){
+
+   reasons.push(
+    'Recent workload creates fantasy opportunity'
+   );
+
+  }
+
+ }
+
+ if(!tags.length){
+
+  tags.push(
+   p._g==='skater'
+    ? 'DEPTH WATCH'
+    : 'GOALIE WATCH'
+  );
+
+ }
+
+ return {
+  tags:tags.slice(0,3),
+  reason:reasons.slice(0,3).join(' • ')
+ };
+
+}
+
+/* =========================================================
    POTENTIAL WAIVER TARGETS
 
-   Skaters must be OUTSIDE Top 30.
-   Goalies must be OUTSIDE Top 5.
+   Eligibility is based on the user's custom scoring:
+   Skaters #31+
+   Goalies #6+
+
+   Once eligible, players are ranked by the independent
+   Ice Watchers Target Score.
 ========================================================= */
 
 function renderTargets(){
@@ -1978,17 +1920,13 @@ function renderTargets(){
    p=>({
     ...p,
     _g:'skater',
-    fpts:points(
-     p,
-     'skater'
-    )
+    fpts:points(p,'skater')
    })
   )
 
   .sort(
    (a,b)=>
-    b.fpts-
-    a.fpts
+    b.fpts-a.fpts
   );
 
  const go=
@@ -1998,47 +1936,88 @@ function renderTargets(){
    p=>({
     ...p,
     _g:'goalie',
-    fpts:points(
-     p,
-     'goalie'
-    )
+    fpts:points(p,'goalie')
    })
   )
 
   .sort(
    (a,b)=>
+    b.fpts-a.fpts
+  );
+
+ const skaterTargets=
+  sk.slice(30)
+
+  .map(
+   (p,i)=>({
+    ...p,
+    _weeklyRank:i+31,
+    _targetScore:skaterTargetScore(p)
+   })
+  );
+
+ const goalieTargets=
+  go.slice(5)
+
+  .map(
+   (p,i)=>({
+    ...p,
+    _weeklyRank:i+6,
+    _targetScore:goalieTargetScore(p)
+   })
+  );
+
+ const pool=[
+  ...skaterTargets,
+  ...goalieTargets
+ ];
+
+ const mature=
+  pool
+
+  .filter(
+   p=>num(p,'gp')>=2
+  )
+
+  .sort(
+   (a,b)=>
+    b._targetScore-
+    a._targetScore
+    ||
     b.fpts-
     a.fpts
   );
 
- /*
-  slice(30) means:
+ const early=
+  pool
 
-  Index 0 = Rank #1
-  Index 29 = Rank #30
-  Index 30 = Rank #31
+  .filter(
+   p=>num(p,'gp')<2
+  )
 
-  Therefore only #31+ skaters qualify.
- */
+  .sort(
+   (a,b)=>
+    b._targetScore-
+    a._targetScore
+    ||
+    b.fpts-
+    a.fpts
+  );
 
  const candidates=[
+  ...mature.slice(0,10)
+ ];
 
-  ...sk.slice(30),
+ if(candidates.length<10){
 
-  ...go.slice(5)
+  candidates.push(
+   ...early.slice(
+    0,
+    10-candidates.length
+   )
+  );
 
- ]
-
- .sort(
-  (a,b)=>
-   b.fpts-
-   a.fpts
- )
-
- .slice(
-  0,
-  10
- );
+ }
 
  $('targets-table')
   .querySelector('tbody')
@@ -2049,35 +2028,18 @@ function renderTargets(){
    ? candidates.map(
       p=>{
 
-       const role=
+       const info=
+        targetInfo(p);
 
-        p._g==='skater'
+       const tags=
+        info.tags
 
-         ? sk.findIndex(
-            x=>
-             String(
-              x.player_id??
-              x.name
-             )
-             ===
-             String(
-              p.player_id??
-              p.name
-             )
-           )+1
+        .map(
+         tag=>
+          `<span class="target-tag">${esc(tag)}</span>`
+        )
 
-         : go.findIndex(
-            x=>
-             String(
-              x.player_id??
-              x.name
-             )
-             ===
-             String(
-              p.player_id??
-              p.name
-             )
-           )+1;
+        .join('');
 
        return `
 
@@ -2098,7 +2060,7 @@ function renderTargets(){
            p._g==='skater'
             ? 'Skater #'
             : 'Goalie #'
-          }${role}
+          }${p._weeklyRank}
 
          </td>
 
@@ -2111,9 +2073,19 @@ function renderTargets(){
 
          </td>
 
-         <td class="fpts">
+         <td class="target-reason">
 
-          ${p.fpts.toFixed(2)}
+          <div class="target-tags">
+           ${tags}
+          </div>
+
+          ${esc(info.reason)}
+
+         </td>
+
+         <td class="target-score">
+
+          ${p._targetScore}
 
          </td>
 
@@ -2123,20 +2095,21 @@ function renderTargets(){
 
       }
      )
+
      .join('')
 
    : `
 
       <tr class="empty-row">
 
-       <td colspan="4">
+       <td colspan="5">
 
         <strong>
          Waiting for a deeper player pool
         </strong>
 
         <span>
-         Targets appear outside the top 30 skaters and top 5 goalies.
+         Target Score evaluates skaters outside the top 30 and goalies outside the top 5.
         </span>
 
        </td>
@@ -2149,53 +2122,22 @@ function renderTargets(){
 
 /* =========================================================
    PLAYER WATCH
-
-   This is NOT a fantasy points leaderboard.
-
-   It is designed to identify players
-   sustaining strong recent performance.
-
-   Up to:
-   8 skaters
-   4 goalies
 ========================================================= */
 
 function renderWatch(){
 
  const skaters=[];
-
  const goalies=[];
 
- /* =====================================================
-    SKATERS
- ===================================================== */
+ for(const p of players.skater){
 
- for(
-  const p of players.skater
- ){
+  const b=badges(p,'skater');
 
-  const b=
-   badges(
-    p,
-    'skater'
-   );
-
-  /*
-   If no consistency badge was earned,
-   this player does not belong in Watch.
-  */
-
-  if(
-   !b.length
-  ){
+  if(!b.length){
    continue;
   }
 
-  const gp=
-   Math.max(
-    1,
-    num(p,'gp')
-   );
+  const gp=Math.max(1,num(p,'gp'));
 
   const totalPoints=
    num(p,'g')+
@@ -2215,29 +2157,6 @@ function renderWatch(){
 
   const pppPerGame=
    num(p,'ppp')/gp;
-
-  /*
-   CONSISTENCY SCORE
-
-   Badge coverage:
-   15 points each
-
-   Scoring:
-   P/GP x 12
-
-   Shot generation:
-   SOG/GP x 2
-
-   Power play:
-   PPP/GP x 5
-
-   Physical:
-   HIT+BLK/GP x .75
-
-   Sample confidence:
-   small bonus for sustaining production
-   across additional games.
-  */
 
   const consistencyScore=
 
@@ -2261,93 +2180,37 @@ function renderWatch(){
 
    +
 
-   Math.min(
-    gp,
-    4
-   )*2;
+   Math.min(gp,4)*2;
 
   skaters.push({
-
    ...p,
-
    _g:'skater',
-
    _badges:b,
-
-   _watchScore:
-    consistencyScore
-
+   _watchScore:consistencyScore
   });
 
  }
 
- /* =====================================================
-    GOALIES
- ===================================================== */
+ for(const p of players.goalie){
 
- for(
-  const p of players.goalie
- ){
+  const b=badges(p,'goalie');
 
-  const b=
-   badges(
-    p,
-    'goalie'
-   );
-
-  if(
-   !b.length
-  ){
+  if(!b.length){
    continue;
   }
 
-  const gp=
-   Math.max(
-    1,
-    num(p,'gp')
-   );
+  const gp=Math.max(1,num(p,'gp'));
 
   const savePct=
-
-   known(
-    p,
-    'svPct'
-   )
-
-    ? num(
-       p,
-       'svPct'
-      )
-
+   known(p,'svPct')
+    ? num(p,'svPct')
     : 0;
 
   const savesPerGame=
-   num(
-    p,
-    'sv'
-   )
-   /
-   gp;
+   num(p,'sv')/gp;
 
   const winsPerGame=
-   num(
-    p,
-    'w'
-   )
-   /
-   gp;
-
-  /*
-   We score SV% relative to .900.
-
-   Example:
-
-   .925 -> .025
-   .940 -> .040
-
-   This lets better sustained save
-   percentages separate themselves.
-  */
+   num(p,'w')/gp;
 
   const svQuality=
    Math.max(
@@ -2373,36 +2236,20 @@ function renderWatch(){
 
    +
 
-   num(
-    p,
-    'so'
-   )*4
+   num(p,'so')*4
 
    +
 
-   Math.min(
-    gp,
-    4
-   )*2;
+   Math.min(gp,4)*2;
 
   goalies.push({
-
    ...p,
-
    _g:'goalie',
-
    _badges:b,
-
-   _watchScore:
-    consistencyScore
-
+   _watchScore:consistencyScore
   });
 
  }
-
- /* =====================================================
-    RANK EACH POSITION SEPARATELY
- ===================================================== */
 
  skaters.sort(
   (a,b)=>
@@ -2416,40 +2263,15 @@ function renderWatch(){
    a._watchScore
  );
 
- /* =====================================================
-    WATCH BALANCE
-
-    Maximum starting allocation:
-
-    8 skaters
-    4 goalies
-
-    If one group does not have enough
-    qualifying players, the other group
-    can fill the empty spots.
- ===================================================== */
-
  let selected=[
 
-  ...skaters.slice(
-   0,
-   8
-  ),
+  ...skaters.slice(0,8),
 
-  ...goalies.slice(
-   0,
-   4
-  )
+  ...goalies.slice(0,4)
 
  ];
 
- /* =====================================================
-    FILL EMPTY WATCH SPOTS
- ===================================================== */
-
- if(
-  selected.length<12
- ){
+ if(selected.length<12){
 
   const used=
    new Set(
@@ -2493,21 +2315,11 @@ function renderWatch(){
 
  }
 
- /* =====================================================
-    FINAL ORDER
-
-    Strongest consistency signal first.
- ===================================================== */
-
  selected.sort(
   (a,b)=>
    b._watchScore-
    a._watchScore
  );
-
- /* =====================================================
-    RENDER PLAYER WATCH
- ===================================================== */
 
  $('watch-list').innerHTML=
 
@@ -2584,13 +2396,9 @@ function renderWatch(){
 
 function refresh(){
 
- render(
-  'skater'
- );
+ render('skater');
 
- render(
-  'goalie'
- );
+ render('goalie');
 
  renderLeaders();
 
@@ -2611,16 +2419,12 @@ function applyData(d){
  completedPlayers={
 
   skater:
-   Array.isArray(
-    d.skaters
-   )
+   Array.isArray(d.skaters)
     ? d.skaters
     : [],
 
   goalie:
-   Array.isArray(
-    d.goalies
-   )
+   Array.isArray(d.goalies)
     ? d.goalies
     : []
 
@@ -2629,16 +2433,12 @@ function applyData(d){
  livePlayers={
 
   skater:
-   Array.isArray(
-    d.live?.skaters
-   )
+   Array.isArray(d.live?.skaters)
     ? d.live.skaters
     : [],
 
   goalie:
-   Array.isArray(
-    d.live?.goalies
-   )
+   Array.isArray(d.live?.goalies)
     ? d.live.goalies
     : []
 
@@ -2665,16 +2465,12 @@ function applyData(d){
  monthlyPlayers={
 
   skater:
-   Array.isArray(
-    d.monthly?.skaters
-   )
+   Array.isArray(d.monthly?.skaters)
     ? d.monthly.skaters
     : [],
 
   goalie:
-   Array.isArray(
-    d.monthly?.goalies
-   )
+   Array.isArray(d.monthly?.goalies)
     ? d.monthly.goalies
     : []
 
@@ -2717,22 +2513,16 @@ function applyData(d){
   updatedAt
 
    ? 'Updated '+
-     new Date(
-      updatedAt
-     )
+     new Date(updatedAt)
      .toLocaleString()
 
    : 'Update time unavailable';
 
  $('banner')
   .classList
-  .remove(
-   'error'
-  );
+  .remove('error');
 
- if(
-  liveCount
- ){
+ if(liveCount){
 
   $('banner').textContent=
 
@@ -2789,9 +2579,7 @@ async function load(
 
    );
 
-  if(
-   !r.ok
-  ){
+  if(!r.ok){
 
    throw Error(
     'HTTP '+
@@ -2819,12 +2607,9 @@ async function load(
    stamp!==lastDataStamp
   ){
 
-   lastDataStamp=
-    stamp;
+   lastDataStamp=stamp;
 
-   applyData(
-    d
-   );
+   applyData(d);
 
   }
 
@@ -2832,15 +2617,11 @@ async function load(
 
  catch(e){
 
-  if(
-   !silent
-  ){
+  if(!silent){
 
    $('banner')
     .classList
-    .add(
-     'error'
-    );
+    .add('error');
 
    $('banner').textContent=
 
@@ -2866,13 +2647,9 @@ async function load(
 
 function startNearLiveRefresh(){
 
- if(
-  refreshTimer
- ){
+ if(refreshTimer){
 
-  clearInterval(
-   refreshTimer
-  );
+  clearInterval(refreshTimer);
 
  }
 
@@ -2937,17 +2714,12 @@ $('settings')
   'input',
   e=>{
 
-   const x=
-    e.target;
+   const x=e.target;
 
    if(
-    !x.matches(
-     'input[data-group]'
-    )
+    !x.matches('input[data-group]')
     ||
-    !Number.isFinite(
-     x.valueAsNumber
-    )
+    !Number.isFinite(x.valueAsNumber)
    ){
 
     return;
@@ -2969,13 +2741,8 @@ $('settings')
    try{
 
     localStorage.setItem(
-
      KEY,
-
-     JSON.stringify(
-      scoring
-     )
-
+     JSON.stringify(scoring)
     );
 
     $('saved').textContent=
@@ -2999,29 +2766,18 @@ $('reset').onclick=
 
   scoring=
    JSON.parse(
-    JSON.stringify(
-     DEFAULTS
-    )
+    JSON.stringify(DEFAULTS)
    );
 
-  fields(
-   'skater'
-  );
+  fields('skater');
 
-  fields(
-   'goalie'
-  );
+  fields('goalie');
 
   try{
 
    localStorage.setItem(
-
     KEY,
-
-    JSON.stringify(
-     scoring
-    )
-
+    JSON.stringify(scoring)
    );
 
   }
@@ -3049,10 +2805,7 @@ $('edit-scoring').onclick=
 ========================================================= */
 
 document
- .querySelectorAll(
-  '[data-period]'
- )
-
+ .querySelectorAll('[data-period]')
  .forEach(
   b=>
 
@@ -3063,21 +2816,13 @@ document
       b.dataset.period;
 
      document
-      .querySelectorAll(
-       '[data-period]'
-      )
-
+      .querySelectorAll('[data-period]')
       .forEach(
        x=>
 
         x.setAttribute(
-
          'aria-pressed',
-
-         String(
-          x===b
-         )
-
+         String(x===b)
         )
 
       );
@@ -3093,10 +2838,7 @@ document
 ========================================================= */
 
 document
- .querySelectorAll(
-  '[data-view]'
- )
-
+ .querySelectorAll('[data-view]')
  .forEach(
   b=>
 
@@ -3104,21 +2846,13 @@ document
     ()=>{
 
      document
-      .querySelectorAll(
-       '[data-view]'
-      )
-
+      .querySelectorAll('[data-view]')
       .forEach(
        x=>
 
         x.setAttribute(
-
          'aria-pressed',
-
-         String(
-          x===b
-         )
-
+         String(x===b)
         )
 
       );
