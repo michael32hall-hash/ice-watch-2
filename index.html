@@ -66,7 +66,6 @@ table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;white-
 th{background:#edf1f4;border-bottom:1px solid #cbd6de;color:#536373;text-align:right;font-size:10px;height:45px;padding:0 12px}
 td{height:76px;padding:10px 12px;text-align:right;border-bottom:1px solid #edf1f4;background:white}
 tbody tr:hover td{background:#f4faff}
-
 .rank{text-align:center;color:#71808d;font-weight:700}
 .player-col{text-align:left;min-width:220px;position:sticky;left:0;z-index:1;border-right:1px solid #edf1f4}
 .player{display:flex;align-items:center;gap:12px}
@@ -94,10 +93,10 @@ tbody tr:hover td{background:#f4faff}
 .report-controls button[aria-pressed=true]{background:var(--ink);color:white}
 .stat-summary{white-space:normal;min-width:190px;text-align:left;line-height:1.8}
 
-.target-score{font-weight:800;font-size:16px;color:var(--blue);background:#f0f9fd;text-align:center;min-width:100px}
-.target-reason{white-space:normal;min-width:220px;max-width:280px;text-align:left;line-height:1.55;color:#40515f}
-.target-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
-.target-tag{display:inline-flex;align-items:center;padding:4px 7px;border-radius:999px;font-size:8px;font-weight:800;letter-spacing:.3px;background:var(--pale);border:1px solid #c9e6f1;color:#075879}
+.target-reason{min-width:240px;max-width:340px;white-space:normal;text-align:left;line-height:1.7}
+.target-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
+.target-tag{display:inline-flex;border:1px solid #cce4ee;background:var(--pale);color:#075879;border-radius:999px;padding:4px 7px;font-size:9px;font-weight:800;line-height:1.2}
+.target-score{font-weight:800;color:var(--blue);background:#f0f9fd;font-size:16px}
 
 .empty-row td{height:150px;text-align:center;white-space:normal}
 .empty-row strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:24px;text-transform:uppercase;margin-bottom:8px}
@@ -107,7 +106,6 @@ footer b{font-family:'Barlow Condensed',sans-serif;color:var(--ink);font-size:20
 
 .content-grid{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:24px;align-items:start}
 .main-column{min-width:0}
-
 .watch-rail{position:sticky;top:18px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .watch-head{padding:20px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#f7fbfd)}
 .watch-head h2{font-family:'Barlow Condensed',Impact,sans-serif;font-size:32px;text-transform:uppercase;margin:5px 0 6px}
@@ -123,16 +121,49 @@ footer b{font-family:'Barlow Condensed',sans-serif;color:var(--ink);font-size:20
 .watch-empty strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:21px;color:var(--ink);text-transform:uppercase;margin-bottom:6px}
 
 th button{border:0;background:transparent;color:inherit;font-size:10px;font-weight:700;padding:0;min-height:44px;cursor:default}
-
 #skater-table{min-width:1220px}
 #goalie-table{min-width:980px}
-#targets-table{min-width:1050px}
 #skater-table th,#goalie-table th{white-space:nowrap}
 #skater-table th button,#goalie-table th button{cursor:pointer}
 #skater-table th[aria-sort]:not([aria-sort=none]),#goalie-table th[aria-sort]:not([aria-sort=none]){background:#e1f3fa;color:#075879}
 #skater-table thead,#goalie-table thead{display:table-header-group!important}
 #skater-table:has(.empty-row),#goalie-table:has(.empty-row){table-layout:auto!important}
 #skater-table .empty-row td,#goalie-table .empty-row td{text-align:center;white-space:normal}
+
+.player-profile-link{display:block;color:inherit;text-decoration:none;border-radius:6px}
+.player-profile-link:hover .player-name{color:var(--blue);text-decoration:underline}
+.player-profile-link:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+body.profile-open{overflow:hidden}
+.profile-dialog{width:min(780px,calc(100% - 24px));max-height:calc(100dvh - 32px);padding:0;border:1px solid var(--line);border-radius:14px;color:var(--ink);background:#fff;box-shadow:0 24px 100px #10182055;overflow:auto}
+.profile-dialog::backdrop{background:#101820aa}
+.profile-toolbar{position:sticky;top:0;background:#101820;color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:2}
+.profile-toolbar h2{font-family:'Barlow Condensed',Impact,sans-serif;font-size:28px;margin:0;line-height:1.1}
+.profile-toolbar button{border:1px solid #ffffff55;background:transparent;color:#fff;border-radius:6px;padding:9px 12px}
+#profile-content{padding:24px}
+.profile-hero{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.profile-hero .portrait{width:84px;height:84px;flex-basis:84px}
+.profile-hero .player-name{font-size:20px;max-width:none;white-space:normal}
+.profile-hero .player-meta{font-size:12px;margin-top:8px}
+.profile-hero .badges{display:flex;gap:6px;flex-wrap:wrap}
+.profile-note{font-size:11px;color:var(--muted);line-height:1.65;margin:14px 0}
+.profile-periods{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.profile-periods button{border:1px solid var(--line);border-radius:6px;padding:10px 16px;background:var(--ice);color:var(--ink);font-size:12px;font-weight:700}
+.profile-periods button[aria-pressed=true]{background:var(--blue);color:white;border-color:var(--blue)}
+.profile-points{padding:18px;background:var(--pale);border-radius:8px;display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:16px}
+.profile-points span{font-size:12px;font-weight:700}
+.profile-points strong{font-size:28px;color:var(--blue)}
+.profile-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.profile-stat{background:var(--ice);padding:14px;border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;gap:8px}
+.profile-stat span{font-size:10px;color:var(--muted)}
+.profile-stat strong{font-size:22px}
+.profile-total{margin-top:10px}
+.profile-empty{padding:20px;background:var(--ice);color:var(--muted);border-radius:8px;font-size:12px;line-height:1.6}
+#profile-content h3{font-family:'Barlow Condensed',Impact,sans-serif;font-size:25px;margin:28px 0 0}
+.profile-game-table{width:100%;white-space:nowrap}
+.profile-game-table td,.profile-game-table th{padding:12px 10px;font-size:11px}
+.profile-actions{padding:16px 24px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.profile-actions button{border:1px solid var(--line);background:var(--ice);border-radius:6px;padding:10px 14px;font-size:12px}
+#profile-copy-status{font-size:11px;color:var(--muted)}
 
 @media(max-width:980px){
  .content-grid{grid-template-columns:1fr}
@@ -154,266 +185,220 @@ th button{border:0;background:transparent;color:inherit;font-size:10px;font-weig
  .badge{font-size:8px;padding:4px 6px}
  .board-title{flex-wrap:wrap}
  footer{display:block}
+ #profile-content{padding:18px}
+ .profile-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .profile-hero .player-name{font-size:18px}
+ .profile-toolbar{padding:14px 18px}
+ .profile-toolbar h2{font-size:24px}
 }
 </style>
 </head>
 
 <body>
-
 <header class="topbar">
-<div class="nav">
-<a class="brand" href="#">ICE <span>WATCHERS</span></a>
-<div class="nav-note">Your league. Your scoring. Your edge.</div>
-</div>
+ <div class="nav">
+  <a class="brand" href="#">ICE <span>WATCHERS</span></a>
+  <div class="nav-note">Your league. Your scoring. Your edge.</div>
+ </div>
 </header>
 
 <main>
+ <div class="intro">
+  <div>
+   <div class="eyebrow">Fantasy hockey / Daily report</div>
+   <h1>Player statistics</h1>
+   <p>The week's best, ranked for your league.<br>Custom scoring. Regular season. Top 10.</p>
+  </div>
+  <div class="edition">
+   <b>THE WEEKLY TEN</b>
+   <span>Skaters &amp; goaltenders</span>
+  </div>
+ </div>
 
-<div class="intro">
-<div>
-<div class="eyebrow">Fantasy hockey / Daily report</div>
-<h1>Player statistics</h1>
-<p>The week's best, ranked for your league.<br>Custom scoring. Regular season. Top 10.</p>
-</div>
+ <div class="summarybar">
+  <span class="pill">REGULAR SEASON</span>
+  <span class="pill live-pill" id="live-pill" hidden>LIVE</span>
+  <span id="period">Last 7 completed calendar days</span>
+  <span class="updated" id="updated">Loading statistics...</span>
+ </div>
 
-<div class="edition">
-<b>THE WEEKLY TEN</b>
-<span>Skaters &amp; goaltenders</span>
-</div>
-</div>
+ <p class="banner" id="banner">You can adjust your scoring while statistics load.</p>
 
-<div class="summarybar">
-<span class="pill">REGULAR SEASON</span>
-<span class="pill live-pill" id="live-pill" hidden>LIVE</span>
-<span id="period">Last 7 completed calendar days</span>
-<span class="updated" id="updated">Loading statistics...</span>
-</div>
+ <nav class="tabs">
+  <button class="tab" data-view="all" aria-pressed="true">All leaders</button>
+  <button class="tab" data-view="skater" aria-pressed="false">Skaters</button>
+  <button class="tab" data-view="goalie" aria-pressed="false">Goalies</button>
+  <button class="tab" data-view="leaders" aria-pressed="false">Week &amp; month</button>
+  <button class="tab" data-view="targets" aria-pressed="false">Potential targets</button>
+  <button class="tab settings-link" id="edit-scoring">Edit scoring</button>
+ </nav>
 
-<p class="banner" id="banner">You can adjust your scoring while statistics load.</p>
+ <details id="settings">
+  <summary>Your league's scoring</summary>
+  <div class="settings-body">
+   <p class="help">Enter points per stat. Player Watch badges are independent of these scoring settings.</p>
+   <h3>Skaters</h3>
+   <div class="field-grid" id="skater-fields"></div>
+   <h3>Goalies</h3>
+   <div class="field-grid" id="goalie-fields"></div>
+   <div class="actions">
+    <button class="reset" id="reset">Reset to defaults</button>
+    <span id="saved"></span>
+   </div>
+  </div>
+ </details>
 
-<nav class="tabs">
-<button class="tab" data-view="all" aria-pressed="true">All leaders</button>
-<button class="tab" data-view="skater" aria-pressed="false">Skaters</button>
-<button class="tab" data-view="goalie" aria-pressed="false">Goalies</button>
-<button class="tab" data-view="leaders" aria-pressed="false">Week &amp; month</button>
-<button class="tab" data-view="targets" aria-pressed="false">Potential targets</button>
-<button class="tab settings-link" id="edit-scoring">Edit scoring</button>
-</nav>
+ <div class="content-grid">
+  <div class="main-column">
 
-<details id="settings">
-<summary>Your league's scoring</summary>
+   <section class="board" id="skater-board">
+    <div class="board-title">
+     <h2>Top 10 skaters</h2>
+     <span>FANTASY POINTS</span>
+    </div>
+    <div class="tablewrap">
+     <table id="skater-table">
+      <thead></thead>
+      <tbody></tbody>
+     </table>
+    </div>
+    <p class="board-foot">Click any stat heading to rank the top 10 by that category.</p>
+   </section>
 
-<div class="settings-body">
-<p class="help">Enter points per stat. Player Watch badges are independent of these scoring settings.</p>
+   <section class="board" id="goalie-board">
+    <div class="board-title">
+     <h2>Top 10 goalies</h2>
+     <span>FANTASY POINTS</span>
+    </div>
+    <div class="tablewrap">
+     <table id="goalie-table">
+      <thead></thead>
+      <tbody></tbody>
+     </table>
+    </div>
+    <p class="board-foot"></p>
+   </section>
 
-<h3>Skaters</h3>
-<div class="field-grid" id="skater-fields"></div>
+   <section class="board" id="leaders-board">
+    <div class="board-title">
+     <h2 id="leaders-title">Top 10 players of the week</h2>
+     <span>ALL-STAT SCORE</span>
+    </div>
+    <p class="report-note">Independent all-stat performance ranking.</p>
+    <div class="report-controls">
+     <button data-period="week" aria-pressed="true">Last 7 days</button>
+     <button data-period="month" aria-pressed="false">Last 30 days</button>
+    </div>
+    <div class="tablewrap">
+     <table id="leaders-table">
+      <thead>
+       <tr>
+        <th>#</th>
+        <th class="player-col">PLAYER</th>
+        <th>GP</th>
+        <th class="stat-summary">PERIOD STATS</th>
+        <th>SCORE / 100</th>
+       </tr>
+      </thead>
+      <tbody></tbody>
+     </table>
+    </div>
+    <p class="board-foot" id="leaders-period"></p>
+   </section>
 
-<h3>Goalies</h3>
-<div class="field-grid" id="goalie-fields"></div>
+   <section class="board" id="targets-board">
+    <div class="board-title">
+     <h2>Potential waiver targets</h2>
+     <span>ICE WATCHERS TARGET SCORE</span>
+    </div>
+    <p class="report-note">
+     Ice Watchers searches below the obvious fantasy leaders: skaters ranked #31+ and goalies #6+.
+     Target Score is independent of your league scoring; ownership is not checked.
+    </p>
+    <div class="tablewrap">
+     <table id="targets-table">
+      <thead>
+       <tr>
+        <th class="player-col">PLAYER</th>
+        <th>WEEKLY RANK</th>
+        <th class="stat-summary">RECENT STATS</th>
+        <th class="target-reason">WHY HE'S HERE</th>
+        <th>TARGET SCORE</th>
+       </tr>
+      </thead>
+      <tbody></tbody>
+     </table>
+    </div>
+   </section>
+  </div>
 
-<div class="actions">
-<button class="reset" id="reset">Reset to defaults</button>
-<span id="saved"></span>
-</div>
+  <aside class="watch-rail" id="watch-rail" aria-labelledby="watch-title">
+   <div class="watch-head">
+    <div class="eyebrow">Ice Watchers intelligence</div>
+    <h2 id="watch-title">Player Watch</h2>
+    <p>
+     Players showing sustained performance over the last seven days.
+     Requires multiple games and is independent of your league scoring.
+    </p>
+   </div>
+   <div id="watch-list"></div>
+  </aside>
+ </div>
 
-</div>
-</details>
-
-<div class="content-grid">
-
-<div class="main-column">
-
-<section class="board" id="skater-board">
-
-<div class="board-title">
-<h2>Top 10 skaters</h2>
-<span>FANTASY POINTS</span>
-</div>
-
-<div class="tablewrap">
-<table id="skater-table">
-<thead></thead>
-<tbody></tbody>
-</table>
-</div>
-
-<p class="board-foot">Click any stat heading to rank the top 10 by that category.</p>
-
-</section>
-
-<section class="board" id="goalie-board">
-
-<div class="board-title">
-<h2>Top 10 goalies</h2>
-<span>FANTASY POINTS</span>
-</div>
-
-<div class="tablewrap">
-<table id="goalie-table">
-<thead></thead>
-<tbody></tbody>
-</table>
-</div>
-
-<p class="board-foot"></p>
-
-</section>
-
-<section class="board" id="leaders-board">
-
-<div class="board-title">
-<h2 id="leaders-title">Top 10 players of the week</h2>
-<span>ALL-STAT SCORE</span>
-</div>
-
-<p class="report-note">Independent all-stat performance ranking.</p>
-
-<div class="report-controls">
-<button data-period="week" aria-pressed="true">Last 7 days</button>
-<button data-period="month" aria-pressed="false">Last 30 days</button>
-</div>
-
-<div class="tablewrap">
-
-<table id="leaders-table">
-
-<thead>
-<tr>
-<th>#</th>
-<th class="player-col">PLAYER</th>
-<th>GP</th>
-<th class="stat-summary">PERIOD STATS</th>
-<th>SCORE / 100</th>
-</tr>
-</thead>
-
-<tbody></tbody>
-
-</table>
-
-</div>
-
-<p class="board-foot" id="leaders-period"></p>
-
-</section>
-
-<section class="board" id="targets-board">
-
-<div class="board-title">
-<h2>Potential waiver targets</h2>
-<span>ICE WATCHERS TARGET SCORE</span>
-</div>
-
-<p class="report-note">
-Ice Watchers searches below the obvious fantasy leaders: skaters ranked #31+ and goalies #6+. Target Score is independent of your league scoring; ownership is not checked.
-</p>
-
-<div class="tablewrap">
-
-<table id="targets-table">
-
-<thead>
-<tr>
-<th class="player-col">PLAYER</th>
-<th>WEEKLY RANK</th>
-<th class="stat-summary">RECENT STATS</th>
-<th class="target-reason">WHY HE'S HERE</th>
-<th>TARGET SCORE</th>
-</tr>
-</thead>
-
-<tbody></tbody>
-
-</table>
-
-</div>
-
-</section>
-
-</div>
-
-<aside class="watch-rail" id="watch-rail" aria-labelledby="watch-title">
-
-<div class="watch-head">
-
-<div class="eyebrow">Ice Watchers intelligence</div>
-
-<h2 id="watch-title">Player Watch</h2>
-
-<p>
-Players showing sustained performance over the last seven days.
-Requires multiple games and is independent of your league scoring.
-</p>
-
-</div>
-
-<div id="watch-list"></div>
-
-</aside>
-
-</div>
-
-<footer>
-
-<div>
-<b>ICE WATCHERS</b><br>
-Independent fantasy hockey tracker. Not affiliated with the NHL.<br>
-Regular-season data. Live games may be included in displayed rankings.
-</div>
-
-<a href="https://www.nhl.com/stats/" target="_blank" rel="noopener noreferrer">
-NHL statistics &nearr;
-</a>
-
-</footer>
-
+ <footer>
+  <div>
+   <b>ICE WATCHERS</b><br>
+   Independent fantasy hockey tracker. Not affiliated with the NHL.<br>
+   Regular-season data. Live games may be included in displayed rankings.
+  </div>
+  <a href="https://www.nhl.com/stats/" target="_blank" rel="noopener noreferrer">
+   NHL statistics &nearr;
+  </a>
+ </footer>
 </main>
+
+<dialog id="player-profile" class="profile-dialog" aria-labelledby="profile-title">
+ <div class="profile-toolbar">
+  <h2 id="profile-title">Player profile</h2>
+  <button type="button" id="profile-close" autofocus>Close</button>
+ </div>
+ <div id="profile-content"></div>
+ <div class="profile-actions">
+  <button type="button" id="profile-copy">Copy profile link</button>
+  <span id="profile-copy-status" role="status"></span>
+ </div>
+</dialog>
 
 <script>
 'use strict';
 
+/* SETTINGS */
+
 const DEFAULTS={
  skater:{
-  g:1,a:1,pim:0,ppp:0,shg:0,sha:0,gwg:0,hat:0,sog:0,hit:0,blk:0,fow:0,def:0
+  g:1,a:1,pim:0,ppp:0,shg:0,sha:0,gwg:0,hat:0,
+  sog:0,hit:0,blk:0,fow:0,def:0
  },
- goalie:{
-  gs:0,w:1,ga:0,sv:0,so:0,otl:0
- }
+ goalie:{gs:0,w:1,ga:0,sv:0,so:0,otl:0}
 };
 
 const LABELS={
- rank:'Rank',
- name:'Player',
- gp:'Games played',
- g:'Goals',
- a:'Assists',
- plusMinus:'Plus/minus',
- pim:'Penalty minutes',
- ppp:'Power-play points',
- shg:'Shorthanded goals',
- sha:'Shorthanded assists',
- gwg:'Game-winning goals',
- hat:'Hat tricks',
- sog:'Shots on goal',
- hit:'Hits',
- blk:'Blocked shots',
- fow:'Faceoff wins',
- def:'Defense bonus',
- gs:'Games started',
- w:'Wins',
- ga:'Goals against',
- sv:'Saves',
- svPct:'Save percentage',
- gaa:'Goals-against average',
- so:'Shutouts',
- otl:'Overtime losses',
- fpts:'Fantasy points'
+ rank:'Rank',name:'Player',gp:'Games played',
+ g:'Goals',a:'Assists',plusMinus:'Plus/minus',
+ pim:'Penalty minutes',ppp:'Power-play points',
+ shg:'Shorthanded goals',sha:'Shorthanded assists',
+ gwg:'Game-winning goals',hat:'Hat tricks',
+ sog:'Shots on goal',hit:'Hits',blk:'Blocked shots',
+ fow:'Faceoff wins',def:'Defense bonus',
+ gs:'Games started',w:'Wins',ga:'Goals against',
+ sv:'Saves',svPct:'Save percentage',gaa:'Goals-against average',
+ so:'Shutouts',otl:'Overtime losses',fpts:'Fantasy points'
 };
 
 const COLS={
  skater:[
-  'rank','name','gp','g','a','plusMinus','sog','hit','blk','ppp','fow','pim','shg','sha','gwg','hat','fpts'
+  'rank','name','gp','g','a','plusMinus','sog','hit','blk',
+  'ppp','fow','pim','shg','sha','gwg','hat','fpts'
  ],
  goalie:[
   'rank','name','gp','gs','w','ga','sv','svPct','gaa','so','otl','fpts'
@@ -421,40 +406,26 @@ const COLS={
 };
 
 const $=id=>document.getElementById(id);
-
 const KEY='icewatch-scoring';
 
 const known=(p,k)=>
- p &&
- p[k]!==null &&
- p[k]!==undefined &&
- p[k]!=='' &&
+ p && p[k]!==null && p[k]!==undefined && p[k]!=='' &&
  Number.isFinite(Number(p[k]));
 
-const num=(p,k)=>
- known(p,k)
-  ? Number(p[k])
-  : 0;
+const num=(p,k)=>known(p,k)?Number(p[k]):0;
 
-const esc=v=>
- String(v??'').replace(
-  /[&<>"']/g,
-  c=>({
-   '&':'&amp;',
-   '<':'&lt;',
-   '>':'&gt;',
-   '"':'&quot;',
-   "'":'&#39;'
-  }[c])
- );
+const esc=v=>String(v??'').replace(
+ /[&<>"']/g,
+ c=>({
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+ }[c])
+);
 
 let scoring=JSON.parse(JSON.stringify(DEFAULTS));
-
 let players={skater:[],goalie:[]};
 let completedPlayers={skater:[],goalie:[]};
 let livePlayers={skater:[],goalie:[]};
 let monthlyPlayers={skater:[],goalie:[]};
-
 let leaderPeriod='week';
 let lastDataStamp='';
 let refreshTimer=null;
@@ -466,576 +437,245 @@ const ranking={
 };
 
 try{
- const x=JSON.parse(localStorage.getItem(KEY));
-
+ const saved=JSON.parse(localStorage.getItem(KEY));
  for(const g in scoring){
   for(const k in scoring[g]){
-   if(Number.isFinite(x?.[g]?.[k])){
-    scoring[g][k]=x[g][k];
+   if(Number.isFinite(saved?.[g]?.[k])){
+    scoring[g][k]=saved[g][k];
    }
   }
  }
 }catch{}
 
-/* =========================================================
-   SCORING FIELDS
-========================================================= */
+/* SCORING */
 
 function fields(g){
-
- $(g+'-fields').innerHTML=
-
-  Object.keys(DEFAULTS[g])
-
-  .map(k=>`
-
-   <label class="field">
-
-    <span>${LABELS[k]}</span>
-
-    <input
-     type="number"
-     step="any"
-     data-group="${g}"
-     data-key="${k}"
-     value="${scoring[g][k]}"
-     class="${scoring[g][k]?'active':''}"
-    >
-
-   </label>
-
-  `)
-
-  .join('');
-
+ $(g+'-fields').innerHTML=Object.keys(DEFAULTS[g]).map(k=>`
+  <label class="field">
+   <span>${LABELS[k]}</span>
+   <input
+    type="number"
+    step="any"
+    data-group="${g}"
+    data-key="${k}"
+    value="${scoring[g][k]}"
+    class="${scoring[g][k]?'active':''}"
+   >
+  </label>
+ `).join('');
 }
-
-/* =========================================================
-   FANTASY POINTS
-========================================================= */
 
 function points(p,g){
-
- return Object.entries(scoring[g])
-
- .reduce(
-  (t,[k,v])=>
-
-   t+(
-
-    k==='def' &&
+ return Object.entries(scoring[g]).reduce((total,[k,value])=>{
+  if(k==='def'){
+   return total+(
     String(p.pos).toUpperCase()==='D'
-
-     ? (num(p,'g')+num(p,'a'))*v
-
-     : k==='def'
-      ? 0
-      : num(p,k)*v
-
-   ),
-
-  0
-
- );
-
+     ? (num(p,'g')+num(p,'a'))*value
+     : 0
+   );
+  }
+  return total+num(p,k)*value;
+ },0);
 }
 
-/* =========================================================
-   PLAYER WATCH BADGES
-========================================================= */
+/* PLAYER WATCH BADGES */
 
 function badges(p,g){
-
  const gp=num(p,'gp');
  const out=[];
+ if(gp<2)return out;
 
  if(g==='skater'){
+  const ppg=(num(p,'g')+num(p,'a'))/gp;
+  const shots=num(p,'sog')/gp;
+  const physical=(num(p,'hit')+num(p,'blk'))/gp;
+  const power=num(p,'ppp')/gp;
 
-  if(gp<2){
-   return out;
-  }
-
-  const totalPoints=num(p,'g')+num(p,'a');
-  const pointsPerGame=totalPoints/gp;
-  const shotsPerGame=num(p,'sog')/gp;
-  const physicalPerGame=(num(p,'hit')+num(p,'blk'))/gp;
-  const pppPerGame=num(p,'ppp')/gp;
-
-  if(pointsPerGame>=1.5){
-   out.push(['HOT','hot']);
-  }
-
-  if(shotsPerGame>=4){
-   out.push(['SHOT MACHINE','shots']);
-  }
-
-  if(physicalPerGame>=5){
-   out.push(['PHYSICAL FORCE','physical']);
-  }
-
-  if(
-   num(p,'ppp')>=2 &&
-   pppPerGame>=0.5
-  ){
+  if(ppg>=1.5)out.push(['HOT','hot']);
+  if(shots>=4)out.push(['SHOT MACHINE','shots']);
+  if(physical>=5)out.push(['PHYSICAL FORCE','physical']);
+  if(num(p,'ppp')>=2&&power>=.5){
    out.push(['POWER PLAY','power']);
   }
-
-  if(
-   pointsPerGame>=1 &&
-   shotsPerGame>=3.5
-  ){
+  if(ppg>=1&&shots>=3.5){
    out.push(['BREAKOUT WATCH','breakout']);
   }
-
  }else{
-
-  if(gp<2){
-   return out;
-  }
-
-  const savesPerGame=num(p,'sv')/gp;
-
-  if(
-   known(p,'svPct') &&
-   num(p,'svPct')>=.925 &&
-   savesPerGame>=25
-  ){
+  const saves=num(p,'sv')/gp;
+  if(known(p,'svPct')&&num(p,'svPct')>=.925&&saves>=25){
    out.push(['HOT GOALIE','goalie']);
   }
-
-  if(
-   num(p,'so')>=1 &&
-   known(p,'svPct') &&
-   num(p,'svPct')>=.920
-  ){
+  if(num(p,'so')>=1&&known(p,'svPct')&&num(p,'svPct')>=.920){
    out.push(['SHUTOUT FORM','shutout']);
   }
-
  }
 
  return out;
-
 }
 
 function badgeHTML(p,g){
-
- return badges(p,g)
-
-  .map(
-   x=>
-    `<span class="badge ${x[1]}">${x[0]}</span>`
-  )
-
-  .join('');
-
+ return badges(p,g).map(
+  x=>`<span class="badge ${x[1]}">${x[0]}</span>`
+ ).join('');
 }
 
-/* =========================================================
-   PLAYER CELL
-========================================================= */
+/* PLAYER CELLS */
 
-function playerCell(p,g){
-
+function basePlayerCell(p,g){
  const id=String(p.player_id??'');
+ const initials=String(p.name||'?')
+  .split(/\s+/).map(x=>x[0]).slice(0,2).join('');
 
- const initials=
-  String(p.name||'?')
-  .split(/\s+/)
-  .map(x=>x[0])
-  .slice(0,2)
-  .join('');
-
- const photo=
-  /^\d+$/.test(id)
-
-   ? `<img
-       src="https://assets.nhle.com/mugs/nhl/latest/${id}.png"
-       alt=""
-       loading="lazy"
-       onerror="this.remove()"
-      >`
-
-   : '';
+ const photo=/^\d+$/.test(id)
+  ? `<img
+      src="https://assets.nhle.com/mugs/nhl/latest/${id}.png"
+      alt=""
+      loading="lazy"
+      onerror="this.remove()"
+     >`
+  : '';
 
  return `
-
   <div class="player">
-
-   <div class="portrait">
-    ${esc(initials)}
-    ${photo}
-   </div>
-
+   <div class="portrait">${esc(initials)}${photo}</div>
    <div>
-
-    <div class="player-name">
-     ${esc(p.name||'Unknown')}
-    </div>
-
+    <div class="player-name">${esc(p.name||'Unknown')}</div>
     <div class="player-meta">
-
-     ${esc(p.team||'-')}
-
-     |
-
-     ${esc(
-      g==='goalie'
-       ? 'G'
-       : p.pos||'F'
-     )}
-
-     ${
-      p.live
-       ? ' | <span class="live-dot">LIVE</span>'
-       : ''
-     }
-
+     ${esc(p.team||'-')} |
+     ${esc(g==='goalie'?'G':p.pos||'F')}
+     ${p.live?' | <span class="live-dot">LIVE</span>':''}
     </div>
-
    </div>
-
   </div>
-
  `;
-
 }
 
-/* =========================================================
-   TOP 10
-========================================================= */
+/* MAIN TABLE RANKINGS */
 
 function rankedTopTen(g){
-
- const key=ranking[g].key;
- const dir=ranking[g].dir;
+ const {key,dir}=ranking[g];
 
  return players[g]
-
-  .map(
-   p=>({
-    ...p,
-    fpts:points(p,g)
-   })
-  )
-
-  .filter(
-   p=>
-    key==='name' ||
-    key==='fpts' ||
-    known(p,key)
-  )
-
-  .sort(
-   (a,b)=>{
-
-    if(key==='name'){
-
-     return dir*
-      String(a.name||'')
-      .localeCompare(String(b.name||''));
-
-    }
-
-    const av=
-     key==='fpts'
-      ? a.fpts
-      : num(a,key);
-
-    const bv=
-     key==='fpts'
-      ? b.fpts
-      : num(b,key);
-
-    return (
-     dir*(av-bv) ||
-     String(a.name||'')
-     .localeCompare(String(b.name||''))
-    );
-
+  .map(p=>({...p,fpts:points(p,g)}))
+  .filter(p=>key==='name'||key==='fpts'||known(p,key))
+  .sort((a,b)=>{
+   if(key==='name'){
+    return dir*String(a.name||'').localeCompare(String(b.name||''));
    }
-  )
 
+   const av=key==='fpts'?a.fpts:num(a,key);
+   const bv=key==='fpts'?b.fpts:num(b,key);
+
+   return dir*(av-bv)||
+    String(a.name||'').localeCompare(String(b.name||''));
+  })
   .slice(0,10)
-
-  .map(
-   (p,i)=>({
-    ...p,
-    rank:i+1
-   })
-  );
-
+  .map((p,i)=>({...p,rank:i+1}));
 }
 
-/* =========================================================
-   TABLE SETUP
-========================================================= */
-
 function setupTable(g){
-
  const table=$(g+'-table');
 
- table
-  .querySelector('thead')
-  .innerHTML=
-
-  '<tr>'+
-
-  COLS[g]
-
-  .map(k=>`
-
+ table.querySelector('thead').innerHTML='<tr>'+
+  COLS[g].map(k=>`
    <th
     scope="col"
     data-key="${k}"
-    class="${
-     k==='name'
-      ? 'player-col'
-      : k==='rank'
-       ? 'rank'
-       : ''
-    }"
+    class="${k==='name'?'player-col':k==='rank'?'rank':''}"
     aria-sort="none"
    >
-
-    <button
-     type="button"
-     title="Show top 10 by ${esc(LABELS[k]||k)}"
-    >
-
+    <button type="button" title="Show top 10 by ${esc(LABELS[k]||k)}">
      ${
-      k==='rank'
-       ? '#'
-       : k==='name'
-        ? 'PLAYER'
-       : k==='plusMinus'
-        ? '+/-'
-       : k==='svPct'
-        ? 'SV%'
-       : k.toUpperCase()
+      k==='rank'?'#':
+      k==='name'?'PLAYER':
+      k==='plusMinus'?'+/-':
+      k==='svPct'?'SV%':
+      k.toUpperCase()
      }
-
     </button>
-
    </th>
+  `).join('')+'</tr>';
 
-  `)
+ table.querySelectorAll('th[data-key]').forEach(th=>{
+  th.querySelector('button').addEventListener('click',()=>{
+   const k=th.dataset.key;
+   if(k==='rank')return;
 
-  .join('')
+   const lowerBetter=
+    k==='gaa'||k==='ga'||k==='otl'||k==='pim';
 
-  +'</tr>';
+   if(ranking[g].key===k){
+    ranking[g].dir*=-1;
+   }else{
+    ranking[g]={key:k,dir:k==='name'||lowerBetter?1:-1};
+   }
 
- table
-  .querySelectorAll('th[data-key]')
-  .forEach(
-   th=>
-
-    th
-     .querySelector('button')
-
-     .addEventListener(
-      'click',
-      ()=>{
-
-       const k=th.dataset.key;
-
-       if(k==='rank'){
-        return;
-       }
-
-       const lowerBetter=
-        k==='gaa' ||
-        k==='ga' ||
-        k==='otl' ||
-        k==='pim';
-
-       if(ranking[g].key===k){
-
-        ranking[g].dir*=-1;
-
-       }else{
-
-        ranking[g]={
-         key:k,
-         dir:
-          k==='name'
-           ? 1
-           : lowerBetter
-            ? 1
-            : -1
-        };
-
-       }
-
-       render(g);
-
-      }
-     )
-
-  );
-
+   render(g);
+  });
+ });
 }
-
-/* =========================================================
-   DISPLAY STAT
-========================================================= */
 
 function displayStat(p,k){
-
- if(k==='fpts'){
-  return p.fpts.toFixed(2);
- }
-
- if(!known(p,k)){
-  return '-';
- }
-
- if(k==='svPct'){
-  return (num(p,k)*100).toFixed(1)+'%';
- }
-
- if(k==='gaa'){
-  return num(p,k).toFixed(2);
- }
-
+ if(k==='fpts')return p.fpts.toFixed(2);
+ if(!known(p,k))return '-';
+ if(k==='svPct')return (num(p,k)*100).toFixed(1)+'%';
+ if(k==='gaa')return num(p,k).toFixed(2);
  return esc(p[k]);
-
 }
-
-/* =========================================================
-   RENDER MAIN TABLE
-========================================================= */
 
 function render(g){
-
  const rows=rankedTopTen(g);
- const t=$(g+'-table');
+ const table=$(g+'-table');
  const active=ranking[g];
 
- t
-  .querySelectorAll('th[data-key]')
-  .forEach(
-   th=>
-
-    th.setAttribute(
-     'aria-sort',
-
-     th.dataset.key===active.key
-
-      ? active.dir===1
-       ? 'ascending'
-       : 'descending'
-
-      : 'none'
-    )
-
+ table.querySelectorAll('th[data-key]').forEach(th=>{
+  th.setAttribute(
+   'aria-sort',
+   th.dataset.key===active.key
+    ? active.dir===1?'ascending':'descending'
+    : 'none'
   );
+ });
 
- t
-  .querySelector('tbody')
-  .innerHTML=
+ table.querySelector('tbody').innerHTML=rows.length
+  ? rows.map(p=>'<tr>'+COLS[g].map(k=>`
+     <td class="${
+      k==='name'?'player-col':
+      k==='fpts'?'fpts':
+      k==='rank'?'rank':''
+     }">
+      ${
+       k==='name'?playerCell(p,g):
+       k==='rank'?p.rank:
+       displayStat(p,k)
+      }
+     </td>
+    `).join('')+'</tr>').join('')
+  : `
+   <tr class="empty-row">
+    <td colspan="${COLS[g].length}">
+     <strong>Waiting for regular-season stats</strong>
+     <span>Results will appear when regular-season games are available.</span>
+    </td>
+   </tr>
+  `;
 
-  rows.length
-
-   ? rows
-
-      .map(
-       p=>
-
-        '<tr>'+
-
-        COLS[g]
-
-        .map(k=>`
-
-         <td class="${
-          k==='name'
-           ? 'player-col'
-          : k==='fpts'
-           ? 'fpts'
-          : k==='rank'
-           ? 'rank'
-          : ''
-         }">
-
-          ${
-           k==='name'
-            ? playerCell(p,g)
-           : k==='rank'
-            ? p.rank
-           : displayStat(p,k)
-          }
-
-         </td>
-
-        `)
-
-        .join('')
-
-        +'</tr>'
-
-      )
-
-      .join('')
-
-   : `
-
-      <tr class="empty-row">
-
-       <td colspan="${COLS[g].length}">
-
-        <strong>
-         Waiting for regular-season stats
-        </strong>
-
-        <span>
-         Results will appear when regular-season games are available.
-        </span>
-
-       </td>
-
-      </tr>
-
-     `;
-
- const foot=
-  t
-   .closest('.board')
-   ?.querySelector('.board-foot');
+ const foot=table.closest('.board')?.querySelector('.board-foot');
 
  if(foot){
-
-  const label=
-   LABELS[active.key]||
-   active.key;
-
   foot.textContent=
-
-   `Showing the top 10 ${
-    g==='skater'
-     ? 'skaters'
-     : 'goalies'
-   } by ${label}. `+
-
-   `Click any stat heading to change the ranking. `+
-
-   `${
-    active.dir===1
-     ? 'Lowest to highest'
-     : 'Highest to lowest'
-   }. `+
-
-   `On mobile, swipe horizontally for more stats.`;
-
+   `Showing the top 10 ${g==='skater'?'skaters':'goalies'} by ${LABELS[active.key]||active.key}. `+
+   'Click any stat heading to change the ranking. '+
+   `${active.dir===1?'Lowest to highest':'Highest to lowest'}. `+
+   'On mobile, swipe horizontally for more stats.';
  }
-
 }
 
-/* =========================================================
-   MERGE COMPLETED + LIVE
-========================================================= */
+/* MERGE COMPLETED AND LIVE STATISTICS */
 
 const SKATER_ADD=[
- 'gp','g','a','pim','ppp','shg','sha','gwg','hat','sog','hit','blk','fow','plusMinus','seconds'
+ 'gp','g','a','pim','ppp','shg','sha','gwg','hat',
+ 'sog','hit','blk','fow','plusMinus','seconds'
 ];
 
 const GOALIE_ADD=[
@@ -1043,66 +683,28 @@ const GOALIE_ADD=[
 ];
 
 function mergePlayerLists(completed,live,g){
-
  const map=new Map();
 
  for(const p of completed||[]){
-
-  map.set(
-   String(p.player_id??p.name),
-   {...p}
-  );
-
+  map.set(String(p.player_id??p.name),{...p});
  }
 
  for(const p of live||[]){
-
   const id=String(p.player_id??p.name);
   const old=map.get(id);
 
   if(!old){
-
-   map.set(
-    id,
-    {
-     ...p,
-     live:true
-    }
-   );
-
+   map.set(id,{...p,live:true});
    continue;
-
   }
 
   const merged={...old};
-
-  const keys=
-   g==='skater'
-    ? SKATER_ADD
-    : GOALIE_ADD;
+  const keys=g==='skater'?SKATER_ADD:GOALIE_ADD;
 
   for(const k of keys){
-
-   if(
-    known(old,k) ||
-    known(p,k)
-   ){
-
-    merged[k]=
-     (
-      known(old,k)
-       ? Number(old[k])
-       : 0
-     )
-     +
-     (
-      known(p,k)
-       ? Number(p[k])
-       : 0
-     );
-
+   if(known(old,k)||known(p,k)){
+    merged[k]=num(old,k)+num(p,k);
    }
-
   }
 
   merged.name=p.name||old.name;
@@ -1114,1783 +716,968 @@ function mergePlayerLists(completed,live,g){
   }
 
   if(g==='goalie'){
+   const sv=known(merged,'sv')?Number(merged.sv):null;
+   const sa=known(merged,'sa')?Number(merged.sa):null;
+   const ga=known(merged,'ga')?Number(merged.ga):null;
+   const seconds=known(merged,'seconds')?Number(merged.seconds):null;
 
-   const sv=
-    known(merged,'sv')
-     ? Number(merged.sv)
-     : null;
-
-   const sa=
-    known(merged,'sa')
-     ? Number(merged.sa)
-     : null;
-
-   const ga=
-    known(merged,'ga')
-     ? Number(merged.ga)
-     : null;
-
-   const sec=
-    known(merged,'seconds')
-     ? Number(merged.seconds)
-     : null;
-
-   merged.svPct=
-    sv!==null &&
-    sa!==null &&
-    sa>0
-     ? sv/sa
-     : null;
-
-   merged.gaa=
-    ga!==null &&
-    sec!==null &&
-    sec>0
-     ? ga*3600/sec
-     : null;
-
+   merged.svPct=sv!==null&&sa!==null&&sa>0?sv/sa:null;
+   merged.gaa=ga!==null&&seconds!==null&&seconds>0
+    ? ga*3600/seconds
+    : null;
   }
 
   merged.live=true;
-
   map.set(id,merged);
-
  }
 
  return [...map.values()];
-
 }
 
-/* =========================================================
-   ALL-STAT RANKINGS
-========================================================= */
+/* WEEK AND MONTH ALL-STAT RANKINGS */
 
 function percentileRanks(values){
+ const sorted=[...values].filter(Number.isFinite).sort((a,b)=>a-b);
 
- const sorted=
-  [...values]
-   .filter(Number.isFinite)
-   .sort((a,b)=>a-b);
-
- return v=>{
-
-  if(
-   !sorted.length ||
-   !Number.isFinite(v)
-  ){
-   return 0;
-  }
-
-  let n=0;
-
+ return value=>{
+  if(!sorted.length||!Number.isFinite(value))return 0;
+  let count=0;
   for(const x of sorted){
-
-   if(x<=v){
-    n++;
-   }
-
+   if(x<=value)count++;
   }
-
-  return n/sorted.length;
-
+  return count/sorted.length;
  };
-
 }
-
-/* =========================================================
-   WEEK / MONTH ALL-STAT SCORE
-========================================================= */
 
 function allStatRows(source){
+ const sk=(source.skater||[]).map(p=>({...p,_g:'skater'}));
+ const go=(source.goalie||[]).map(p=>({...p,_g:'goalie'}));
+ const skKeys=['g','a','sog','hit','blk','ppp','fow'];
+ const goKeys=['w','sv','svPct','so'];
 
- const sk=
-  (source.skater||[])
-  .map(
-   p=>({
-    ...p,
-    _g:'skater'
-   })
-  );
+ function scoreGroup(arr,keys){
+  const rankers={};
 
- const go=
-  (source.goalie||[])
-  .map(
-   p=>({
-    ...p,
-    _g:'goalie'
-   })
-  );
-
- const skKeys=[
-  'g','a','sog','hit','blk','ppp','fow'
- ];
-
- const goKeys=[
-  'w','sv','svPct','so'
- ];
-
- const scoreGroup=
-  (arr,keys)=>{
-
-   const rankers={};
-
-   for(const k of keys){
-
-    rankers[k]=
-     percentileRanks(
-
-      arr.map(
-       p=>
-        known(p,k)
-         ? num(p,k)
-         : NaN
-      )
-
-     );
-
-   }
-
-   return arr.map(
-    p=>{
-
-     const available=
-      keys.filter(
-       k=>known(p,k)
-      );
-
-     const score=
-      available.length
-
-       ? available.reduce(
-          (s,k)=>
-           s+
-           rankers[k](num(p,k)),
-          0
-         )
-         /
-         available.length
-         *
-         100
-
-       : 0;
-
-     return {
-      ...p,
-      allScore:score
-     };
-
-    }
+  for(const k of keys){
+   rankers[k]=percentileRanks(
+    arr.map(p=>known(p,k)?num(p,k):NaN)
    );
+  }
 
-  };
+  return arr.map(p=>{
+   const available=keys.filter(k=>known(p,k));
+   const score=available.length
+    ? available.reduce((sum,k)=>sum+rankers[k](num(p,k)),0)/
+      available.length*100
+    : 0;
 
- return [
-
-  ...scoreGroup(sk,skKeys),
-  ...scoreGroup(go,goKeys)
-
- ]
-
- .sort(
-  (a,b)=>
-
-   b.allScore-
-   a.allScore
-
-   ||
-
-   (
-    num(b,'g')+
-    num(b,'a')
-   )
-
-   -
-
-   (
-    num(a,'g')+
-    num(a,'a')
-   )
- )
-
- .slice(0,10);
-
-}
-
-/* =========================================================
-   STAT SUMMARY
-========================================================= */
-
-function statSummary(p,g){
-
- if(g==='goalie'){
-
-  return (
-
-   `W ${
-    known(p,'w')
-     ? num(p,'w')
-     : '-'
-   } | `+
-
-   `SV ${
-    known(p,'sv')
-     ? num(p,'sv')
-     : '-'
-   } | `+
-
-   `SV% ${
-    known(p,'svPct')
-     ? (
-        num(p,'svPct')*
-        100
-       ).toFixed(1)+'%'
-     : '-'
-   } | `+
-
-   `SO ${
-    known(p,'so')
-     ? num(p,'so')
-     : '-'
-   }`
-
-  );
-
+   return {...p,allScore:score};
+  });
  }
 
- return (
-
-  `G ${
-   known(p,'g')
-    ? num(p,'g')
-    : '-'
-  } | `+
-
-  `A ${
-   known(p,'a')
-    ? num(p,'a')
-    : '-'
-  } | `+
-
-  `SOG ${
-   known(p,'sog')
-    ? num(p,'sog')
-    : '-'
-  } | `+
-
-  `HIT ${
-   known(p,'hit')
-    ? num(p,'hit')
-    : '-'
-  } | `+
-
-  `BLK ${
-   known(p,'blk')
-    ? num(p,'blk')
-    : '-'
-  }`
-
- );
-
+ return [
+  ...scoreGroup(sk,skKeys),
+  ...scoreGroup(go,goKeys)
+ ].sort((a,b)=>
+  b.allScore-a.allScore||
+  (num(b,'g')+num(b,'a'))-(num(a,'g')+num(a,'a'))
+ ).slice(0,10);
 }
 
-/* =========================================================
-   WEEK / MONTH LEADERS
-========================================================= */
+function statSummary(p,g){
+ if(g==='goalie'){
+  return `W ${known(p,'w')?num(p,'w'):'-'} | `+
+   `SV ${known(p,'sv')?num(p,'sv'):'-'} | `+
+   `SV% ${known(p,'svPct')?(num(p,'svPct')*100).toFixed(1)+'%':'-'} | `+
+   `SO ${known(p,'so')?num(p,'so'):'-'}`;
+ }
+
+ return `G ${known(p,'g')?num(p,'g'):'-'} | `+
+  `A ${known(p,'a')?num(p,'a'):'-'} | `+
+  `SOG ${known(p,'sog')?num(p,'sog'):'-'} | `+
+  `HIT ${known(p,'hit')?num(p,'hit'):'-'} | `+
+  `BLK ${known(p,'blk')?num(p,'blk'):'-'}`;
+}
 
 function renderLeaders(){
-
- const source=
-  leaderPeriod==='month'
-   ? monthlyPlayers
-   : players;
-
+ const source=leaderPeriod==='month'?monthlyPlayers:players;
  const rows=allStatRows(source);
 
- $('leaders-title').textContent=
+ $('leaders-title').textContent=leaderPeriod==='month'
+  ? 'Top 10 players of the month'
+  : 'Top 10 players of the week';
 
-  leaderPeriod==='month'
+ $('leaders-period').textContent=leaderPeriod==='month'
+  ? 'Completed-game 30-day performance.'
+  : 'Seven-day performance; current live stats are included when games are in progress.';
 
-   ? 'Top 10 players of the month'
-
-   : 'Top 10 players of the week';
-
- $('leaders-period').textContent=
-
-  leaderPeriod==='month'
-
-   ? 'Completed-game 30-day performance.'
-
-   : 'Seven-day performance; current live stats are included when games are in progress.';
-
- $('leaders-table')
-  .querySelector('tbody')
-  .innerHTML=
-
-  rows.length
-
-   ? rows.map(
-      (p,i)=>`
-
-       <tr>
-
-        <td class="rank">
-         ${i+1}
-        </td>
-
-        <td class="player-col">
-         ${playerCell(p,p._g)}
-        </td>
-
-        <td>
-         ${
-          known(p,'gp')
-           ? num(p,'gp')
-           : '-'
-         }
-        </td>
-
-        <td class="stat-summary">
-         ${statSummary(p,p._g)}
-        </td>
-
-        <td class="fpts">
-         ${p.allScore.toFixed(1)}
-        </td>
-
-       </tr>
-
-      `
-     )
-     .join('')
-
-   : `
-
-      <tr class="empty-row">
-
-       <td colspan="5">
-
-        <strong>
-         Waiting for regular-season stats
-        </strong>
-
-        <span>
-         All-stat leaders will appear when games are available.
-        </span>
-
-       </td>
-
-      </tr>
-
-     `;
-
+ $('leaders-table').querySelector('tbody').innerHTML=rows.length
+  ? rows.map((p,i)=>`
+   <tr>
+    <td class="rank">${i+1}</td>
+    <td class="player-col">${playerCell(p,p._g)}</td>
+    <td>${known(p,'gp')?num(p,'gp'):'-'}</td>
+    <td class="stat-summary">${statSummary(p,p._g)}</td>
+    <td class="fpts">${p.allScore.toFixed(1)}</td>
+   </tr>
+  `).join('')
+  : `
+   <tr class="empty-row">
+    <td colspan="5">
+     <strong>Waiting for regular-season stats</strong>
+     <span>All-stat leaders will appear when games are available.</span>
+    </td>
+   </tr>
+  `;
 }
 
-/* =========================================================
-   ICE WATCHERS TARGET SCORE
-========================================================= */
+/* INDEPENDENT ICE WATCHERS TARGET SCORE */
 
-function clamp(v,min,max){
- return Math.min(max,Math.max(min,v));
+function clamp(value,min,max){
+ return Math.min(max,Math.max(min,value));
 }
 
 function rateScore(value,low,high){
-
- if(
-  !Number.isFinite(value) ||
-  high<=low
- ){
-  return 0;
- }
-
- return clamp(
-  (value-low)/(high-low),
-  0,
-  1
- );
-
+ if(!Number.isFinite(value)||high<=low)return 0;
+ return clamp((value-low)/(high-low),0,1);
 }
 
 function skaterTargetScore(p){
-
  const gp=Math.max(1,num(p,'gp'));
 
- const pointsPerGame=
-  (
-   num(p,'g')+
-   num(p,'a')
-  )/gp;
-
- const shotsPerGame=
-  num(p,'sog')/gp;
-
- const pppPerGame=
-  num(p,'ppp')/gp;
-
- const physicalPerGame=
-  (
-   num(p,'hit')+
-   num(p,'blk')
-  )/gp;
-
- const fowPerGame=
-  num(p,'fow')/gp;
-
- const goalsPerGame=
-  num(p,'g')/gp;
-
  let score=
+  rateScore((num(p,'g')+num(p,'a'))/gp,.35,1.35)*30+
+  rateScore(num(p,'sog')/gp,1.5,4.5)*22+
+  rateScore(num(p,'ppp')/gp,0,.75)*14+
+  rateScore((num(p,'hit')+num(p,'blk'))/gp,1,6)*14+
+  rateScore(num(p,'fow')/gp,0,8)*4+
+  rateScore(num(p,'g')/gp,.1,.75)*8;
 
-  rateScore(
-   pointsPerGame,
-   .35,
-   1.35
-  )*30
+ score+=gp>=4?8:gp===3?6:gp===2?4:1;
 
-  +
+ if(gp<2)score=Math.min(score,49);
 
-  rateScore(
-   shotsPerGame,
-   1.5,
-   4.5
-  )*22
-
-  +
-
-  rateScore(
-   pppPerGame,
-   0,
-   .75
-  )*14
-
-  +
-
-  rateScore(
-   physicalPerGame,
-   1,
-   6
-  )*14
-
-  +
-
-  rateScore(
-   fowPerGame,
-   0,
-   8
-  )*4
-
-  +
-
-  rateScore(
-   goalsPerGame,
-   .1,
-   .75
-  )*8;
-
- score+=
-  gp>=4
-   ? 8
-   : gp===3
-    ? 6
-    : gp===2
-     ? 4
-     : 1;
-
- if(gp<2){
-  score=Math.min(score,49);
- }
-
- return Math.round(
-  clamp(score,0,100)
- );
-
+ return Math.round(clamp(score,0,100));
 }
 
 function goalieTargetScore(p){
-
  const gp=Math.max(1,num(p,'gp'));
 
- const savePct=
-  known(p,'svPct')
-   ? num(p,'svPct')
-   : 0;
-
- const savesPerGame=
-  num(p,'sv')/gp;
-
- const winsPerGame=
-  num(p,'w')/gp;
-
- const startsPerGame=
-  num(p,'gs')/gp;
-
  let score=
+  rateScore(known(p,'svPct')?num(p,'svPct'):0,.890,.940)*40+
+  rateScore(num(p,'sv')/gp,18,35)*25+
+  rateScore(num(p,'w')/gp,0,.8)*17+
+  rateScore(num(p,'gs')/gp,.5,1)*8+
+  rateScore(num(p,'so'),0,1)*5;
 
-  rateScore(
-   savePct,
-   .890,
-   .940
-  )*40
+ score+=gp>=4?5:gp===3?4:gp===2?3:1;
 
-  +
+ if(gp<2)score=Math.min(score,49);
 
-  rateScore(
-   savesPerGame,
-   18,
-   35
-  )*25
-
-  +
-
-  rateScore(
-   winsPerGame,
-   0,
-   .8
-  )*17
-
-  +
-
-  rateScore(
-   startsPerGame,
-   .5,
-   1
-  )*8
-
-  +
-
-  rateScore(
-   num(p,'so'),
-   0,
-   1
-  )*5;
-
- score+=
-  gp>=4
-   ? 5
-   : gp===3
-    ? 4
-    : gp===2
-     ? 3
-     : 1;
-
- if(gp<2){
-  score=Math.min(score,49);
- }
-
- return Math.round(
-  clamp(score,0,100)
- );
-
+ return Math.round(clamp(score,0,100));
 }
 
-function targetInfo(p){
+/* WHY EACH WAIVER TARGET IS HERE */
 
+function targetInfo(p){
  const gp=Math.max(1,num(p,'gp'));
  const tags=[];
  const reasons=[];
 
  if(p._g==='skater'){
+  const ppg=(num(p,'g')+num(p,'a'))/gp;
+  const shots=num(p,'sog')/gp;
+  const power=num(p,'ppp')/gp;
+  const physical=(num(p,'hit')+num(p,'blk'))/gp;
+  const faceoffs=num(p,'fow')/gp;
+  const goals=num(p,'g')/gp;
 
-  const pointsPerGame=
-   (
-    num(p,'g')+
-    num(p,'a')
-   )/gp;
-
-  const shotsPerGame=
-   num(p,'sog')/gp;
-
-  const pppPerGame=
-   num(p,'ppp')/gp;
-
-  const physicalPerGame=
-   (
-    num(p,'hit')+
-    num(p,'blk')
-   )/gp;
-
-  const fowPerGame=
-   num(p,'fow')/gp;
-
-  const goalsPerGame=
-   num(p,'g')/gp;
-
-  if(
-   gp>=2 &&
-   pointsPerGame>=1
-  ){
-   tags.push('TRENDING');
-  }
-
-  if(shotsPerGame>=3.5){
-   tags.push('SHOT VOLUME');
-  }
-
-  if(
-   num(p,'ppp')>=1 &&
-   pppPerGame>=.4
-  ){
-   tags.push('POWER PLAY');
-  }
-
-  if(
-   physicalPerGame>=4 ||
-   fowPerGame>=6
-  ){
-   tags.push('CATEGORY VALUE');
-  }
-
-  if(goalsPerGame>=.5){
-   tags.push('SCORING');
-  }
+  if(gp>=2&&ppg>=1)tags.push('TRENDING');
+  if(shots>=3.5)tags.push('SHOT VOLUME');
+  if(num(p,'ppp')>=1&&power>=.4)tags.push('POWER PLAY');
+  if(physical>=4||faceoffs>=6)tags.push('CATEGORY VALUE');
+  if(goals>=.5)tags.push('SCORING');
 
   if(gp<2){
-
-   reasons.push(
-    'Early signal only; more games are needed'
-   );
-
-  }else if(pointsPerGame>=1){
-
-   reasons.push(
-    `${pointsPerGame.toFixed(2)} points per game`
-   );
-
-  }else if(pointsPerGame>=.7){
-
-   reasons.push(
-    'Solid recent point production'
-   );
-
+   reasons.push('Early signal only; more games are needed');
+  }else if(ppg>=1){
+   reasons.push(`${ppg.toFixed(2)} points per game`);
+  }else if(ppg>=.7){
+   reasons.push('Solid recent point production');
   }
 
-  if(shotsPerGame>=3.5){
-
-   reasons.push(
-    `${shotsPerGame.toFixed(1)} shots per game`
-   );
-
+  if(shots>=3.5){
+   reasons.push(`${shots.toFixed(1)} shots per game`);
   }
-
-  if(pppPerGame>=.4){
-
-   reasons.push(
-    'Active power-play production'
-   );
-
+  if(power>=.4){
+   reasons.push('Active power-play production');
   }
-
-  if(physicalPerGame>=4){
-
-   reasons.push(
-    'Strong hits and blocks contribution'
-   );
-
+  if(physical>=4){
+   reasons.push('Strong hits and blocks contribution');
   }
-
-  if(fowPerGame>=6){
-
-   reasons.push(
-    'Useful faceoff volume'
-   );
-
+  if(faceoffs>=6){
+   reasons.push('Useful faceoff volume');
   }
-
   if(!reasons.length){
-
-   reasons.push(
-    'Balanced recent fantasy production'
-   );
-
+   reasons.push('Balanced recent fantasy production');
   }
-
  }else{
+  const savePct=known(p,'svPct')?num(p,'svPct'):0;
+  const saves=num(p,'sv')/gp;
+  const wins=num(p,'w')/gp;
 
-  const savePct=
-   known(p,'svPct')
-    ? num(p,'svPct')
-    : 0;
-
-  const savesPerGame=
-   num(p,'sv')/gp;
-
-  const winsPerGame=
-   num(p,'w')/gp;
-
-  if(
-   gp>=2 &&
-   savePct>=.920
-  ){
-   tags.push('HOT GOALIE');
-  }
-
-  if(savesPerGame>=27){
-   tags.push('WORKLOAD');
-  }
-
-  if(winsPerGame>=.5){
-   tags.push('WINNING');
-  }
-
-  if(num(p,'so')>=1){
-   tags.push('SHUTOUT');
-  }
+  if(gp>=2&&savePct>=.920)tags.push('HOT GOALIE');
+  if(saves>=27)tags.push('WORKLOAD');
+  if(wins>=.5)tags.push('WINNING');
+  if(num(p,'so')>=1)tags.push('SHUTOUT');
 
   if(gp<2){
-
-   reasons.push(
-    'Early signal only; more appearances are needed'
-   );
-
+   reasons.push('Early signal only; more appearances are needed');
   }else if(savePct>=.920){
-
-   reasons.push(
-    `${(savePct*100).toFixed(1)}% save percentage`
-   );
-
+   reasons.push(`${(savePct*100).toFixed(1)}% save percentage`);
   }
 
-  if(savesPerGame>=25){
-
-   reasons.push(
-    `${savesPerGame.toFixed(1)} saves per appearance`
-   );
-
+  if(saves>=25){
+   reasons.push(`${saves.toFixed(1)} saves per appearance`);
   }
-
-  if(winsPerGame>=.5){
-
-   reasons.push(
-    'Strong recent winning rate'
-   );
-
+  if(wins>=.5){
+   reasons.push('Strong recent winning rate');
   }
-
   if(num(p,'so')>=1){
-
-   reasons.push(
-    'Shutout production'
-   );
-
+   reasons.push('Shutout production');
   }
-
   if(!reasons.length){
-
-   reasons.push(
-    'Recent workload creates fantasy opportunity'
-   );
-
+   reasons.push('Recent workload creates fantasy opportunity');
   }
-
  }
 
  if(!tags.length){
-
-  tags.push(
-   p._g==='skater'
-    ? 'DEPTH WATCH'
-    : 'GOALIE WATCH'
-  );
-
+  tags.push(p._g==='skater'?'DEPTH WATCH':'GOALIE WATCH');
  }
 
  return {
   tags:tags.slice(0,3),
-  reason:reasons.slice(0,3).join(' • ')
+  reason:reasons.slice(0,3).join(' / ')
  };
-
 }
 
-/* =========================================================
-   POTENTIAL WAIVER TARGETS
-
-   Eligibility is based on the user's custom scoring:
-   Skaters #31+
-   Goalies #6+
-
-   Once eligible, players are ranked by the independent
-   Ice Watchers Target Score.
-========================================================= */
+/* WAIVER TARGET TABLE */
 
 function renderTargets(){
+ const sk=players.skater
+  .map(p=>({...p,_g:'skater',fpts:points(p,'skater')}))
+  .sort((a,b)=>b.fpts-a.fpts);
 
- const sk=
-  players.skater
-
-  .map(
-   p=>({
-    ...p,
-    _g:'skater',
-    fpts:points(p,'skater')
-   })
-  )
-
-  .sort(
-   (a,b)=>
-    b.fpts-a.fpts
-  );
-
- const go=
-  players.goalie
-
-  .map(
-   p=>({
-    ...p,
-    _g:'goalie',
-    fpts:points(p,'goalie')
-   })
-  )
-
-  .sort(
-   (a,b)=>
-    b.fpts-a.fpts
-  );
-
- const skaterTargets=
-  sk.slice(30)
-
-  .map(
-   (p,i)=>({
-    ...p,
-    _weeklyRank:i+31,
-    _targetScore:skaterTargetScore(p)
-   })
-  );
-
- const goalieTargets=
-  go.slice(5)
-
-  .map(
-   (p,i)=>({
-    ...p,
-    _weeklyRank:i+6,
-    _targetScore:goalieTargetScore(p)
-   })
-  );
+ const go=players.goalie
+  .map(p=>({...p,_g:'goalie',fpts:points(p,'goalie')}))
+  .sort((a,b)=>b.fpts-a.fpts);
 
  const pool=[
-  ...skaterTargets,
-  ...goalieTargets
+  ...sk.slice(30).map((p,i)=>({
+   ...p,
+   _weeklyRank:i+31,
+   _targetScore:skaterTargetScore(p)
+  })),
+  ...go.slice(5).map((p,i)=>({
+   ...p,
+   _weeklyRank:i+6,
+   _targetScore:goalieTargetScore(p)
+  }))
  ];
 
- const mature=
-  pool
+ const byTarget=(a,b)=>
+  b._targetScore-a._targetScore||b.fpts-a.fpts;
 
-  .filter(
-   p=>num(p,'gp')>=2
-  )
+ const mature=pool.filter(p=>num(p,'gp')>=2).sort(byTarget);
+ const early=pool.filter(p=>num(p,'gp')<2).sort(byTarget);
 
-  .sort(
-   (a,b)=>
-    b._targetScore-
-    a._targetScore
-    ||
-    b.fpts-
-    a.fpts
-  );
-
- const early=
-  pool
-
-  .filter(
-   p=>num(p,'gp')<2
-  )
-
-  .sort(
-   (a,b)=>
-    b._targetScore-
-    a._targetScore
-    ||
-    b.fpts-
-    a.fpts
-  );
-
- const candidates=[
-  ...mature.slice(0,10)
- ];
+ const candidates=mature.slice(0,10);
 
  if(candidates.length<10){
-
-  candidates.push(
-   ...early.slice(
-    0,
-    10-candidates.length
-   )
-  );
-
+  candidates.push(...early.slice(0,10-candidates.length));
  }
 
- $('targets-table')
-  .querySelector('tbody')
-  .innerHTML=
+ $('targets-table').querySelector('tbody').innerHTML=candidates.length
+  ? candidates.map(p=>{
+   const info=targetInfo(p);
 
-  candidates.length
-
-   ? candidates.map(
-      p=>{
-
-       const info=
-        targetInfo(p);
-
-       const tags=
-        info.tags
-
-        .map(
-         tag=>
-          `<span class="target-tag">${esc(tag)}</span>`
-        )
-
-        .join('');
-
-       return `
-
-        <tr>
-
-         <td class="player-col">
-
-          ${playerCell(
-           p,
-           p._g
-          )}
-
-         </td>
-
-         <td>
-
-          ${
-           p._g==='skater'
-            ? 'Skater #'
-            : 'Goalie #'
-          }${p._weeklyRank}
-
-         </td>
-
-         <td class="stat-summary">
-
-          ${statSummary(
-           p,
-           p._g
-          )}
-
-         </td>
-
-         <td class="target-reason">
-
-          <div class="target-tags">
-           ${tags}
-          </div>
-
-          ${esc(info.reason)}
-
-         </td>
-
-         <td class="target-score">
-
-          ${p._targetScore}
-
-         </td>
-
-        </tr>
-
-       `;
-
-      }
-     )
-
-     .join('')
-
-   : `
-
-      <tr class="empty-row">
-
-       <td colspan="5">
-
-        <strong>
-         Waiting for a deeper player pool
-        </strong>
-
-        <span>
-         Target Score evaluates skaters outside the top 30 and goalies outside the top 5.
-        </span>
-
-       </td>
-
-      </tr>
-
-     `;
-
+   return `
+    <tr>
+     <td class="player-col">${playerCell(p,p._g)}</td>
+     <td>
+      ${p._g==='skater'?'Skater #':'Goalie #'}${p._weeklyRank}
+     </td>
+     <td class="stat-summary">${statSummary(p,p._g)}</td>
+     <td class="target-reason">
+      <div class="target-tags">
+       ${info.tags.map(
+        tag=>`<span class="target-tag">${esc(tag)}</span>`
+       ).join('')}
+      </div>
+      ${esc(info.reason)}
+     </td>
+     <td class="target-score">${p._targetScore}</td>
+    </tr>
+   `;
+  }).join('')
+  : `
+   <tr class="empty-row">
+    <td colspan="5">
+     <strong>Waiting for a deeper player pool</strong>
+     <span>
+      Target Score evaluates skaters outside the top 30 and goalies outside the top 5.
+     </span>
+    </td>
+   </tr>
+  `;
 }
 
-/* =========================================================
-   PLAYER WATCH
-========================================================= */
+/* BALANCED PLAYER WATCH */
 
 function renderWatch(){
-
  const skaters=[];
  const goalies=[];
 
  for(const p of players.skater){
-
-  const b=badges(p,'skater');
-
-  if(!b.length){
-   continue;
-  }
+  const earned=badges(p,'skater');
+  if(!earned.length)continue;
 
   const gp=Math.max(1,num(p,'gp'));
+  const ppg=(num(p,'g')+num(p,'a'))/gp;
+  const shots=num(p,'sog')/gp;
+  const physical=(num(p,'hit')+num(p,'blk'))/gp;
+  const power=num(p,'ppp')/gp;
 
-  const totalPoints=
-   num(p,'g')+
-   num(p,'a');
-
-  const pointsPerGame=
-   totalPoints/gp;
-
-  const shotsPerGame=
-   num(p,'sog')/gp;
-
-  const physicalPerGame=
-   (
-    num(p,'hit')+
-    num(p,'blk')
-   )/gp;
-
-  const pppPerGame=
-   num(p,'ppp')/gp;
-
-  const consistencyScore=
-
-   b.length*15
-
-   +
-
-   pointsPerGame*12
-
-   +
-
-   shotsPerGame*2
-
-   +
-
-   pppPerGame*5
-
-   +
-
-   physicalPerGame*.75
-
-   +
-
+  const score=
+   earned.length*15+
+   ppg*12+
+   shots*2+
+   power*5+
+   physical*.75+
    Math.min(gp,4)*2;
 
   skaters.push({
-   ...p,
-   _g:'skater',
-   _badges:b,
-   _watchScore:consistencyScore
+   ...p,_g:'skater',_badges:earned,_watchScore:score
   });
-
  }
 
  for(const p of players.goalie){
-
-  const b=badges(p,'goalie');
-
-  if(!b.length){
-   continue;
-  }
+  const earned=badges(p,'goalie');
+  if(!earned.length)continue;
 
   const gp=Math.max(1,num(p,'gp'));
+  const savePct=known(p,'svPct')?num(p,'svPct'):0;
+  const saves=num(p,'sv')/gp;
+  const wins=num(p,'w')/gp;
+  const quality=Math.max(0,savePct-.900);
 
-  const savePct=
-   known(p,'svPct')
-    ? num(p,'svPct')
-    : 0;
-
-  const savesPerGame=
-   num(p,'sv')/gp;
-
-  const winsPerGame=
-   num(p,'w')/gp;
-
-  const svQuality=
-   Math.max(
-    0,
-    savePct-.900
-   );
-
-  const consistencyScore=
-
-   b.length*15
-
-   +
-
-   svQuality*300
-
-   +
-
-   savesPerGame*.5
-
-   +
-
-   winsPerGame*8
-
-   +
-
-   num(p,'so')*4
-
-   +
-
+  const score=
+   earned.length*15+
+   quality*300+
+   saves*.5+
+   wins*8+
+   num(p,'so')*4+
    Math.min(gp,4)*2;
 
   goalies.push({
-   ...p,
-   _g:'goalie',
-   _badges:b,
-   _watchScore:consistencyScore
+   ...p,_g:'goalie',_badges:earned,_watchScore:score
   });
-
  }
 
- skaters.sort(
-  (a,b)=>
-   b._watchScore-
-   a._watchScore
- );
+ skaters.sort((a,b)=>b._watchScore-a._watchScore);
+ goalies.sort((a,b)=>b._watchScore-a._watchScore);
 
- goalies.sort(
-  (a,b)=>
-   b._watchScore-
-   a._watchScore
- );
-
- let selected=[
-
+ const selected=[
   ...skaters.slice(0,8),
-
   ...goalies.slice(0,4)
-
  ];
 
  if(selected.length<12){
-
-  const used=
-   new Set(
-
-    selected.map(
-     p=>
-      `${p._g}:${p.player_id??p.name}`
-    )
-
-   );
-
-  const remaining=[
-
-   ...skaters,
-
-   ...goalies
-
-  ]
-
-  .filter(
-   p=>
-    !used.has(
-     `${p._g}:${p.player_id??p.name}`
-    )
-  )
-
-  .sort(
-   (a,b)=>
-    b._watchScore-
-    a._watchScore
+  const used=new Set(
+   selected.map(p=>`${p._g}:${p.player_id??p.name}`)
   );
 
-  selected.push(
+  const remaining=[...skaters,...goalies]
+   .filter(p=>!used.has(`${p._g}:${p.player_id??p.name}`))
+   .sort((a,b)=>b._watchScore-a._watchScore);
 
-   ...remaining.slice(
-    0,
-    12-selected.length
-   )
-
-  );
-
+  selected.push(...remaining.slice(0,12-selected.length));
  }
 
- selected.sort(
-  (a,b)=>
-   b._watchScore-
-   a._watchScore
+ selected.sort((a,b)=>b._watchScore-a._watchScore);
+
+ $('watch-list').innerHTML=selected.length
+  ? selected.map(p=>`
+   <div class="watch-card">
+    <div class="badges">
+     ${p.live?'<span class="badge live">LIVE</span>':''}
+     ${badgeHTML(p,p._g)}
+    </div>
+    <div class="watch-player">${playerCell(p,p._g)}</div>
+    <div class="watch-stats">${statSummary(p,p._g)}</div>
+   </div>
+  `).join('')
+  : `
+   <div class="watch-empty">
+    <strong>No consistent trends yet</strong>
+    Player Watch requires at least two games of sustained
+    performance during the current seven-day window.
+   </div>
+  `;
+}
+
+/* PLAYER PROFILES */
+
+let profilePeriod='week';
+let profileOpener=null;
+
+const profileDialog=$('player-profile');
+const profileKey=p=>String(p.player_id??p.name??'');
+const profileListKey=g=>g==='goalie'?'goalies':'skaters';
+
+function profileRoute(){
+ const match=location.hash.match(/^#player=(skater|goalie):(.+)$/);
+ if(!match)return null;
+
+ try{
+  return {g:match[1],id:decodeURIComponent(match[2])};
+ }catch{
+  return null;
+ }
+}
+
+function playerCell(p,g){
+ const hash='#player='+g+':'+encodeURIComponent(profileKey(p));
+
+ return `
+  <a
+   class="player-profile-link"
+   href="${esc(hash)}"
+   aria-label="View ${esc(p.name||'player')} profile"
+  >${basePlayerCell(p,g)}</a>
+ `;
+}
+
+function profileSource(g,period){
+ if(period==='week')return players[g];
+ if(period==='month')return monthlyPlayers[g];
+
+ const list=currentData?.season?.[profileListKey(g)];
+ return Array.isArray(list)?list:[];
+}
+
+function findProfilePlayer(route){
+ for(const period of ['week','month','season']){
+  const player=profileSource(route.g,period)
+   .find(p=>profileKey(p)===route.id);
+
+  if(player)return player;
+ }
+
+ const log=currentData?.game_logs?.[profileListKey(route.g)]?.[route.id];
+
+ return log?{...log,player_id:route.id}:null;
+}
+
+function renderProfile(){
+ const route=profileRoute();
+ if(!route)return;
+
+ const p=findProfilePlayer(route);
+ const content=$('profile-content');
+
+ if(!p){
+  $('profile-title').textContent='Player profile';
+
+  content.innerHTML=`
+   <p class="profile-note">
+    ${
+     currentData
+      ? 'This player is not in the available regular-season data.'
+      : 'Waiting for player data. If statistics fail to load, close this profile and check the dashboard.'
+    }
+   </p>
+  `;
+  return;
+ }
+
+ $('profile-title').textContent=p.name||'Player profile';
+
+ const selected=profileSource(route.g,profilePeriod)
+  .find(x=>profileKey(x)===route.id);
+
+ const weekly=profileSource(route.g,'week')
+  .find(x=>profileKey(x)===route.id);
+
+ const keys=route.g==='goalie'
+  ? ['gp','gs','w','sv','ga','svPct','gaa','so','otl']
+  : [
+     'gp','g','a','plusMinus','sog','hit','blk','ppp',
+     'fow','pim','shg','sha','gwg','hat'
+    ];
+
+ const periodLabels={
+  week:'Last 7 days',
+  month:'Last 30 days',
+  season:'Season'
+ };
+
+ const scope=profilePeriod==='week'
+  ? currentData
+  : profilePeriod==='month'
+   ? currentData?.monthly
+   : currentData?.season;
+
+ const dates=scope?.period_start&&scope?.period_end
+  ? `${scope.period_start} - ${scope.period_end}`
+  : '';
+
+ const stamp=currentData?.live?.updated_at||currentData?.updated_at;
+
+ const logs=currentData?.game_logs?.[profileListKey(route.g)]?.[route.id]?.games;
+
+ const recent=Array.isArray(logs)
+  ? [...logs].sort((a,b)=>
+     String(b.date||'').localeCompare(String(a.date||''))||
+     num(b,'game_id')-num(a,'game_id')
+    ).slice(0,10)
+  : [];
+
+ const logKeys=route.g==='goalie'
+  ? ['w','sv','ga','svPct','gaa','so']
+  : ['g','a','sog','hit','blk','ppp','fow'];
+
+ const gameTable=recent.length
+  ? `
+   <div class="tablewrap">
+    <table class="profile-game-table">
+     <thead>
+      <tr>
+       <th scope="col">DATE</th>
+       <th scope="col">OPP</th>
+       ${logKeys.map(k=>`
+        <th scope="col" title="${esc(LABELS[k])}">
+         ${k==='svPct'?'SV%':k.toUpperCase()}
+        </th>
+       `).join('')}
+       <th scope="col">TOI</th>
+       <th scope="col">FPTS</th>
+      </tr>
+     </thead>
+     <tbody>
+      ${recent.map(row=>`
+       <tr>
+        <td>${esc(row.date)}</td>
+        <td>
+         ${row.home_away==='home'?'vs':'@'}
+         ${esc(row.opponent||'-')}
+        </td>
+        ${logKeys.map(k=>`<td>${displayStat(row,k)}</td>`).join('')}
+        <td>${esc(row.toi||'-')}</td>
+        <td class="fpts">
+         ${points({...row,pos:row.pos||p.pos},route.g).toFixed(2)}
+        </td>
+       </tr>
+      `).join('')}
+     </tbody>
+    </table>
+   </div>
+  `
+  : '<p class="profile-empty">Game logs are not available in the current data.</p>';
+
+ content.innerHTML=`
+  <div class="profile-hero">
+   ${basePlayerCell(p,route.g)}
+   <div class="badges">
+    ${weekly?badgeHTML(weekly,route.g):''}
+   </div>
+  </div>
+
+  <p class="profile-note">
+   Player Watch badges reflect the seven-day window.
+  </p>
+
+  <div class="profile-periods" aria-label="Profile statistics period">
+   ${Object.entries(periodLabels).map(([key,label])=>`
+    <button
+     type="button"
+     data-profile-period="${key}"
+     aria-pressed="${profilePeriod===key}"
+    >${label}</button>
+   `).join('')}
+  </div>
+
+  <p class="profile-note">
+   ${esc(dates)}${dates?' / ':''}
+   ${
+    profilePeriod==='week'
+     ? 'Includes current live stats when available.'
+     : 'Completed regular-season games only.'
+   }
+  </p>
+
+  ${
+   selected
+    ? `
+     <div class="profile-points">
+      <span>Fantasy points / your scoring</span>
+      <strong>${points(selected,route.g).toFixed(2)}</strong>
+     </div>
+
+     <div class="profile-stats">
+      ${keys.map(k=>`
+       <div class="profile-stat">
+        <span>${esc(LABELS[k]||k)}</span>
+        <strong>${displayStat(selected,k)}</strong>
+       </div>
+      `).join('')}
+     </div>
+
+     ${
+      route.g==='skater'
+       ? `
+        <div class="profile-stat profile-total">
+         <span>Points (goals + assists)</span>
+         <strong>
+          ${
+           known(selected,'g')&&known(selected,'a')
+            ? num(selected,'g')+num(selected,'a')
+            : '-'
+          }
+         </strong>
+        </div>
+       `
+       : ''
+     }
+    `
+    : '<p class="profile-empty">No player statistics are available for this period.</p>'
+  }
+
+  <h3>Recent games</h3>
+  <p class="profile-note">
+   Last 10 completed games, independent of the selected period.
+  </p>
+
+  ${gameTable}
+
+  <p class="profile-note">
+   ${stamp?'Updated '+esc(new Date(stamp).toLocaleString()):''}
+  </p>
+ `;
+}
+
+function syncProfile(){
+ const route=profileRoute();
+
+ if(route){
+  renderProfile();
+
+  if(!profileDialog.open){
+   profileDialog.showModal();
+   document.body.classList.add('profile-open');
+  }
+ }else if(profileDialog.open){
+  profileDialog.close();
+  document.body.classList.remove('profile-open');
+
+  if(profileOpener?.isConnected){
+   profileOpener.focus();
+  }else{
+   document.querySelector('.brand')?.focus();
+  }
+
+  profileOpener=null;
+ }
+}
+
+function closeProfile(){
+ if(history.state?.iceWatchProfile){
+  history.back();
+ }else{
+  const url=new URL(location.href);
+  url.hash='';
+  history.replaceState(null,'',url);
+  syncProfile();
+ }
+}
+
+document.addEventListener('click',e=>{
+ const link=e.target.closest?.('.player-profile-link');
+
+ if(!link||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey){
+  return;
+ }
+
+ e.preventDefault();
+ profileOpener=link;
+ profilePeriod='week';
+
+ history.pushState(
+  {iceWatchProfile:true},
+  '',
+  link.getAttribute('href')
  );
 
- $('watch-list').innerHTML=
+ syncProfile();
+});
 
-  selected.length
+profileDialog.addEventListener('click',e=>{
+ const period=e.target.closest?.('[data-profile-period]');
 
-   ? selected.map(
-      p=>`
+ if(period){
+  profilePeriod=period.dataset.profilePeriod;
+  renderProfile();
 
-       <div class="watch-card">
+  profileDialog.querySelector(
+   `[data-profile-period="${profilePeriod}"]`
+  )?.focus();
+ }
 
-        <div class="badges">
+ if(e.target===profileDialog){
+  const rect=profileDialog.getBoundingClientRect();
 
-         ${
-          p.live
+  if(
+   e.clientX<rect.left||
+   e.clientX>rect.right||
+   e.clientY<rect.top||
+   e.clientY>rect.bottom
+  ){
+   closeProfile();
+  }
+ }
+});
 
-           ? '<span class="badge live">LIVE</span>'
+profileDialog.addEventListener('cancel',e=>{
+ e.preventDefault();
+ closeProfile();
+});
 
-           : ''
-         }
+$('profile-close').onclick=closeProfile;
 
-         ${badgeHTML(
-          p,
-          p._g
-         )}
+$('profile-copy').onclick=async()=>{
+ const status=$('profile-copy-status');
 
-        </div>
+ try{
+  await navigator.clipboard.writeText(location.href);
+  status.textContent='Profile link copied';
+ }catch{
+  status.textContent=
+   'Copy the address from your browser to share this profile.';
+ }
+};
 
-        <div class="watch-player">
+window.addEventListener('popstate',syncProfile);
+window.addEventListener('hashchange',syncProfile);
 
-         ${playerCell(
-          p,
-          p._g
-         )}
-
-        </div>
-
-        <div class="watch-stats">
-
-         ${statSummary(
-          p,
-          p._g
-         )}
-
-        </div>
-
-       </div>
-
-      `
-     )
-
-     .join('')
-
-   : `
-
-      <div class="watch-empty">
-
-       <strong>
-        No consistent trends yet
-       </strong>
-
-       Player Watch requires at least two games
-       of sustained performance during the
-       current seven-day window.
-
-      </div>
-
-     `;
-
-}
-
-/* =========================================================
-   REFRESH EVERYTHING
-========================================================= */
+/* REFRESH ALL VIEWS */
 
 function refresh(){
-
  render('skater');
-
  render('goalie');
-
  renderLeaders();
-
  renderTargets();
-
  renderWatch();
 
+ if(profileDialog.open)renderProfile();
 }
 
-/* =========================================================
-   APPLY DATA.JSON
-========================================================= */
+/* APPLY DATA */
 
 function applyData(d){
-
  currentData=d;
 
  completedPlayers={
-
-  skater:
-   Array.isArray(d.skaters)
-    ? d.skaters
-    : [],
-
-  goalie:
-   Array.isArray(d.goalies)
-    ? d.goalies
-    : []
-
+  skater:Array.isArray(d.skaters)?d.skaters:[],
+  goalie:Array.isArray(d.goalies)?d.goalies:[]
  };
 
  livePlayers={
-
-  skater:
-   Array.isArray(d.live?.skaters)
-    ? d.live.skaters
-    : [],
-
-  goalie:
-   Array.isArray(d.live?.goalies)
-    ? d.live.goalies
-    : []
-
+  skater:Array.isArray(d.live?.skaters)?d.live.skaters:[],
+  goalie:Array.isArray(d.live?.goalies)?d.live.goalies:[]
  };
 
  players={
-
-  skater:
-   mergePlayerLists(
-    completedPlayers.skater,
-    livePlayers.skater,
-    'skater'
-   ),
-
-  goalie:
-   mergePlayerLists(
-    completedPlayers.goalie,
-    livePlayers.goalie,
-    'goalie'
-   )
-
+  skater:mergePlayerLists(
+   completedPlayers.skater,
+   livePlayers.skater,
+   'skater'
+  ),
+  goalie:mergePlayerLists(
+   completedPlayers.goalie,
+   livePlayers.goalie,
+   'goalie'
+  )
  };
 
  monthlyPlayers={
-
-  skater:
-   Array.isArray(d.monthly?.skaters)
-    ? d.monthly.skaters
-    : [],
-
-  goalie:
-   Array.isArray(d.monthly?.goalies)
-    ? d.monthly.goalies
-    : []
-
+  skater:Array.isArray(d.monthly?.skaters)?d.monthly.skaters:[],
+  goalie:Array.isArray(d.monthly?.goalies)?d.monthly.goalies:[]
  };
 
- $('period').textContent=
+ $('period').textContent=d.period_start&&d.period_end
+  ? d.period_start+' - '+d.period_end
+  : 'Last 7 days';
 
-  d.period_start &&
-  d.period_end
+ const liveCount=Number(d.live?.games_count||0);
+ const updatedAt=d.live?.updated_at||d.updated_at;
 
-   ? d.period_start+
-     ' - '+
-     d.period_end
+ $('live-pill').hidden=!liveCount;
+ $('live-pill').textContent=liveCount?`LIVE ${liveCount}`:'LIVE';
 
-   : 'Last 7 days';
+ $('updated').textContent=updatedAt
+  ? 'Updated '+new Date(updatedAt).toLocaleString()
+  : 'Update time unavailable';
 
- const liveCount=
-  Number(
-   d.live?.games_count||
-   0
-  );
-
- const updatedAt=
-  d.live?.updated_at||
-  d.updated_at;
-
- $('live-pill').hidden=
-  !liveCount;
-
- $('live-pill').textContent=
-
-  liveCount
-
-   ? `LIVE ${liveCount}`
-
-   : 'LIVE';
-
- $('updated').textContent=
-
-  updatedAt
-
-   ? 'Updated '+
-     new Date(updatedAt)
-     .toLocaleString()
-
-   : 'Update time unavailable';
-
- $('banner')
-  .classList
-  .remove('error');
+ $('banner').classList.remove('error');
 
  if(liveCount){
-
   $('banner').textContent=
-
-   `${liveCount} regular-season game${
-    liveCount===1
-     ? ' is'
-     : 's are'
-   } live. Current boxscore stats are included and the page checks for updates every 60 seconds.`;
-
- }
-
- else if(
-  completedPlayers.skater.length ||
+   `${liveCount} regular-season game${liveCount===1?' is':'s are'} live. `+
+   'Current boxscore stats are included and the page checks for updates every 60 seconds.';
+ }else if(
+  completedPlayers.skater.length||
   completedPlayers.goalie.length
  ){
-
   $('banner').textContent=
-
-   'Daily update loaded. No games are live right now. Player Watch is based on sustained recent NHL performance.';
-
- }
-
- else{
-
+   'Daily update loaded. No games are live right now. '+
+   'Player Watch is based on sustained recent NHL performance.';
+ }else{
   $('banner').textContent=
-
    'No confirmed regular-season games in this period. Preseason is excluded.';
-
  }
 
  refresh();
-
 }
 
-/* =========================================================
-   LOAD DATA.JSON
-========================================================= */
+/* LOAD DATA.JSON */
 
-async function load(
- {silent=false}={}
-){
-
+async function load({silent=false}={}){
  try{
-
-  const r=
-   await fetch(
-
-    './data.json?t='+
-    Date.now(),
-
-    {
-     cache:'no-store'
-    }
-
-   );
-
-  if(!r.ok){
-
-   throw Error(
-    'HTTP '+
-    r.status
-   );
-
-  }
-
-  const d=
-   await r.json();
-
-  const stamp=
-   String(
-
-    d.updated_at||
-
-    d.live?.updated_at||
-
-    ''
-
-   );
-
-  if(
-   !lastDataStamp ||
-   stamp!==lastDataStamp
-  ){
-
-   lastDataStamp=stamp;
-
-   applyData(d);
-
-  }
-
- }
-
- catch(e){
-
-  if(!silent){
-
-   $('banner')
-    .classList
-    .add('error');
-
-   $('banner').textContent=
-
-    'Could not load statistics ('+
-    e.message+
-    ').';
-
-   $('updated').textContent=
-
-    'Statistics unavailable';
-
-   refresh();
-
-  }
-
- }
-
-}
-
-/* =========================================================
-   NEAR-LIVE REFRESH
-========================================================= */
-
-function startNearLiveRefresh(){
-
- if(refreshTimer){
-
-  clearInterval(refreshTimer);
-
- }
-
- refreshTimer=
-  setInterval(
-
-   ()=>
-    load({
-     silent:true
-    }),
-
-   60000
-
+  const response=await fetch(
+   './data.json?t='+Date.now(),
+   {cache:'no-store'}
   );
 
- document.addEventListener(
-
-  'visibilitychange',
-
-  ()=>{
-
-   if(
-    document.visibilityState===
-    'visible'
-   ){
-
-    load({
-     silent:true
-    });
-
-   }
-
+  if(!response.ok){
+   throw Error('HTTP '+response.status);
   }
 
- );
+  const data=await response.json();
 
-}
+  const stamp=JSON.stringify([
+   data.updated_at||'',
+   data.live?.updated_at||''
+  ]);
 
-/* =========================================================
-   INITIAL TABLE SETUP
-========================================================= */
-
-for(
- const g of [
-  'skater',
-  'goalie'
- ]
-){
-
- fields(g);
-
- setupTable(g);
-
-}
-
-/* =========================================================
-   CUSTOM SCORING INPUT
-========================================================= */
-
-$('settings')
- .addEventListener(
-  'input',
-  e=>{
-
-   const x=e.target;
-
-   if(
-    !x.matches('input[data-group]')
-    ||
-    !Number.isFinite(x.valueAsNumber)
-   ){
-
-    return;
-
-   }
-
-   scoring[
-    x.dataset.group
-   ][
-    x.dataset.key
-   ]=
-    x.valueAsNumber;
-
-   x.classList.toggle(
-    'active',
-    x.valueAsNumber!==0
-   );
-
-   try{
-
-    localStorage.setItem(
-     KEY,
-     JSON.stringify(scoring)
-    );
-
-    $('saved').textContent=
-     'Saved on this device';
-
-   }
-
-   catch{}
-
+  if(!lastDataStamp||stamp!==lastDataStamp){
+   lastDataStamp=stamp;
+   applyData(data);
+  }
+ }catch(error){
+  if(!silent){
+   $('banner').classList.add('error');
+   $('banner').textContent=
+    'Could not load statistics ('+error.message+').';
+   $('updated').textContent='Statistics unavailable';
    refresh();
-
   }
+ }
+}
+
+/* NEAR-LIVE REFRESH */
+
+function startNearLiveRefresh(){
+ if(refreshTimer)clearInterval(refreshTimer);
+
+ refreshTimer=setInterval(
+  ()=>load({silent:true}),
+  60000
  );
 
-/* =========================================================
-   RESET SCORING
-========================================================= */
-
-$('reset').onclick=
- ()=>{
-
-  scoring=
-   JSON.parse(
-    JSON.stringify(DEFAULTS)
-   );
-
-  fields('skater');
-
-  fields('goalie');
-
-  try{
-
-   localStorage.setItem(
-    KEY,
-    JSON.stringify(scoring)
-   );
-
+ document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible'){
+   load({silent:true});
   }
+ });
+}
 
-  catch{}
+/* CONTROLS */
 
-  refresh();
+for(const g of ['skater','goalie']){
+ fields(g);
+ setupTable(g);
+}
 
+$('settings').addEventListener('input',e=>{
+ const input=e.target;
+
+ if(
+  !input.matches('input[data-group]')||
+  !Number.isFinite(input.valueAsNumber)
+ ){
+  return;
+ }
+
+ scoring[input.dataset.group][input.dataset.key]=input.valueAsNumber;
+ input.classList.toggle('active',input.valueAsNumber!==0);
+
+ try{
+  localStorage.setItem(KEY,JSON.stringify(scoring));
+  $('saved').textContent='Saved on this device';
+ }catch{}
+
+ refresh();
+});
+
+$('reset').onclick=()=>{
+ scoring=JSON.parse(JSON.stringify(DEFAULTS));
+
+ fields('skater');
+ fields('goalie');
+
+ try{
+  localStorage.setItem(KEY,JSON.stringify(scoring));
+ }catch{}
+
+ refresh();
+};
+
+$('edit-scoring').onclick=()=>{
+ $('settings').open=!$('settings').open;
+};
+
+document.querySelectorAll('[data-period]').forEach(button=>{
+ button.onclick=()=>{
+  leaderPeriod=button.dataset.period;
+
+  document.querySelectorAll('[data-period]').forEach(other=>{
+   other.setAttribute('aria-pressed',String(other===button));
+  });
+
+  renderLeaders();
  };
+});
 
-/* =========================================================
-   EDIT SCORING
-========================================================= */
+document.querySelectorAll('[data-view]').forEach(button=>{
+ button.onclick=()=>{
+  document.querySelectorAll('[data-view]').forEach(other=>{
+   other.setAttribute('aria-pressed',String(other===button));
+  });
 
-$('edit-scoring').onclick=
- ()=>{
-
-  $('settings').open=
-   !$('settings').open;
-
+  for(const group of ['skater','goalie','leaders','targets']){
+   $(group+'-board').hidden=
+    button.dataset.view!=='all'&&
+    button.dataset.view!==group;
+  }
  };
+});
 
-/* =========================================================
-   WEEK / MONTH
-========================================================= */
+/* START */
 
-document
- .querySelectorAll('[data-period]')
- .forEach(
-  b=>
-
-   b.onclick=
-    ()=>{
-
-     leaderPeriod=
-      b.dataset.period;
-
-     document
-      .querySelectorAll('[data-period]')
-      .forEach(
-       x=>
-
-        x.setAttribute(
-         'aria-pressed',
-         String(x===b)
-        )
-
-      );
-
-     renderLeaders();
-
-    }
-
- );
-
-/* =========================================================
-   VIEW TABS
-========================================================= */
-
-document
- .querySelectorAll('[data-view]')
- .forEach(
-  b=>
-
-   b.onclick=
-    ()=>{
-
-     document
-      .querySelectorAll('[data-view]')
-      .forEach(
-       x=>
-
-        x.setAttribute(
-         'aria-pressed',
-         String(x===b)
-        )
-
-      );
-
-     for(
-      const g of [
-       'skater',
-       'goalie',
-       'leaders',
-       'targets'
-      ]
-     ){
-
-      $(g+'-board').hidden=
-
-       b.dataset.view!=='all'
-
-       &&
-
-       b.dataset.view!==g;
-
-     }
-
-    }
-
- );
-
-/* =========================================================
-   START ICE WATCHERS
-========================================================= */
-
+syncProfile();
 refresh();
-
 load();
-
 startNearLiveRefresh();
-
 </script>
-
 </body>
 </html>
