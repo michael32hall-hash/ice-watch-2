@@ -2086,18 +2086,53 @@ function targetInfo(p){
    ========================================================= */
 
 /*
- Manual superstar backup.
+ ICE WATCHERS WAIVER PROTECTION
 
- Automatic season protection below does most of the work.
- This list protects obvious elite players early in the season
- before enough season data exists.
+ The Potential Waiver Targets section is designed to find
+ emerging/depth fantasy options rather than established stars.
+
+ Protection has three layers:
+
+ 1. MANUAL STAR BACKUP
+    Protects obvious established stars, especially early
+    in the season when current-season samples are tiny.
+
+ 2. CURRENT-SEASON PROTECTION
+    Protects:
+    - Top 75 skaters by your custom fantasy scoring
+    - Top 20 goalies by your custom fantasy scoring
+
+    Players need at least 3 GP before this protection applies.
+
+ 3. PREVIOUS-SEASON GRADUATION
+    Automatically removes players who already established
+    themselves during the previous NHL regular season.
+
+    Skater graduates if he had ANY of:
+    - 60+ points
+    - 30+ goals
+    - 20+ power-play points
+
+    Goalie graduates if he finished among the top 20
+    qualifying goalies in wins, minimum 20 appearances.
+
+ IMPORTANT:
+ These protections affect ONLY Potential Waiver Targets.
+ Player Watch, rankings, profiles, leaders and scoring
+ are completely independent.
 */
+
+
+/* =========================================================
+   MANUAL STAR BACKUP
+   ========================================================= */
 
 const WAIVER_EXEMPT_IDS=
  new Set([
-  '8477956',
-  '8478427'
+  '8477956', // David Pastrnak
+  '8478427'  // Sebastian Aho
  ]);
+
 
 const WAIVER_EXEMPT_NAMES=
  new Set([
@@ -2106,31 +2141,35 @@ const WAIVER_EXEMPT_NAMES=
   'Nathan MacKinnon',
   'Leon Draisaitl',
   'Auston Matthews',
+
   'David Pastrnak',
   'Nikita Kucherov',
   'Kirill Kaprizov',
   'Mikko Rantanen',
+
   'Jack Hughes',
   'Quinn Hughes',
   'Cale Makar',
 
   'Brady Tkachuk',
   'Matthew Tkachuk',
+
   'William Nylander',
   'Mitch Marner',
 
   'Aleksander Barkov',
   'Sam Reinhart',
   'Sebastian Aho',
-  'Jason Robertson',
 
+  'Jason Robertson',
   'Tage Thompson',
   'Kyle Connor',
   'Artemi Panarin',
-  'Connor Bedard',
 
+  'Connor Bedard',
   'Filip Forsberg',
   'Tim Stutzle',
+
   'Brayden Point',
   'Jake Guentzel',
 
@@ -2139,47 +2178,64 @@ const WAIVER_EXEMPT_NAMES=
 
   'Elias Pettersson',
   'J.T. Miller',
+
   'Mark Scheifele',
   'Dylan Larkin',
 
   'Robert Thomas',
   'Jack Eichel',
+
   'Jesper Bratt',
   'Cole Caufield',
   'Nick Suzuki',
 
   'Mathew Barzal',
   'Clayton Keller',
+
   'Macklin Celebrini',
 
   'Adam Fox',
   'Roman Josi',
+
   'Rasmus Dahlin',
   'Moritz Seider',
 
   'Dougie Hamilton',
   'Evan Bouchard',
+
   'Charlie McAvoy',
   'Noah Dobson',
+
   'Victor Hedman',
 
   'Igor Shesterkin',
   'Connor Hellebuyck',
+
   'Andrei Vasilevskiy',
   'Jake Oettinger',
+
   'Juuse Saros',
   'Jeremy Swayman',
+
   'Thatcher Demko',
   'Ilya Sorokin'
 
  ]);
 
+
+/* =========================================================
+   NAME NORMALIZATION
+   ========================================================= */
+
 function normalizeName(name){
 
  return String(
-  name||''
+  name||
+  ''
  )
- .normalize('NFD')
+ .normalize(
+  'NFD'
+ )
  .replace(
   /[\u0300-\u036f]/g,
   ''
@@ -2197,15 +2253,59 @@ function normalizeName(name){
 
 }
 
+
 const NORMALIZED_WAIVER_NAMES=
  new Set(
+
   [
    ...WAIVER_EXEMPT_NAMES
   ]
+
   .map(
    normalizeName
   )
+
  );
+
+
+/* =========================================================
+   PLAYER PROTECTION KEY
+   ========================================================= */
+
+/*
+ NHL player ID is preferred.
+
+ Name fallback allows protection to continue working if
+ an NHL feed ever returns a player without an ID.
+*/
+
+function playerProtectionKey(p){
+
+ const id=
+  String(
+   p?.player_id??
+   p?.playerId??
+   p?.id??
+   ''
+  )
+  .trim();
+
+ if(id){
+  return id;
+ }
+
+ return normalizeName(
+  p?.name||
+  p?.fullName||
+  ''
+ );
+
+}
+
+
+/* =========================================================
+   MANUAL PROTECTION CHECK
+   ========================================================= */
 
 function manualWaiverProtected(p){
 
@@ -2220,7 +2320,9 @@ function manualWaiverProtected(p){
 
  if(
   id &&
-  WAIVER_EXEMPT_IDS.has(id)
+  WAIVER_EXEMPT_IDS.has(
+   id
+  )
  ){
   return true;
  }
@@ -2235,22 +2337,17 @@ function manualWaiverProtected(p){
  return (
   name &&
   NORMALIZED_WAIVER_NAMES
-   .has(name)
+   .has(
+    name
+   )
  );
 
 }
 
-/*
- AUTOMATIC PROTECTION
 
- Top 75 season-long skaters
- Top 20 season-long goalies
-
- Requires at least 3 season games so one-game hot starts
- do not immediately become permanently protected.
-
- The rankings recalculate every time data.json updates.
-*/
+/* =========================================================
+   BUILD AUTOMATIC PROTECTION
+   ========================================================= */
 
 function buildSeasonProtection(){
 
@@ -2260,27 +2357,56 @@ function buildSeasonProtection(){
  const protectedGoalies=
   new Set();
 
+
+ /* =======================================================
+    CURRENT SEASON
+    ======================================================= */
+
  const seasonSkaters=
   Array.isArray(
-   currentData?.season?.skaters
+   currentData
+    ?.season
+    ?.skaters
   )
-   ?currentData.season.skaters
+   ?currentData
+     .season
+     .skaters
    :[];
+
 
  const seasonGoalies=
   Array.isArray(
-   currentData?.season?.goalies
+   currentData
+    ?.season
+    ?.goalies
   )
-   ?currentData.season.goalies
+   ?currentData
+     .season
+     .goalies
    :[];
 
+
+ /*
+  CURRENT-SEASON SKATERS
+
+  Protect the top 75 fantasy performers once they have
+  played at least three games.
+ */
+
  seasonSkaters
+
   .filter(
-   p=>num(p,'gp')>=3
+   p=>
+    num(
+     p,
+     'gp'
+    )>=3
   )
+
   .map(
    p=>({
     ...p,
+
     _seasonFpts:
      points(
       p,
@@ -2288,39 +2414,53 @@ function buildSeasonProtection(){
      )
    })
   )
+
   .sort(
    (a,b)=>
     b._seasonFpts-
     a._seasonFpts
   )
+
   .slice(
    0,
    75
   )
+
   .forEach(
    p=>{
 
-    const key=
-     String(
-      p.player_id??
-      normalizeName(
-       p.name
+    protectedSkaters
+     .add(
+      playerProtectionKey(
+       p
       )
      );
-
-    protectedSkaters
-     .add(key);
 
    }
   );
 
+
+ /*
+  CURRENT-SEASON GOALIES
+
+  Protect the top 20 fantasy performers once they have
+  played at least three games.
+ */
+
  seasonGoalies
+
   .filter(
-   p=>num(p,'gp')>=3
+   p=>
+    num(
+     p,
+     'gp'
+    )>=3
   )
+
   .map(
    p=>({
     ...p,
+
     _seasonFpts:
      points(
       p,
@@ -2328,41 +2468,216 @@ function buildSeasonProtection(){
      )
    })
   )
+
   .sort(
    (a,b)=>
     b._seasonFpts-
     a._seasonFpts
   )
+
   .slice(
    0,
    20
   )
+
   .forEach(
    p=>{
 
-    const key=
-     String(
-      p.player_id??
-      normalizeName(
-       p.name
+    protectedGoalies
+     .add(
+      playerProtectionKey(
+       p
       )
      );
-
-    protectedGoalies
-     .add(key);
 
    }
   );
 
+
+ /* =======================================================
+    PREVIOUS SEASON
+    ======================================================= */
+
+ const previousSkaters=
+  Array.isArray(
+   currentData
+    ?.previous_season
+    ?.skaters
+  )
+   ?currentData
+     .previous_season
+     .skaters
+   :[];
+
+
+ const previousGoalies=
+  Array.isArray(
+   currentData
+    ?.previous_season
+    ?.goalies
+  )
+   ?currentData
+     .previous_season
+     .goalies
+   :[];
+
+
+ /* =======================================================
+    PREVIOUS-SEASON SKATER GRADUATION
+
+    Graduate a player if he reached ANY:
+
+    60 points
+    30 goals
+    20 power-play points
+    ======================================================= */
+
+ for(
+  const p
+  of previousSkaters
+ ){
+
+  const goals=
+   num(
+    p,
+    'g'
+   );
+
+
+  const assists=
+   num(
+    p,
+    'a'
+   );
+
+
+  const pointsValue=
+   known(
+    p,
+    'points'
+   )
+    ?num(
+     p,
+     'points'
+    )
+    :goals+
+     assists;
+
+
+  const powerPlayPoints=
+   num(
+    p,
+    'ppp'
+   );
+
+
+  const graduated=
+
+   pointsValue>=60 ||
+
+   goals>=30 ||
+
+   powerPlayPoints>=20;
+
+
+  if(
+   graduated
+  ){
+
+   protectedSkaters
+    .add(
+     playerProtectionKey(
+      p
+     )
+    );
+
+  }
+
+ }
+
+
+ /* =======================================================
+    PREVIOUS-SEASON GOALIE GRADUATION
+
+    Minimum 20 appearances.
+
+    Of those qualifying goalies, protect the top 20
+    in wins.
+
+    Saves are used as the first tiebreaker.
+    ======================================================= */
+
+ previousGoalies
+
+  .filter(
+   p=>
+    num(
+     p,
+     'gp'
+    )>=20
+  )
+
+  .sort(
+   (a,b)=>
+
+    num(
+     b,
+     'w'
+    )-
+
+    num(
+     a,
+     'w'
+    )
+
+    ||
+
+    num(
+     b,
+     'sv'
+    )-
+
+    num(
+     a,
+     'sv'
+    )
+  )
+
+  .slice(
+   0,
+   20
+  )
+
+  .forEach(
+   p=>{
+
+    protectedGoalies
+     .add(
+      playerProtectionKey(
+       p
+      )
+     );
+
+   }
+  );
+
+
  return {
+
   skater:
    protectedSkaters,
 
   goalie:
    protectedGoalies
+
  };
 
 }
+
+
+/* =========================================================
+   AUTOMATIC PROTECTION CHECK
+   ========================================================= */
 
 function seasonWaiverProtected(
  p,
@@ -2371,23 +2686,22 @@ function seasonWaiverProtected(
 ){
 
  const key=
-  String(
-   p.player_id??
-   normalizeName(
-    p.name
-   )
+  playerProtectionKey(
+   p
   );
+
+ if(!key){
+  return false;
+ }
 
  return (
   protection[g]
-   ?.has(key)===true
+   ?.has(
+    key
+   )===true
  );
 
 }
-
-/* =========================================================
-   WAIVER TARGET TABLE
-   ========================================================= */
 
 function renderTargets(){
 
