@@ -312,8 +312,8 @@ body.profile-open{overflow:hidden}
      <span>ICE WATCHERS TARGET SCORE</span>
     </div>
     <p class="report-note">
-     Ice Watchers searches below the obvious fantasy leaders: skaters ranked #31+ and goalies #6+.
-     Target Score is independent of your league scoring; ownership is not checked.
+     Ice Watchers searches beyond the established fantasy tier: skaters ranked #51+ and goalies ranked #13+.
+     Established stars and strong season-long performers are automatically excluded. Ownership is not checked.
     </p>
     <div class="tablewrap">
      <table id="targets-table">
@@ -961,75 +961,315 @@ function targetInfo(p){
  };
 }
 
+/* WAIVER TARGET PROTECTION */
+
+const WAIVER_EXEMPT_NAMES=new Set([
+ 'Connor McDavid',
+ 'Nathan MacKinnon',
+ 'Leon Draisaitl',
+ 'Auston Matthews',
+ 'David Pastrnak',
+ 'Nikita Kucherov',
+ 'Kirill Kaprizov',
+ 'Mikko Rantanen',
+ 'Jack Hughes',
+ 'Quinn Hughes',
+ 'Cale Makar',
+ 'Brady Tkachuk',
+ 'Matthew Tkachuk',
+ 'William Nylander',
+ 'Mitch Marner',
+ 'Aleksander Barkov',
+ 'Sam Reinhart',
+ 'Sebastian Aho',
+ 'Jason Robertson',
+ 'Tage Thompson',
+ 'Kyle Connor',
+ 'Artemi Panarin',
+ 'Connor Bedard',
+ 'Filip Forsberg',
+ 'Tim Stutzle',
+ 'Brayden Point',
+ 'Jake Guentzel',
+ 'Alex Ovechkin',
+ 'Sidney Crosby',
+ 'Elias Pettersson',
+ 'J.T. Miller',
+ 'Mark Scheifele',
+ 'Dylan Larkin',
+ 'Robert Thomas',
+ 'Jack Eichel',
+ 'Jesper Bratt',
+ 'Cole Caufield',
+ 'Nick Suzuki',
+ 'Mathew Barzal',
+ 'Clayton Keller',
+ 'Macklin Celebrini',
+ 'Adam Fox',
+ 'Roman Josi',
+ 'Rasmus Dahlin',
+ 'Moritz Seider',
+ 'Dougie Hamilton',
+ 'Evan Bouchard',
+ 'Charlie McAvoy',
+ 'Noah Dobson',
+ 'Victor Hedman',
+ 'Igor Shesterkin',
+ 'Connor Hellebuyck',
+ 'Andrei Vasilevskiy',
+ 'Jake Oettinger',
+ 'Juuse Saros',
+ 'Jeremy Swayman',
+ 'Thatcher Demko',
+ 'Ilya Sorokin'
+]);
+
+function normalizedPlayerName(name){
+ return String(name||'')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g,'')
+  .trim()
+  .toLowerCase();
+}
+
+const WAIVER_EXEMPT_NORMALIZED=new Set(
+ [...WAIVER_EXEMPT_NAMES].map(normalizedPlayerName)
+);
+
+function manualWaiverExempt(p){
+ return WAIVER_EXEMPT_NORMALIZED.has(
+  normalizedPlayerName(p?.name)
+ );
+}
+
+function seasonWaiverExemptions(){
+ const exemptSkaters=new Set();
+ const exemptGoalies=new Set();
+
+ const seasonSkaters=Array.isArray(currentData?.season?.skaters)
+  ? currentData.season.skaters
+  : [];
+
+ const seasonGoalies=Array.isArray(currentData?.season?.goalies)
+  ? currentData.season.goalies
+  : [];
+
+ seasonSkaters
+  .map(p=>({
+   ...p,
+   _seasonFantasyPoints:points(p,'skater')
+  }))
+  .sort((a,b)=>
+   b._seasonFantasyPoints-a._seasonFantasyPoints||
+   String(a.name||'').localeCompare(String(b.name||''))
+  )
+  .slice(0,60)
+  .forEach(p=>{
+   exemptSkaters.add(
+    String(p.player_id??normalizedPlayerName(p.name))
+   );
+  });
+
+ seasonGoalies
+  .map(p=>({
+   ...p,
+   _seasonFantasyPoints:points(p,'goalie')
+  }))
+  .sort((a,b)=>
+   b._seasonFantasyPoints-a._seasonFantasyPoints||
+   String(a.name||'').localeCompare(String(b.name||''))
+  )
+  .slice(0,15)
+  .forEach(p=>{
+   exemptGoalies.add(
+    String(p.player_id??normalizedPlayerName(p.name))
+   );
+  });
+
+ return {
+  skater:exemptSkaters,
+  goalie:exemptGoalies
+ };
+}
+
+function seasonWaiverExempt(p,g,seasonExemptions){
+ const key=String(
+  p.player_id??normalizedPlayerName(p.name)
+ );
+
+ return seasonExemptions[g]?.has(key)===true;
+}
+
 /* WAIVER TARGET TABLE */
 
 function renderTargets(){
- const sk=players.skater
-  .map(p=>({...p,_g:'skater',fpts:points(p,'skater')}))
-  .sort((a,b)=>b.fpts-a.fpts);
+ try{
+  const sk=players.skater
+   .map(p=>({
+    ...p,
+    _g:'skater',
+    fpts:points(p,'skater')
+   }))
+   .sort((a,b)=>
+    b.fpts-a.fpts||
+    String(a.name||'').localeCompare(String(b.name||''))
+   );
 
- const go=players.goalie
-  .map(p=>({...p,_g:'goalie',fpts:points(p,'goalie')}))
-  .sort((a,b)=>b.fpts-a.fpts);
+  const go=players.goalie
+   .map(p=>({
+    ...p,
+    _g:'goalie',
+    fpts:points(p,'goalie')
+   }))
+   .sort((a,b)=>
+    b.fpts-a.fpts||
+    String(a.name||'').localeCompare(String(b.name||''))
+   );
 
- const pool=[
-  ...sk.slice(30).map((p,i)=>({
-   ...p,
-   _weeklyRank:i+31,
-   _targetScore:skaterTargetScore(p)
-  })),
-  ...go.slice(5).map((p,i)=>({
-   ...p,
-   _weeklyRank:i+6,
-   _targetScore:goalieTargetScore(p)
-  }))
- ];
+  const seasonExemptions=seasonWaiverExemptions();
 
- const byTarget=(a,b)=>
-  b._targetScore-a._targetScore||b.fpts-a.fpts;
+  const eligibleSkaters=sk
+   .slice(50)
+   .map((p,i)=>({
+    ...p,
+    _weeklyRank:i+51
+   }))
+   .filter(p=>
+    !manualWaiverExempt(p)&&
+    !seasonWaiverExempt(
+     p,
+     'skater',
+     seasonExemptions
+    )
+   )
+   .map(p=>({
+    ...p,
+    _targetScore:skaterTargetScore(p)
+   }));
 
- const mature=pool.filter(p=>num(p,'gp')>=2).sort(byTarget);
- const early=pool.filter(p=>num(p,'gp')<2).sort(byTarget);
+  const eligibleGoalies=go
+   .slice(12)
+   .map((p,i)=>({
+    ...p,
+    _weeklyRank:i+13
+   }))
+   .filter(p=>
+    !manualWaiverExempt(p)&&
+    !seasonWaiverExempt(
+     p,
+     'goalie',
+     seasonExemptions
+    )
+   )
+   .map(p=>({
+    ...p,
+    _targetScore:goalieTargetScore(p)
+   }));
 
- const candidates=mature.slice(0,10);
+  const pool=[
+   ...eligibleSkaters,
+   ...eligibleGoalies
+  ];
 
- if(candidates.length<10){
-  candidates.push(...early.slice(0,10-candidates.length));
- }
+  const byTarget=(a,b)=>
+   b._targetScore-a._targetScore||
+   b.fpts-a.fpts||
+   String(a.name||'').localeCompare(String(b.name||''));
 
- $('targets-table').querySelector('tbody').innerHTML=candidates.length
-  ? candidates.map(p=>{
-   const info=targetInfo(p);
+  const mature=pool
+   .filter(p=>num(p,'gp')>=2)
+   .sort(byTarget);
 
-   return `
-    <tr>
-     <td class="player-col">${playerCell(p,p._g)}</td>
-     <td>
-      ${p._g==='skater'?'Skater #':'Goalie #'}${p._weeklyRank}
+  const early=pool
+   .filter(p=>num(p,'gp')<2)
+   .sort(byTarget);
+
+  const candidates=mature.slice(0,10);
+
+  if(candidates.length<10){
+   candidates.push(
+    ...early.slice(0,10-candidates.length)
+   );
+  }
+
+  $('targets-table').querySelector('tbody').innerHTML=
+   candidates.length
+    ? candidates.map(p=>{
+     const info=targetInfo(p);
+
+     return `
+      <tr>
+       <td class="player-col">
+        ${playerCell(p,p._g)}
+       </td>
+
+       <td>
+        ${
+         p._g==='skater'
+          ? 'Skater #'
+          : 'Goalie #'
+        }${p._weeklyRank}
+       </td>
+
+       <td class="stat-summary">
+        ${statSummary(p,p._g)}
+       </td>
+
+       <td class="target-reason">
+        <div class="target-tags">
+         ${info.tags.map(
+          tag=>`
+           <span class="target-tag">
+            ${esc(tag)}
+           </span>
+          `
+         ).join('')}
+        </div>
+
+        ${esc(info.reason)}
+       </td>
+
+       <td class="target-score">
+        ${p._targetScore}
+       </td>
+      </tr>
+     `;
+    }).join('')
+    : `
+     <tr class="empty-row">
+      <td colspan="5">
+       <strong>No waiver targets yet</strong>
+       <span>
+        Ice Watchers searches skaters ranked #51+
+        and goalies ranked #13+ while protecting
+        established fantasy stars.
+       </span>
+      </td>
+     </tr>
+    `;
+
+ }catch(error){
+  console.error(
+   'Ice Watchers waiver target error:',
+   error
+  );
+
+  const tbody=$('targets-table')
+   ?.querySelector('tbody');
+
+  if(tbody){
+   tbody.innerHTML=`
+    <tr class="empty-row">
+     <td colspan="5">
+      <strong>Waiver targets temporarily unavailable</strong>
+      <span>
+       The rest of Ice Watchers is still working.
+      </span>
      </td>
-     <td class="stat-summary">${statSummary(p,p._g)}</td>
-     <td class="target-reason">
-      <div class="target-tags">
-       ${info.tags.map(
-        tag=>`<span class="target-tag">${esc(tag)}</span>`
-       ).join('')}
-      </div>
-      ${esc(info.reason)}
-     </td>
-     <td class="target-score">${p._targetScore}</td>
     </tr>
    `;
-  }).join('')
-  : `
-   <tr class="empty-row">
-    <td colspan="5">
-     <strong>Waiting for a deeper player pool</strong>
-     <span>
-      Target Score evaluates skaters outside the top 30 and goalies outside the top 5.
-     </span>
-    </td>
-   </tr>
-  `;
+  }
+ }
 }
 
 /* BALANCED PLAYER WATCH */
