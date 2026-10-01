@@ -5465,7 +5465,7 @@
       "sha": 0,
       "gwg": null,
       "hat": 0,
-      "sog": 0,
+      "sog": 1,
       "hit": 3,
       "blk": 0,
       "fow": 1,
@@ -5639,10 +5639,10 @@
       "fow": 1,
       "plusMinus": 0,
       "gp": 1,
-      "seconds": 930,
-      "toi": "15:30",
-      "toiPerGame": 930.0,
-      "avgToi": "15:30"
+      "seconds": 928,
+      "toi": "15:28",
+      "toiPerGame": 928.0,
+      "avgToi": "15:28"
     },
     {
       "name": "N. Roy",
@@ -5783,10 +5783,10 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 1,
-      "seconds": 1165,
-      "toi": "19:25",
-      "toiPerGame": 1165.0,
-      "avgToi": "19:25"
+      "seconds": 1167,
+      "toi": "19:27",
+      "toiPerGame": 1167.0,
+      "avgToi": "19:27"
     },
     {
       "name": "J. Schwartz",
@@ -6742,7 +6742,7 @@
       "name": "D. Kuemper",
       "team": "LAK",
       "player_id": 8475311,
-      "gs": null,
+      "gs": 1,
       "w": 0,
       "ga": 8,
       "sv": 21,
@@ -6761,16 +6761,16 @@
       "name": "M. Blackwood",
       "team": "COL",
       "player_id": 8478406,
-      "gs": null,
+      "gs": 1,
       "w": 1,
       "ga": 4,
-      "sv": 26,
+      "sv": 27,
       "so": 0,
       "otl": 0,
       "gp": 1,
-      "sa": 30,
+      "sa": 31,
       "seconds": 3600,
-      "svPct": 0.8666666666666667,
+      "svPct": 0.8709677419354839,
       "gaa": 4.0,
       "toi": "60:00",
       "toiPerGame": 3600.0,
@@ -12282,7 +12282,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 3,
         "blk": 0,
         "fow": 1,
@@ -12456,10 +12456,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 930,
-        "toi": "15:30",
-        "toiPerGame": 930.0,
-        "avgToi": "15:30"
+        "seconds": 928,
+        "toi": "15:28",
+        "toiPerGame": 928.0,
+        "avgToi": "15:28"
       },
       {
         "name": "N. Roy",
@@ -12600,10 +12600,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 1165,
-        "toi": "19:25",
-        "toiPerGame": 1165.0,
-        "avgToi": "19:25"
+        "seconds": 1167,
+        "toi": "19:27",
+        "toiPerGame": 1167.0,
+        "avgToi": "19:27"
       },
       {
         "name": "J. Schwartz",
@@ -13559,7 +13559,7 @@
         "name": "D. Kuemper",
         "team": "LAK",
         "player_id": 8475311,
-        "gs": null,
+        "gs": 1,
         "w": 0,
         "ga": 8,
         "sv": 21,
@@ -13578,16 +13578,16 @@
         "name": "M. Blackwood",
         "team": "COL",
         "player_id": 8478406,
-        "gs": null,
+        "gs": 1,
         "w": 1,
         "ga": 4,
-        "sv": 26,
+        "sv": 27,
         "so": 0,
         "otl": 0,
         "gp": 1,
-        "sa": 30,
+        "sa": 31,
         "seconds": 3600,
-        "svPct": 0.8666666666666667,
+        "svPct": 0.8709677419354839,
         "gaa": 4.0,
         "toi": "60:00",
         "toiPerGame": 3600.0,
@@ -19100,7 +19100,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 3,
         "blk": 0,
         "fow": 1,
@@ -19274,10 +19274,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 930,
-        "toi": "15:30",
-        "toiPerGame": 930.0,
-        "avgToi": "15:30"
+        "seconds": 928,
+        "toi": "15:28",
+        "toiPerGame": 928.0,
+        "avgToi": "15:28"
       },
       {
         "name": "N. Roy",
@@ -19418,10 +19418,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 1165,
-        "toi": "19:25",
-        "toiPerGame": 1165.0,
-        "avgToi": "19:25"
+        "seconds": 1167,
+        "toi": "19:27",
+        "toiPerGame": 1167.0,
+        "avgToi": "19:27"
       },
       {
         "name": "J. Schwartz",
@@ -20377,7 +20377,7 @@
         "name": "D. Kuemper",
         "team": "LAK",
         "player_id": 8475311,
-        "gs": null,
+        "gs": 1,
         "w": 0,
         "ga": 8,
         "sv": 21,
@@ -20396,16 +20396,16 @@
         "name": "M. Blackwood",
         "team": "COL",
         "player_id": 8478406,
-        "gs": null,
+        "gs": 1,
         "w": 1,
         "ga": 4,
-        "sv": 26,
+        "sv": 27,
         "so": 0,
         "otl": 0,
         "gp": 1,
-        "sa": 30,
+        "sa": 31,
         "seconds": 3600,
-        "svPct": 0.8666666666666667,
+        "svPct": 0.8709677419354839,
         "gaa": 4.0,
         "toi": "60:00",
         "toiPerGame": 3600.0,
@@ -27668,7 +27668,7 @@
             "sha": 0,
             "gwg": null,
             "hat": 0,
-            "sog": 0,
+            "sog": 1,
             "hit": 3,
             "blk": 0,
             "fow": 1,
@@ -27889,8 +27889,8 @@
             "opponent": "LAK",
             "home_away": "home",
             "pos": "C",
-            "toi": "15:30",
-            "toi_seconds": 930
+            "toi": "15:28",
+            "toi_seconds": 928
           }
         ]
       },
@@ -28069,8 +28069,8 @@
             "opponent": "LAK",
             "home_away": "home",
             "pos": "L",
-            "toi": "19:25",
-            "toi_seconds": 1165
+            "toi": "19:27",
+            "toi_seconds": 1167
           }
         ]
       },
@@ -29307,7 +29307,7 @@
             "team": "LAK",
             "opponent": "COL",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "L",
             "toi": "59:25",
             "toi_seconds": 3565
@@ -29323,9 +29323,9 @@
             "w": 1,
             "otl": 0,
             "ga": 4,
-            "sv": 26,
-            "sa": 30,
-            "svPct": 0.8666666666666667,
+            "sv": 27,
+            "sa": 31,
+            "svPct": 0.8709677419354839,
             "so": 0,
             "gaa": 4.0,
             "game_id": 2026020007,
@@ -29333,7 +29333,7 @@
             "team": "COL",
             "opponent": "LAK",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
@@ -29399,7 +29399,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-01T05:01:11.495848+00:00"
+    "updated_at": "2026-10-01T05:23:36.540976+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -41043,6 +41043,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation."
   },
   "waivers": [],
-  "updated_at": "2026-10-01T05:01:11.502243+00:00",
+  "updated_at": "2026-10-01T05:23:36.548432+00:00",
   "timezone": "America/Toronto"
 }
