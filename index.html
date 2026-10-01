@@ -2213,7 +2213,7 @@ function waiverTrend(week,month,season,g){
 function waiverPeriodSummary(p,g,label){
  if(!p||num(p,'gp')<=0)return label+': -';
  if(g==='goalie')return `${label}: ${num(p,'gp')} GP, ${num(p,'w')} W, ${num(p,'sv')} SV, ${known(p,'svPct')?(num(p,'svPct')*100).toFixed(1)+'%':'-'} SV%`;
- return `${label}: ${num(p,'gp')} GP, ${num(p,'g')} G, ${num(p,'a')} A, ${num(p,'sog')} SOG`;
+ return `${label}: ${num(p,'gp')} GP, ${num(p,'g')} G, ${num(p,'a')} A, ${num(p,'sog')} SOG, ${num(p,'hit')} HIT, ${num(p,'blk')} BLK`;
 }
 function waiverCandidates(){
  const protection=buildSeasonProtection();
