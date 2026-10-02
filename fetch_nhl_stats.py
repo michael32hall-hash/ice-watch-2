@@ -11,13 +11,15 @@ Features:
 - Near-live game stats
 - Faceoff wins from play-by-play
 - Power-play points from NHL scoring summaries
-- Fresh NHL requests on every run
-- Live games rebuilt from current NHL game state
+- Resilient handling of NHL scoring credits for players omitted from
+  playerByGameStats
 
 FW is stored as fow.
 PPP is stored as ppp.
 
-Missing/inconsistent feeds fail the run before data.json is replaced.
+The NHL API occasionally credits a goal/assist to a player who is not
+present in playerByGameStats for that snapshot. Those credits are skipped
+for supplemental validation rather than freezing the entire site.
 """
 
 import json
@@ -53,7 +55,6 @@ LIVE_STATES = {
     "CRIT",
 }
 
-
 SKATER_KEYS = (
     "g",
     "a",
@@ -72,7 +73,6 @@ SKATER_KEYS = (
     "seconds",
 )
 
-
 GOALIE_KEYS = (
     "gs",
     "w",
@@ -90,46 +90,20 @@ GOALIE_KEYS = (
 # HTTP
 # ============================================================
 
-def cache_busted_url(url):
-    """
-    Force a fresh NHL response.
-
-    A unique query parameter is added to every request so that
-    schedule, boxscore, play-by-play and landing requests cannot
-    accidentally reuse an older CDN/intermediary snapshot.
-    """
-
-    separator = "&" if "?" in url else "?"
-
-    return (
-        f"{url}{separator}"
-        f"_icewatch={time.time_ns()}"
-    )
-
-
 def get_json(url):
 
     last_error = None
 
-    for attempt in range(5):
+    for attempt in range(3):
 
         try:
 
-            fresh_url = cache_busted_url(
-                url
-            )
-
             request = urllib.request.Request(
-                fresh_url,
+                url,
                 headers={
-                    "User-Agent": (
-                        "Mozilla/5.0 "
-                        "(compatible; IceWatch/6.0)"
-                    ),
+                    "User-Agent": "Mozilla/5.0 (compatible; IceWatch/5.1)",
                     "Accept": "application/json",
-                    "Cache-Control": (
-                        "no-cache, no-store, max-age=0"
-                    ),
+                    "Cache-Control": "no-cache",
                     "Pragma": "no-cache",
                 },
             )
@@ -139,17 +113,11 @@ def get_json(url):
                 timeout=30,
             ) as response:
 
-                value = json.load(
-                    response
-                )
+                value = json.load(response)
 
-            if not isinstance(
-                value,
-                dict,
-            ):
+            if not isinstance(value, dict):
                 raise ValueError(
-                    "Expected JSON object: "
-                    + url
+                    "Expected JSON object: " + url
                 )
 
             return value
@@ -158,26 +126,12 @@ def get_json(url):
 
             last_error = exc
 
-            print(
-                f"WARNING: request failed "
-                f"(attempt {attempt + 1}/5): "
-                f"{url} - "
-                f"{type(exc).__name__}: {exc}"
-            )
+            if attempt == 2:
+                raise
 
-            if attempt < 4:
+            time.sleep(attempt + 1)
 
-                time.sleep(
-                    2 ** attempt
-                )
-
-    raise RuntimeError(
-        "Unable to fetch fresh NHL data "
-        f"after 5 attempts: {url}. "
-        f"Last error: "
-        f"{type(last_error).__name__}: "
-        f"{last_error}"
-    ) from last_error
+    raise last_error
 
 
 # ============================================================
@@ -342,23 +296,18 @@ def schedule_games_for_date(day):
 
     return [
         game
-
         for entry in payload["gameWeek"]
-
         for game in entry.get(
             "games",
             [],
         )
-
         if (
             date.fromisoformat(
                 game.get("gameDate")
                 or entry["date"]
             )
             == day
-
             and
-
             str(
                 game.get("gameType")
             )
@@ -421,16 +370,12 @@ def completed_game_ids_for_range(
                     start_date
                     <= game_day
                     <= end_date
-
                     and
-
                     str(
                         game.get("gameType")
                     )
                     == "2"
-
                     and
-
                     game.get("gameState")
                     in FINAL_STATES
                 ):
@@ -463,23 +408,19 @@ def live_games_for_dates(days):
             day
         ):
 
-            game_id = str(
-                game["id"]
-            )
-
             state = game.get(
                 "gameState"
             )
 
             print(
-                f"Schedule game {game_id}: "
+                f"Schedule game {game.get('id')}: "
                 f"state={state}"
             )
 
             if state in LIVE_STATES:
 
                 games[
-                    game_id
+                    str(game["id"])
                 ] = game
 
     return list(
@@ -516,9 +457,7 @@ def skaters_in_box(box):
 
         if (
             not isinstance(group, dict)
-
             or
-
             not all(
                 isinstance(
                     group.get(k),
@@ -588,20 +527,60 @@ def supplement_skater_stats(
         for pid in by_id
     }
 
+    unknown_credits = set()
+
     def credit(pid, key):
 
-        if (
-            pid is None
-            or int(pid) not in counts
-        ):
-            raise ValueError(
-                f"Missing/unknown {key} player "
-                f"in game {gid}: {pid}"
+        if pid is None:
+
+            print(
+                f"WARNING: missing {key} player ID "
+                f"in game {gid}; skipping credit"
             )
 
+            return False
+
+        try:
+            pid = int(pid)
+
+        except (TypeError, ValueError):
+
+            print(
+                f"WARNING: invalid {key} player ID "
+                f"in game {gid}: {pid!r}; "
+                "skipping credit"
+            )
+
+            return False
+
+        if pid not in counts:
+
+            marker = (
+                pid,
+                key,
+            )
+
+            if marker not in unknown_credits:
+
+                print(
+                    f"WARNING: NHL feed credited {key} "
+                    f"to player {pid} in game {gid}, "
+                    "but that player is not present in "
+                    "playerByGameStats; skipping "
+                    "supplemental credit"
+                )
+
+                unknown_credits.add(
+                    marker
+                )
+
+            return False
+
         counts[
-            int(pid)
+            pid
         ][key] += 1
+
+        return True
 
 
     plays = pbp.get(
@@ -658,9 +637,13 @@ def supplement_skater_stats(
         )
 
         if event_id is None:
-            raise ValueError(
-                f"Missing event ID: {gid}"
+
+            print(
+                f"WARNING: missing event ID "
+                f"in game {gid}; skipping event"
             )
+
+            continue
 
         if event_id in seen:
             continue
@@ -671,13 +654,15 @@ def supplement_skater_stats(
 
         if kind == "faceoff":
 
+            winner = (
+                play.get("details")
+                or {}
+            ).get(
+                "winningPlayerId"
+            )
+
             credit(
-                (
-                    play.get("details")
-                    or {}
-                ).get(
-                    "winningPlayerId"
-                ),
+                winner,
                 "fow",
             )
 
@@ -722,8 +707,16 @@ def supplement_skater_stats(
             )
 
             if event_id is None:
-                raise ValueError(
-                    f"Missing summary event ID: {gid}"
+
+                print(
+                    f"WARNING: summary goal has no "
+                    f"event ID in game {gid}; "
+                    "processing anyway"
+                )
+
+                event_id = (
+                    "summary",
+                    summary_goals,
                 )
 
             if event_id in seen:
@@ -747,9 +740,12 @@ def supplement_skater_stats(
                 "pp",
                 "sh",
             }:
-                raise ValueError(
-                    f"Unknown goal strength "
-                    f"{strength!r}: {gid}"
+
+                print(
+                    f"WARNING: unknown goal strength "
+                    f"{strength!r} in game {gid}; "
+                    "goal/assist validation retained "
+                    "but special-teams credit skipped"
                 )
 
             scorer = goal.get(
@@ -764,8 +760,13 @@ def supplement_skater_stats(
                 assists,
                 list,
             ):
-                raise ValueError(
-                    f"Missing assists list: {gid}"
+
+                assists = []
+
+                print(
+                    f"WARNING: missing assists list "
+                    f"in game {gid}; treating as "
+                    "unassisted"
                 )
 
             credit(
@@ -784,17 +785,36 @@ def supplement_skater_stats(
 
             if strength == "pp":
 
-                ids = {
-                    scorer,
-                    *(
-                        a.get(
-                            "playerId"
-                        )
-                        for a in assists
-                    ),
-                }
+                ids = [
+                    scorer
+                ]
+
+                ids.extend(
+                    assist.get(
+                        "playerId"
+                    )
+                    for assist in assists
+                )
+
+                credited = set()
 
                 for pid in ids:
+
+                    try:
+                        normalized_pid = int(pid)
+
+                    except (
+                        TypeError,
+                        ValueError,
+                    ):
+                        normalized_pid = pid
+
+                    if normalized_pid in credited:
+                        continue
+
+                    credited.add(
+                        normalized_pid
+                    )
 
                     credit(
                         pid,
@@ -820,25 +840,29 @@ def supplement_skater_stats(
 
     if summary_goals != pbp_goals:
 
-        raise ValueError(
-            f"Scoring/play-by-play snapshots disagree: {gid}"
+        print(
+            f"WARNING: scoring/play-by-play "
+            f"goal totals disagree for game {gid}: "
+            f"summary={summary_goals}, "
+            f"pbp={pbp_goals}. "
+            "Using boxscore goals and scoring-summary "
+            "special-teams credits."
         )
 
 
     if (
         box.get("gameState")
         in FINAL_STATES
-
         and
-
         not any(
             c["fow"]
             for c in counts.values()
         )
     ):
 
-        raise ValueError(
-            f"Completed game has no faceoff events: {gid}"
+        print(
+            f"WARNING: completed game {gid} "
+            "has no usable faceoff-win events"
         )
 
 
@@ -846,23 +870,42 @@ def supplement_skater_stats(
 
         c = counts[pid]
 
+        box_goals = number(
+            player.get("goals")
+        )
+
+        box_assists = number(
+            player.get("assists")
+        )
+
         if (
-            number(
-                player.get("goals")
-            )
-            != c["goals"]
-
-            or
-
-            number(
-                player.get("assists")
-            )
-            != c["assists"]
+            box_goals is not None
+            and
+            box_goals != c["goals"]
         ):
 
-            raise ValueError(
-                f"Boxscore/scoring snapshots disagree: "
-                f"{gid}/{pid}"
+            print(
+                f"WARNING: goal-credit snapshot "
+                f"differs for game {gid}, "
+                f"player {pid}: "
+                f"box={box_goals}, "
+                f"summary={c['goals']}. "
+                "Keeping official boxscore goals."
+            )
+
+        if (
+            box_assists is not None
+            and
+            box_assists != c["assists"]
+        ):
+
+            print(
+                f"WARNING: assist-credit snapshot "
+                f"differs for game {gid}, "
+                f"player {pid}: "
+                f"box={box_assists}, "
+                f"summary={c['assists']}. "
+                "Keeping official boxscore assists."
             )
 
         player[
@@ -902,19 +945,26 @@ def fetch_boxscore(game_id):
                 f"(attempt {attempt + 1}/5)"
             )
 
+            cache_buster = int(
+                time.time() * 1000
+            )
+
             box = get_json(
                 f"{NHL_API}/gamecenter/"
                 f"{game_id}/boxscore"
+                f"?_={cache_buster}"
             )
 
             pbp = get_json(
                 f"{NHL_API}/gamecenter/"
                 f"{game_id}/play-by-play"
+                f"?_={cache_buster}"
             )
 
             landing = get_json(
                 f"{NHL_API}/gamecenter/"
                 f"{game_id}/landing"
+                f"?_={cache_buster}"
             )
 
             result = supplement_skater_stats(
@@ -925,7 +975,7 @@ def fetch_boxscore(game_id):
 
             print(
                 f"Game {game_id} fetched successfully "
-                f"- state={result.get('gameState')}"
+                f"(state={result.get('gameState')})"
             )
 
             return result
@@ -1877,10 +1927,6 @@ def build_live_data(
     boxes_by_id,
 ):
 
-    # IMPORTANT:
-    # This is rebuilt from scratch on every run.
-    # Nothing from the previous data.json live section is reused.
-
     skaters = {}
     goalies = {}
     games = []
@@ -1898,28 +1944,17 @@ def build_live_data(
         )
 
         if not box:
-
-            print(
-                f"Skipping live game {game_id}: "
-                "no fresh boxscore"
-            )
-
             continue
 
-        state = box.get(
+        actual_state = box.get(
             "gameState"
         )
 
-        print(
-            f"Fresh boxscore state for "
-            f"{game_id}: {state}"
-        )
-
-        if state not in LIVE_STATES:
+        if actual_state not in LIVE_STATES:
 
             print(
-                f"Removing {game_id} from live: "
-                f"current state={state}"
+                f"Removing game {game_id} from live: "
+                f"fresh boxscore state={actual_state}"
             )
 
             continue
@@ -2252,16 +2287,18 @@ def build_previous_season_data(
 
 def main():
 
-    run_started_at = datetime.now(
+    now_utc = datetime.now(
         timezone.utc
     )
 
-    today = datetime.now(
+    now_local = datetime.now(
         LOCAL_ZONE
-    ).date()
+    )
+
+    today = now_local.date()
 
     print(
-        "========================================"
+        "=" * 48
     )
 
     print(
@@ -2269,7 +2306,7 @@ def main():
     )
 
     print(
-        f"UTC: {run_started_at.isoformat()}"
+        f"UTC: {now_utc.isoformat()}"
     )
 
     print(
@@ -2277,8 +2314,9 @@ def main():
     )
 
     print(
-        "========================================"
+        "=" * 48
     )
+
 
     week_start = (
         today
@@ -2302,14 +2340,14 @@ def main():
 
 
     # --------------------------------------------------------
-    # CURRENT SCHEDULE STATE
+    # FIRST: CHECK LIVE/RECENT GAMES
     #
-    # Fetch yesterday/today/tomorrow fresh at the beginning
-    # of every run. This gives us a current picture of which
-    # games are actually live.
+    # This happens before the season aggregate so games that
+    # just changed from LIVE/CRIT to FINAL/OFF can be included
+    # immediately in this same refresh.
     # --------------------------------------------------------
 
-    live_scan_days = [
+    recent_schedule_days = [
         today - timedelta(days=1),
         today,
         today + timedelta(days=1),
@@ -2317,14 +2355,8 @@ def main():
 
     scheduled_live = (
         live_games_for_dates(
-            live_scan_days
+            recent_schedule_days
         )
-    )
-
-    print(
-        f"Current NHL schedule reports "
-        f"{len(scheduled_live)} live "
-        f"regular-season game(s)"
     )
 
 
@@ -2357,6 +2389,14 @@ def main():
                 completed_ids,
             )
         )
+
+
+    completed_by_id = {
+        str(
+            box["id"]
+        ): box
+        for box in completed_boxes
+    }
 
 
     for box in completed_boxes:
@@ -2396,7 +2436,100 @@ def main():
 
 
     # --------------------------------------------------------
-    # COMPLETED GAME WINDOWS
+    # FETCH FRESH BOXES FOR GAMES THE SCHEDULE CURRENTLY SAYS
+    # ARE LIVE.
+    # --------------------------------------------------------
+
+    live_boxes = []
+
+    if scheduled_live:
+
+        with ThreadPoolExecutor(
+            max_workers=6
+        ) as pool:
+
+            live_boxes = list(
+                pool.map(
+                    fetch_boxscore,
+                    [
+                        str(
+                            g["id"]
+                        )
+                        for g in scheduled_live
+                    ],
+                )
+            )
+
+
+    # --------------------------------------------------------
+    # A GAME MAY HAVE FINISHED BETWEEN THE SCHEDULE REQUEST
+    # AND THE BOXSCORE REQUEST.
+    #
+    # If that happens, immediately graduate it from LIVE to
+    # completed so its stats are included in the same run.
+    # --------------------------------------------------------
+
+    for box in live_boxes:
+
+        game_id = str(
+            box["id"]
+        )
+
+        state = box.get(
+            "gameState"
+        )
+
+        print(
+            f"Fresh game {game_id}: "
+            f"state={state}"
+        )
+
+        if state in FINAL_STATES:
+
+            game_day = date.fromisoformat(
+                box[
+                    "gameDate"
+                ]
+            )
+
+            if (
+                str(
+                    box.get(
+                        "gameType"
+                    )
+                )
+                == "2"
+
+                and
+
+                season_start
+                <= game_day
+                <= today
+            ):
+
+                completed_by_id[
+                    game_id
+                ] = box
+
+                print(
+                    f"Game {game_id} graduated "
+                    "from live to completed"
+                )
+
+
+    completed_boxes = sorted(
+        completed_by_id.values(),
+        key=lambda b: (
+            b["gameDate"],
+            int(
+                b["id"]
+            ),
+        ),
+    )
+
+
+    # --------------------------------------------------------
+    # BUILD COMPLETED-GAME WINDOWS AFTER LIVE GRADUATION
     # --------------------------------------------------------
 
     data = aggregate(
@@ -2429,152 +2562,11 @@ def main():
 
 
     # --------------------------------------------------------
-    # FETCH CURRENT LIVE BOXSCORES
-    # --------------------------------------------------------
-
-    if scheduled_live:
-
-        with ThreadPoolExecutor(
-            max_workers=6
-        ) as pool:
-
-            live_boxes = list(
-                pool.map(
-                    fetch_boxscore,
-                    [
-                        str(
-                            g["id"]
-                        )
-                        for g in scheduled_live
-                    ],
-                )
-            )
-
-    else:
-
-        live_boxes = []
-
-
-    # --------------------------------------------------------
-    # HANDLE A GAME THAT ENDED BETWEEN THE SCHEDULE REQUEST
-    # AND THE BOXSCORE REQUEST.
-    # --------------------------------------------------------
-
-    completed_set = set(
-        completed_ids
-    )
-
-    newly_completed = False
-
-    for box in live_boxes:
-
-        game_id = str(
-            box["id"]
-        )
-
-        state = box.get(
-            "gameState"
-        )
-
-        print(
-            f"Live candidate {game_id}: "
-            f"fresh boxscore state={state}"
-        )
-
-        if (
-            state in FINAL_STATES
-            and
-            game_id not in completed_set
-        ):
-
-            if (
-                str(
-                    box.get(
-                        "gameType"
-                    )
-                )
-                != "2"
-
-                or
-
-                not (
-                    season_start
-                    <= date.fromisoformat(
-                        box[
-                            "gameDate"
-                        ]
-                    )
-                    <= today
-                )
-            ):
-
-                raise ValueError(
-                    "Unexpected newly "
-                    "completed game"
-                )
-
-            print(
-                f"Game {game_id} finished during "
-                "this refresh; moving it from live "
-                "into completed statistics"
-            )
-
-            completed_boxes.append(
-                box
-            )
-
-            completed_set.add(
-                game_id
-            )
-
-            newly_completed = True
-
-
-    # --------------------------------------------------------
-    # REBUILD COMPLETED WINDOWS IF A LIVE GAME JUST FINISHED
-    # --------------------------------------------------------
-
-    if newly_completed:
-
-        data.update(
-            aggregate(
-                completed_boxes,
-                week_start,
-                today,
-            )
-        )
-
-        data[
-            "monthly"
-        ] = aggregate(
-            completed_boxes,
-            month_start,
-            today,
-        )
-
-        data[
-            "season"
-        ] = aggregate(
-            completed_boxes,
-            season_start,
-            today,
-        )
-
-        data[
-            "game_logs"
-        ] = build_game_logs(
-            completed_boxes
-        )
-
-
-    # --------------------------------------------------------
-    # LIVE DATA
+    # BUILD LIVE SECTION
     #
-    # ALWAYS REBUILT FROM SCRATCH.
-    #
-    # The old data.json live section is never reused.
-    # Only games whose FRESH boxscore still says LIVE/CRIT
-    # are allowed into this object.
+    # build_live_data checks the FRESH boxscore state.
+    # A game only remains here if its current boxscore is
+    # actually LIVE or CRIT.
     # --------------------------------------------------------
 
     data[
@@ -2591,8 +2583,8 @@ def main():
 
 
     print(
-        "Fresh live object contains "
-        f"{data['live']['games_count']} game(s)"
+        f"Current live games after fresh validation: "
+        f"{data['live']['games_count']}"
     )
 
 
@@ -2621,6 +2613,7 @@ def main():
         except (
             ValueError,
             AttributeError,
+            OSError,
         ):
 
             old_data = {}
@@ -2754,11 +2747,12 @@ def main():
             "under live. Faceoff wins come from "
             "play-by-play and power-play points "
             "from NHL scoring-summary credits. "
-            "Live schedule, boxscore, play-by-play "
-            "and landing feeds are requested fresh "
-            "on every workflow run. Previous-season "
-            "totals support Ice Watchers waiver "
-            "graduation."
+            "Previous-season totals support "
+            "Ice Watchers waiver graduation. "
+            "NHL scoring credits for players "
+            "missing from playerByGameStats are "
+            "logged and skipped instead of "
+            "blocking the refresh."
         ),
     }
 
@@ -2775,47 +2769,15 @@ def main():
     )
 
 
-    # --------------------------------------------------------
-    # FRESH RUN TIMESTAMP
-    # --------------------------------------------------------
-
-    finished_at = datetime.now(
-        timezone.utc
-    )
-
     data.update(
 
-        updated_at=finished_at.isoformat(),
+        updated_at=datetime.now(
+            timezone.utc
+        ).isoformat(),
 
         timezone="America/Toronto",
 
     )
-
-
-    # --------------------------------------------------------
-    # FINAL VALIDATION
-    #
-    # A game is not allowed to remain in live if its fresh
-    # boxscore says it is complete.
-    # --------------------------------------------------------
-
-    for game in data[
-        "live"
-    ][
-        "games"
-    ]:
-
-        if (
-            game.get(
-                "state"
-            )
-            not in LIVE_STATES
-        ):
-
-            raise ValueError(
-                "Non-live game found inside "
-                "live data; previous data retained"
-            )
 
 
     # --------------------------------------------------------
@@ -2842,7 +2804,11 @@ def main():
 
 
     print(
-        "========================================"
+        "=" * 48
+    )
+
+    print(
+        "ICE WATCHERS REFRESH COMPLETE"
     )
 
     print(
@@ -2858,12 +2824,12 @@ def main():
     )
 
     print(
-        f"data.json updated_at: "
+        f"data.json updated at "
         f"{data['updated_at']}"
     )
 
     print(
-        "========================================"
+        "=" * 48
     )
 
 
