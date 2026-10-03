@@ -1916,7 +1916,7 @@
       "sog": 8,
       "hit": 11,
       "blk": 0,
-      "fow": 3,
+      "fow": 4,
       "plusMinus": -1,
       "gp": 3,
       "seconds": 2638,
@@ -11180,7 +11180,7 @@
       "sog": 4,
       "hit": 1,
       "blk": 0,
-      "fow": 10,
+      "fow": 9,
       "plusMinus": 0,
       "gp": 1,
       "seconds": 650,
@@ -12359,10 +12359,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 1,
-      "seconds": 828,
-      "toi": "13:48",
-      "toiPerGame": 828.0,
-      "avgToi": "13:48"
+      "seconds": 825,
+      "toi": "13:45",
+      "toiPerGame": 825.0,
+      "avgToi": "13:45"
     },
     {
       "name": "R. Johnston",
@@ -12383,10 +12383,10 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 1,
-      "seconds": 596,
-      "toi": "9:56",
-      "toiPerGame": 596.0,
-      "avgToi": "9:56"
+      "seconds": 599,
+      "toi": "9:59",
+      "toiPerGame": 599.0,
+      "avgToi": "9:59"
     },
     {
       "name": "J. Neighbours",
@@ -16159,7 +16159,7 @@
         "sog": 8,
         "hit": 11,
         "blk": 0,
-        "fow": 3,
+        "fow": 4,
         "plusMinus": -1,
         "gp": 3,
         "seconds": 2638,
@@ -25423,7 +25423,7 @@
         "sog": 4,
         "hit": 1,
         "blk": 0,
-        "fow": 10,
+        "fow": 9,
         "plusMinus": 0,
         "gp": 1,
         "seconds": 650,
@@ -26602,10 +26602,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 828,
-        "toi": "13:48",
-        "toiPerGame": 828.0,
-        "avgToi": "13:48"
+        "seconds": 825,
+        "toi": "13:45",
+        "toiPerGame": 825.0,
+        "avgToi": "13:45"
       },
       {
         "name": "R. Johnston",
@@ -26626,10 +26626,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 596,
-        "toi": "9:56",
-        "toiPerGame": 596.0,
-        "avgToi": "9:56"
+        "seconds": 599,
+        "toi": "9:59",
+        "toiPerGame": 599.0,
+        "avgToi": "9:59"
       },
       {
         "name": "J. Neighbours",
@@ -30403,7 +30403,7 @@
         "sog": 8,
         "hit": 11,
         "blk": 0,
-        "fow": 3,
+        "fow": 4,
         "plusMinus": -1,
         "gp": 3,
         "seconds": 2638,
@@ -39667,7 +39667,7 @@
         "sog": 4,
         "hit": 1,
         "blk": 0,
-        "fow": 10,
+        "fow": 9,
         "plusMinus": 0,
         "gp": 1,
         "seconds": 650,
@@ -40846,10 +40846,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 828,
-        "toi": "13:48",
-        "toiPerGame": 828.0,
-        "avgToi": "13:48"
+        "seconds": 825,
+        "toi": "13:45",
+        "toiPerGame": 825.0,
+        "avgToi": "13:45"
       },
       {
         "name": "R. Johnston",
@@ -40870,10 +40870,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 596,
-        "toi": "9:56",
-        "toiPerGame": 596.0,
-        "avgToi": "9:56"
+        "seconds": 599,
+        "toi": "9:59",
+        "toiPerGame": 599.0,
+        "avgToi": "9:59"
       },
       {
         "name": "J. Neighbours",
@@ -46682,7 +46682,7 @@
             "sog": 2,
             "hit": 6,
             "blk": 0,
-            "fow": 2,
+            "fow": 3,
             "plusMinus": 0,
             "game_id": 2026020017,
             "date": "2026-10-02",
@@ -61137,7 +61137,7 @@
             "sog": 4,
             "hit": 1,
             "blk": 0,
-            "fow": 10,
+            "fow": 9,
             "plusMinus": 0,
             "game_id": 2026020017,
             "date": "2026-10-02",
@@ -62615,8 +62615,8 @@
             "opponent": "DAL",
             "home_away": "away",
             "pos": "R",
-            "toi": "13:48",
-            "toi_seconds": 828
+            "toi": "13:45",
+            "toi_seconds": 825
           }
         ]
       },
@@ -62645,8 +62645,8 @@
             "opponent": "DAL",
             "home_away": "away",
             "pos": "L",
-            "toi": "09:56",
-            "toi_seconds": 596
+            "toi": "09:59",
+            "toi_seconds": 599
           }
         ]
       },
@@ -65152,7 +65152,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-03T11:10:40.400308+00:00"
+    "updated_at": "2026-10-03T14:39:39.415134+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -76796,6 +76796,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-03T11:10:40.414012+00:00",
+  "updated_at": "2026-10-03T14:39:39.429114+00:00",
   "timezone": "America/Toronto"
 }
