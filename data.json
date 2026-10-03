@@ -2172,7 +2172,7 @@
       "g": 2,
       "a": 0,
       "pim": 0,
-      "ppp": 0,
+      "ppp": 1,
       "shg": 0,
       "sha": 0,
       "gwg": null,
@@ -2388,7 +2388,7 @@
       "g": 0,
       "a": 2,
       "pim": 0,
-      "ppp": 0,
+      "ppp": 1,
       "shg": 0,
       "sha": 0,
       "gwg": null,
@@ -2580,7 +2580,7 @@
       "g": 0,
       "a": 2,
       "pim": 0,
-      "ppp": 0,
+      "ppp": 1,
       "shg": 0,
       "sha": 0,
       "gwg": null,
@@ -3908,7 +3908,7 @@
       "sog": 4,
       "hit": 1,
       "blk": 1,
-      "fow": 19,
+      "fow": 18,
       "plusMinus": 1,
       "gp": 2,
       "seconds": 2407,
@@ -4029,11 +4029,11 @@
       "hit": 0,
       "blk": 1,
       "fow": 0,
-      "plusMinus": -4,
+      "plusMinus": -3,
       "gp": 2,
-      "seconds": 1379,
-      "toi": "22:59",
-      "toiPerGame": 689.5,
+      "seconds": 1380,
+      "toi": "23:00",
+      "toiPerGame": 690.0,
       "avgToi": "11:30"
     },
     {
@@ -4052,7 +4052,7 @@
       "sog": 9,
       "hit": 3,
       "blk": 2,
-      "fow": 14,
+      "fow": 12,
       "plusMinus": 2,
       "gp": 2,
       "seconds": 1988,
@@ -4079,10 +4079,10 @@
       "fow": 0,
       "plusMinus": 2,
       "gp": 2,
-      "seconds": 1770,
-      "toi": "29:30",
-      "toiPerGame": 885.0,
-      "avgToi": "14:45"
+      "seconds": 1772,
+      "toi": "29:32",
+      "toiPerGame": 886.0,
+      "avgToi": "14:46"
     },
     {
       "name": "M. Stone",
@@ -4149,11 +4149,11 @@
       "hit": 1,
       "blk": 1,
       "fow": 0,
-      "plusMinus": 0,
+      "plusMinus": -1,
       "gp": 2,
-      "seconds": 2624,
-      "toi": "43:44",
-      "toiPerGame": 1312.0,
+      "seconds": 2623,
+      "toi": "43:43",
+      "toiPerGame": 1311.5,
       "avgToi": "21:52"
     },
     {
@@ -4247,9 +4247,9 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 2,
-      "seconds": 2049,
-      "toi": "34:09",
-      "toiPerGame": 1024.5,
+      "seconds": 2048,
+      "toi": "34:08",
+      "toiPerGame": 1024.0,
       "avgToi": "17:04"
     },
     {
@@ -4271,9 +4271,9 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 2,
-      "seconds": 2305,
-      "toi": "38:25",
-      "toiPerGame": 1152.5,
+      "seconds": 2304,
+      "toi": "38:24",
+      "toiPerGame": 1152.0,
       "avgToi": "19:12"
     },
     {
@@ -13271,10 +13271,10 @@
       "fow": 0,
       "plusMinus": 2,
       "gp": 1,
-      "seconds": 1085,
-      "toi": "18:05",
-      "toiPerGame": 1085.0,
-      "avgToi": "18:05"
+      "seconds": 1084,
+      "toi": "18:04",
+      "toiPerGame": 1084.0,
+      "avgToi": "18:04"
     },
     {
       "name": "C. Gauthier",
@@ -13316,7 +13316,7 @@
       "sog": 0,
       "hit": 0,
       "blk": 0,
-      "fow": 5,
+      "fow": 6,
       "plusMinus": 1,
       "gp": 1,
       "seconds": 1119,
@@ -13364,7 +13364,7 @@
       "sog": 1,
       "hit": 0,
       "blk": 1,
-      "fow": 4,
+      "fow": 6,
       "plusMinus": 1,
       "gp": 1,
       "seconds": 1063,
@@ -13511,10 +13511,10 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 1,
-      "seconds": 1269,
-      "toi": "21:09",
-      "toiPerGame": 1269.0,
-      "avgToi": "21:09"
+      "seconds": 1270,
+      "toi": "21:10",
+      "toiPerGame": 1270.0,
+      "avgToi": "21:10"
     }
   ],
   "goalies": [
@@ -14226,7 +14226,7 @@
       "team": "ANA",
       "player_id": 8480843,
       "gs": null,
-      "w": 0,
+      "w": 1,
       "ga": 3,
       "sv": 27,
       "so": 0,
@@ -16415,7 +16415,7 @@
         "g": 2,
         "a": 0,
         "pim": 0,
-        "ppp": 0,
+        "ppp": 1,
         "shg": 0,
         "sha": 0,
         "gwg": null,
@@ -16631,7 +16631,7 @@
         "g": 0,
         "a": 2,
         "pim": 0,
-        "ppp": 0,
+        "ppp": 1,
         "shg": 0,
         "sha": 0,
         "gwg": null,
@@ -16823,7 +16823,7 @@
         "g": 0,
         "a": 2,
         "pim": 0,
-        "ppp": 0,
+        "ppp": 1,
         "shg": 0,
         "sha": 0,
         "gwg": null,
@@ -18151,7 +18151,7 @@
         "sog": 4,
         "hit": 1,
         "blk": 1,
-        "fow": 19,
+        "fow": 18,
         "plusMinus": 1,
         "gp": 2,
         "seconds": 2407,
@@ -18272,11 +18272,11 @@
         "hit": 0,
         "blk": 1,
         "fow": 0,
-        "plusMinus": -4,
+        "plusMinus": -3,
         "gp": 2,
-        "seconds": 1379,
-        "toi": "22:59",
-        "toiPerGame": 689.5,
+        "seconds": 1380,
+        "toi": "23:00",
+        "toiPerGame": 690.0,
         "avgToi": "11:30"
       },
       {
@@ -18295,7 +18295,7 @@
         "sog": 9,
         "hit": 3,
         "blk": 2,
-        "fow": 14,
+        "fow": 12,
         "plusMinus": 2,
         "gp": 2,
         "seconds": 1988,
@@ -18322,10 +18322,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 2,
-        "seconds": 1770,
-        "toi": "29:30",
-        "toiPerGame": 885.0,
-        "avgToi": "14:45"
+        "seconds": 1772,
+        "toi": "29:32",
+        "toiPerGame": 886.0,
+        "avgToi": "14:46"
       },
       {
         "name": "M. Stone",
@@ -18392,11 +18392,11 @@
         "hit": 1,
         "blk": 1,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": -1,
         "gp": 2,
-        "seconds": 2624,
-        "toi": "43:44",
-        "toiPerGame": 1312.0,
+        "seconds": 2623,
+        "toi": "43:43",
+        "toiPerGame": 1311.5,
         "avgToi": "21:52"
       },
       {
@@ -18490,9 +18490,9 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 2,
-        "seconds": 2049,
-        "toi": "34:09",
-        "toiPerGame": 1024.5,
+        "seconds": 2048,
+        "toi": "34:08",
+        "toiPerGame": 1024.0,
         "avgToi": "17:04"
       },
       {
@@ -18514,9 +18514,9 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 2,
-        "seconds": 2305,
-        "toi": "38:25",
-        "toiPerGame": 1152.5,
+        "seconds": 2304,
+        "toi": "38:24",
+        "toiPerGame": 1152.0,
         "avgToi": "19:12"
       },
       {
@@ -27514,10 +27514,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 1,
-        "seconds": 1085,
-        "toi": "18:05",
-        "toiPerGame": 1085.0,
-        "avgToi": "18:05"
+        "seconds": 1084,
+        "toi": "18:04",
+        "toiPerGame": 1084.0,
+        "avgToi": "18:04"
       },
       {
         "name": "C. Gauthier",
@@ -27559,7 +27559,7 @@
         "sog": 0,
         "hit": 0,
         "blk": 0,
-        "fow": 5,
+        "fow": 6,
         "plusMinus": 1,
         "gp": 1,
         "seconds": 1119,
@@ -27607,7 +27607,7 @@
         "sog": 1,
         "hit": 0,
         "blk": 1,
-        "fow": 4,
+        "fow": 6,
         "plusMinus": 1,
         "gp": 1,
         "seconds": 1063,
@@ -27754,10 +27754,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 1269,
-        "toi": "21:09",
-        "toiPerGame": 1269.0,
-        "avgToi": "21:09"
+        "seconds": 1270,
+        "toi": "21:10",
+        "toiPerGame": 1270.0,
+        "avgToi": "21:10"
       }
     ],
     "goalies": [
@@ -28469,7 +28469,7 @@
         "team": "ANA",
         "player_id": 8480843,
         "gs": null,
-        "w": 0,
+        "w": 1,
         "ga": 3,
         "sv": 27,
         "so": 0,
@@ -30659,7 +30659,7 @@
         "g": 2,
         "a": 0,
         "pim": 0,
-        "ppp": 0,
+        "ppp": 1,
         "shg": 0,
         "sha": 0,
         "gwg": null,
@@ -30875,7 +30875,7 @@
         "g": 0,
         "a": 2,
         "pim": 0,
-        "ppp": 0,
+        "ppp": 1,
         "shg": 0,
         "sha": 0,
         "gwg": null,
@@ -31067,7 +31067,7 @@
         "g": 0,
         "a": 2,
         "pim": 0,
-        "ppp": 0,
+        "ppp": 1,
         "shg": 0,
         "sha": 0,
         "gwg": null,
@@ -32395,7 +32395,7 @@
         "sog": 4,
         "hit": 1,
         "blk": 1,
-        "fow": 19,
+        "fow": 18,
         "plusMinus": 1,
         "gp": 2,
         "seconds": 2407,
@@ -32516,11 +32516,11 @@
         "hit": 0,
         "blk": 1,
         "fow": 0,
-        "plusMinus": -4,
+        "plusMinus": -3,
         "gp": 2,
-        "seconds": 1379,
-        "toi": "22:59",
-        "toiPerGame": 689.5,
+        "seconds": 1380,
+        "toi": "23:00",
+        "toiPerGame": 690.0,
         "avgToi": "11:30"
       },
       {
@@ -32539,7 +32539,7 @@
         "sog": 9,
         "hit": 3,
         "blk": 2,
-        "fow": 14,
+        "fow": 12,
         "plusMinus": 2,
         "gp": 2,
         "seconds": 1988,
@@ -32566,10 +32566,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 2,
-        "seconds": 1770,
-        "toi": "29:30",
-        "toiPerGame": 885.0,
-        "avgToi": "14:45"
+        "seconds": 1772,
+        "toi": "29:32",
+        "toiPerGame": 886.0,
+        "avgToi": "14:46"
       },
       {
         "name": "M. Stone",
@@ -32636,11 +32636,11 @@
         "hit": 1,
         "blk": 1,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": -1,
         "gp": 2,
-        "seconds": 2624,
-        "toi": "43:44",
-        "toiPerGame": 1312.0,
+        "seconds": 2623,
+        "toi": "43:43",
+        "toiPerGame": 1311.5,
         "avgToi": "21:52"
       },
       {
@@ -32734,9 +32734,9 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 2,
-        "seconds": 2049,
-        "toi": "34:09",
-        "toiPerGame": 1024.5,
+        "seconds": 2048,
+        "toi": "34:08",
+        "toiPerGame": 1024.0,
         "avgToi": "17:04"
       },
       {
@@ -32758,9 +32758,9 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 2,
-        "seconds": 2305,
-        "toi": "38:25",
-        "toiPerGame": 1152.5,
+        "seconds": 2304,
+        "toi": "38:24",
+        "toiPerGame": 1152.0,
         "avgToi": "19:12"
       },
       {
@@ -41758,10 +41758,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 1,
-        "seconds": 1085,
-        "toi": "18:05",
-        "toiPerGame": 1085.0,
-        "avgToi": "18:05"
+        "seconds": 1084,
+        "toi": "18:04",
+        "toiPerGame": 1084.0,
+        "avgToi": "18:04"
       },
       {
         "name": "C. Gauthier",
@@ -41803,7 +41803,7 @@
         "sog": 0,
         "hit": 0,
         "blk": 0,
-        "fow": 5,
+        "fow": 6,
         "plusMinus": 1,
         "gp": 1,
         "seconds": 1119,
@@ -41851,7 +41851,7 @@
         "sog": 1,
         "hit": 0,
         "blk": 1,
-        "fow": 4,
+        "fow": 6,
         "plusMinus": 1,
         "gp": 1,
         "seconds": 1063,
@@ -41998,10 +41998,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 1269,
-        "toi": "21:09",
-        "toiPerGame": 1269.0,
-        "avgToi": "21:09"
+        "seconds": 1270,
+        "toi": "21:10",
+        "toiPerGame": 1270.0,
+        "avgToi": "21:10"
       }
     ],
     "goalies": [
@@ -42713,7 +42713,7 @@
         "team": "ANA",
         "player_id": 8480843,
         "gs": null,
-        "w": 0,
+        "w": 1,
         "ga": 3,
         "sv": 27,
         "so": 0,
@@ -47441,7 +47441,7 @@
             "g": 1,
             "a": 0,
             "pim": 0,
-            "ppp": 0,
+            "ppp": 1,
             "shg": 0,
             "sha": 0,
             "gwg": null,
@@ -47918,7 +47918,7 @@
             "g": 0,
             "a": 2,
             "pim": 0,
-            "ppp": 0,
+            "ppp": 1,
             "shg": 0,
             "sha": 0,
             "gwg": null,
@@ -48342,7 +48342,7 @@
             "g": 0,
             "a": 2,
             "pim": 0,
-            "ppp": 0,
+            "ppp": 1,
             "shg": 0,
             "sha": 0,
             "gwg": null,
@@ -51219,7 +51219,7 @@
             "sog": 2,
             "hit": 0,
             "blk": 1,
-            "fow": 13,
+            "fow": 12,
             "plusMinus": 0,
             "game_id": 2026020021,
             "date": "2026-10-02",
@@ -51485,15 +51485,15 @@
             "hit": 0,
             "blk": 0,
             "fow": 0,
-            "plusMinus": -3,
+            "plusMinus": -2,
             "game_id": 2026020021,
             "date": "2026-10-02",
             "team": "VGK",
             "opponent": "ANA",
             "home_away": "home",
             "pos": "R",
-            "toi": "12:01",
-            "toi_seconds": 721
+            "toi": "12:02",
+            "toi_seconds": 722
           }
         ]
       },
@@ -51537,7 +51537,7 @@
             "sog": 5,
             "hit": 1,
             "blk": 2,
-            "fow": 8,
+            "fow": 6,
             "plusMinus": 1,
             "game_id": 2026020021,
             "date": "2026-10-02",
@@ -51598,8 +51598,8 @@
             "opponent": "ANA",
             "home_away": "home",
             "pos": "L",
-            "toi": "15:03",
-            "toi_seconds": 903
+            "toi": "15:05",
+            "toi_seconds": 905
           }
         ]
       },
@@ -51750,15 +51750,15 @@
             "hit": 1,
             "blk": 1,
             "fow": 0,
-            "plusMinus": 0,
+            "plusMinus": -1,
             "game_id": 2026020021,
             "date": "2026-10-02",
             "team": "VGK",
             "opponent": "ANA",
             "home_away": "home",
             "pos": "R",
-            "toi": "22:23",
-            "toi_seconds": 1343
+            "toi": "22:22",
+            "toi_seconds": 1342
           }
         ]
       },
@@ -51969,8 +51969,8 @@
             "opponent": "ANA",
             "home_away": "home",
             "pos": "D",
-            "toi": "16:49",
-            "toi_seconds": 1009
+            "toi": "16:48",
+            "toi_seconds": 1008
           }
         ]
       },
@@ -52022,8 +52022,8 @@
             "opponent": "ANA",
             "home_away": "home",
             "pos": "D",
-            "toi": "19:34",
-            "toi_seconds": 1174
+            "toi": "19:33",
+            "toi_seconds": 1173
           }
         ]
       },
@@ -63755,8 +63755,8 @@
             "opponent": "VGK",
             "home_away": "away",
             "pos": "R",
-            "toi": "18:05",
-            "toi_seconds": 1085
+            "toi": "18:04",
+            "toi_seconds": 1084
           }
         ]
       },
@@ -63807,7 +63807,7 @@
             "sog": 0,
             "hit": 0,
             "blk": 0,
-            "fow": 5,
+            "fow": 6,
             "plusMinus": 1,
             "game_id": 2026020021,
             "date": "2026-10-02",
@@ -63867,7 +63867,7 @@
             "sog": 1,
             "hit": 0,
             "blk": 1,
-            "fow": 4,
+            "fow": 6,
             "plusMinus": 1,
             "game_id": 2026020021,
             "date": "2026-10-02",
@@ -64055,8 +64055,8 @@
             "opponent": "VGK",
             "home_away": "away",
             "pos": "D",
-            "toi": "21:09",
-            "toi_seconds": 1269
+            "toi": "21:10",
+            "toi_seconds": 1270
           }
         ]
       }
@@ -64411,7 +64411,7 @@
             "opponent": "ANA",
             "home_away": "home",
             "starter": null,
-            "decision": null,
+            "decision": "L",
             "toi": "57:40",
             "toi_seconds": 3460
           }
@@ -65125,7 +65125,7 @@
         "pos": "G",
         "games": [
           {
-            "w": 0,
+            "w": 1,
             "otl": 0,
             "ga": 3,
             "sv": 27,
@@ -65139,7 +65139,7 @@
             "opponent": "VGK",
             "home_away": "away",
             "starter": null,
-            "decision": null,
+            "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
           }
@@ -65152,7 +65152,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-03T04:47:34.134167+00:00"
+    "updated_at": "2026-10-03T05:01:07.304006+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -76796,6 +76796,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-03T04:47:34.146993+00:00",
+  "updated_at": "2026-10-03T05:01:07.311658+00:00",
   "timezone": "America/Toronto"
 }
