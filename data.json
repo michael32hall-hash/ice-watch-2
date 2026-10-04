@@ -81300,10 +81300,10 @@
         "game_id": 2026020036,
         "game_date": "2026-10-04",
         "state": "LIVE",
-        "period": 1,
+        "period": 2,
         "period_type": "REG",
-        "clock": "12:47",
-        "in_intermission": true,
+        "clock": "20:00",
+        "in_intermission": false,
         "away": {
           "abbrev": "UTA",
           "score": 0
@@ -81497,7 +81497,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 0,
+        "hit": 1,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -81905,7 +81905,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 0,
+        "hit": 1,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
@@ -82220,7 +82220,7 @@
         "avgToi": "20:00"
       }
     ],
-    "updated_at": "2026-10-04T22:48:15.967241+00:00"
+    "updated_at": "2026-10-04T23:01:10.081839+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -93864,6 +93864,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-04T22:48:15.987108+00:00",
+  "updated_at": "2026-10-04T23:01:10.099286+00:00",
   "timezone": "America/Toronto"
 }
