@@ -10101,11 +10101,11 @@
       "hit": 3,
       "blk": 1,
       "fow": 9,
-      "plusMinus": -4,
+      "plusMinus": -3,
       "gp": 3,
-      "seconds": 2517,
-      "toi": "41:57",
-      "toiPerGame": 839.0,
+      "seconds": 2516,
+      "toi": "41:56",
+      "toiPerGame": 838.6666666666666,
       "avgToi": "13:59"
     },
     {
@@ -10245,11 +10245,11 @@
       "hit": 16,
       "blk": 1,
       "fow": 13,
-      "plusMinus": -2,
+      "plusMinus": -3,
       "gp": 3,
-      "seconds": 2321,
-      "toi": "38:41",
-      "toiPerGame": 773.6666666666666,
+      "seconds": 2322,
+      "toi": "38:42",
+      "toiPerGame": 774.0,
       "avgToi": "12:54"
     },
     {
@@ -25652,11 +25652,11 @@
         "hit": 3,
         "blk": 1,
         "fow": 9,
-        "plusMinus": -4,
+        "plusMinus": -3,
         "gp": 3,
-        "seconds": 2517,
-        "toi": "41:57",
-        "toiPerGame": 839.0,
+        "seconds": 2516,
+        "toi": "41:56",
+        "toiPerGame": 838.6666666666666,
         "avgToi": "13:59"
       },
       {
@@ -25796,11 +25796,11 @@
         "hit": 16,
         "blk": 1,
         "fow": 13,
-        "plusMinus": -2,
+        "plusMinus": -3,
         "gp": 3,
-        "seconds": 2321,
-        "toi": "38:41",
-        "toiPerGame": 773.6666666666666,
+        "seconds": 2322,
+        "toi": "38:42",
+        "toiPerGame": 774.0,
         "avgToi": "12:54"
       },
       {
@@ -41204,11 +41204,11 @@
         "hit": 3,
         "blk": 1,
         "fow": 9,
-        "plusMinus": -4,
+        "plusMinus": -3,
         "gp": 3,
-        "seconds": 2517,
-        "toi": "41:57",
-        "toiPerGame": 839.0,
+        "seconds": 2516,
+        "toi": "41:56",
+        "toiPerGame": 838.6666666666666,
         "avgToi": "13:59"
       },
       {
@@ -41348,11 +41348,11 @@
         "hit": 16,
         "blk": 1,
         "fow": 13,
-        "plusMinus": -2,
+        "plusMinus": -3,
         "gp": 3,
-        "seconds": 2321,
-        "toi": "38:41",
-        "toiPerGame": 773.6666666666666,
+        "seconds": 2322,
+        "toi": "38:42",
+        "toiPerGame": 774.0,
         "avgToi": "12:54"
       },
       {
@@ -74108,15 +74108,15 @@
             "hit": 2,
             "blk": 0,
             "fow": 3,
-            "plusMinus": -3,
+            "plusMinus": -2,
             "game_id": 2026020038,
             "date": "2026-10-04",
             "team": "CGY",
             "opponent": "SEA",
             "home_away": "away",
             "pos": "C",
-            "toi": "14:22",
-            "toi_seconds": 862
+            "toi": "14:21",
+            "toi_seconds": 861
           }
         ]
       },
@@ -74541,15 +74541,15 @@
             "hit": 8,
             "blk": 0,
             "fow": 7,
-            "plusMinus": -2,
+            "plusMinus": -3,
             "game_id": 2026020038,
             "date": "2026-10-04",
             "team": "CGY",
             "opponent": "SEA",
             "home_away": "away",
             "pos": "C",
-            "toi": "13:30",
-            "toi_seconds": 810
+            "toi": "13:31",
+            "toi_seconds": 811
           }
         ]
       },
@@ -85063,7 +85063,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-05T18:28:38.680668+00:00"
+    "updated_at": "2026-10-05T18:54:21.853324+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -96707,6 +96707,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-05T18:28:38.698547+00:00",
+  "updated_at": "2026-10-05T18:54:21.871918+00:00",
   "timezone": "America/Toronto"
 }
