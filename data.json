@@ -85063,7 +85063,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-05T13:06:40.807299+00:00"
+    "updated_at": "2026-10-05T13:34:57.696776+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -96707,6 +96707,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-05T13:06:40.825455+00:00",
+  "updated_at": "2026-10-05T13:34:57.709893+00:00",
   "timezone": "America/Toronto"
 }
