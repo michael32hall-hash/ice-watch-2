@@ -3137,7 +3137,7 @@
       "sha": 0,
       "gwg": null,
       "hat": 0,
-      "sog": 15,
+      "sog": 16,
       "hit": 1,
       "blk": 0,
       "fow": 25,
@@ -18688,7 +18688,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 15,
+        "sog": 16,
         "hit": 1,
         "blk": 0,
         "fow": 25,
@@ -34240,7 +34240,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 15,
+        "sog": 16,
         "hit": 1,
         "blk": 0,
         "fow": 25,
@@ -56687,7 +56687,7 @@
             "sha": 0,
             "gwg": null,
             "hat": 0,
-            "sog": 5,
+            "sog": 6,
             "hit": 1,
             "blk": 0,
             "fow": 8,
@@ -85063,7 +85063,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-05T17:00:04.128128+00:00"
+    "updated_at": "2026-10-05T17:22:02.441842+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -96707,6 +96707,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-05T17:00:04.146083+00:00",
+  "updated_at": "2026-10-05T17:22:02.459880+00:00",
   "timezone": "America/Toronto"
 }
