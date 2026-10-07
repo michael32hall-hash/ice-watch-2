@@ -4604,7 +4604,7 @@
       "sog": 5,
       "hit": 2,
       "blk": 3,
-      "fow": 25,
+      "fow": 26,
       "plusMinus": -1,
       "gp": 4,
       "seconds": 3500,
@@ -4796,7 +4796,7 @@
       "sog": 8,
       "hit": 3,
       "blk": 3,
-      "fow": 21,
+      "fow": 20,
       "plusMinus": -6,
       "gp": 3,
       "seconds": 2787,
@@ -6263,9 +6263,9 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 3,
-      "seconds": 1403,
-      "toi": "23:23",
-      "toiPerGame": 467.6666666666667,
+      "seconds": 1405,
+      "toi": "23:25",
+      "toiPerGame": 468.3333333333333,
       "avgToi": "7:48"
     },
     {
@@ -6311,9 +6311,9 @@
       "fow": 2,
       "plusMinus": 1,
       "gp": 3,
-      "seconds": 2905,
-      "toi": "48:25",
-      "toiPerGame": 968.3333333333334,
+      "seconds": 2903,
+      "toi": "48:23",
+      "toiPerGame": 967.6666666666666,
       "avgToi": "16:08"
     },
     {
@@ -15678,7 +15678,7 @@
       "name": "J. Markstrom",
       "team": "FLA",
       "player_id": 8474593,
-      "gs": null,
+      "gs": 2,
       "w": 1,
       "ga": 4,
       "sv": 36,
@@ -15849,7 +15849,7 @@
       "name": "D. Kuemper",
       "team": "LAK",
       "player_id": 8475311,
-      "gs": null,
+      "gs": 1,
       "w": 0,
       "ga": 2,
       "sv": 26,
@@ -16082,10 +16082,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 4,
-        "seconds": 1980,
-        "toi": "33:00",
-        "toiPerGame": 495.0,
-        "avgToi": "8:15"
+        "seconds": 1982,
+        "toi": "33:02",
+        "toiPerGame": 495.5,
+        "avgToi": "8:16"
       },
       {
         "name": "C. Verhaeghe",
@@ -16130,10 +16130,10 @@
         "fow": 2,
         "plusMinus": 1,
         "gp": 4,
-        "seconds": 3743,
-        "toi": "62:23",
-        "toiPerGame": 935.75,
-        "avgToi": "15:36"
+        "seconds": 3741,
+        "toi": "62:21",
+        "toiPerGame": 935.25,
+        "avgToi": "15:35"
       },
       {
         "name": "S. Vilmanis",
@@ -25727,7 +25727,7 @@
         "sog": 5,
         "hit": 2,
         "blk": 3,
-        "fow": 25,
+        "fow": 26,
         "plusMinus": -1,
         "gp": 4,
         "seconds": 3500,
@@ -25919,7 +25919,7 @@
         "sog": 8,
         "hit": 3,
         "blk": 3,
-        "fow": 21,
+        "fow": 20,
         "plusMinus": -6,
         "gp": 3,
         "seconds": 2787,
@@ -30877,7 +30877,7 @@
         "name": "J. Markstrom",
         "team": "FLA",
         "player_id": 8474593,
-        "gs": null,
+        "gs": 3,
         "w": 2,
         "ga": 4,
         "sv": 51,
@@ -31105,7 +31105,7 @@
         "name": "D. Kuemper",
         "team": "LAK",
         "player_id": 8475311,
-        "gs": null,
+        "gs": 2,
         "w": 0,
         "ga": 10,
         "sv": 47,
@@ -32137,10 +32137,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 4,
-        "seconds": 1980,
-        "toi": "33:00",
-        "toiPerGame": 495.0,
-        "avgToi": "8:15"
+        "seconds": 1982,
+        "toi": "33:02",
+        "toiPerGame": 495.5,
+        "avgToi": "8:16"
       },
       {
         "name": "C. Verhaeghe",
@@ -32185,10 +32185,10 @@
         "fow": 2,
         "plusMinus": 1,
         "gp": 4,
-        "seconds": 3743,
-        "toi": "62:23",
-        "toiPerGame": 935.75,
-        "avgToi": "15:36"
+        "seconds": 3741,
+        "toi": "62:21",
+        "toiPerGame": 935.25,
+        "avgToi": "15:35"
       },
       {
         "name": "S. Vilmanis",
@@ -41782,7 +41782,7 @@
         "sog": 5,
         "hit": 2,
         "blk": 3,
-        "fow": 25,
+        "fow": 26,
         "plusMinus": -1,
         "gp": 4,
         "seconds": 3500,
@@ -41974,7 +41974,7 @@
         "sog": 8,
         "hit": 3,
         "blk": 3,
-        "fow": 21,
+        "fow": 20,
         "plusMinus": -6,
         "gp": 3,
         "seconds": 2787,
@@ -46932,7 +46932,7 @@
         "name": "J. Markstrom",
         "team": "FLA",
         "player_id": 8474593,
-        "gs": null,
+        "gs": 3,
         "w": 2,
         "ga": 4,
         "sv": 51,
@@ -47160,7 +47160,7 @@
         "name": "D. Kuemper",
         "team": "LAK",
         "player_id": 8475311,
-        "gs": null,
+        "gs": 2,
         "w": 0,
         "ga": 10,
         "sv": 47,
@@ -48817,8 +48817,8 @@
             "opponent": "LAK",
             "home_away": "away",
             "pos": "R",
-            "toi": "07:50",
-            "toi_seconds": 470
+            "toi": "07:52",
+            "toi_seconds": 472
           }
         ]
       },
@@ -49015,8 +49015,8 @@
             "opponent": "LAK",
             "home_away": "away",
             "pos": "C",
-            "toi": "15:45",
-            "toi_seconds": 945
+            "toi": "15:43",
+            "toi_seconds": 943
           }
         ]
       },
@@ -81914,7 +81914,7 @@
             "sog": 0,
             "hit": 0,
             "blk": 0,
-            "fow": 10,
+            "fow": 11,
             "plusMinus": 0,
             "game_id": 2026020038,
             "date": "2026-10-04",
@@ -82614,7 +82614,7 @@
             "sog": 3,
             "hit": 3,
             "blk": 0,
-            "fow": 7,
+            "fow": 6,
             "plusMinus": 0,
             "game_id": 2026020038,
             "date": "2026-10-04",
@@ -95467,7 +95467,7 @@
             "team": "FLA",
             "opponent": "LAK",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
@@ -96140,7 +96140,7 @@
             "team": "LAK",
             "opponent": "FLA",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "L",
             "toi": "57:56",
             "toi_seconds": 3476
@@ -97835,7 +97835,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-07T05:12:39.871411+00:00"
+    "updated_at": "2026-10-07T05:35:43.508282+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -109479,6 +109479,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-07T05:12:39.892499+00:00",
+  "updated_at": "2026-10-07T05:35:43.528089+00:00",
   "timezone": "America/Toronto"
 }
