@@ -275,7 +275,7 @@
       "player_id": 8483493,
       "g": 2,
       "a": 1,
-      "pim": 20,
+      "pim": 15,
       "ppp": 1,
       "shg": 0,
       "sha": 0,
@@ -2753,7 +2753,7 @@
       "sha": 0,
       "gwg": null,
       "hat": 0,
-      "sog": 9,
+      "sog": 8,
       "hit": 7,
       "blk": 1,
       "fow": 2,
@@ -16637,7 +16637,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 11,
+        "sog": 10,
         "hit": 12,
         "blk": 1,
         "fow": 3,
@@ -19751,7 +19751,7 @@
         "player_id": 8483493,
         "g": 2,
         "a": 1,
-        "pim": 22,
+        "pim": 17,
         "ppp": 1,
         "shg": 0,
         "sha": 0,
@@ -33195,7 +33195,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 11,
+        "sog": 10,
         "hit": 12,
         "blk": 1,
         "fow": 3,
@@ -36309,7 +36309,7 @@
         "player_id": 8483493,
         "g": 2,
         "a": 1,
-        "pim": 22,
+        "pim": 17,
         "ppp": 1,
         "shg": 0,
         "sha": 0,
@@ -51694,7 +51694,7 @@
             "sha": 0,
             "gwg": null,
             "hat": 0,
-            "sog": 3,
+            "sog": 2,
             "hit": 2,
             "blk": 0,
             "fow": 0,
@@ -65961,7 +65961,7 @@
           {
             "g": 1,
             "a": 0,
-            "pim": 20,
+            "pim": 15,
             "ppp": 0,
             "shg": 0,
             "sha": 0,
@@ -110463,7 +110463,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-09T16:24:22.210107+00:00"
+    "updated_at": "2026-10-09T16:47:29.418087+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -122107,6 +122107,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-09T16:24:22.244955+00:00",
+  "updated_at": "2026-10-09T16:47:29.441171+00:00",
   "timezone": "America/Toronto"
 }
