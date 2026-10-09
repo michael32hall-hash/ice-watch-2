@@ -14995,7 +14995,7 @@
       "name": "S. Bobrovsky",
       "team": "TOR",
       "player_id": 8475683,
-      "gs": null,
+      "gs": 2,
       "w": 0,
       "ga": 6,
       "sv": 66,
@@ -15584,7 +15584,7 @@
       "name": "A. Hill",
       "team": "VGK",
       "player_id": 8478499,
-      "gs": null,
+      "gs": 2,
       "w": 2,
       "ga": 5,
       "sv": 39,
@@ -31495,7 +31495,7 @@
         "name": "S. Bobrovsky",
         "team": "TOR",
         "player_id": 8475683,
-        "gs": null,
+        "gs": 3,
         "w": 0,
         "ga": 9,
         "sv": 87,
@@ -32369,7 +32369,7 @@
         "name": "A. Hill",
         "team": "VGK",
         "player_id": 8478499,
-        "gs": null,
+        "gs": 2,
         "w": 2,
         "ga": 5,
         "sv": 39,
@@ -48053,7 +48053,7 @@
         "name": "S. Bobrovsky",
         "team": "TOR",
         "player_id": 8475683,
-        "gs": null,
+        "gs": 3,
         "w": 0,
         "ga": 9,
         "sv": 87,
@@ -48927,7 +48927,7 @@
         "name": "A. Hill",
         "team": "VGK",
         "player_id": 8478499,
-        "gs": null,
+        "gs": 2,
         "w": 2,
         "ga": 5,
         "sv": 39,
@@ -107701,7 +107701,7 @@
             "team": "TOR",
             "opponent": "VGK",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "O",
             "toi": "65:00",
             "toi_seconds": 3900
@@ -110170,7 +110170,7 @@
             "team": "VGK",
             "opponent": "TOR",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "64:40",
             "toi_seconds": 3880
@@ -110463,7 +110463,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-09T05:17:37.445468+00:00"
+    "updated_at": "2026-10-09T05:39:06.443899+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -122107,6 +122107,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-09T05:17:37.457995+00:00",
+  "updated_at": "2026-10-09T05:39:06.467597+00:00",
   "timezone": "America/Toronto"
 }
