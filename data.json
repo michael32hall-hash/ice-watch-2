@@ -15623,7 +15623,7 @@
       "name": "L. Dostal",
       "team": "ANA",
       "player_id": 8480843,
-      "gs": null,
+      "gs": 3,
       "w": 2,
       "ga": 8,
       "sv": 56,
@@ -15775,7 +15775,7 @@
       "name": "C. Stevenson",
       "team": "WPG",
       "player_id": 8483532,
-      "gs": null,
+      "gs": 2,
       "w": 1,
       "ga": 6,
       "sv": 41,
@@ -32366,7 +32366,7 @@
         "name": "L. Dostal",
         "team": "ANA",
         "player_id": 8480843,
-        "gs": null,
+        "gs": 4,
         "w": 3,
         "ga": 11,
         "sv": 83,
@@ -32632,7 +32632,7 @@
         "name": "C. Stevenson",
         "team": "WPG",
         "player_id": 8483532,
-        "gs": null,
+        "gs": 2,
         "w": 1,
         "ga": 6,
         "sv": 41,
@@ -49034,7 +49034,7 @@
         "name": "L. Dostal",
         "team": "ANA",
         "player_id": 8480843,
-        "gs": null,
+        "gs": 4,
         "w": 3,
         "ga": 11,
         "sv": 83,
@@ -49300,7 +49300,7 @@
         "name": "C. Stevenson",
         "team": "WPG",
         "player_id": 8483532,
-        "gs": null,
+        "gs": 2,
         "w": 1,
         "ga": 6,
         "sv": 41,
@@ -113526,7 +113526,7 @@
             "team": "ANA",
             "opponent": "WPG",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
@@ -114080,7 +114080,7 @@
             "team": "WPG",
             "opponent": "ANA",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "L",
             "toi": "56:08",
             "toi_seconds": 3368
@@ -114373,7 +114373,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-10T02:43:46.968682+00:00"
+    "updated_at": "2026-10-10T03:00:22.555761+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -126017,6 +126017,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-10T02:43:46.986370+00:00",
+  "updated_at": "2026-10-10T03:00:22.568833+00:00",
   "timezone": "America/Toronto"
 }
