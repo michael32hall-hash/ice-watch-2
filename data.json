@@ -2711,10 +2711,10 @@
       "fow": 0,
       "plusMinus": -5,
       "gp": 3,
-      "seconds": 3123,
-      "toi": "52:03",
-      "toiPerGame": 1041.0,
-      "avgToi": "17:21"
+      "seconds": 3125,
+      "toi": "52:05",
+      "toiPerGame": 1041.6666666666667,
+      "avgToi": "17:22"
     },
     {
       "name": "I. Stenberg",
@@ -2951,10 +2951,10 @@
       "fow": 0,
       "plusMinus": -1,
       "gp": 3,
-      "seconds": 3359,
-      "toi": "55:59",
-      "toiPerGame": 1119.6666666666667,
-      "avgToi": "18:40"
+      "seconds": 3357,
+      "toi": "55:57",
+      "toiPerGame": 1119.0,
+      "avgToi": "18:39"
     },
     {
       "name": "D. Nurse",
@@ -26651,9 +26651,9 @@
         "fow": 0,
         "plusMinus": -6,
         "gp": 5,
-        "seconds": 4870,
-        "toi": "81:10",
-        "toiPerGame": 974.0,
+        "seconds": 4872,
+        "toi": "81:12",
+        "toiPerGame": 974.4,
         "avgToi": "16:14"
       },
       {
@@ -26915,9 +26915,9 @@
         "fow": 0,
         "plusMinus": -3,
         "gp": 5,
-        "seconds": 5526,
-        "toi": "92:06",
-        "toiPerGame": 1105.2,
+        "seconds": 5524,
+        "toi": "92:04",
+        "toiPerGame": 1104.8,
         "avgToi": "18:25"
       },
       {
@@ -43650,9 +43650,9 @@
         "fow": 0,
         "plusMinus": -6,
         "gp": 5,
-        "seconds": 4870,
-        "toi": "81:10",
-        "toiPerGame": 974.0,
+        "seconds": 4872,
+        "toi": "81:12",
+        "toiPerGame": 974.4,
         "avgToi": "16:14"
       },
       {
@@ -43914,9 +43914,9 @@
         "fow": 0,
         "plusMinus": -3,
         "gp": 5,
-        "seconds": 5526,
-        "toi": "92:06",
-        "toiPerGame": 1105.2,
+        "seconds": 5524,
+        "toi": "92:04",
+        "toiPerGame": 1104.8,
         "avgToi": "18:25"
       },
       {
@@ -103449,8 +103449,8 @@
             "opponent": "EDM",
             "home_away": "home",
             "pos": "L",
-            "toi": "17:44",
-            "toi_seconds": 1064
+            "toi": "17:46",
+            "toi_seconds": 1066
           }
         ]
       },
@@ -104676,8 +104676,8 @@
             "opponent": "EDM",
             "home_away": "home",
             "pos": "D",
-            "toi": "18:20",
-            "toi_seconds": 1100
+            "toi": "18:18",
+            "toi_seconds": 1098
           }
         ]
       },
@@ -127171,7 +127171,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-11T15:00:17.944192+00:00"
+    "updated_at": "2026-10-11T15:21:41.423843+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -138815,6 +138815,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-11T15:00:17.962847+00:00",
+  "updated_at": "2026-10-11T15:21:41.449787+00:00",
   "timezone": "America/Toronto"
 }
