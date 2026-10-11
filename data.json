@@ -125247,13 +125247,13 @@
         "game_id": 2026020082,
         "game_date": "2026-10-10",
         "state": "LIVE",
-        "period": 2,
+        "period": 3,
         "period_type": "REG",
-        "clock": "08:11",
-        "in_intermission": true,
+        "clock": "14:11",
+        "in_intermission": false,
         "away": {
           "abbrev": "ANA",
-          "score": 2
+          "score": 3
         },
         "home": {
           "abbrev": "CGY",
@@ -125264,10 +125264,10 @@
         "game_id": 2026020083,
         "game_date": "2026-10-10",
         "state": "LIVE",
-        "period": 2,
+        "period": 3,
         "period_type": "REG",
-        "clock": "03:22",
-        "in_intermission": true,
+        "clock": "10:05",
+        "in_intermission": false,
         "away": {
           "abbrev": "LAK",
           "score": 1
@@ -125293,15 +125293,15 @@
         "gwg": null,
         "hat": 0,
         "sog": 1,
-        "hit": 1,
+        "hit": 2,
         "blk": 0,
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 566,
-        "toi": "9:26",
-        "toiPerGame": 566.0,
-        "avgToi": "9:26"
+        "seconds": 666,
+        "toi": "11:06",
+        "toiPerGame": 666.0,
+        "avgToi": "11:06"
       },
       {
         "name": "N. Nesterenko",
@@ -125320,12 +125320,12 @@
         "hit": 4,
         "blk": 0,
         "fow": 0,
-        "plusMinus": -1,
+        "plusMinus": 0,
         "gp": 1,
-        "seconds": 571,
-        "toi": "9:31",
-        "toiPerGame": 571.0,
-        "avgToi": "9:31"
+        "seconds": 613,
+        "toi": "10:13",
+        "toiPerGame": 613.0,
+        "avgToi": "10:13"
       },
       {
         "name": "A. Killorn",
@@ -125346,34 +125346,34 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 655,
-        "toi": "10:55",
-        "toiPerGame": 655.0,
-        "avgToi": "10:55"
+        "seconds": 758,
+        "toi": "12:38",
+        "toiPerGame": 758.0,
+        "avgToi": "12:38"
       },
       {
         "name": "R. Poehling",
         "team": "ANA",
         "pos": "C",
         "player_id": 8480068,
-        "g": 0,
+        "g": 1,
         "a": 1,
         "pim": 0,
         "ppp": 0,
-        "shg": 0,
+        "shg": 1,
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 1,
+        "sog": 2,
         "hit": 2,
         "blk": 1,
-        "fow": 6,
-        "plusMinus": 1,
+        "fow": 7,
+        "plusMinus": 2,
         "gp": 1,
-        "seconds": 625,
-        "toi": "10:25",
-        "toiPerGame": 625.0,
-        "avgToi": "10:25"
+        "seconds": 709,
+        "toi": "11:49",
+        "toiPerGame": 709.0,
+        "avgToi": "11:49"
       },
       {
         "name": "J. Caulfield",
@@ -125389,15 +125389,15 @@
         "gwg": null,
         "hat": 0,
         "sog": 0,
-        "hit": 1,
+        "hit": 2,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 529,
-        "toi": "8:49",
-        "toiPerGame": 529.0,
-        "avgToi": "8:49"
+        "seconds": 608,
+        "toi": "10:08",
+        "toiPerGame": 608.0,
+        "avgToi": "10:08"
       },
       {
         "name": "J. Malott",
@@ -125418,10 +125418,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 483,
-        "toi": "8:03",
-        "toiPerGame": 483.0,
-        "avgToi": "8:03"
+        "seconds": 546,
+        "toi": "9:06",
+        "toiPerGame": 546.0,
+        "avgToi": "9:06"
       },
       {
         "name": "T. Washe",
@@ -125430,7 +125430,7 @@
         "player_id": 8485512,
         "g": 0,
         "a": 0,
-        "pim": 0,
+        "pim": 2,
         "ppp": 0,
         "shg": 0,
         "sha": 0,
@@ -125439,13 +125439,13 @@
         "sog": 2,
         "hit": 8,
         "blk": 2,
-        "fow": 4,
+        "fow": 6,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 668,
-        "toi": "11:08",
-        "toiPerGame": 668.0,
-        "avgToi": "11:08"
+        "seconds": 766,
+        "toi": "12:46",
+        "toiPerGame": 766.0,
+        "avgToi": "12:46"
       },
       {
         "name": "B. Sennecke",
@@ -125466,10 +125466,10 @@
         "fow": 0,
         "plusMinus": -2,
         "gp": 1,
-        "seconds": 927,
-        "toi": "15:27",
-        "toiPerGame": 927.0,
-        "avgToi": "15:27"
+        "seconds": 1004,
+        "toi": "16:44",
+        "toiPerGame": 1004.0,
+        "avgToi": "16:44"
       },
       {
         "name": "C. Gauthier",
@@ -125511,13 +125511,13 @@
         "sog": 2,
         "hit": 0,
         "blk": 1,
-        "fow": 5,
+        "fow": 7,
         "plusMinus": -2,
         "gp": 1,
-        "seconds": 703,
-        "toi": "11:43",
-        "toiPerGame": 703.0,
-        "avgToi": "11:43"
+        "seconds": 777,
+        "toi": "12:57",
+        "toiPerGame": 777.0,
+        "avgToi": "12:57"
       },
       {
         "name": "F. Vatrano",
@@ -125559,13 +125559,13 @@
         "sog": 2,
         "hit": 1,
         "blk": 0,
-        "fow": 2,
+        "fow": 3,
         "plusMinus": -1,
         "gp": 1,
-        "seconds": 789,
-        "toi": "13:09",
-        "toiPerGame": 789.0,
-        "avgToi": "13:09"
+        "seconds": 884,
+        "toi": "14:44",
+        "toiPerGame": 884.0,
+        "avgToi": "14:44"
       },
       {
         "name": "J. LaCombe",
@@ -125574,7 +125574,7 @@
         "player_id": 8481605,
         "g": 1,
         "a": 0,
-        "pim": 0,
+        "pim": 2,
         "ppp": 1,
         "shg": 0,
         "sha": 0,
@@ -125586,10 +125586,10 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 1,
-        "seconds": 538,
-        "toi": "8:58",
-        "toiPerGame": 538.0,
-        "avgToi": "8:58"
+        "seconds": 659,
+        "toi": "10:59",
+        "toiPerGame": 659.0,
+        "avgToi": "10:59"
       },
       {
         "name": "T. Mitchell",
@@ -125604,16 +125604,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 0,
         "blk": 4,
         "fow": 0,
         "plusMinus": -1,
         "gp": 1,
-        "seconds": 826,
-        "toi": "13:46",
-        "toiPerGame": 826.0,
-        "avgToi": "13:46"
+        "seconds": 924,
+        "toi": "15:24",
+        "toiPerGame": 924.0,
+        "avgToi": "15:24"
       },
       {
         "name": "N. Warren",
@@ -125630,14 +125630,14 @@
         "hat": 0,
         "sog": 2,
         "hit": 1,
-        "blk": 2,
+        "blk": 3,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 770,
-        "toi": "12:50",
-        "toiPerGame": 770.0,
-        "avgToi": "12:50"
+        "seconds": 955,
+        "toi": "15:55",
+        "toiPerGame": 955.0,
+        "avgToi": "15:55"
       },
       {
         "name": "T. Hinds",
@@ -125658,10 +125658,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 914,
-        "toi": "15:14",
-        "toiPerGame": 914.0,
-        "avgToi": "15:14"
+        "seconds": 939,
+        "toi": "15:39",
+        "toiPerGame": 939.0,
+        "avgToi": "15:39"
       },
       {
         "name": "T. Luneau",
@@ -125680,12 +125680,12 @@
         "hit": 0,
         "blk": 1,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": 1,
         "gp": 1,
-        "seconds": 985,
-        "toi": "16:25",
-        "toiPerGame": 985.0,
-        "avgToi": "16:25"
+        "seconds": 1139,
+        "toi": "18:59",
+        "toiPerGame": 1139.0,
+        "avgToi": "18:59"
       },
       {
         "name": "P. Mintyukov",
@@ -125693,23 +125693,23 @@
         "pos": "D",
         "player_id": 8483490,
         "g": 0,
-        "a": 0,
+        "a": 1,
         "pim": 0,
         "ppp": 0,
         "shg": 0,
-        "sha": 0,
+        "sha": 1,
         "gwg": null,
         "hat": 0,
         "sog": 1,
         "hit": 0,
         "blk": 0,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": 1,
         "gp": 1,
-        "seconds": 766,
-        "toi": "12:46",
-        "toiPerGame": 766.0,
-        "avgToi": "12:46"
+        "seconds": 862,
+        "toi": "14:22",
+        "toiPerGame": 862.0,
+        "avgToi": "14:22"
       },
       {
         "name": "M. Backlund",
@@ -125724,16 +125724,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 0,
         "blk": 2,
         "fow": 7,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 798,
-        "toi": "13:18",
-        "toiPerGame": 798.0,
-        "avgToi": "13:18"
+        "seconds": 886,
+        "toi": "14:46",
+        "toiPerGame": 886.0,
+        "avgToi": "14:46"
       },
       {
         "name": "M. Frost",
@@ -125752,12 +125752,12 @@
         "hit": 0,
         "blk": 0,
         "fow": 4,
-        "plusMinus": 2,
+        "plusMinus": 1,
         "gp": 1,
-        "seconds": 596,
-        "toi": "9:56",
-        "toiPerGame": 596.0,
-        "avgToi": "9:56"
+        "seconds": 726,
+        "toi": "12:06",
+        "toiPerGame": 726.0,
+        "avgToi": "12:06"
       },
       {
         "name": "Y. Sharangovich",
@@ -125778,10 +125778,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 806,
-        "toi": "13:26",
-        "toiPerGame": 806.0,
-        "avgToi": "13:26"
+        "seconds": 904,
+        "toi": "15:04",
+        "toiPerGame": 904.0,
+        "avgToi": "15:04"
       },
       {
         "name": "R. Strome",
@@ -125802,10 +125802,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 490,
-        "toi": "8:10",
-        "toiPerGame": 490.0,
-        "avgToi": "8:10"
+        "seconds": 569,
+        "toi": "9:29",
+        "toiPerGame": 569.0,
+        "avgToi": "9:29"
       },
       {
         "name": "M. Coronato",
@@ -125824,12 +125824,12 @@
         "hit": 0,
         "blk": 0,
         "fow": 3,
-        "plusMinus": 1,
+        "plusMinus": 0,
         "gp": 1,
-        "seconds": 705,
-        "toi": "11:45",
-        "toiPerGame": 705.0,
-        "avgToi": "11:45"
+        "seconds": 850,
+        "toi": "14:10",
+        "toiPerGame": 850.0,
+        "avgToi": "14:10"
       },
       {
         "name": "J. Castagna",
@@ -125847,13 +125847,13 @@
         "sog": 1,
         "hit": 1,
         "blk": 0,
-        "fow": 6,
+        "fow": 7,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 473,
-        "toi": "7:53",
-        "toiPerGame": 473.0,
-        "avgToi": "7:53"
+        "seconds": 536,
+        "toi": "8:56",
+        "toiPerGame": 536.0,
+        "avgToi": "8:56"
       },
       {
         "name": "A. Klapka",
@@ -125874,10 +125874,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 492,
-        "toi": "8:12",
-        "toiPerGame": 492.0,
-        "avgToi": "8:12"
+        "seconds": 557,
+        "toi": "9:17",
+        "toiPerGame": 557.0,
+        "avgToi": "9:17"
       },
       {
         "name": "A. Suniev",
@@ -125898,10 +125898,10 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 1,
-        "seconds": 561,
-        "toi": "9:21",
-        "toiPerGame": 561.0,
-        "avgToi": "9:21"
+        "seconds": 612,
+        "toi": "10:12",
+        "toiPerGame": 612.0,
+        "avgToi": "10:12"
       },
       {
         "name": "M. Tsyplakov",
@@ -125917,15 +125917,15 @@
         "gwg": null,
         "hat": 0,
         "sog": 1,
-        "hit": 3,
+        "hit": 4,
         "blk": 0,
-        "fow": 0,
+        "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 448,
-        "toi": "7:28",
-        "toiPerGame": 448.0,
-        "avgToi": "7:28"
+        "seconds": 560,
+        "toi": "9:20",
+        "toiPerGame": 560.0,
+        "avgToi": "9:20"
       },
       {
         "name": "M. Pospisil",
@@ -125964,16 +125964,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 2,
+        "sog": 4,
         "hit": 0,
         "blk": 1,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": -1,
         "gp": 1,
-        "seconds": 745,
-        "toi": "12:25",
-        "toiPerGame": 745.0,
-        "avgToi": "12:25"
+        "seconds": 963,
+        "toi": "16:03",
+        "toiPerGame": 963.0,
+        "avgToi": "16:03"
       },
       {
         "name": "M. Gridin",
@@ -125992,12 +125992,12 @@
         "hit": 0,
         "blk": 1,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": -1,
         "gp": 1,
-        "seconds": 538,
-        "toi": "8:58",
-        "toiPerGame": 538.0,
-        "avgToi": "8:58"
+        "seconds": 675,
+        "toi": "11:15",
+        "toiPerGame": 675.0,
+        "avgToi": "11:15"
       },
       {
         "name": "K. Bahl",
@@ -126014,14 +126014,14 @@
         "hat": 0,
         "sog": 3,
         "hit": 2,
-        "blk": 0,
+        "blk": 1,
         "fow": 0,
         "plusMinus": 2,
         "gp": 1,
-        "seconds": 836,
-        "toi": "13:56",
-        "toiPerGame": 836.0,
-        "avgToi": "13:56"
+        "seconds": 914,
+        "toi": "15:14",
+        "toiPerGame": 914.0,
+        "avgToi": "15:14"
       },
       {
         "name": "Z. Parekh",
@@ -126040,12 +126040,12 @@
         "hit": 1,
         "blk": 0,
         "fow": 0,
-        "plusMinus": -1,
+        "plusMinus": -2,
         "gp": 1,
-        "seconds": 680,
-        "toi": "11:20",
-        "toiPerGame": 680.0,
-        "avgToi": "11:20"
+        "seconds": 820,
+        "toi": "13:40",
+        "toiPerGame": 820.0,
+        "avgToi": "13:40"
       },
       {
         "name": "Z. Whitecloud",
@@ -126066,10 +126066,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 843,
-        "toi": "14:03",
-        "toiPerGame": 843.0,
-        "avgToi": "14:03"
+        "seconds": 915,
+        "toi": "15:15",
+        "toiPerGame": 915.0,
+        "avgToi": "15:15"
       },
       {
         "name": "Y. Kuznetsov",
@@ -126090,10 +126090,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 901,
-        "toi": "15:01",
-        "toiPerGame": 901.0,
-        "avgToi": "15:01"
+        "seconds": 970,
+        "toi": "16:10",
+        "toiPerGame": 970.0,
+        "avgToi": "16:10"
       },
       {
         "name": "J. Middleton",
@@ -126114,10 +126114,10 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 1,
-        "seconds": 668,
-        "toi": "11:08",
-        "toiPerGame": 668.0,
-        "avgToi": "11:08"
+        "seconds": 676,
+        "toi": "11:16",
+        "toiPerGame": 676.0,
+        "avgToi": "11:16"
       },
       {
         "name": "S. Nemec",
@@ -126138,10 +126138,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 1,
-        "seconds": 877,
-        "toi": "14:37",
-        "toiPerGame": 877.0,
-        "avgToi": "14:37"
+        "seconds": 999,
+        "toi": "16:39",
+        "toiPerGame": 999.0,
+        "avgToi": "16:39"
       },
       {
         "name": "A. Kempe",
@@ -126162,10 +126162,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 781,
-        "toi": "13:01",
-        "toiPerGame": 781.0,
-        "avgToi": "13:01"
+        "seconds": 904,
+        "toi": "15:04",
+        "toiPerGame": 904.0,
+        "avgToi": "15:04"
       },
       {
         "name": "A. Panarin",
@@ -126180,16 +126180,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 4,
+        "sog": 5,
         "hit": 0,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 857,
-        "toi": "14:17",
-        "toiPerGame": 857.0,
-        "avgToi": "14:17"
+        "seconds": 1001,
+        "toi": "16:41",
+        "toiPerGame": 1001.0,
+        "avgToi": "16:41"
       },
       {
         "name": "T. Moore",
@@ -126210,10 +126210,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 725,
-        "toi": "12:05",
-        "toiPerGame": 725.0,
-        "avgToi": "12:05"
+        "seconds": 897,
+        "toi": "14:57",
+        "toiPerGame": 897.0,
+        "avgToi": "14:57"
       },
       {
         "name": "A. Laferriere",
@@ -126234,10 +126234,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 771,
-        "toi": "12:51",
-        "toiPerGame": 771.0,
-        "avgToi": "12:51"
+        "seconds": 925,
+        "toi": "15:25",
+        "toiPerGame": 925.0,
+        "avgToi": "15:25"
       },
       {
         "name": "S. Laughton",
@@ -126255,13 +126255,13 @@
         "sog": 2,
         "hit": 2,
         "blk": 1,
-        "fow": 3,
+        "fow": 4,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 550,
-        "toi": "9:10",
-        "toiPerGame": 550.0,
-        "avgToi": "9:10"
+        "seconds": 704,
+        "toi": "11:44",
+        "toiPerGame": 704.0,
+        "avgToi": "11:44"
       },
       {
         "name": "J. Wright",
@@ -126282,10 +126282,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 381,
-        "toi": "6:21",
-        "toiPerGame": 381.0,
-        "avgToi": "6:21"
+        "seconds": 475,
+        "toi": "7:55",
+        "toiPerGame": 475.0,
+        "avgToi": "7:55"
       },
       {
         "name": "J. Armia",
@@ -126306,10 +126306,10 @@
         "fow": 1,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 461,
-        "toi": "7:41",
-        "toiPerGame": 461.0,
-        "avgToi": "7:41"
+        "seconds": 576,
+        "toi": "9:36",
+        "toiPerGame": 576.0,
+        "avgToi": "9:36"
       },
       {
         "name": "A. Lee",
@@ -126324,16 +126324,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 1,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 414,
-        "toi": "6:54",
-        "toiPerGame": 414.0,
-        "avgToi": "6:54"
+        "seconds": 572,
+        "toi": "9:32",
+        "toiPerGame": 572.0,
+        "avgToi": "9:32"
       },
       {
         "name": "Q. Byfield",
@@ -126354,10 +126354,10 @@
         "fow": 4,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 841,
-        "toi": "14:01",
-        "toiPerGame": 841.0,
-        "avgToi": "14:01"
+        "seconds": 962,
+        "toi": "16:02",
+        "toiPerGame": 962.0,
+        "avgToi": "16:02"
       },
       {
         "name": "E. Haula",
@@ -126372,16 +126372,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 1,
-        "blk": 2,
-        "fow": 3,
+        "blk": 1,
+        "fow": 2,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 696,
-        "toi": "11:36",
-        "toiPerGame": 696.0,
-        "avgToi": "11:36"
+        "seconds": 845,
+        "toi": "14:05",
+        "toiPerGame": 845.0,
+        "avgToi": "14:05"
       },
       {
         "name": "S. Helenius",
@@ -126402,10 +126402,10 @@
         "fow": 4,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 352,
-        "toi": "5:52",
-        "toiPerGame": 352.0,
-        "avgToi": "5:52"
+        "seconds": 462,
+        "toi": "7:42",
+        "toiPerGame": 462.0,
+        "avgToi": "7:42"
       },
       {
         "name": "C. Perry",
@@ -126426,10 +126426,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 642,
-        "toi": "10:42",
-        "toiPerGame": 642.0,
-        "avgToi": "10:42"
+        "seconds": 752,
+        "toi": "12:32",
+        "toiPerGame": 752.0,
+        "avgToi": "12:32"
       },
       {
         "name": "B. Dumoulin",
@@ -126438,7 +126438,7 @@
         "player_id": 8475208,
         "g": 0,
         "a": 0,
-        "pim": 0,
+        "pim": 2,
         "ppp": 0,
         "shg": 0,
         "sha": 0,
@@ -126450,10 +126450,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 732,
-        "toi": "12:12",
-        "toiPerGame": 732.0,
-        "avgToi": "12:12"
+        "seconds": 912,
+        "toi": "15:12",
+        "toiPerGame": 912.0,
+        "avgToi": "15:12"
       },
       {
         "name": "C. Ceci",
@@ -126474,10 +126474,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 785,
-        "toi": "13:05",
-        "toiPerGame": 785.0,
-        "avgToi": "13:05"
+        "seconds": 1073,
+        "toi": "17:53",
+        "toiPerGame": 1073.0,
+        "avgToi": "17:53"
       },
       {
         "name": "J. Edmundson",
@@ -126498,10 +126498,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 643,
-        "toi": "10:43",
-        "toiPerGame": 643.0,
-        "avgToi": "10:43"
+        "seconds": 770,
+        "toi": "12:50",
+        "toiPerGame": 770.0,
+        "avgToi": "12:50"
       },
       {
         "name": "D. Doughty",
@@ -126522,10 +126522,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 836,
-        "toi": "13:56",
-        "toiPerGame": 836.0,
-        "avgToi": "13:56"
+        "seconds": 1047,
+        "toi": "17:27",
+        "toiPerGame": 1047.0,
+        "avgToi": "17:27"
       },
       {
         "name": "M. Anderson",
@@ -126546,10 +126546,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 831,
-        "toi": "13:51",
-        "toiPerGame": 831.0,
-        "avgToi": "13:51"
+        "seconds": 1098,
+        "toi": "18:18",
+        "toiPerGame": 1098.0,
+        "avgToi": "18:18"
       },
       {
         "name": "B. Clarke",
@@ -126570,10 +126570,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 700,
-        "toi": "11:40",
-        "toiPerGame": 700.0,
-        "avgToi": "11:40"
+        "seconds": 803,
+        "toi": "13:23",
+        "toiPerGame": 803.0,
+        "avgToi": "13:23"
       },
       {
         "name": "J. Eichel",
@@ -126588,16 +126588,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 3,
+        "sog": 4,
         "hit": 0,
         "blk": 1,
-        "fow": 2,
+        "fow": 6,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 888,
-        "toi": "14:48",
-        "toiPerGame": 888.0,
-        "avgToi": "14:48"
+        "seconds": 1139,
+        "toi": "18:59",
+        "toiPerGame": 1139.0,
+        "avgToi": "18:59"
       },
       {
         "name": "M. Gatcomb",
@@ -126618,10 +126618,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 460,
-        "toi": "7:40",
-        "toiPerGame": 460.0,
-        "avgToi": "7:40"
+        "seconds": 558,
+        "toi": "9:18",
+        "toiPerGame": 558.0,
+        "avgToi": "9:18"
       },
       {
         "name": "B. Howden",
@@ -126642,10 +126642,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 560,
-        "toi": "9:20",
-        "toiPerGame": 560.0,
-        "avgToi": "9:20"
+        "seconds": 670,
+        "toi": "11:10",
+        "toiPerGame": 670.0,
+        "avgToi": "11:10"
       },
       {
         "name": "T. Connelly",
@@ -126661,15 +126661,15 @@
         "gwg": null,
         "hat": 0,
         "sog": 5,
-        "hit": 0,
+        "hit": 1,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 493,
-        "toi": "8:13",
-        "toiPerGame": 493.0,
-        "avgToi": "8:13"
+        "seconds": 666,
+        "toi": "11:06",
+        "toiPerGame": 666.0,
+        "avgToi": "11:06"
       },
       {
         "name": "N. Dowd",
@@ -126690,10 +126690,10 @@
         "fow": 2,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 455,
-        "toi": "7:35",
-        "toiPerGame": 455.0,
-        "avgToi": "7:35"
+        "seconds": 551,
+        "toi": "9:11",
+        "toiPerGame": 551.0,
+        "avgToi": "9:11"
       },
       {
         "name": "R. Lavoie",
@@ -126714,10 +126714,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 423,
-        "toi": "7:03",
-        "toiPerGame": 423.0,
-        "avgToi": "7:03"
+        "seconds": 514,
+        "toi": "8:34",
+        "toiPerGame": 514.0,
+        "avgToi": "8:34"
       },
       {
         "name": "B. Bowman",
@@ -126738,10 +126738,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 430,
-        "toi": "7:10",
-        "toiPerGame": 430.0,
-        "avgToi": "7:10"
+        "seconds": 601,
+        "toi": "10:01",
+        "toiPerGame": 601.0,
+        "avgToi": "10:01"
       },
       {
         "name": "T. Hertl",
@@ -126759,13 +126759,13 @@
         "sog": 0,
         "hit": 1,
         "blk": 0,
-        "fow": 9,
+        "fow": 10,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 552,
-        "toi": "9:12",
-        "toiPerGame": 552.0,
-        "avgToi": "9:12"
+        "seconds": 726,
+        "toi": "12:06",
+        "toiPerGame": 726.0,
+        "avgToi": "12:06"
       },
       {
         "name": "I. Barbashev",
@@ -126786,10 +126786,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 740,
-        "toi": "12:20",
-        "toiPerGame": 740.0,
-        "avgToi": "12:20"
+        "seconds": 951,
+        "toi": "15:51",
+        "toiPerGame": 951.0,
+        "avgToi": "15:51"
       },
       {
         "name": "M. Stone",
@@ -126804,16 +126804,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 0,
         "blk": 0,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 705,
-        "toi": "11:45",
-        "toiPerGame": 705.0,
-        "avgToi": "11:45"
+        "seconds": 903,
+        "toi": "15:03",
+        "toiPerGame": 903.0,
+        "avgToi": "15:03"
       },
       {
         "name": "W. Karlsson",
@@ -126828,16 +126828,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 2,
+        "sog": 3,
         "hit": 0,
         "blk": 1,
-        "fow": 7,
+        "fow": 10,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 601,
-        "toi": "10:01",
-        "toiPerGame": 601.0,
-        "avgToi": "10:01"
+        "seconds": 760,
+        "toi": "12:40",
+        "toiPerGame": 760.0,
+        "avgToi": "12:40"
       },
       {
         "name": "M. Marner",
@@ -126858,10 +126858,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 765,
-        "toi": "12:45",
-        "toiPerGame": 765.0,
-        "avgToi": "12:45"
+        "seconds": 963,
+        "toi": "16:03",
+        "toiPerGame": 963.0,
+        "avgToi": "16:03"
       },
       {
         "name": "B. McNabb",
@@ -126882,10 +126882,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 781,
-        "toi": "13:01",
-        "toiPerGame": 781.0,
-        "avgToi": "13:01"
+        "seconds": 971,
+        "toi": "16:11",
+        "toiPerGame": 971.0,
+        "avgToi": "16:11"
       },
       {
         "name": "R. Andersson",
@@ -126900,16 +126900,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 1,
+        "sog": 2,
         "hit": 0,
-        "blk": 1,
+        "blk": 2,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 747,
-        "toi": "12:27",
-        "toiPerGame": 747.0,
-        "avgToi": "12:27"
+        "seconds": 901,
+        "toi": "15:01",
+        "toiPerGame": 901.0,
+        "avgToi": "15:01"
       },
       {
         "name": "J. Lauzon",
@@ -126930,10 +126930,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 676,
-        "toi": "11:16",
-        "toiPerGame": 676.0,
-        "avgToi": "11:16"
+        "seconds": 803,
+        "toi": "13:23",
+        "toiPerGame": 803.0,
+        "avgToi": "13:23"
       },
       {
         "name": "N. Hanifin",
@@ -126948,16 +126948,16 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 0,
+        "sog": 1,
         "hit": 1,
         "blk": 1,
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 813,
-        "toi": "13:33",
-        "toiPerGame": 813.0,
-        "avgToi": "13:33"
+        "seconds": 940,
+        "toi": "15:40",
+        "toiPerGame": 940.0,
+        "avgToi": "15:40"
       },
       {
         "name": "S. Theodore",
@@ -126978,10 +126978,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 789,
-        "toi": "13:09",
-        "toiPerGame": 789.0,
-        "avgToi": "13:09"
+        "seconds": 1044,
+        "toi": "17:24",
+        "toiPerGame": 1044.0,
+        "avgToi": "17:24"
       },
       {
         "name": "P. Wotherspoon",
@@ -127002,10 +127002,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 1,
-        "seconds": 822,
-        "toi": "13:42",
-        "toiPerGame": 822.0,
-        "avgToi": "13:42"
+        "seconds": 939,
+        "toi": "15:39",
+        "toiPerGame": 939.0,
+        "avgToi": "15:39"
       }
     ],
     "goalies": [
@@ -127016,17 +127016,17 @@
         "gs": null,
         "w": 0,
         "ga": 2,
-        "sv": 19,
+        "sv": 22,
         "so": 0,
         "otl": 0,
         "gp": 1,
-        "sa": 21,
-        "seconds": 2400,
-        "svPct": 0.9047619047619048,
-        "gaa": 3.0,
-        "toi": "40:00",
-        "toiPerGame": 2400.0,
-        "avgToi": "40:00"
+        "sa": 24,
+        "seconds": 2735,
+        "svPct": 0.9166666666666666,
+        "gaa": 2.6325411334552102,
+        "toi": "45:35",
+        "toiPerGame": 2735.0,
+        "avgToi": "45:35"
       },
       {
         "name": "D. Wolf",
@@ -127034,18 +127034,18 @@
         "player_id": 8481692,
         "gs": null,
         "w": 0,
-        "ga": 2,
-        "sv": 18,
+        "ga": 3,
+        "sv": 19,
         "so": 0,
         "otl": 0,
         "gp": 1,
-        "sa": 20,
-        "seconds": 2400,
-        "svPct": 0.9,
-        "gaa": 3.0,
-        "toi": "40:00",
-        "toiPerGame": 2400.0,
-        "avgToi": "40:00"
+        "sa": 22,
+        "seconds": 2735,
+        "svPct": 0.8636363636363636,
+        "gaa": 3.9488117001828154,
+        "toi": "45:35",
+        "toiPerGame": 2735.0,
+        "avgToi": "45:35"
       },
       {
         "name": "D. Kuemper",
@@ -127054,17 +127054,17 @@
         "gs": null,
         "w": 0,
         "ga": 1,
-        "sv": 22,
+        "sv": 27,
         "so": 0,
         "otl": 0,
         "gp": 1,
-        "sa": 23,
-        "seconds": 2320,
-        "svPct": 0.9565217391304348,
-        "gaa": 1.5517241379310345,
-        "toi": "38:40",
-        "toiPerGame": 2320.0,
-        "avgToi": "38:40"
+        "sa": 28,
+        "seconds": 2900,
+        "svPct": 0.9642857142857143,
+        "gaa": 1.2413793103448276,
+        "toi": "48:20",
+        "toiPerGame": 2900.0,
+        "avgToi": "48:20"
       },
       {
         "name": "C. Hart",
@@ -127073,20 +127073,20 @@
         "gs": null,
         "w": 0,
         "ga": 1,
-        "sv": 12,
+        "sv": 15,
         "so": 0,
         "otl": 0,
         "gp": 1,
-        "sa": 13,
-        "seconds": 2400,
-        "svPct": 0.9230769230769231,
-        "gaa": 1.5,
-        "toi": "40:00",
-        "toiPerGame": 2400.0,
-        "avgToi": "40:00"
+        "sa": 16,
+        "seconds": 2980,
+        "svPct": 0.9375,
+        "gaa": 1.2080536912751678,
+        "toi": "49:40",
+        "toiPerGame": 2980.0,
+        "avgToi": "49:40"
       }
     ],
-    "updated_at": "2026-10-11T04:00:54.630243+00:00"
+    "updated_at": "2026-10-11T04:23:45.140750+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -138730,6 +138730,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-11T04:00:54.644161+00:00",
+  "updated_at": "2026-10-11T04:23:45.166999+00:00",
   "timezone": "America/Toronto"
 }
