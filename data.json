@@ -4055,10 +4055,10 @@
       "fow": 21,
       "plusMinus": 1,
       "gp": 3,
-      "seconds": 2497,
-      "toi": "41:37",
-      "toiPerGame": 832.3333333333334,
-      "avgToi": "13:52"
+      "seconds": 2499,
+      "toi": "41:39",
+      "toiPerGame": 833.0,
+      "avgToi": "13:53"
     },
     {
       "name": "J. Chmelar",
@@ -4319,9 +4319,9 @@
       "fow": 0,
       "plusMinus": 4,
       "gp": 3,
-      "seconds": 3901,
-      "toi": "65:01",
-      "toiPerGame": 1300.3333333333333,
+      "seconds": 3899,
+      "toi": "64:59",
+      "toiPerGame": 1299.6666666666667,
       "avgToi": "21:40"
     },
     {
@@ -17987,10 +17987,10 @@
         "fow": 39,
         "plusMinus": 1,
         "gp": 7,
-        "seconds": 6029,
-        "toi": "100:29",
-        "toiPerGame": 861.2857142857143,
-        "avgToi": "14:21"
+        "seconds": 6031,
+        "toi": "100:31",
+        "toiPerGame": 861.5714285714286,
+        "avgToi": "14:22"
       },
       {
         "name": "W. Cuylle",
@@ -18251,10 +18251,10 @@
         "fow": 0,
         "plusMinus": 5,
         "gp": 7,
-        "seconds": 8915,
-        "toi": "148:35",
-        "toiPerGame": 1273.5714285714287,
-        "avgToi": "21:14"
+        "seconds": 8913,
+        "toi": "148:33",
+        "toiPerGame": 1273.2857142857142,
+        "avgToi": "21:13"
       },
       {
         "name": "J. Peterka",
@@ -35058,10 +35058,10 @@
         "fow": 39,
         "plusMinus": 1,
         "gp": 7,
-        "seconds": 6029,
-        "toi": "100:29",
-        "toiPerGame": 861.2857142857143,
-        "avgToi": "14:21"
+        "seconds": 6031,
+        "toi": "100:31",
+        "toiPerGame": 861.5714285714286,
+        "avgToi": "14:22"
       },
       {
         "name": "W. Cuylle",
@@ -35322,10 +35322,10 @@
         "fow": 0,
         "plusMinus": 5,
         "gp": 7,
-        "seconds": 8915,
-        "toi": "148:35",
-        "toiPerGame": 1273.5714285714287,
-        "avgToi": "21:14"
+        "seconds": 8913,
+        "toi": "148:33",
+        "toiPerGame": 1273.2857142857142,
+        "avgToi": "21:13"
       },
       {
         "name": "J. Peterka",
@@ -60833,8 +60833,8 @@
             "opponent": "VAN",
             "home_away": "home",
             "pos": "C",
-            "toi": "13:08",
-            "toi_seconds": 788
+            "toi": "13:10",
+            "toi_seconds": 790
           }
         ]
       },
@@ -62474,8 +62474,8 @@
             "opponent": "VAN",
             "home_away": "home",
             "pos": "D",
-            "toi": "20:22",
-            "toi_seconds": 1222
+            "toi": "20:20",
+            "toi_seconds": 1220
           }
         ]
       },
@@ -129958,7 +129958,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-12T13:28:37.640198+00:00"
+    "updated_at": "2026-10-12T14:03:08.206782+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -141602,6 +141602,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-12T13:28:37.666693+00:00",
+  "updated_at": "2026-10-12T14:03:08.230614+00:00",
   "timezone": "America/Toronto"
 }
