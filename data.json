@@ -15785,7 +15785,7 @@
       "name": "J. Woll",
       "team": "PHI",
       "player_id": 8479361,
-      "gs": null,
+      "gs": 2,
       "w": 0,
       "ga": 6,
       "sv": 50,
@@ -15861,7 +15861,7 @@
       "name": "P. Kochetkov",
       "team": "CAR",
       "player_id": 8481611,
-      "gs": null,
+      "gs": 2,
       "w": 2,
       "ga": 3,
       "sv": 36,
@@ -32342,7 +32342,7 @@
         "name": "J. Woll",
         "team": "PHI",
         "player_id": 8479361,
-        "gs": null,
+        "gs": 4,
         "w": 0,
         "ga": 12,
         "sv": 128,
@@ -32798,7 +32798,7 @@
         "name": "P. Kochetkov",
         "team": "CAR",
         "player_id": 8481611,
-        "gs": null,
+        "gs": 3,
         "w": 3,
         "ga": 5,
         "sv": 52,
@@ -49413,7 +49413,7 @@
         "name": "J. Woll",
         "team": "PHI",
         "player_id": 8479361,
-        "gs": null,
+        "gs": 4,
         "w": 0,
         "ga": 12,
         "sv": 128,
@@ -49869,7 +49869,7 @@
         "name": "P. Kochetkov",
         "team": "CAR",
         "player_id": 8481611,
-        "gs": null,
+        "gs": 3,
         "w": 3,
         "ga": 5,
         "sv": 52,
@@ -127490,7 +127490,7 @@
             "team": "PHI",
             "opponent": "CAR",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "L",
             "toi": "59:50",
             "toi_seconds": 3590
@@ -129197,7 +129197,7 @@
             "team": "CAR",
             "opponent": "PHI",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
@@ -130030,7 +130030,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-12T02:08:39.065518+00:00"
+    "updated_at": "2026-10-12T02:33:06.146102+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -141674,6 +141674,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-12T02:08:39.091919+00:00",
+  "updated_at": "2026-10-12T02:33:06.172352+00:00",
   "timezone": "America/Toronto"
 }
