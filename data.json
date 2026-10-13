@@ -15224,7 +15224,7 @@
       "name": "J. Wallstedt",
       "team": "MIN",
       "player_id": 8482661,
-      "gs": null,
+      "gs": 4,
       "w": 2,
       "ga": 9,
       "sv": 107,
@@ -15300,7 +15300,7 @@
       "name": "C. Hart",
       "team": "VGK",
       "player_id": 8479394,
-      "gs": null,
+      "gs": 3,
       "w": 2,
       "ga": 6,
       "sv": 75,
@@ -32223,7 +32223,7 @@
         "name": "C. Hart",
         "team": "VGK",
         "player_id": 8479394,
-        "gs": null,
+        "gs": 5,
         "w": 3,
         "ga": 12,
         "sv": 115,
@@ -32451,7 +32451,7 @@
         "name": "J. Wallstedt",
         "team": "MIN",
         "player_id": 8482661,
-        "gs": null,
+        "gs": 6,
         "w": 4,
         "ga": 11,
         "sv": 152,
@@ -49318,7 +49318,7 @@
         "name": "C. Hart",
         "team": "VGK",
         "player_id": 8479394,
-        "gs": null,
+        "gs": 5,
         "w": 3,
         "ga": 12,
         "sv": 115,
@@ -49546,7 +49546,7 @@
         "name": "J. Wallstedt",
         "team": "MIN",
         "player_id": 8482661,
-        "gs": null,
+        "gs": 6,
         "w": 4,
         "ga": 11,
         "sv": 152,
@@ -129552,7 +129552,7 @@
             "team": "VGK",
             "opponent": "MIN",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "L",
             "toi": "58:16",
             "toi_seconds": 3496
@@ -130472,7 +130472,7 @@
             "team": "MIN",
             "opponent": "VGK",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
@@ -132711,7 +132711,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-13T03:02:00.370084+00:00"
+    "updated_at": "2026-10-13T03:26:41.649123+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -144355,6 +144355,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-13T03:02:00.402942+00:00",
+  "updated_at": "2026-10-13T03:26:41.680036+00:00",
   "timezone": "America/Toronto"
 }
