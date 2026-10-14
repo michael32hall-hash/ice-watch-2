@@ -3185,7 +3185,7 @@
       "sha": 0,
       "gwg": null,
       "hat": 0,
-      "sog": 6,
+      "sog": 7,
       "hit": 9,
       "blk": 2,
       "fow": 20,
@@ -12887,9 +12887,9 @@
       "fow": 0,
       "plusMinus": 3,
       "gp": 2,
-      "seconds": 2352,
-      "toi": "39:12",
-      "toiPerGame": 1176.0,
+      "seconds": 2353,
+      "toi": "39:13",
+      "toiPerGame": 1176.5,
       "avgToi": "19:36"
     },
     {
@@ -13005,12 +13005,12 @@
       "hit": 0,
       "blk": 2,
       "fow": 0,
-      "plusMinus": 3,
+      "plusMinus": 2,
       "gp": 2,
-      "seconds": 2647,
-      "toi": "44:07",
-      "toiPerGame": 1323.5,
-      "avgToi": "22:04"
+      "seconds": 2625,
+      "toi": "43:45",
+      "toiPerGame": 1312.5,
+      "avgToi": "21:52"
     },
     {
       "name": "T. Emberson",
@@ -13029,12 +13029,12 @@
       "hit": 1,
       "blk": 2,
       "fow": 0,
-      "plusMinus": 0,
+      "plusMinus": 1,
       "gp": 2,
-      "seconds": 1395,
-      "toi": "23:15",
-      "toiPerGame": 697.5,
-      "avgToi": "11:38"
+      "seconds": 1416,
+      "toi": "23:36",
+      "toiPerGame": 708.0,
+      "avgToi": "11:48"
     },
     {
       "name": "S. Mukhamadullin",
@@ -15456,13 +15456,13 @@
       "gs": 2,
       "w": 1,
       "ga": 5,
-      "sv": 39,
+      "sv": 40,
       "so": 0,
       "otl": 0,
       "gp": 2,
-      "sa": 44,
+      "sa": 45,
       "seconds": 7204,
-      "svPct": 0.8863636363636364,
+      "svPct": 0.8888888888888888,
       "gaa": 2.498611882287618,
       "toi": "120:04",
       "toiPerGame": 3602.0,
@@ -19537,9 +19537,9 @@
         "fow": 1,
         "plusMinus": 9,
         "gp": 6,
-        "seconds": 6851,
-        "toi": "114:11",
-        "toiPerGame": 1141.8333333333333,
+        "seconds": 6852,
+        "toi": "114:12",
+        "toiPerGame": 1142.0,
         "avgToi": "19:02"
       },
       {
@@ -19655,12 +19655,12 @@
         "hit": 4,
         "blk": 4,
         "fow": 0,
-        "plusMinus": 13,
+        "plusMinus": 12,
         "gp": 6,
-        "seconds": 7822,
-        "toi": "130:22",
-        "toiPerGame": 1303.6666666666667,
-        "avgToi": "21:44"
+        "seconds": 7800,
+        "toi": "130:00",
+        "toiPerGame": 1300.0,
+        "avgToi": "21:40"
       },
       {
         "name": "S. Mukhamadullin",
@@ -29995,7 +29995,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 13,
+        "sog": 14,
         "hit": 20,
         "blk": 4,
         "fow": 42,
@@ -30503,12 +30503,12 @@
         "hit": 4,
         "blk": 3,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": 1,
         "gp": 4,
-        "seconds": 2747,
-        "toi": "45:47",
-        "toiPerGame": 686.75,
-        "avgToi": "11:27"
+        "seconds": 2768,
+        "toi": "46:08",
+        "toiPerGame": 692.0,
+        "avgToi": "11:32"
       },
       {
         "name": "C. Blackwell",
@@ -33176,13 +33176,13 @@
         "gs": 4,
         "w": 2,
         "ga": 7,
-        "sv": 81,
+        "sv": 82,
         "so": 1,
         "otl": 0,
         "gp": 4,
-        "sa": 88,
+        "sa": 89,
         "seconds": 14298,
-        "svPct": 0.9204545454545454,
+        "svPct": 0.9213483146067416,
         "gaa": 1.7624842635333613,
         "toi": "238:18",
         "toiPerGame": 3574.5,
@@ -37011,9 +37011,9 @@
         "fow": 1,
         "plusMinus": 9,
         "gp": 6,
-        "seconds": 6851,
-        "toi": "114:11",
-        "toiPerGame": 1141.8333333333333,
+        "seconds": 6852,
+        "toi": "114:12",
+        "toiPerGame": 1142.0,
         "avgToi": "19:02"
       },
       {
@@ -37129,12 +37129,12 @@
         "hit": 4,
         "blk": 4,
         "fow": 0,
-        "plusMinus": 13,
+        "plusMinus": 12,
         "gp": 6,
-        "seconds": 7822,
-        "toi": "130:22",
-        "toiPerGame": 1303.6666666666667,
-        "avgToi": "21:44"
+        "seconds": 7800,
+        "toi": "130:00",
+        "toiPerGame": 1300.0,
+        "avgToi": "21:40"
       },
       {
         "name": "S. Mukhamadullin",
@@ -47469,7 +47469,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 13,
+        "sog": 14,
         "hit": 20,
         "blk": 4,
         "fow": 42,
@@ -47977,12 +47977,12 @@
         "hit": 4,
         "blk": 3,
         "fow": 0,
-        "plusMinus": 0,
+        "plusMinus": 1,
         "gp": 4,
-        "seconds": 2747,
-        "toi": "45:47",
-        "toiPerGame": 686.75,
-        "avgToi": "11:27"
+        "seconds": 2768,
+        "toi": "46:08",
+        "toiPerGame": 692.0,
+        "avgToi": "11:32"
       },
       {
         "name": "C. Blackwell",
@@ -50650,13 +50650,13 @@
         "gs": 4,
         "w": 2,
         "ga": 7,
-        "sv": 81,
+        "sv": 82,
         "so": 1,
         "otl": 0,
         "gp": 4,
-        "sa": 88,
+        "sa": 89,
         "seconds": 14298,
-        "svPct": 0.9204545454545454,
+        "svPct": 0.9213483146067416,
         "gaa": 1.7624842635333613,
         "toi": "238:18",
         "toiPerGame": 3574.5,
@@ -73174,8 +73174,8 @@
             "opponent": "LAK",
             "home_away": "away",
             "pos": "R",
-            "toi": "18:24",
-            "toi_seconds": 1104
+            "toi": "18:25",
+            "toi_seconds": 1105
           }
         ]
       },
@@ -73892,15 +73892,15 @@
             "hit": 0,
             "blk": 2,
             "fow": 0,
-            "plusMinus": 2,
+            "plusMinus": 1,
             "game_id": 2026020104,
             "date": "2026-10-13",
             "team": "EDM",
             "opponent": "LAK",
             "home_away": "away",
             "pos": "D",
-            "toi": "21:21",
-            "toi_seconds": 1281
+            "toi": "20:59",
+            "toi_seconds": 1259
           }
         ]
       },
@@ -134934,7 +134934,7 @@
             "sha": 0,
             "gwg": null,
             "hat": 0,
-            "sog": 1,
+            "sog": 2,
             "hit": 3,
             "blk": 0,
             "fow": 4,
@@ -137546,15 +137546,15 @@
             "hit": 1,
             "blk": 0,
             "fow": 0,
-            "plusMinus": 0,
+            "plusMinus": 1,
             "game_id": 2026020104,
             "date": "2026-10-13",
             "team": "EDM",
             "opponent": "LAK",
             "home_away": "away",
             "pos": "D",
-            "toi": "12:05",
-            "toi_seconds": 725
+            "toi": "12:26",
+            "toi_seconds": 746
           }
         ]
       },
@@ -146116,9 +146116,9 @@
             "w": 1,
             "otl": 0,
             "ga": 2,
-            "sv": 15,
-            "sa": 17,
-            "svPct": 0.8823529411764706,
+            "sv": 16,
+            "sa": 18,
+            "svPct": 0.8888888888888888,
             "so": 0,
             "gaa": 2.027027027027027,
             "game_id": 2026020096,
@@ -147571,7 +147571,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-14T16:35:33.362517+00:00"
+    "updated_at": "2026-10-14T17:11:56.272687+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -159215,6 +159215,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-14T16:35:33.391585+00:00",
+  "updated_at": "2026-10-14T17:11:56.299932+00:00",
   "timezone": "America/Toronto"
 }
