@@ -8327,10 +8327,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 3,
-      "seconds": 2784,
-      "toi": "46:24",
-      "toiPerGame": 928.0,
-      "avgToi": "15:28"
+      "seconds": 2744,
+      "toi": "45:44",
+      "toiPerGame": 914.6666666666666,
+      "avgToi": "15:15"
     },
     {
       "name": "R. Johnston",
@@ -8375,10 +8375,10 @@
       "fow": 3,
       "plusMinus": -2,
       "gp": 2,
-      "seconds": 998,
-      "toi": "16:38",
-      "toiPerGame": 499.0,
-      "avgToi": "8:19"
+      "seconds": 1038,
+      "toi": "17:18",
+      "toiPerGame": 519.0,
+      "avgToi": "8:39"
     },
     {
       "name": "J. Neighbours",
@@ -8423,10 +8423,10 @@
       "fow": 7,
       "plusMinus": 0,
       "gp": 3,
-      "seconds": 2996,
-      "toi": "49:56",
-      "toiPerGame": 998.6666666666666,
-      "avgToi": "16:39"
+      "seconds": 2956,
+      "toi": "49:16",
+      "toiPerGame": 985.3333333333334,
+      "avgToi": "16:25"
     },
     {
       "name": "D. Holloway",
@@ -13871,10 +13871,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 2,
-      "seconds": 989,
-      "toi": "16:29",
-      "toiPerGame": 494.5,
-      "avgToi": "8:14"
+      "seconds": 1029,
+      "toi": "17:09",
+      "toiPerGame": 514.5,
+      "avgToi": "8:34"
     },
     {
       "name": "J. Donovan",
@@ -28614,10 +28614,10 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 7,
-        "seconds": 6182,
-        "toi": "103:02",
-        "toiPerGame": 883.1428571428571,
-        "avgToi": "14:43"
+        "seconds": 6142,
+        "toi": "102:22",
+        "toiPerGame": 877.4285714285714,
+        "avgToi": "14:37"
       },
       {
         "name": "R. Johnston",
@@ -28686,10 +28686,10 @@
         "fow": 9,
         "plusMinus": -2,
         "gp": 7,
-        "seconds": 6739,
-        "toi": "112:19",
-        "toiPerGame": 962.7142857142857,
-        "avgToi": "16:03"
+        "seconds": 6699,
+        "toi": "111:39",
+        "toiPerGame": 957.0,
+        "avgToi": "15:57"
       },
       {
         "name": "D. Holloway",
@@ -30606,10 +30606,10 @@
         "fow": 5,
         "plusMinus": -4,
         "gp": 3,
-        "seconds": 1755,
-        "toi": "29:15",
-        "toiPerGame": 585.0,
-        "avgToi": "9:45"
+        "seconds": 1795,
+        "toi": "29:55",
+        "toiPerGame": 598.3333333333334,
+        "avgToi": "9:58"
       },
       {
         "name": "D. Dube",
@@ -32286,10 +32286,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 2,
-        "seconds": 989,
-        "toi": "16:29",
-        "toiPerGame": 494.5,
-        "avgToi": "8:14"
+        "seconds": 1029,
+        "toi": "17:09",
+        "toiPerGame": 514.5,
+        "avgToi": "8:34"
       },
       {
         "name": "J. Donovan",
@@ -46275,10 +46275,10 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 7,
-        "seconds": 6182,
-        "toi": "103:02",
-        "toiPerGame": 883.1428571428571,
-        "avgToi": "14:43"
+        "seconds": 6142,
+        "toi": "102:22",
+        "toiPerGame": 877.4285714285714,
+        "avgToi": "14:37"
       },
       {
         "name": "R. Johnston",
@@ -46347,10 +46347,10 @@
         "fow": 9,
         "plusMinus": -2,
         "gp": 7,
-        "seconds": 6739,
-        "toi": "112:19",
-        "toiPerGame": 962.7142857142857,
-        "avgToi": "16:03"
+        "seconds": 6699,
+        "toi": "111:39",
+        "toiPerGame": 957.0,
+        "avgToi": "15:57"
       },
       {
         "name": "D. Holloway",
@@ -48267,10 +48267,10 @@
         "fow": 5,
         "plusMinus": -4,
         "gp": 3,
-        "seconds": 1755,
-        "toi": "29:15",
-        "toiPerGame": 585.0,
-        "avgToi": "9:45"
+        "seconds": 1795,
+        "toi": "29:55",
+        "toiPerGame": 598.3333333333334,
+        "avgToi": "9:58"
       },
       {
         "name": "D. Dube",
@@ -49947,10 +49947,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 2,
-        "seconds": 989,
-        "toi": "16:29",
-        "toiPerGame": 494.5,
-        "avgToi": "8:14"
+        "seconds": 1029,
+        "toi": "17:09",
+        "toiPerGame": 514.5,
+        "avgToi": "8:34"
       },
       {
         "name": "J. Donovan",
@@ -135884,8 +135884,8 @@
             "opponent": "MIN",
             "home_away": "away",
             "pos": "R",
-            "toi": "15:53",
-            "toi_seconds": 953
+            "toi": "15:13",
+            "toi_seconds": 913
           }
         ]
       },
@@ -136365,8 +136365,8 @@
             "opponent": "MIN",
             "home_away": "away",
             "pos": "L",
-            "toi": "17:25",
-            "toi_seconds": 1045
+            "toi": "16:45",
+            "toi_seconds": 1005
           }
         ]
       },
@@ -147919,8 +147919,8 @@
             "opponent": "MIN",
             "home_away": "away",
             "pos": "C",
-            "toi": "06:47",
-            "toi_seconds": 407
+            "toi": "07:27",
+            "toi_seconds": 447
           }
         ]
       },
@@ -153515,8 +153515,8 @@
             "opponent": "MIN",
             "home_away": "away",
             "pos": "C",
-            "toi": "07:32",
-            "toi_seconds": 452
+            "toi": "08:12",
+            "toi_seconds": 492
           }
         ]
       },
@@ -159283,7 +159283,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-16T13:25:45.408047+00:00"
+    "updated_at": "2026-10-16T14:08:45.565243+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -170927,6 +170927,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-16T13:25:45.432858+00:00",
+  "updated_at": "2026-10-16T14:08:45.586125+00:00",
   "timezone": "America/Toronto"
 }
