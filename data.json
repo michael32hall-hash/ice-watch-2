@@ -1364,7 +1364,7 @@
       "sog": 11,
       "hit": 5,
       "blk": 2,
-      "fow": 24,
+      "fow": 23,
       "plusMinus": 4,
       "gp": 4,
       "seconds": 3690,
@@ -5687,9 +5687,9 @@
       "fow": 1,
       "plusMinus": 1,
       "gp": 4,
-      "seconds": 4502,
-      "toi": "75:02",
-      "toiPerGame": 1125.5,
+      "seconds": 4504,
+      "toi": "75:04",
+      "toiPerGame": 1126.0,
       "avgToi": "18:46"
     },
     {
@@ -5855,10 +5855,10 @@
       "fow": 1,
       "plusMinus": 1,
       "gp": 4,
-      "seconds": 2774,
-      "toi": "46:14",
-      "toiPerGame": 693.5,
-      "avgToi": "11:34"
+      "seconds": 2772,
+      "toi": "46:12",
+      "toiPerGame": 693.0,
+      "avgToi": "11:33"
     },
     {
       "name": "R. Greig",
@@ -9809,7 +9809,7 @@
       "sha": 0,
       "gwg": null,
       "hat": 0,
-      "sog": 4,
+      "sog": 5,
       "hit": 0,
       "blk": 3,
       "fow": 0,
@@ -10343,10 +10343,10 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 3,
-      "seconds": 4913,
-      "toi": "81:53",
-      "toiPerGame": 1637.6666666666667,
-      "avgToi": "27:18"
+      "seconds": 4917,
+      "toi": "81:57",
+      "toiPerGame": 1639.0,
+      "avgToi": "27:19"
     },
     {
       "name": "T. DeAngelo",
@@ -13220,7 +13220,7 @@
       "sog": 7,
       "hit": 18,
       "blk": 0,
-      "fow": 6,
+      "fow": 7,
       "plusMinus": 1,
       "gp": 3,
       "seconds": 2925,
@@ -13919,10 +13919,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 2,
-      "seconds": 1461,
-      "toi": "24:21",
-      "toiPerGame": 730.5,
-      "avgToi": "12:10"
+      "seconds": 1457,
+      "toi": "24:17",
+      "toiPerGame": 728.5,
+      "avgToi": "12:08"
     },
     {
       "name": "V. Koivunen",
@@ -15898,13 +15898,13 @@
       "gs": 2,
       "w": 1,
       "ga": 6,
-      "sv": 54,
+      "sv": 55,
       "so": 0,
       "otl": 0,
       "gp": 2,
-      "sa": 60,
+      "sa": 61,
       "seconds": 7627,
-      "svPct": 0.9,
+      "svPct": 0.9016393442622951,
       "gaa": 2.8320440540186183,
       "toi": "127:07",
       "toiPerGame": 3813.5,
@@ -18171,7 +18171,7 @@
         "sog": 22,
         "hit": 40,
         "blk": 1,
-        "fow": 18,
+        "fow": 19,
         "plusMinus": 0,
         "gp": 9,
         "seconds": 8471,
@@ -22710,10 +22710,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 7,
-        "seconds": 10920,
-        "toi": "182:00",
-        "toiPerGame": 1560.0,
-        "avgToi": "26:00"
+        "seconds": 10924,
+        "toi": "182:04",
+        "toiPerGame": 1560.5714285714287,
+        "avgToi": "26:01"
       },
       {
         "name": "T. DeAngelo",
@@ -22851,7 +22851,7 @@
         "sog": 13,
         "hit": 10,
         "blk": 2,
-        "fow": 50,
+        "fow": 49,
         "plusMinus": 0,
         "gp": 7,
         "seconds": 6647,
@@ -23496,7 +23496,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 5,
+        "sog": 6,
         "hit": 1,
         "blk": 8,
         "fow": 0,
@@ -29910,9 +29910,9 @@
         "fow": 1,
         "plusMinus": 2,
         "gp": 8,
-        "seconds": 8489,
-        "toi": "141:29",
-        "toiPerGame": 1061.125,
+        "seconds": 8491,
+        "toi": "141:31",
+        "toiPerGame": 1061.375,
         "avgToi": "17:41"
       },
       {
@@ -30102,9 +30102,9 @@
         "fow": 1,
         "plusMinus": 4,
         "gp": 8,
-        "seconds": 5535,
-        "toi": "92:15",
-        "toiPerGame": 691.875,
+        "seconds": 5533,
+        "toi": "92:13",
+        "toiPerGame": 691.625,
         "avgToi": "11:32"
       },
       {
@@ -32334,10 +32334,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 2,
-        "seconds": 1461,
-        "toi": "24:21",
-        "toiPerGame": 730.5,
-        "avgToi": "12:10"
+        "seconds": 1457,
+        "toi": "24:17",
+        "toiPerGame": 728.5,
+        "avgToi": "12:08"
       },
       {
         "name": "C. Bedard",
@@ -33482,13 +33482,13 @@
         "gs": 4,
         "w": 2,
         "ga": 12,
-        "sv": 120,
+        "sv": 121,
         "so": 0,
         "otl": 0,
         "gp": 5,
-        "sa": 132,
+        "sa": 133,
         "seconds": 15968,
-        "svPct": 0.9090909090909091,
+        "svPct": 0.9097744360902256,
         "gaa": 2.7054108216432864,
         "toi": "266:08",
         "toiPerGame": 3193.6,
@@ -35832,7 +35832,7 @@
         "sog": 22,
         "hit": 40,
         "blk": 1,
-        "fow": 18,
+        "fow": 19,
         "plusMinus": 0,
         "gp": 9,
         "seconds": 8471,
@@ -40371,10 +40371,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 7,
-        "seconds": 10920,
-        "toi": "182:00",
-        "toiPerGame": 1560.0,
-        "avgToi": "26:00"
+        "seconds": 10924,
+        "toi": "182:04",
+        "toiPerGame": 1560.5714285714287,
+        "avgToi": "26:01"
       },
       {
         "name": "T. DeAngelo",
@@ -40512,7 +40512,7 @@
         "sog": 13,
         "hit": 10,
         "blk": 2,
-        "fow": 50,
+        "fow": 49,
         "plusMinus": 0,
         "gp": 7,
         "seconds": 6647,
@@ -41157,7 +41157,7 @@
         "sha": 0,
         "gwg": null,
         "hat": 0,
-        "sog": 5,
+        "sog": 6,
         "hit": 1,
         "blk": 8,
         "fow": 0,
@@ -47571,9 +47571,9 @@
         "fow": 1,
         "plusMinus": 2,
         "gp": 8,
-        "seconds": 8489,
-        "toi": "141:29",
-        "toiPerGame": 1061.125,
+        "seconds": 8491,
+        "toi": "141:31",
+        "toiPerGame": 1061.375,
         "avgToi": "17:41"
       },
       {
@@ -47763,9 +47763,9 @@
         "fow": 1,
         "plusMinus": 4,
         "gp": 8,
-        "seconds": 5535,
-        "toi": "92:15",
-        "toiPerGame": 691.875,
+        "seconds": 5533,
+        "toi": "92:13",
+        "toiPerGame": 691.625,
         "avgToi": "11:32"
       },
       {
@@ -49995,10 +49995,10 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 2,
-        "seconds": 1461,
-        "toi": "24:21",
-        "toiPerGame": 730.5,
-        "avgToi": "12:10"
+        "seconds": 1457,
+        "toi": "24:17",
+        "toiPerGame": 728.5,
+        "avgToi": "12:08"
       },
       {
         "name": "C. Bedard",
@@ -51143,13 +51143,13 @@
         "gs": 4,
         "w": 2,
         "ga": 12,
-        "sv": 120,
+        "sv": 121,
         "so": 0,
         "otl": 0,
         "gp": 5,
-        "sa": 132,
+        "sa": 133,
         "seconds": 15968,
-        "svPct": 0.9090909090909091,
+        "svPct": 0.9097744360902256,
         "gaa": 2.7054108216432864,
         "toi": "266:08",
         "toiPerGame": 3193.6,
@@ -65694,7 +65694,7 @@
             "sog": 0,
             "hit": 3,
             "blk": 0,
-            "fow": 2,
+            "fow": 3,
             "plusMinus": -1,
             "game_id": 2026020113,
             "date": "2026-10-15",
@@ -97178,8 +97178,8 @@
             "opponent": "OTT",
             "home_away": "away",
             "pos": "D",
-            "toi": "29:29",
-            "toi_seconds": 1769
+            "toi": "29:33",
+            "toi_seconds": 1773
           }
         ]
       },
@@ -98063,7 +98063,7 @@
             "sog": 2,
             "hit": 0,
             "blk": 1,
-            "fow": 9,
+            "fow": 8,
             "plusMinus": 2,
             "game_id": 2026020113,
             "date": "2026-10-15",
@@ -102320,7 +102320,7 @@
             "sha": 0,
             "gwg": null,
             "hat": 0,
-            "sog": 2,
+            "sog": 3,
             "hit": 0,
             "blk": 1,
             "fow": 0,
@@ -143921,8 +143921,8 @@
             "opponent": "NYI",
             "home_away": "home",
             "pos": "R",
-            "toi": "20:00",
-            "toi_seconds": 1200
+            "toi": "20:02",
+            "toi_seconds": 1202
           }
         ]
       },
@@ -145357,8 +145357,8 @@
             "opponent": "NYI",
             "home_away": "home",
             "pos": "L",
-            "toi": "13:39",
-            "toi_seconds": 819
+            "toi": "13:37",
+            "toi_seconds": 817
           }
         ]
       },
@@ -153598,8 +153598,8 @@
             "opponent": "OTT",
             "home_away": "away",
             "pos": "D",
-            "toi": "10:30",
-            "toi_seconds": 630
+            "toi": "10:26",
+            "toi_seconds": 626
           }
         ]
       },
@@ -158231,9 +158231,9 @@
             "w": 0,
             "otl": 0,
             "ga": 4,
-            "sv": 30,
-            "sa": 34,
-            "svPct": 0.8823529411764706,
+            "sv": 31,
+            "sa": 35,
+            "svPct": 0.8857142857142857,
             "so": 0,
             "gaa": 3.8636973437080764,
             "game_id": 2026020111,
@@ -159283,7 +159283,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-16T16:25:36.397526+00:00"
+    "updated_at": "2026-10-16T17:01:51.752614+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -170927,6 +170927,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-16T16:25:36.429675+00:00",
+  "updated_at": "2026-10-16T17:01:51.829351+00:00",
   "timezone": "America/Toronto"
 }
