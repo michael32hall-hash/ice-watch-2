@@ -14207,10 +14207,10 @@
       "fow": 11,
       "plusMinus": 2,
       "gp": 2,
-      "seconds": 2267,
-      "toi": "37:47",
-      "toiPerGame": 1133.5,
-      "avgToi": "18:54"
+      "seconds": 2271,
+      "toi": "37:51",
+      "toiPerGame": 1135.5,
+      "avgToi": "18:56"
     },
     {
       "name": "V. Bj\u00f6rck",
@@ -14231,10 +14231,10 @@
       "fow": 5,
       "plusMinus": -2,
       "gp": 2,
-      "seconds": 1590,
-      "toi": "26:30",
-      "toiPerGame": 795.0,
-      "avgToi": "13:15"
+      "seconds": 1587,
+      "toi": "26:27",
+      "toiPerGame": 793.5,
+      "avgToi": "13:14"
     },
     {
       "name": "N. Niederreiter",
@@ -14327,9 +14327,9 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 2,
-      "seconds": 2548,
-      "toi": "42:28",
-      "toiPerGame": 1274.0,
+      "seconds": 2547,
+      "toi": "42:27",
+      "toiPerGame": 1273.5,
       "avgToi": "21:14"
     },
     {
@@ -28206,9 +28206,9 @@
         "fow": 50,
         "plusMinus": 1,
         "gp": 7,
-        "seconds": 8656,
-        "toi": "144:16",
-        "toiPerGame": 1236.5714285714287,
+        "seconds": 8660,
+        "toi": "144:20",
+        "toiPerGame": 1237.142857142857,
         "avgToi": "20:37"
       },
       {
@@ -28230,9 +28230,9 @@
         "fow": 17,
         "plusMinus": -4,
         "gp": 7,
-        "seconds": 6016,
-        "toi": "100:16",
-        "toiPerGame": 859.4285714285714,
+        "seconds": 6013,
+        "toi": "100:13",
+        "toiPerGame": 859.0,
         "avgToi": "14:19"
       },
       {
@@ -28350,9 +28350,9 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 7,
-        "seconds": 9056,
-        "toi": "150:56",
-        "toiPerGame": 1293.7142857142858,
+        "seconds": 9055,
+        "toi": "150:55",
+        "toiPerGame": 1293.5714285714287,
         "avgToi": "21:34"
       },
       {
@@ -45867,9 +45867,9 @@
         "fow": 50,
         "plusMinus": 1,
         "gp": 7,
-        "seconds": 8656,
-        "toi": "144:16",
-        "toiPerGame": 1236.5714285714287,
+        "seconds": 8660,
+        "toi": "144:20",
+        "toiPerGame": 1237.142857142857,
         "avgToi": "20:37"
       },
       {
@@ -45891,9 +45891,9 @@
         "fow": 17,
         "plusMinus": -4,
         "gp": 7,
-        "seconds": 6016,
-        "toi": "100:16",
-        "toiPerGame": 859.4285714285714,
+        "seconds": 6013,
+        "toi": "100:13",
+        "toiPerGame": 859.0,
         "avgToi": "14:19"
       },
       {
@@ -46011,9 +46011,9 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 7,
-        "seconds": 9056,
-        "toi": "150:56",
-        "toiPerGame": 1293.7142857142858,
+        "seconds": 9055,
+        "toi": "150:55",
+        "toiPerGame": 1293.5714285714287,
         "avgToi": "21:34"
       },
       {
@@ -133396,8 +133396,8 @@
             "opponent": "CHI",
             "home_away": "away",
             "pos": "C",
-            "toi": "21:28",
-            "toi_seconds": 1288
+            "toi": "21:32",
+            "toi_seconds": 1292
           }
         ]
       },
@@ -133564,8 +133564,8 @@
             "opponent": "CHI",
             "home_away": "away",
             "pos": "C",
-            "toi": "12:12",
-            "toi_seconds": 732
+            "toi": "12:09",
+            "toi_seconds": 729
           }
         ]
       },
@@ -134312,8 +134312,8 @@
             "opponent": "CHI",
             "home_away": "away",
             "pos": "D",
-            "toi": "19:49",
-            "toi_seconds": 1189
+            "toi": "19:48",
+            "toi_seconds": 1188
           }
         ]
       },
@@ -159283,7 +159283,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-16T15:53:59.784988+00:00"
+    "updated_at": "2026-10-16T16:25:36.397526+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -170927,6 +170927,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-16T15:53:59.803145+00:00",
+  "updated_at": "2026-10-16T16:25:36.429675+00:00",
   "timezone": "America/Toronto"
 }
