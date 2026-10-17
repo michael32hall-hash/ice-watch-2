@@ -15497,7 +15497,7 @@
       "name": "L. Dostal",
       "team": "ANA",
       "player_id": 8480843,
-      "gs": null,
+      "gs": 2,
       "w": 0,
       "ga": 7,
       "sv": 50,
@@ -15801,7 +15801,7 @@
       "name": "M. DiPietro",
       "team": "BOS",
       "player_id": 8480022,
-      "gs": null,
+      "gs": 1,
       "w": 1,
       "ga": 2,
       "sv": 25,
@@ -32948,7 +32948,7 @@
         "name": "L. Dostal",
         "team": "ANA",
         "player_id": 8480843,
-        "gs": null,
+        "gs": 6,
         "w": 3,
         "ga": 18,
         "sv": 134,
@@ -33100,7 +33100,7 @@
         "name": "M. DiPietro",
         "team": "BOS",
         "player_id": 8480022,
-        "gs": null,
+        "gs": 2,
         "w": 1,
         "ga": 5,
         "sv": 51,
@@ -50609,7 +50609,7 @@
         "name": "L. Dostal",
         "team": "ANA",
         "player_id": 8480843,
-        "gs": null,
+        "gs": 6,
         "w": 3,
         "ga": 18,
         "sv": 134,
@@ -50761,7 +50761,7 @@
         "name": "M. DiPietro",
         "team": "BOS",
         "player_id": 8480022,
-        "gs": null,
+        "gs": 2,
         "w": 1,
         "ga": 5,
         "sv": 51,
@@ -159122,7 +159122,7 @@
             "team": "ANA",
             "opponent": "BOS",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "L",
             "toi": "59:21",
             "toi_seconds": 3561
@@ -159672,7 +159672,7 @@
             "team": "BOS",
             "opponent": "ANA",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
@@ -160579,7 +160579,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-17T05:08:04.543550+00:00"
+    "updated_at": "2026-10-17T05:40:28.871999+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -172223,6 +172223,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-17T05:08:04.565952+00:00",
+  "updated_at": "2026-10-17T05:40:28.903352+00:00",
   "timezone": "America/Toronto"
 }
