@@ -8026,7 +8026,7 @@
       "pos": "R",
       "player_id": 8482758,
       "g": 0,
-      "a": 2,
+      "a": 1,
       "pim": 0,
       "ppp": 0,
       "shg": 0,
@@ -8290,7 +8290,7 @@
       "pos": "D",
       "player_id": 8471724,
       "g": 0,
-      "a": 0,
+      "a": 1,
       "pim": 4,
       "ppp": 0,
       "shg": 0,
@@ -20724,7 +20724,7 @@
         "pos": "R",
         "player_id": 8482758,
         "g": 1,
-        "a": 3,
+        "a": 2,
         "pim": 4,
         "ppp": 0,
         "shg": 0,
@@ -20940,7 +20940,7 @@
         "pos": "D",
         "player_id": 8471724,
         "g": 0,
-        "a": 3,
+        "a": 4,
         "pim": 6,
         "ppp": 1,
         "shg": 0,
@@ -38553,7 +38553,7 @@
         "pos": "R",
         "player_id": 8482758,
         "g": 1,
-        "a": 3,
+        "a": 2,
         "pim": 4,
         "ppp": 0,
         "shg": 0,
@@ -38769,7 +38769,7 @@
         "pos": "D",
         "player_id": 8471724,
         "g": 0,
-        "a": 3,
+        "a": 4,
         "pim": 6,
         "ppp": 1,
         "shg": 0,
@@ -88913,7 +88913,7 @@
           },
           {
             "g": 0,
-            "a": 1,
+            "a": 0,
             "pim": 0,
             "ppp": 0,
             "shg": 0,
@@ -90701,7 +90701,7 @@
           },
           {
             "g": 0,
-            "a": 0,
+            "a": 1,
             "pim": 0,
             "ppp": 0,
             "shg": 0,
@@ -173538,7 +173538,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-18T14:42:02.956779+00:00"
+    "updated_at": "2026-10-18T15:06:37.660445+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -185182,6 +185182,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-18T14:42:02.988370+00:00",
+  "updated_at": "2026-10-18T15:06:37.687958+00:00",
   "timezone": "America/Toronto"
 }
