@@ -1247,9 +1247,9 @@
       "fow": 0,
       "plusMinus": 2,
       "gp": 4,
-      "seconds": 5410,
-      "toi": "90:10",
-      "toiPerGame": 1352.5,
+      "seconds": 5409,
+      "toi": "90:09",
+      "toiPerGame": 1352.25,
       "avgToi": "22:32"
     },
     {
@@ -1271,9 +1271,9 @@
       "fow": 0,
       "plusMinus": 3,
       "gp": 4,
-      "seconds": 5329,
-      "toi": "88:49",
-      "toiPerGame": 1332.25,
+      "seconds": 5328,
+      "toi": "88:48",
+      "toiPerGame": 1332.0,
       "avgToi": "22:12"
     },
     {
@@ -6287,9 +6287,9 @@
       "fow": 1,
       "plusMinus": 2,
       "gp": 3,
-      "seconds": 2445,
-      "toi": "40:45",
-      "toiPerGame": 815.0,
+      "seconds": 2446,
+      "toi": "40:46",
+      "toiPerGame": 815.3333333333334,
       "avgToi": "13:35"
     },
     {
@@ -12695,10 +12695,10 @@
       "fow": 2,
       "plusMinus": 1,
       "gp": 2,
-      "seconds": 2154,
-      "toi": "35:54",
-      "toiPerGame": 1077.0,
-      "avgToi": "17:57"
+      "seconds": 2209,
+      "toi": "36:49",
+      "toiPerGame": 1104.5,
+      "avgToi": "18:24"
     },
     {
       "name": "J. Castagna",
@@ -12983,10 +12983,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 2,
-      "seconds": 2286,
-      "toi": "38:06",
-      "toiPerGame": 1143.0,
-      "avgToi": "19:03"
+      "seconds": 2231,
+      "toi": "37:11",
+      "toiPerGame": 1115.5,
+      "avgToi": "18:36"
     },
     {
       "name": "S. Nemec",
@@ -14663,10 +14663,10 @@
       "fow": 0,
       "plusMinus": 4,
       "gp": 2,
-      "seconds": 1544,
-      "toi": "25:44",
-      "toiPerGame": 772.0,
-      "avgToi": "12:52"
+      "seconds": 1546,
+      "toi": "25:46",
+      "toiPerGame": 773.0,
+      "avgToi": "12:53"
     },
     {
       "name": "L. Schenn",
@@ -17161,9 +17161,9 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 12,
-        "seconds": 16212,
-        "toi": "270:12",
-        "toiPerGame": 1351.0,
+        "seconds": 16211,
+        "toi": "270:11",
+        "toiPerGame": 1350.9166666666667,
         "avgToi": "22:31"
       },
       {
@@ -17185,10 +17185,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 12,
-        "seconds": 15583,
-        "toi": "259:43",
-        "toiPerGame": 1298.5833333333333,
-        "avgToi": "21:39"
+        "seconds": 15582,
+        "toi": "259:42",
+        "toiPerGame": 1298.5,
+        "avgToi": "21:38"
       },
       {
         "name": "C. Legault",
@@ -26497,10 +26497,10 @@
         "fow": 28,
         "plusMinus": -8,
         "gp": 9,
-        "seconds": 9457,
-        "toi": "157:37",
-        "toiPerGame": 1050.7777777777778,
-        "avgToi": "17:31"
+        "seconds": 9512,
+        "toi": "158:32",
+        "toiPerGame": 1056.888888888889,
+        "avgToi": "17:37"
       },
       {
         "name": "S. Honzek",
@@ -26785,10 +26785,10 @@
         "fow": 0,
         "plusMinus": -4,
         "gp": 9,
-        "seconds": 9728,
-        "toi": "162:08",
-        "toiPerGame": 1080.888888888889,
-        "avgToi": "18:01"
+        "seconds": 9673,
+        "toi": "161:13",
+        "toiPerGame": 1074.7777777777778,
+        "avgToi": "17:55"
       },
       {
         "name": "S. Nemec",
@@ -30217,9 +30217,9 @@
         "fow": 2,
         "plusMinus": 6,
         "gp": 11,
-        "seconds": 7978,
-        "toi": "132:58",
-        "toiPerGame": 725.2727272727273,
+        "seconds": 7979,
+        "toi": "132:59",
+        "toiPerGame": 725.3636363636364,
         "avgToi": "12:05"
       },
       {
@@ -33265,10 +33265,10 @@
         "fow": 0,
         "plusMinus": 4,
         "gp": 2,
-        "seconds": 1544,
-        "toi": "25:44",
-        "toiPerGame": 772.0,
-        "avgToi": "12:52"
+        "seconds": 1546,
+        "toi": "25:46",
+        "toiPerGame": 773.0,
+        "avgToi": "12:53"
       },
       {
         "name": "J. Zucker",
@@ -35623,9 +35623,9 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 12,
-        "seconds": 16212,
-        "toi": "270:12",
-        "toiPerGame": 1351.0,
+        "seconds": 16211,
+        "toi": "270:11",
+        "toiPerGame": 1350.9166666666667,
         "avgToi": "22:31"
       },
       {
@@ -35647,10 +35647,10 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 12,
-        "seconds": 15583,
-        "toi": "259:43",
-        "toiPerGame": 1298.5833333333333,
-        "avgToi": "21:39"
+        "seconds": 15582,
+        "toi": "259:42",
+        "toiPerGame": 1298.5,
+        "avgToi": "21:38"
       },
       {
         "name": "C. Legault",
@@ -44959,10 +44959,10 @@
         "fow": 28,
         "plusMinus": -8,
         "gp": 9,
-        "seconds": 9457,
-        "toi": "157:37",
-        "toiPerGame": 1050.7777777777778,
-        "avgToi": "17:31"
+        "seconds": 9512,
+        "toi": "158:32",
+        "toiPerGame": 1056.888888888889,
+        "avgToi": "17:37"
       },
       {
         "name": "S. Honzek",
@@ -45247,10 +45247,10 @@
         "fow": 0,
         "plusMinus": -4,
         "gp": 9,
-        "seconds": 9728,
-        "toi": "162:08",
-        "toiPerGame": 1080.888888888889,
-        "avgToi": "18:01"
+        "seconds": 9673,
+        "toi": "161:13",
+        "toiPerGame": 1074.7777777777778,
+        "avgToi": "17:55"
       },
       {
         "name": "S. Nemec",
@@ -48679,9 +48679,9 @@
         "fow": 2,
         "plusMinus": 6,
         "gp": 11,
-        "seconds": 7978,
-        "toi": "132:58",
-        "toiPerGame": 725.2727272727273,
+        "seconds": 7979,
+        "toi": "132:59",
+        "toiPerGame": 725.3636363636364,
         "avgToi": "12:05"
       },
       {
@@ -51727,10 +51727,10 @@
         "fow": 0,
         "plusMinus": 4,
         "gp": 2,
-        "seconds": 1544,
-        "toi": "25:44",
-        "toiPerGame": 772.0,
-        "avgToi": "12:52"
+        "seconds": 1546,
+        "toi": "25:46",
+        "toiPerGame": 773.0,
+        "avgToi": "12:53"
       },
       {
         "name": "J. Zucker",
@@ -61409,8 +61409,8 @@
             "opponent": "EDM",
             "home_away": "away",
             "pos": "D",
-            "toi": "24:22",
-            "toi_seconds": 1462
+            "toi": "24:21",
+            "toi_seconds": 1461
           }
         ]
       },
@@ -61692,8 +61692,8 @@
             "opponent": "EDM",
             "home_away": "away",
             "pos": "D",
-            "toi": "23:46",
-            "toi_seconds": 1426
+            "toi": "23:45",
+            "toi_seconds": 1425
           }
         ]
       },
@@ -147392,8 +147392,8 @@
             "opponent": "MIN",
             "home_away": "home",
             "pos": "R",
-            "toi": "16:23",
-            "toi_seconds": 983
+            "toi": "17:18",
+            "toi_seconds": 1038
           }
         ]
       },
@@ -149592,8 +149592,8 @@
             "opponent": "MIN",
             "home_away": "home",
             "pos": "D",
-            "toi": "19:53",
-            "toi_seconds": 1193
+            "toi": "18:58",
+            "toi_seconds": 1138
           }
         ]
       },
@@ -180125,8 +180125,8 @@
             "opponent": "SJS",
             "home_away": "home",
             "pos": "L",
-            "toi": "12:47",
-            "toi_seconds": 767
+            "toi": "12:48",
+            "toi_seconds": 768
           }
         ]
       },
@@ -194561,8 +194561,8 @@
             "opponent": "EDM",
             "home_away": "away",
             "pos": "D",
-            "toi": "14:15",
-            "toi_seconds": 855
+            "toi": "14:17",
+            "toi_seconds": 857
           }
         ]
       },
@@ -202016,7 +202016,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-23T14:26:18.802960+00:00"
+    "updated_at": "2026-10-23T15:10:42.110216+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -213660,6 +213660,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-23T14:26:18.825017+00:00",
+  "updated_at": "2026-10-23T15:10:42.150506+00:00",
   "timezone": "America/Toronto"
 }
