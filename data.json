@@ -15103,7 +15103,7 @@
       "name": "J. Allen",
       "team": "NJD",
       "player_id": 8474596,
-      "gs": null,
+      "gs": 2,
       "w": 2,
       "ga": 4,
       "sv": 43,
@@ -15768,7 +15768,7 @@
       "name": "A. Forsberg",
       "team": "LAK",
       "player_id": 8476341,
-      "gs": null,
+      "gs": 1,
       "w": 0,
       "ga": 2,
       "sv": 23,
@@ -33327,7 +33327,7 @@
         "name": "J. Allen",
         "team": "NJD",
         "player_id": 8474596,
-        "gs": null,
+        "gs": 7,
         "w": 5,
         "ga": 20,
         "sv": 156,
@@ -33916,7 +33916,7 @@
         "name": "A. Forsberg",
         "team": "LAK",
         "player_id": 8476341,
-        "gs": null,
+        "gs": 3,
         "w": 0,
         "ga": 9,
         "sv": 76,
@@ -51837,7 +51837,7 @@
         "name": "J. Allen",
         "team": "NJD",
         "player_id": 8474596,
-        "gs": null,
+        "gs": 7,
         "w": 5,
         "ga": 20,
         "sv": 156,
@@ -52426,7 +52426,7 @@
         "name": "A. Forsberg",
         "team": "LAK",
         "player_id": 8476341,
-        "gs": null,
+        "gs": 3,
         "w": 0,
         "ga": 9,
         "sv": 76,
@@ -200082,7 +200082,7 @@
             "team": "NJD",
             "opponent": "LAK",
             "home_away": "home",
-            "starter": null,
+            "starter": true,
             "decision": "W",
             "toi": "60:00",
             "toi_seconds": 3600
@@ -203814,7 +203814,7 @@
             "team": "LAK",
             "opponent": "NJD",
             "home_away": "away",
-            "starter": null,
+            "starter": true,
             "decision": "L",
             "toi": "58:29",
             "toi_seconds": 3509
@@ -205006,7 +205006,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-24T22:30:43.500432+00:00"
+    "updated_at": "2026-10-24T22:58:38.799719+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -216650,6 +216650,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-24T22:30:43.543728+00:00",
+  "updated_at": "2026-10-24T22:58:38.830638+00:00",
   "timezone": "America/Toronto"
 }
