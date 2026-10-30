@@ -4338,7 +4338,7 @@
       "gwg": null,
       "hat": 0,
       "sog": 10,
-      "hit": 4,
+      "hit": 3,
       "blk": 1,
       "fow": 0,
       "plusMinus": 6,
@@ -4410,7 +4410,7 @@
       "gwg": null,
       "hat": 0,
       "sog": 1,
-      "hit": 10,
+      "hit": 11,
       "blk": 1,
       "fow": 8,
       "plusMinus": 3,
@@ -6095,9 +6095,9 @@
       "fow": 22,
       "plusMinus": 3,
       "gp": 3,
-      "seconds": 2861,
-      "toi": "47:41",
-      "toiPerGame": 953.6666666666666,
+      "seconds": 2862,
+      "toi": "47:42",
+      "toiPerGame": 954.0,
       "avgToi": "15:54"
     },
     {
@@ -6215,10 +6215,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 3,
-      "seconds": 1604,
-      "toi": "26:44",
-      "toiPerGame": 534.6666666666666,
-      "avgToi": "8:55"
+      "seconds": 1603,
+      "toi": "26:43",
+      "toiPerGame": 534.3333333333334,
+      "avgToi": "8:54"
     },
     {
       "name": "J. Martinook",
@@ -6287,9 +6287,9 @@
       "fow": 0,
       "plusMinus": 4,
       "gp": 3,
-      "seconds": 3048,
-      "toi": "50:48",
-      "toiPerGame": 1016.0,
+      "seconds": 3049,
+      "toi": "50:49",
+      "toiPerGame": 1016.3333333333334,
       "avgToi": "16:56"
     },
     {
@@ -6455,9 +6455,9 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 3,
-      "seconds": 3564,
-      "toi": "59:24",
-      "toiPerGame": 1188.0,
+      "seconds": 3563,
+      "toi": "59:23",
+      "toiPerGame": 1187.6666666666667,
       "avgToi": "19:48"
     },
     {
@@ -8850,7 +8850,7 @@
       "gwg": null,
       "hat": 0,
       "sog": 5,
-      "hit": 6,
+      "hit": 5,
       "blk": 1,
       "fow": 21,
       "plusMinus": 3,
@@ -8970,7 +8970,7 @@
       "gwg": null,
       "hat": 0,
       "sog": 0,
-      "hit": 8,
+      "hit": 9,
       "blk": 2,
       "fow": 0,
       "plusMinus": 3,
@@ -17929,7 +17929,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 29,
-        "hit": 17,
+        "hit": 16,
         "blk": 6,
         "fow": 4,
         "plusMinus": 10,
@@ -18001,7 +18001,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 7,
-        "hit": 24,
+        "hit": 25,
         "blk": 3,
         "fow": 20,
         "plusMinus": 1,
@@ -23329,7 +23329,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 28,
-        "hit": 17,
+        "hit": 16,
         "blk": 8,
         "fow": 72,
         "plusMinus": 10,
@@ -24030,9 +24030,9 @@
         "fow": 74,
         "plusMinus": 11,
         "gp": 14,
-        "seconds": 14395,
-        "toi": "239:55",
-        "toiPerGame": 1028.2142857142858,
+        "seconds": 14396,
+        "toi": "239:56",
+        "toiPerGame": 1028.2857142857142,
         "avgToi": "17:08"
       },
       {
@@ -24126,9 +24126,9 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 9,
-        "seconds": 4906,
-        "toi": "81:46",
-        "toiPerGame": 545.1111111111111,
+        "seconds": 4905,
+        "toi": "81:45",
+        "toiPerGame": 545.0,
         "avgToi": "9:05"
       },
       {
@@ -24198,9 +24198,9 @@
         "fow": 0,
         "plusMinus": 11,
         "gp": 14,
-        "seconds": 15004,
-        "toi": "250:04",
-        "toiPerGame": 1071.7142857142858,
+        "seconds": 15005,
+        "toi": "250:05",
+        "toiPerGame": 1071.7857142857142,
         "avgToi": "17:52"
       },
       {
@@ -24342,9 +24342,9 @@
         "fow": 0,
         "plusMinus": 3,
         "gp": 14,
-        "seconds": 17996,
-        "toi": "299:56",
-        "toiPerGame": 1285.4285714285713,
+        "seconds": 17995,
+        "toi": "299:55",
+        "toiPerGame": 1285.357142857143,
         "avgToi": "21:25"
       },
       {
@@ -30481,7 +30481,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 4,
-        "hit": 25,
+        "hit": 26,
         "blk": 8,
         "fow": 0,
         "plusMinus": 3,
@@ -35613,9 +35613,9 @@
         "fow": 79,
         "plusMinus": 11,
         "gp": 15,
-        "seconds": 15589,
-        "toi": "259:49",
-        "toiPerGame": 1039.2666666666667,
+        "seconds": 15590,
+        "toi": "259:50",
+        "toiPerGame": 1039.3333333333333,
         "avgToi": "17:19"
       },
       {
@@ -35709,9 +35709,9 @@
         "fow": 0,
         "plusMinus": 2,
         "gp": 10,
-        "seconds": 5207,
-        "toi": "86:47",
-        "toiPerGame": 520.7,
+        "seconds": 5206,
+        "toi": "86:46",
+        "toiPerGame": 520.6,
         "avgToi": "8:41"
       },
       {
@@ -35781,9 +35781,9 @@
         "fow": 0,
         "plusMinus": 10,
         "gp": 15,
-        "seconds": 16302,
-        "toi": "271:42",
-        "toiPerGame": 1086.8,
+        "seconds": 16303,
+        "toi": "271:43",
+        "toiPerGame": 1086.8666666666666,
         "avgToi": "18:07"
       },
       {
@@ -35925,9 +35925,9 @@
         "fow": 0,
         "plusMinus": 3,
         "gp": 15,
-        "seconds": 19146,
-        "toi": "319:06",
-        "toiPerGame": 1276.4,
+        "seconds": 19145,
+        "toi": "319:05",
+        "toiPerGame": 1276.3333333333333,
         "avgToi": "21:16"
       },
       {
@@ -42520,7 +42520,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 29,
-        "hit": 17,
+        "hit": 16,
         "blk": 6,
         "fow": 4,
         "plusMinus": 10,
@@ -42592,7 +42592,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 7,
-        "hit": 24,
+        "hit": 25,
         "blk": 3,
         "fow": 20,
         "plusMinus": 1,
@@ -46264,7 +46264,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 28,
-        "hit": 17,
+        "hit": 16,
         "blk": 8,
         "fow": 72,
         "plusMinus": 10,
@@ -49624,7 +49624,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 4,
-        "hit": 25,
+        "hit": 26,
         "blk": 8,
         "fow": 0,
         "plusMinus": 3,
@@ -59952,8 +59952,8 @@
             "opponent": "CBJ",
             "home_away": "home",
             "pos": "C",
-            "toi": "17:08",
-            "toi_seconds": 1028
+            "toi": "17:09",
+            "toi_seconds": 1029
           }
         ]
       },
@@ -61245,8 +61245,8 @@
             "opponent": "CBJ",
             "home_away": "home",
             "pos": "L",
-            "toi": "07:25",
-            "toi_seconds": 445
+            "toi": "07:24",
+            "toi_seconds": 444
           }
         ]
       },
@@ -62301,8 +62301,8 @@
             "opponent": "CBJ",
             "home_away": "home",
             "pos": "R",
-            "toi": "16:47",
-            "toi_seconds": 1007
+            "toi": "16:48",
+            "toi_seconds": 1008
           }
         ]
       },
@@ -64160,8 +64160,8 @@
             "opponent": "CBJ",
             "home_away": "home",
             "pos": "D",
-            "toi": "20:17",
-            "toi_seconds": 1217
+            "toi": "20:16",
+            "toi_seconds": 1216
           }
         ]
       },
@@ -141837,7 +141837,7 @@
             "gwg": null,
             "hat": 0,
             "sog": 3,
-            "hit": 2,
+            "hit": 1,
             "blk": 1,
             "fow": 0,
             "plusMinus": 3,
@@ -142571,7 +142571,7 @@
             "gwg": null,
             "hat": 0,
             "sog": 1,
-            "hit": 4,
+            "hit": 5,
             "blk": 0,
             "fow": 8,
             "plusMinus": 3,
@@ -184352,7 +184352,7 @@
             "gwg": null,
             "hat": 0,
             "sog": 4,
-            "hit": 3,
+            "hit": 2,
             "blk": 1,
             "fow": 9,
             "plusMinus": 2,
@@ -219947,7 +219947,7 @@
             "gwg": null,
             "hat": 0,
             "sog": 0,
-            "hit": 2,
+            "hit": 3,
             "blk": 0,
             "fow": 0,
             "plusMinus": 1,
@@ -244543,7 +244543,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-10-30T10:02:05.880693+00:00"
+    "updated_at": "2026-10-30T16:40:57.405725+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -256187,6 +256187,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-10-30T10:02:05.932020+00:00",
+  "updated_at": "2026-10-30T16:40:57.457311+00:00",
   "timezone": "America/Toronto"
 }
