@@ -1938,7 +1938,7 @@
       "gwg": null,
       "hat": 0,
       "sog": 5,
-      "hit": 6,
+      "hit": 7,
       "blk": 4,
       "fow": 0,
       "plusMinus": 1,
@@ -2058,7 +2058,7 @@
       "gwg": null,
       "hat": 0,
       "sog": 2,
-      "hit": 3,
+      "hit": 2,
       "blk": 3,
       "fow": 0,
       "plusMinus": -1,
@@ -9527,10 +9527,10 @@
       "fow": 10,
       "plusMinus": 1,
       "gp": 2,
-      "seconds": 1322,
-      "toi": "22:02",
-      "toiPerGame": 661.0,
-      "avgToi": "11:01"
+      "seconds": 1323,
+      "toi": "22:03",
+      "toiPerGame": 661.5,
+      "avgToi": "11:02"
     },
     {
       "name": "N. Hischier",
@@ -9599,9 +9599,9 @@
       "fow": 9,
       "plusMinus": -1,
       "gp": 2,
-      "seconds": 1760,
-      "toi": "29:20",
-      "toiPerGame": 880.0,
+      "seconds": 1759,
+      "toi": "29:19",
+      "toiPerGame": 879.5,
       "avgToi": "14:40"
     },
     {
@@ -13387,7 +13387,7 @@
       "hat": 0,
       "sog": 10,
       "hit": 1,
-      "blk": 5,
+      "blk": 4,
       "fow": 0,
       "plusMinus": 2,
       "gp": 3,
@@ -18779,7 +18779,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 17,
-        "hit": 31,
+        "hit": 32,
         "blk": 11,
         "fow": 0,
         "plusMinus": 2,
@@ -18923,7 +18923,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 15,
-        "hit": 17,
+        "hit": 16,
         "blk": 10,
         "fow": 0,
         "plusMinus": -5,
@@ -19024,9 +19024,9 @@
         "fow": 99,
         "plusMinus": 1,
         "gp": 13,
-        "seconds": 9737,
-        "toi": "162:17",
-        "toiPerGame": 749.0,
+        "seconds": 9738,
+        "toi": "162:18",
+        "toiPerGame": 749.0769230769231,
         "avgToi": "12:29"
       },
       {
@@ -19072,9 +19072,9 @@
         "fow": 62,
         "plusMinus": 0,
         "gp": 13,
-        "seconds": 11880,
-        "toi": "198:00",
-        "toiPerGame": 913.8461538461538,
+        "seconds": 11879,
+        "toi": "197:59",
+        "toiPerGame": 913.7692307692307,
         "avgToi": "15:14"
       },
       {
@@ -24948,7 +24948,7 @@
         "hat": 0,
         "sog": 40,
         "hit": 4,
-        "blk": 16,
+        "blk": 15,
         "fow": 0,
         "plusMinus": 2,
         "gp": 13,
@@ -40908,7 +40908,7 @@
         "hat": 0,
         "sog": 44,
         "hit": 4,
-        "blk": 19,
+        "blk": 18,
         "fow": 0,
         "plusMinus": 3,
         "gp": 15,
@@ -41536,9 +41536,9 @@
         "fow": 108,
         "plusMinus": 0,
         "gp": 15,
-        "seconds": 10943,
-        "toi": "182:23",
-        "toiPerGame": 729.5333333333333,
+        "seconds": 10944,
+        "toi": "182:24",
+        "toiPerGame": 729.6,
         "avgToi": "12:10"
       },
       {
@@ -41584,9 +41584,9 @@
         "fow": 84,
         "plusMinus": -4,
         "gp": 15,
-        "seconds": 13887,
-        "toi": "231:27",
-        "toiPerGame": 925.8,
+        "seconds": 13886,
+        "toi": "231:26",
+        "toiPerGame": 925.7333333333333,
         "avgToi": "15:26"
       },
       {
@@ -44339,7 +44339,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 25,
-        "hit": 40,
+        "hit": 41,
         "blk": 12,
         "fow": 1,
         "plusMinus": 3,
@@ -44483,7 +44483,7 @@
         "gwg": null,
         "hat": 0,
         "sog": 17,
-        "hit": 22,
+        "hit": 21,
         "blk": 11,
         "fow": 0,
         "plusMinus": -3,
@@ -135783,7 +135783,7 @@
             "hat": 0,
             "sog": 5,
             "hit": 0,
-            "blk": 2,
+            "blk": 1,
             "fow": 0,
             "plusMinus": -3,
             "game_id": 2026020244,
@@ -143472,8 +143472,8 @@
             "opponent": "EDM",
             "home_away": "home",
             "pos": "C",
-            "toi": "09:49",
-            "toi_seconds": 589
+            "toi": "09:50",
+            "toi_seconds": 590
           }
         ]
       },
@@ -144176,8 +144176,8 @@
             "opponent": "EDM",
             "home_away": "home",
             "pos": "C",
-            "toi": "12:58",
-            "toi_seconds": 778
+            "toi": "12:57",
+            "toi_seconds": 777
           }
         ]
       },
@@ -179701,7 +179701,7 @@
             "gwg": null,
             "hat": 0,
             "sog": 3,
-            "hit": 2,
+            "hit": 3,
             "blk": 4,
             "fow": 0,
             "plusMinus": -1,
@@ -181790,7 +181790,7 @@
             "gwg": null,
             "hat": 0,
             "sog": 1,
-            "hit": 2,
+            "hit": 1,
             "blk": 0,
             "fow": 0,
             "plusMinus": 0,
@@ -273572,7 +273572,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-11-04T11:22:45.765352+00:00"
+    "updated_at": "2026-11-04T18:45:45.721836+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -285216,6 +285216,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-11-04T11:22:45.801855+00:00",
+  "updated_at": "2026-11-04T18:45:45.753577+00:00",
   "timezone": "America/Toronto"
 }
