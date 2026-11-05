@@ -1823,10 +1823,10 @@
       "fow": 0,
       "plusMinus": -1,
       "gp": 2,
-      "seconds": 2025,
-      "toi": "33:45",
-      "toiPerGame": 1012.5,
-      "avgToi": "16:52"
+      "seconds": 2026,
+      "toi": "33:46",
+      "toiPerGame": 1013.0,
+      "avgToi": "16:53"
     },
     {
       "name": "R. Winterton",
@@ -1991,10 +1991,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 2,
-      "seconds": 1790,
-      "toi": "29:50",
-      "toiPerGame": 895.0,
-      "avgToi": "14:55"
+      "seconds": 1789,
+      "toi": "29:49",
+      "toiPerGame": 894.5,
+      "avgToi": "14:54"
     },
     {
       "name": "F. Gaudreau",
@@ -26594,9 +26594,9 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 11,
-        "seconds": 10283,
-        "toi": "171:23",
-        "toiPerGame": 934.8181818181819,
+        "seconds": 10284,
+        "toi": "171:24",
+        "toiPerGame": 934.9090909090909,
         "avgToi": "15:35"
       },
       {
@@ -26762,9 +26762,9 @@
         "fow": 0,
         "plusMinus": -2,
         "gp": 11,
-        "seconds": 9331,
-        "toi": "155:31",
-        "toiPerGame": 848.2727272727273,
+        "seconds": 9330,
+        "toi": "155:30",
+        "toiPerGame": 848.1818181818181,
         "avgToi": "14:08"
       },
       {
@@ -44474,9 +44474,9 @@
         "fow": 0,
         "plusMinus": 1,
         "gp": 15,
-        "seconds": 12823,
-        "toi": "213:43",
-        "toiPerGame": 854.8666666666667,
+        "seconds": 12822,
+        "toi": "213:42",
+        "toiPerGame": 854.8,
         "avgToi": "14:15"
       },
       {
@@ -48818,9 +48818,9 @@
         "fow": 0,
         "plusMinus": 0,
         "gp": 14,
-        "seconds": 12957,
-        "toi": "215:57",
-        "toiPerGame": 925.5,
+        "seconds": 12958,
+        "toi": "215:58",
+        "toiPerGame": 925.5714285714286,
         "avgToi": "15:26"
       },
       {
@@ -187279,8 +187279,8 @@
             "opponent": "CGY",
             "home_away": "home",
             "pos": "R",
-            "toi": "13:25",
-            "toi_seconds": 805
+            "toi": "13:24",
+            "toi_seconds": 804
           }
         ]
       },
@@ -244252,8 +244252,8 @@
             "opponent": "CGY",
             "home_away": "home",
             "pos": "R",
-            "toi": "14:51",
-            "toi_seconds": 891
+            "toi": "14:52",
+            "toi_seconds": 892
           }
         ]
       },
@@ -276810,7 +276810,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-11-05T06:28:36.830727+00:00"
+    "updated_at": "2026-11-05T14:55:45.836983+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -288454,6 +288454,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-11-05T06:28:36.872026+00:00",
+  "updated_at": "2026-11-05T14:55:45.889502+00:00",
   "timezone": "America/Toronto"
 }
