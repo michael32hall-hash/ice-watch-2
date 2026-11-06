@@ -2303,10 +2303,10 @@
       "fow": 0,
       "plusMinus": 2,
       "gp": 3,
-      "seconds": 1992,
-      "toi": "33:12",
-      "toiPerGame": 664.0,
-      "avgToi": "11:04"
+      "seconds": 1994,
+      "toi": "33:14",
+      "toiPerGame": 664.6666666666666,
+      "avgToi": "11:05"
     },
     {
       "name": "M. Wood",
@@ -2471,9 +2471,9 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 3,
-      "seconds": 3913,
-      "toi": "65:13",
-      "toiPerGame": 1304.3333333333333,
+      "seconds": 3911,
+      "toi": "65:11",
+      "toiPerGame": 1303.6666666666667,
       "avgToi": "21:44"
     },
     {
@@ -2519,9 +2519,9 @@
       "fow": 0,
       "plusMinus": 1,
       "gp": 3,
-      "seconds": 3557,
-      "toi": "59:17",
-      "toiPerGame": 1185.6666666666667,
+      "seconds": 3558,
+      "toi": "59:18",
+      "toiPerGame": 1186.0,
       "avgToi": "19:46"
     },
     {
@@ -2567,10 +2567,10 @@
       "fow": 0,
       "plusMinus": 0,
       "gp": 3,
-      "seconds": 4825,
-      "toi": "80:25",
-      "toiPerGame": 1608.3333333333333,
-      "avgToi": "26:48"
+      "seconds": 4805,
+      "toi": "80:05",
+      "toiPerGame": 1601.6666666666667,
+      "avgToi": "26:42"
     },
     {
       "name": "B. Skjei",
@@ -2591,10 +2591,10 @@
       "fow": 0,
       "plusMinus": 3,
       "gp": 3,
-      "seconds": 3846,
-      "toi": "64:06",
-      "toiPerGame": 1282.0,
-      "avgToi": "21:22"
+      "seconds": 3865,
+      "toi": "64:25",
+      "toiPerGame": 1288.3333333333333,
+      "avgToi": "21:28"
     },
     {
       "name": "T. Frederic",
@@ -17771,9 +17771,9 @@
         "fow": 1,
         "plusMinus": 2,
         "gp": 8,
-        "seconds": 5128,
-        "toi": "85:28",
-        "toiPerGame": 641.0,
+        "seconds": 5130,
+        "toi": "85:30",
+        "toiPerGame": 641.25,
         "avgToi": "10:41"
       },
       {
@@ -17939,9 +17939,9 @@
         "fow": 0,
         "plusMinus": 4,
         "gp": 13,
-        "seconds": 16255,
-        "toi": "270:55",
-        "toiPerGame": 1250.3846153846155,
+        "seconds": 16253,
+        "toi": "270:53",
+        "toiPerGame": 1250.2307692307693,
         "avgToi": "20:50"
       },
       {
@@ -17987,9 +17987,9 @@
         "fow": 0,
         "plusMinus": -1,
         "gp": 12,
-        "seconds": 13136,
-        "toi": "218:56",
-        "toiPerGame": 1094.6666666666667,
+        "seconds": 13137,
+        "toi": "218:57",
+        "toiPerGame": 1094.75,
         "avgToi": "18:15"
       },
       {
@@ -18011,10 +18011,10 @@
         "fow": 0,
         "plusMinus": 5,
         "gp": 13,
-        "seconds": 19922,
-        "toi": "332:02",
-        "toiPerGame": 1532.4615384615386,
-        "avgToi": "25:32"
+        "seconds": 19902,
+        "toi": "331:42",
+        "toiPerGame": 1530.923076923077,
+        "avgToi": "25:31"
       },
       {
         "name": "B. Skjei",
@@ -18035,10 +18035,10 @@
         "fow": 0,
         "plusMinus": -3,
         "gp": 13,
-        "seconds": 15443,
-        "toi": "257:23",
-        "toiPerGame": 1187.923076923077,
-        "avgToi": "19:48"
+        "seconds": 15462,
+        "toi": "257:42",
+        "toiPerGame": 1189.3846153846155,
+        "avgToi": "19:49"
       },
       {
         "name": "W. Trudeau",
@@ -43691,9 +43691,9 @@
         "fow": 1,
         "plusMinus": 1,
         "gp": 9,
-        "seconds": 5823,
-        "toi": "97:03",
-        "toiPerGame": 647.0,
+        "seconds": 5825,
+        "toi": "97:05",
+        "toiPerGame": 647.2222222222222,
         "avgToi": "10:47"
       },
       {
@@ -43859,9 +43859,9 @@
         "fow": 0,
         "plusMinus": 4,
         "gp": 16,
-        "seconds": 18998,
-        "toi": "316:38",
-        "toiPerGame": 1187.375,
+        "seconds": 18996,
+        "toi": "316:36",
+        "toiPerGame": 1187.25,
         "avgToi": "19:47"
       },
       {
@@ -43931,9 +43931,9 @@
         "fow": 0,
         "plusMinus": -4,
         "gp": 15,
-        "seconds": 16588,
-        "toi": "276:28",
-        "toiPerGame": 1105.8666666666666,
+        "seconds": 16589,
+        "toi": "276:29",
+        "toiPerGame": 1105.9333333333334,
         "avgToi": "18:26"
       },
       {
@@ -43955,10 +43955,10 @@
         "fow": 0,
         "plusMinus": 4,
         "gp": 16,
-        "seconds": 24486,
-        "toi": "408:06",
-        "toiPerGame": 1530.375,
-        "avgToi": "25:30"
+        "seconds": 24466,
+        "toi": "407:46",
+        "toiPerGame": 1529.125,
+        "avgToi": "25:29"
       },
       {
         "name": "B. Skjei",
@@ -43979,10 +43979,10 @@
         "fow": 0,
         "plusMinus": -4,
         "gp": 16,
-        "seconds": 19154,
-        "toi": "319:14",
-        "toiPerGame": 1197.125,
-        "avgToi": "19:57"
+        "seconds": 19173,
+        "toi": "319:33",
+        "toiPerGame": 1198.3125,
+        "avgToi": "19:58"
       },
       {
         "name": "T. Teravainen",
@@ -179413,8 +179413,8 @@
             "opponent": "COL",
             "home_away": "away",
             "pos": "L",
-            "toi": "09:46",
-            "toi_seconds": 586
+            "toi": "09:48",
+            "toi_seconds": 588
           }
         ]
       },
@@ -181969,8 +181969,8 @@
             "opponent": "COL",
             "home_away": "away",
             "pos": "D",
-            "toi": "22:44",
-            "toi_seconds": 1364
+            "toi": "22:42",
+            "toi_seconds": 1362
           }
         ]
       },
@@ -182657,8 +182657,8 @@
             "opponent": "COL",
             "home_away": "away",
             "pos": "D",
-            "toi": "20:31",
-            "toi_seconds": 1231
+            "toi": "20:32",
+            "toi_seconds": 1232
           }
         ]
       },
@@ -183032,8 +183032,8 @@
             "opponent": "COL",
             "home_away": "away",
             "pos": "D",
-            "toi": "28:22",
-            "toi_seconds": 1702
+            "toi": "28:02",
+            "toi_seconds": 1682
           }
         ]
       },
@@ -183407,8 +183407,8 @@
             "opponent": "COL",
             "home_away": "away",
             "pos": "D",
-            "toi": "21:57",
-            "toi_seconds": 1317
+            "toi": "22:16",
+            "toi_seconds": 1336
           }
         ]
       },
@@ -286561,7 +286561,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-11-06T08:33:50.466989+00:00"
+    "updated_at": "2026-11-06T16:15:00.199914+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -298205,6 +298205,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-11-06T08:33:50.510447+00:00",
+  "updated_at": "2026-11-06T16:15:00.233832+00:00",
   "timezone": "America/Toronto"
 }
