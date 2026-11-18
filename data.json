@@ -2587,7 +2587,7 @@
       "hat": 0,
       "sog": 9,
       "hit": 2,
-      "blk": 8,
+      "blk": 7,
       "fow": 0,
       "plusMinus": -1,
       "gp": 3,
@@ -6741,12 +6741,12 @@
       "hit": 6,
       "blk": 1,
       "fow": 10,
-      "plusMinus": 0,
+      "plusMinus": 1,
       "gp": 4,
-      "seconds": 3486,
-      "toi": "58:06",
-      "toiPerGame": 871.5,
-      "avgToi": "14:32"
+      "seconds": 3457,
+      "toi": "57:37",
+      "toiPerGame": 864.25,
+      "avgToi": "14:24"
     },
     {
       "name": "M. Rantanen",
@@ -6765,12 +6765,12 @@
       "hit": 2,
       "blk": 2,
       "fow": 2,
-      "plusMinus": 3,
+      "plusMinus": 2,
       "gp": 4,
-      "seconds": 4925,
-      "toi": "82:05",
-      "toiPerGame": 1231.25,
-      "avgToi": "20:31"
+      "seconds": 4954,
+      "toi": "82:34",
+      "toiPerGame": 1238.5,
+      "avgToi": "20:38"
     },
     {
       "name": "N. Lundkvist",
@@ -22017,12 +22017,12 @@
         "hit": 13,
         "blk": 3,
         "fow": 25,
-        "plusMinus": -3,
+        "plusMinus": -2,
         "gp": 13,
-        "seconds": 11519,
-        "toi": "191:59",
-        "toiPerGame": 886.0769230769231,
-        "avgToi": "14:46"
+        "seconds": 11490,
+        "toi": "191:30",
+        "toiPerGame": 883.8461538461538,
+        "avgToi": "14:44"
       },
       {
         "name": "M. Rantanen",
@@ -22041,12 +22041,12 @@
         "hit": 8,
         "blk": 2,
         "fow": 7,
-        "plusMinus": 6,
+        "plusMinus": 5,
         "gp": 13,
-        "seconds": 15404,
-        "toi": "256:44",
-        "toiPerGame": 1184.923076923077,
-        "avgToi": "19:45"
+        "seconds": 15433,
+        "toi": "257:13",
+        "toiPerGame": 1187.1538461538462,
+        "avgToi": "19:47"
       },
       {
         "name": "M. Heiskanen",
@@ -27367,7 +27367,7 @@
         "hat": 0,
         "sog": 30,
         "hit": 8,
-        "blk": 23,
+        "blk": 22,
         "fow": 0,
         "plusMinus": -3,
         "gp": 13,
@@ -48105,12 +48105,12 @@
         "hit": 18,
         "blk": 4,
         "fow": 42,
-        "plusMinus": -5,
+        "plusMinus": -4,
         "gp": 21,
-        "seconds": 18850,
-        "toi": "314:10",
-        "toiPerGame": 897.6190476190476,
-        "avgToi": "14:58"
+        "seconds": 18821,
+        "toi": "313:41",
+        "toiPerGame": 896.2380952380952,
+        "avgToi": "14:56"
       },
       {
         "name": "M. Rantanen",
@@ -48129,12 +48129,12 @@
         "hit": 16,
         "blk": 5,
         "fow": 17,
-        "plusMinus": 10,
+        "plusMinus": 9,
         "gp": 21,
-        "seconds": 25348,
-        "toi": "422:28",
-        "toiPerGame": 1207.047619047619,
-        "avgToi": "20:07"
+        "seconds": 25377,
+        "toi": "422:57",
+        "toiPerGame": 1208.4285714285713,
+        "avgToi": "20:08"
       },
       {
         "name": "M. Heiskanen",
@@ -49207,7 +49207,7 @@
         "hat": 0,
         "sog": 30,
         "hit": 9,
-        "blk": 24,
+        "blk": 23,
         "fow": 0,
         "plusMinus": -3,
         "gp": 14,
@@ -289280,15 +289280,15 @@
             "hit": 1,
             "blk": 1,
             "fow": 2,
-            "plusMinus": 1,
+            "plusMinus": 2,
             "game_id": 2026020342,
             "date": "2026-11-17",
             "team": "DAL",
             "opponent": "VGK",
             "home_away": "away",
             "pos": "C",
-            "toi": "13:46",
-            "toi_seconds": 826
+            "toi": "13:17",
+            "toi_seconds": 797
           }
         ]
       },
@@ -289770,15 +289770,15 @@
             "hit": 1,
             "blk": 0,
             "fow": 0,
-            "plusMinus": 4,
+            "plusMinus": 3,
             "game_id": 2026020342,
             "date": "2026-11-17",
             "team": "DAL",
             "opponent": "VGK",
             "home_away": "away",
             "pos": "R",
-            "toi": "24:24",
-            "toi_seconds": 1464
+            "toi": "24:53",
+            "toi_seconds": 1493
           }
         ]
       },
@@ -308713,7 +308713,7 @@
             "hat": 0,
             "sog": 2,
             "hit": 0,
-            "blk": 2,
+            "blk": 1,
             "fow": 0,
             "plusMinus": 0,
             "game_id": 2026020341,
@@ -359107,7 +359107,7 @@
     "games": [],
     "skaters": [],
     "goalies": [],
-    "updated_at": "2026-11-18T16:59:24.521435+00:00"
+    "updated_at": "2026-11-18T23:21:19.100945+00:00"
   },
   "previous_season": {
     "season_id": 20252026,
@@ -370751,6 +370751,6 @@
     "description": "Completed-game season totals and chronological game logs, with in-progress games stored separately under live. Faceoff wins come from play-by-play and power-play points from NHL scoring-summary credits. Previous-season totals support Ice Watchers waiver graduation. NHL scoring credits for players missing from playerByGameStats are logged and skipped instead of blocking the refresh."
   },
   "waivers": [],
-  "updated_at": "2026-11-18T16:59:24.588939+00:00",
+  "updated_at": "2026-11-18T23:21:19.162087+00:00",
   "timezone": "America/Toronto"
 }
